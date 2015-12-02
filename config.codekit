@@ -13,6 +13,39 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/app\/assets\/logos\/logo-lg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.06487e+06,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/logo-lg.jpg",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/logo-lg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/app\/assets\/logos\/logo-sm.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 130890,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/logo-sm.jpg",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/logo-sm.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/app\/assets\/logos\/logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 617590,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/logo.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
 	"\/app\/components\/About.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -26,8 +59,8 @@
 		},
 	"\/app\/components\/ClientResources.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/components\/ClientResources.js",
 		"outputAbbreviatedPath": "\/app\/components\/min\/ClientResources-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -37,8 +70,8 @@
 		},
 	"\/app\/components\/Contact.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/components\/Contact.js",
 		"outputAbbreviatedPath": "\/app\/components\/min\/Contact-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -70,8 +103,8 @@
 		},
 	"\/app\/components\/Services.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/components\/Services.js",
 		"outputAbbreviatedPath": "\/app\/components\/min\/Services-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -81,10 +114,41 @@
 		},
 	"\/app\/config\/routes.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/config\/routes.js",
 		"outputAbbreviatedPath": "\/app\/config\/min\/routes-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bundle.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/bundle.js",
+		"outputAbbreviatedPath": "\/min\/bundle-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/min\/webpack.config-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/webpack.config-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/webpack.config-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -101,41 +165,10 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
-	"\/public\/bundle.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/public\/bundle.js",
-		"outputAbbreviatedPath": "\/public\/min\/bundle-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
-		},
-	"\/public\/index.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/public\/index.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/public\/min\/bundle-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/public\/min\/bundle-min.js",
-		"outputAbbreviatedPath": "\/public\/min\/min\/bundle-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/webpack.config.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/webpack.config.js",
 		"outputAbbreviatedPath": "\/min\/webpack.config-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -153,7 +186,7 @@
 	"bowerAbbreviatedPath": "",
 	"displayValue": "language_liftoff",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "globe_darkGray"
+	"iconImageName": "\/app\/assets\/logos\/logo.png"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
@@ -751,7 +784,7 @@
 	"sassDecimalPrecision": 10,
 	"sassOutputStyle": 0,
 	"sassUseLibsass": 0,
-	"shouldRunAutoprefixer": 0,
+	"shouldRunAutoprefixer": 1,
 	"shouldRunBless": 0,
 	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs, node_modules",
 	"slimAutoOutputPathEnabled": 1,
@@ -957,7 +990,7 @@
 			}
 		},
 	"uglifyReservedNamesString": "$",
-	"websiteRelativeRoot": "public\/"
+	"websiteRelativeRoot": ""
 	},
 "settingsFileVersion": "2"
 }

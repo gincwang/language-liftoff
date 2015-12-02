@@ -1,8 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-DOM');
-var Router = require('react-router').Router;
-var Route = require('react-router').Route;
-var routes = require('./config/routes');
+import React from "react";
+import ReactDOM from "react-DOM";
+import {Router, Route} from "react-router";
+import routes from './config/routes';
 
 ReactDOM.render((
 	<Router>

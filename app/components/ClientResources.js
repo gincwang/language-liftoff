@@ -1,12 +1,12 @@
-var React = require('react');
-var ReactDOM = require('react-DOM');
+import React from 'react';
 
-var ClientResources = React.createClass({
-	render: function(){
+class ClientResources extends React.Component {
+	render(){
 		return (
 			<h1>Client Resources</h1>
 		);
 	}
-});
+}
 
-module.exports = ClientResources;
+
+export default ClientResources;

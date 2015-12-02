@@ -1,12 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-DOM');
+import React from "react";
 
-var About = React.createClass({
-	render: function(){
+class About extends React.Component {
+	render(){
 		return (
 			<h1>About</h1>
 		);
-	}
-});
+	}	
+}
 
-module.exports = About;
+export default About;

@@ -1,12 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-DOM');
+import React from "react";
 
-var Services = React.createClass({
-	render: function(){
+class Services extends React.Component {
+	render(){
 		return (
 			<h1>Services</h1>
 		);
 	}
-});
+}
 
-module.exports = Services;
+export default Services;

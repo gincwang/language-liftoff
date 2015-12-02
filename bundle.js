@@ -24578,10 +24578,10 @@
 							),
 							_react2.default.createElement(
 								'ul',
-								{ style: navLinkStyles },
+								{ style: navUlStyles },
 								_react2.default.createElement(
 									'li',
-									null,
+									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
 										{ to: '/', style: linkStyles },
@@ -24590,7 +24590,7 @@
 								),
 								_react2.default.createElement(
 									'li',
-									null,
+									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
 										{ to: '/services', style: linkStyles },
@@ -24599,7 +24599,7 @@
 								),
 								_react2.default.createElement(
 									'li',
-									null,
+									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
 										{ to: '/client-resources', style: linkStyles },
@@ -24608,7 +24608,7 @@
 								),
 								_react2.default.createElement(
 									'li',
-									null,
+									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
 										{ to: '/about', style: linkStyles },
@@ -24617,7 +24617,7 @@
 								),
 								_react2.default.createElement(
 									'li',
-									null,
+									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
 										{ to: '/contact', style: linkStyles },
@@ -24638,34 +24638,38 @@
 	var navStyles = {
 		display: "flex",
 		flexFlow: "column nowrap",
-		justifyContent: "center",
 		alignItems: "stretch",
 		maxWidth: "1024px",
 		margin: "0 auto"
 	};
 
-	var navLinkStyles = {
+	var navUlStyles = {
 		display: "flex",
 		flexFlow: "row nowrap",
 		justifyContent: "space-around",
 		fontSize: "1.4em",
 		listStyle: "none",
-		padding: "10px 0",
-		backgroundColor: "#FF5722"
+		backgroundColor: "#FF5722",
+		padding: "0"
 	};
 
 	var logoStyles = {
 		margin: "10px 20px"
 	};
 
+	var navLiStyles = {
+		flex: "1 20%"
+	};
+
 	var linkStyles = {
 		color: "white",
-		padding: "10px 15px",
+		padding: "20px 0",
 		textDecoration: "none",
-		borderRadius: "5px",
+		display: "block",
+		textAlign: "center",
 
 		':hover': {
-			color: "gray"
+			color: "#E0E0E0"
 		}
 	};
 

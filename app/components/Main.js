@@ -11,12 +11,12 @@ class Main extends React.Component{
         		<div style={{backgroundColor: "white", border: "1px solid #F5F5F5"}}>
 		            <nav style={navStyles}>
 		            	<Link to="/"><img style={logoStyles} src={"app/assets/logos/logo-lg.jpg"} alt="logo" height={100}/></Link>
-		                <ul style={navLinkStyles}>
-		                	<li><Link to="/" style={linkStyles}>Home</Link></li>
-		                    <li><Link to="/services" style={linkStyles}>Services</Link></li>
-		                    <li><Link to="/client-resources" style={linkStyles}>Client Resources</Link></li>
-		                    <li><Link to="/about" style={linkStyles}>About Us</Link></li>
-		                    <li><Link to="/contact" style={linkStyles}>Contact</Link></li>
+		                <ul style={navUlStyles}>
+		                	<li style={navLiStyles}><Link to="/" style={linkStyles}>Home</Link></li>
+		                    <li style={navLiStyles}><Link to="/services" style={linkStyles}>Services</Link></li>
+		                    <li style={navLiStyles}><Link to="/client-resources" style={linkStyles}>Client Resources</Link></li>
+		                    <li style={navLiStyles}><Link to="/about" style={linkStyles}>About Us</Link></li>
+		                    <li style={navLiStyles}><Link to="/contact" style={linkStyles}>Contact</Link></li>
 		                </ul>
 		            </nav>
 		        </div>
@@ -29,34 +29,38 @@ class Main extends React.Component{
 let navStyles = {
 	display: "flex",
 	flexFlow: "column nowrap",
-	justifyContent: "center",
 	alignItems: "stretch",
 	maxWidth: "1024px",
 	margin: "0 auto"
 };
 
-let navLinkStyles = {
+let navUlStyles = {
 	display: "flex",
 	flexFlow: "row nowrap",
 	justifyContent: "space-around",
 	fontSize: "1.4em",
 	listStyle: "none",
-	padding: "10px 0",
-	backgroundColor: "#FF5722"
+	backgroundColor: "#FF5722",
+	padding: "0"
 };
 
 let logoStyles = {
 	margin: "10px 20px",
 };
 
+let navLiStyles = {
+	flex: "1 20%",
+};
+
 let linkStyles = {
 	color: "white",
-	padding: "10px 15px",
+	padding: "20px 0",
 	textDecoration: "none",
-	borderRadius: "5px",
+	display: "block",
+	textAlign: "center",
 
 	':hover': {
-		color: "gray",
+		color: "#E0E0E0",
 	}
 };
 

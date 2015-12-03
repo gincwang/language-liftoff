@@ -8,7 +8,7 @@ class Main extends React.Component{
     render(){
         return (
         	<div>
-        		<div style={{backgroundColor: "white", border: "1px solid #F5F5F5"}}>
+        		<div style={{backgroundColor: "white"}}>
 		            <nav style={navStyles}>
 		            	<Link to="/"><img style={navLogoStyles} src={"app/assets/logos/logo-lg.jpg"} alt="logo" height={100}/></Link>
 		                <ul style={navUlStyles}>
@@ -27,6 +27,7 @@ class Main extends React.Component{
 }
 
 let navStyles = {
+	fontFamily: "'Comfortaa', cursive",
 	display: "flex",
 	flexFlow: "column nowrap",
 	alignItems: "stretch",
@@ -37,14 +38,14 @@ let navStyles = {
 let navUlStyles = {
 	display: "flex",
 	flexFlow: "row nowrap",
-	fontSize: "1.4em",
+	fontSize: "1.5em",
 	listStyle: "none",
-	backgroundColor: "#FF5722",
+	backgroundColor: "#FFCA28",
 	padding: "0"
 };
 
 let navLogoStyles = {
-	margin: "10px 20px",
+	margin: "20px 20px",
 };
 
 let navLiStyles = {
@@ -52,7 +53,7 @@ let navLiStyles = {
 };
 
 let navLinkStyles = {
-	color: "white",
+	color: "#3E2723",
 	padding: "20px 0",
 	textDecoration: "none",
 	display: "block",

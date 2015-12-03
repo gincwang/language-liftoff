@@ -24567,14 +24567,14 @@
 					null,
 					_react2.default.createElement(
 						'div',
-						{ style: { backgroundColor: "white", border: "1px solid #F5F5F5" } },
+						{ style: { backgroundColor: "white" } },
 						_react2.default.createElement(
 							'nav',
 							{ style: navStyles },
 							_react2.default.createElement(
 								Link,
 								{ to: '/' },
-								_react2.default.createElement('img', { style: logoStyles, src: "app/assets/logos/logo-lg.jpg", alt: 'logo', height: 100 })
+								_react2.default.createElement('img', { style: navLogoStyles, src: "app/assets/logos/logo-lg.jpg", alt: 'logo', height: 100 })
 							),
 							_react2.default.createElement(
 								'ul',
@@ -24584,7 +24584,7 @@
 									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
-										{ to: '/', style: linkStyles },
+										{ to: '/', style: navLinkStyles },
 										'Home'
 									)
 								),
@@ -24593,7 +24593,7 @@
 									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
-										{ to: '/services', style: linkStyles },
+										{ to: '/services', style: navLinkStyles },
 										'Services'
 									)
 								),
@@ -24602,7 +24602,7 @@
 									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
-										{ to: '/client-resources', style: linkStyles },
+										{ to: '/client-resources', style: navLinkStyles },
 										'Client Resources'
 									)
 								),
@@ -24611,7 +24611,7 @@
 									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
-										{ to: '/about', style: linkStyles },
+										{ to: '/about', style: navLinkStyles },
 										'About Us'
 									)
 								),
@@ -24620,7 +24620,7 @@
 									{ style: navLiStyles },
 									_react2.default.createElement(
 										Link,
-										{ to: '/contact', style: linkStyles },
+										{ to: '/contact', style: navLinkStyles },
 										'Contact'
 									)
 								)
@@ -24636,33 +24636,33 @@
 	})(_react2.default.Component);
 
 	var navStyles = {
+		fontFamily: "'Comfortaa', cursive",
 		display: "flex",
 		flexFlow: "column nowrap",
 		alignItems: "stretch",
-		maxWidth: "1024px",
+		maxWidth: "1140px",
 		margin: "0 auto"
 	};
 
 	var navUlStyles = {
 		display: "flex",
 		flexFlow: "row nowrap",
-		justifyContent: "space-around",
-		fontSize: "1.4em",
+		fontSize: "1.5em",
 		listStyle: "none",
-		backgroundColor: "#FF5722",
+		backgroundColor: "#FFCA28",
 		padding: "0"
 	};
 
-	var logoStyles = {
-		margin: "10px 20px"
+	var navLogoStyles = {
+		margin: "20px 20px"
 	};
 
 	var navLiStyles = {
 		flex: "1 20%"
 	};
 
-	var linkStyles = {
-		color: "white",
+	var navLinkStyles = {
+		color: "#3E2723",
 		padding: "20px 0",
 		textDecoration: "none",
 		display: "block",
@@ -27405,6 +27405,14 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _HomeAttributeList = __webpack_require__(253);
+
+	var _HomeAttributeList2 = _interopRequireDefault(_HomeAttributeList);
+
+	var _sharedStyles = __webpack_require__(254);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27426,15 +27434,82 @@
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					"h1",
-					null,
-					"Home"
+					"div",
+					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Speech and Language Services For All"
+							),
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h3",
+								{ style: paragraphStyle },
+								"Language Liftoff is a growing speech-language pathology private practice providing ",
+								_react2.default.createElement(
+									"strong",
+									null,
+									"home-based, clinic, and telepractice"
+								),
+								" speech and language services to clients in the Eastside Seattle suburbs of King County. We offer a wide range of services that enable our clients to reach their full potential and become successful communicators in the home, school, work, and community settings."
+							),
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h3",
+								{ style: paragraphStyle },
+								"We pride ourselves in providing high quality services and differential diagnoses, utilizing evidence-based methods, assessment tools, training, and resources/materials. Caring and effective services are our utmost priority!"
+							)
+						)
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-4 col-md-offset-1" },
+							_react2.default.createElement(
+								"h3",
+								{ style: _sharedStyles2.default.titleStyles },
+								"What We Specialize :"
+							),
+							_react2.default.createElement(_HomeAttributeList2.default, { data: data.specialize })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-4 col-md-offset-1" },
+							_react2.default.createElement(
+								"h3",
+								{ style: _sharedStyles2.default.titleStyles },
+								"What We Offer :"
+							),
+							_react2.default.createElement(_HomeAttributeList2.default, { data: data.offer })
+						)
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement("br", null)
 				);
 			}
 		}]);
 
 		return Home;
 	})(_react2.default.Component);
+
+	var paragraphStyle = {
+		lineHeight: "1.5"
+	};
+
+	var data = {
+		specialize: ["Autism Spectrum Disorders", "Articulation/speech sound disorders", "Fluency disorders (stuttering)", "Expressive and/or receptive language skills", "Specific language impairments", "Pragmatics/social language & cognition skills", "Auditory memory / auditory processing disorders", "Literacy and phonological awareness", "Aphasia", "Dysarthria", "Cognitive communication rehab for improved attention, memory, and executive functioning", "Augmentative and alternative communication (AAC)"],
+		offer: ["Warm and positive connection with the client.", "Creative, goal-oriented, and hierarchal therapy that are tailored to each client's individual needs.", "Observations are welcomed anytime by client's family members and/or caregivers.", "Clear explanations of the activities during therapy, and how these skills can be applied and reinforced at home or in the community.", "Challenging therapy process that is also fun, functional, and motivating to the clients."]
+	};
 
 	exports.default = Home;
 
@@ -27453,6 +27528,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(254);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27475,9 +27554,28 @@
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					"h1",
-					null,
-					"About"
+					"div",
+					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"About Us"
+							)
+						)
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement("div", { className: "col-md-offset-1 col-md-10" })
+					)
 				);
 			}
 		}]);
@@ -27503,6 +27601,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _sharedStyles = __webpack_require__(254);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27523,10 +27625,26 @@
 		_createClass(Services, [{
 			key: "render",
 			value: function render() {
+				console.log({ SharedStyles: _sharedStyles2.default });
 				return _react2.default.createElement(
-					"h1",
-					null,
-					"Services"
+					"div",
+					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Services"
+							)
+						)
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement("div", { className: "row" })
 				);
 			}
 		}]);
@@ -27540,7 +27658,7 @@
 /* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -27551,6 +27669,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(254);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27570,12 +27692,31 @@
 		}
 
 		_createClass(ClientResources, [{
-			key: 'render',
+			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					'h1',
-					null,
-					'Client Resources'
+					"div",
+					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Client Resources"
+							)
+						)
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement("div", { className: "col-md-offset-1 col-md-10" })
+					)
 				);
 			}
 		}]);
@@ -27601,6 +27742,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _sharedStyles = __webpack_require__(254);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27622,9 +27767,58 @@
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					"h1",
-					null,
-					"Contact"
+					"div",
+					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Contact"
+							)
+						)
+					),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10" },
+							_react2.default.createElement(
+								"h3",
+								null,
+								"Thank you for visiting us at LanguageLiftoff!"
+							),
+							_react2.default.createElement(
+								"h3",
+								null,
+								"Please feel free to contact us with any questions or service inquiries."
+							),
+							_react2.default.createElement(
+								"h3",
+								null,
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-earphone", style: _sharedStyles2.default.glyphiconStyles }),
+								" : 425-395-4671"
+							),
+							_react2.default.createElement(
+								"h3",
+								null,
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
+								" : ",
+								_react2.default.createElement(
+									"a",
+									{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries" },
+									"services@languageliftoff.com"
+								)
+							)
+						)
+					)
 				);
 			}
 		}]);
@@ -27633,6 +27827,102 @@
 	})(_react2.default.Component);
 
 	exports.default = Contact;
+
+/***/ },
+/* 252 */,
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var HomeAttributeList = (function (_React$Component) {
+		_inherits(HomeAttributeList, _React$Component);
+
+		function HomeAttributeList() {
+			_classCallCheck(this, HomeAttributeList);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(HomeAttributeList).apply(this, arguments));
+		}
+
+		_createClass(HomeAttributeList, [{
+			key: "render",
+			value: function render() {
+				var elements = this.props.data.sort().map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: liStyle, key: index },
+						_react2.default.createElement(
+							"h4",
+							null,
+							em
+						)
+					);
+				});
+
+				return _react2.default.createElement(
+					"ul",
+					null,
+					elements
+				);
+			}
+		}]);
+
+		return HomeAttributeList;
+	})(_react2.default.Component);
+
+	var liStyle = {
+		textAlign: "left"
+	};
+
+	exports.default = HomeAttributeList;
+
+/***/ },
+/* 254 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	// This is the main shared styles of the website
+
+	var SharedStyles = {
+		mainStyles: {
+			fontFamily: "'Simonetta', cursive",
+			textAlign: "center",
+			color: "#9E9E9E"
+		},
+		titleStyles: {
+			color: "black",
+			paddingBottom: "10px",
+			borderBottom: "1px solid black"
+		},
+		glyphiconStyles: {
+			top: "4px"
+		}
+	};
+
+	exports.default = SharedStyles;
 
 /***/ }
 /******/ ]);

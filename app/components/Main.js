@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-DOM';
 import Radium from 'radium';
 var Link = require('react-router').Link;
-Link = Radium(Link);
+Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
 class Main extends React.Component{
     render(){

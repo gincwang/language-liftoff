@@ -12,6 +12,9 @@ var SharedStyles = {
 		paddingBottom: "10px",
 		borderBottom: "1px solid black"		
 	},
+	paragraphStyles: {
+		lineHeight: "1.5"
+	},
 	glyphiconStyles: {
 		top: "4px"
 	}

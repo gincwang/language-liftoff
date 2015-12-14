@@ -19,11 +19,11 @@ class Home extends React.Component {
 				<br/>
 				<div className="row">
 					<div className="col-md-offset-1 col-md-4 col-md-offset-1">
-						<h3 style={SharedStyles.titleStyles}>What We Specialize :</h3>
+						<h3 style={SharedStyles.titleStyles}>What We Specialize In:</h3>
 						<HomeAttributeList data={data.specialize}/>
 					</div>
 					<div className="col-md-offset-1 col-md-4 col-md-offset-1">
-						<h3 style={SharedStyles.titleStyles}>What We Offer :</h3>
+						<h3 style={SharedStyles.titleStyles}>What We Offer:</h3>
 						<HomeAttributeList data={data.offer}/>
 					</div>
 				</div>

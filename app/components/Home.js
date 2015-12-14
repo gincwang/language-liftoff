@@ -5,19 +5,24 @@ import SharedStyles from "../styles/sharedStyles.js";
 class Home extends React.Component {
 	render(){
 		return (
-			<div className="container" style={SharedStyles.mainStyles}>
-				<div className="row">
+			<div className="container-fluid" style={SharedStyles.mainStyles}>
+				<div className="row" style={SharedStyles.titleRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
 						<br/>
-						<h2 style={SharedStyles.titleStyles}>Speech and Language Services For All</h2>
+						<h2 style={SharedStyles.titleStyles}>{text.title}</h2>
 						<br/>
-						<h3 style={paragraphStyle}>Language Liftoff is a growing speech-language pathology private practice providing <strong>home-based, clinic, and telepractice</strong> speech and language services to clients in the Eastside Seattle suburbs of King County. We offer a wide range of services that enable our clients to reach their full potential and become successful communicators in the home, school, work, and community settings.</h3>
-						<br/>
-						<h3 style={paragraphStyle}>We pride ourselves in providing high quality services and differential diagnoses, utilizing evidence-based methods, assessment tools, training, and resources/materials. Caring and effective services are our utmost priority!</h3>
 					</div>
 				</div>
-				<br/>
-				<div className="row">
+				<div className="row" style={SharedStyles.paragraphRowStyles}>
+					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+						<h3 style={paragraphStyle}>{text.mainParagraph1}</h3>
+						<br/>
+						<h3 style={paragraphStyle}>{text.mainParagraph2}</h3>
+						<br/>
+					</div>
+				</div>
+				<div className="row" style={SharedStyles.altParagraphRowStyles}>
+					<br/>
 					<div className="col-md-offset-1 col-md-4 col-md-offset-1">
 						<h3 style={SharedStyles.titleStyles}>What We Specialize In:</h3>
 						<HomeAttributeList data={data.specialize}/>
@@ -27,8 +32,6 @@ class Home extends React.Component {
 						<HomeAttributeList data={data.offer}/>
 					</div>
 				</div>
-				<br/>
-				<br/>
 			</div>
 		);
 	}	
@@ -37,6 +40,12 @@ class Home extends React.Component {
 
 let paragraphStyle = {
 	lineHeight: "1.5"
+};
+
+let text = {
+	title: "Speech and Language Services For All",
+	mainParagraph1: "Language Liftoff is a growing speech-language pathology private practice providing home-based, clinic, and telepractice speech and language services to clients in the Eastside Seattle suburbs of King County. We offer a wide range of services that enable our clients to reach their full potential and become successful communicators in the home, school, work, and community settings.",
+	mainParagraph2: "We pride ourselves in providing high quality services and differential diagnoses, utilizing evidence-based methods, assessment tools, training, and resources/materials. Caring and effective services are our utmost priority!"
 };
 
 let data = {

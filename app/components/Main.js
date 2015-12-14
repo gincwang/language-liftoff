@@ -7,16 +7,16 @@ Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working 
 class Main extends React.Component{
     render(){
         return (
-        	<div>
-        		<div style={{backgroundColor: "white"}}>
+        	<div className="container-fluid" style={{padding: "0"}}>
+        		<div style={{backgroundColor: "#FFF8E1"}}>
 		            <nav style={navStyles}>
-		            	<Link to="/"><img style={navLogoStyles} src={"app/assets/logos/logo-lg.jpg"} alt="logo" height={100}/></Link>
+		            	<Link to="/"><img style={navLogoStyles} src={"app/assets/logos/logo-full-sm.png"} alt="logo" height={60}/></Link>
 		                <ul style={navUlStyles}>
-		                	<li style={navLiStyles}><Link to="/" style={navLinkStyles}>Home</Link></li>
-		                    <li style={navLiStyles}><Link to="/services" style={navLinkStyles}>Services</Link></li>
-		                    <li style={navLiStyles}><Link to="/client-resources" style={navLinkStyles}>Client Resources</Link></li>
-		                    <li style={navLiStyles}><Link to="/about" style={navLinkStyles}>About Us</Link></li>
-		                    <li style={navLiStyles}><Link to="/contact" style={navLinkStyles}>Contact</Link></li>
+		                	<li style={navLiStyles}><Link to="/" style={navLinkStyles}>HOME</Link></li>
+		                    <li style={navLiStyles}><Link to="/services" style={navLinkStyles}>SERVICES</Link></li>
+		                    <li style={navLiStyles}><Link to="/client-resources" style={navLinkStyles}>RESOURCES</Link></li>
+		                    <li style={navLiStyles}><Link to="/about" style={navLinkStyles}>ABOUT US</Link></li>
+		                    <li style={navLiStyles}><Link to="/contact" style={navLinkStyles}>CONTACT</Link></li>
 		                </ul>
 		            </nav>
 		        </div>
@@ -29,23 +29,25 @@ class Main extends React.Component{
 let navStyles = {
 	fontFamily: "'Comfortaa', cursive",
 	display: "flex",
-	flexFlow: "column nowrap",
+	flexFlow: "row nowrap",
 	alignItems: "stretch",
-	maxWidth: "1140px",
+	maxWidth: "850px",
 	margin: "0 auto"
 };
 
 let navUlStyles = {
+	flex: "2 auto",
 	display: "flex",
 	flexFlow: "row nowrap",
-	fontSize: "1.5em",
+	fontSize: "1em",
 	listStyle: "none",
-	backgroundColor: "#FFCA28",
+	margin: "auto",
+	//backgroundColor: "#FFCA28",
 	padding: "0"
 };
 
 let navLogoStyles = {
-	margin: "20px 20px",
+	margin: "15px 20px",
 };
 
 let navLiStyles = {
@@ -60,7 +62,8 @@ let navLinkStyles = {
 	textAlign: "center",
 
 	':hover': {
-		color: "#E0E0E0",
+		color: "gray",
+		textDecoration: "underline"
 	}
 };
 

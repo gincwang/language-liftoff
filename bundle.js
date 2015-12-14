@@ -24564,17 +24564,17 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: 'container-fluid', style: { padding: "0" } },
 					_react2.default.createElement(
 						'div',
-						{ style: { backgroundColor: "white" } },
+						{ style: { backgroundColor: "#FFF8E1" } },
 						_react2.default.createElement(
 							'nav',
 							{ style: navStyles },
 							_react2.default.createElement(
 								Link,
 								{ to: '/' },
-								_react2.default.createElement('img', { style: navLogoStyles, src: "app/assets/logos/logo-lg.jpg", alt: 'logo', height: 100 })
+								_react2.default.createElement('img', { style: navLogoStyles, src: "app/assets/logos/logo-full-sm.png", alt: 'logo', height: 60 })
 							),
 							_react2.default.createElement(
 								'ul',
@@ -24585,7 +24585,7 @@
 									_react2.default.createElement(
 										Link,
 										{ to: '/', style: navLinkStyles },
-										'Home'
+										'HOME'
 									)
 								),
 								_react2.default.createElement(
@@ -24594,7 +24594,7 @@
 									_react2.default.createElement(
 										Link,
 										{ to: '/services', style: navLinkStyles },
-										'Services'
+										'SERVICES'
 									)
 								),
 								_react2.default.createElement(
@@ -24603,7 +24603,7 @@
 									_react2.default.createElement(
 										Link,
 										{ to: '/client-resources', style: navLinkStyles },
-										'Client Resources'
+										'RESOURCES'
 									)
 								),
 								_react2.default.createElement(
@@ -24612,7 +24612,7 @@
 									_react2.default.createElement(
 										Link,
 										{ to: '/about', style: navLinkStyles },
-										'About Us'
+										'ABOUT US'
 									)
 								),
 								_react2.default.createElement(
@@ -24621,7 +24621,7 @@
 									_react2.default.createElement(
 										Link,
 										{ to: '/contact', style: navLinkStyles },
-										'Contact'
+										'CONTACT'
 									)
 								)
 							)
@@ -24638,23 +24638,25 @@
 	var navStyles = {
 		fontFamily: "'Comfortaa', cursive",
 		display: "flex",
-		flexFlow: "column nowrap",
+		flexFlow: "row nowrap",
 		alignItems: "stretch",
-		maxWidth: "1140px",
+		maxWidth: "850px",
 		margin: "0 auto"
 	};
 
 	var navUlStyles = {
+		flex: "2 auto",
 		display: "flex",
 		flexFlow: "row nowrap",
-		fontSize: "1.5em",
+		fontSize: "1em",
 		listStyle: "none",
-		backgroundColor: "#FFCA28",
+		margin: "auto",
+		//backgroundColor: "#FFCA28",
 		padding: "0"
 	};
 
 	var navLogoStyles = {
-		margin: "20px 20px"
+		margin: "15px 20px"
 	};
 
 	var navLiStyles = {
@@ -24669,7 +24671,8 @@
 		textAlign: "center",
 
 		':hover': {
-			color: "#E0E0E0"
+			color: "gray",
+			textDecoration: "underline"
 		}
 	};
 
@@ -27435,10 +27438,10 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
@@ -27446,32 +27449,35 @@
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
-								"Speech and Language Services For All"
+								text.title
 							),
-							_react2.default.createElement("br", null),
-							_react2.default.createElement(
-								"h3",
-								{ style: paragraphStyle },
-								"Language Liftoff is a growing speech-language pathology private practice providing ",
-								_react2.default.createElement(
-									"strong",
-									null,
-									"home-based, clinic, and telepractice"
-								),
-								" speech and language services to clients in the Eastside Seattle suburbs of King County. We offer a wide range of services that enable our clients to reach their full potential and become successful communicators in the home, school, work, and community settings."
-							),
-							_react2.default.createElement("br", null),
-							_react2.default.createElement(
-								"h3",
-								{ style: paragraphStyle },
-								"We pride ourselves in providing high quality services and differential diagnoses, utilizing evidence-based methods, assessment tools, training, and resources/materials. Caring and effective services are our utmost priority!"
-							)
+							_react2.default.createElement("br", null)
 						)
 					),
-					_react2.default.createElement("br", null),
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h3",
+								{ style: paragraphStyle },
+								text.mainParagraph1
+							),
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"h3",
+								{ style: paragraphStyle },
+								text.mainParagraph2
+							),
+							_react2.default.createElement("br", null)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
+						_react2.default.createElement("br", null),
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-4 col-md-offset-1" },
@@ -27492,9 +27498,7 @@
 							),
 							_react2.default.createElement(_HomeAttributeList2.default, { data: data.offer })
 						)
-					),
-					_react2.default.createElement("br", null),
-					_react2.default.createElement("br", null)
+					)
 				);
 			}
 		}]);
@@ -27504,6 +27508,12 @@
 
 	var paragraphStyle = {
 		lineHeight: "1.5"
+	};
+
+	var text = {
+		title: "Speech and Language Services For All",
+		mainParagraph1: "Language Liftoff is a growing speech-language pathology private practice providing home-based, clinic, and telepractice speech and language services to clients in the Eastside Seattle suburbs of King County. We offer a wide range of services that enable our clients to reach their full potential and become successful communicators in the home, school, work, and community settings.",
+		mainParagraph2: "We pride ourselves in providing high quality services and differential diagnoses, utilizing evidence-based methods, assessment tools, training, and resources/materials. Caring and effective services are our utmost priority!"
 	};
 
 	var data = {
@@ -27552,7 +27562,7 @@
 				var elements = this.props.data.sort().map(function (em, index) {
 					return _react2.default.createElement(
 						"li",
-						{ style: liStyle, key: index },
+						{ style: liStyles, key: index },
 						_react2.default.createElement(
 							"h4",
 							null,
@@ -27563,7 +27573,7 @@
 
 				return _react2.default.createElement(
 					"ul",
-					null,
+					{ style: ulStyles },
 					elements
 				);
 			}
@@ -27572,7 +27582,13 @@
 		return HomeAttributeList;
 	})(_react2.default.Component);
 
-	var liStyle = {
+	var ulStyles = {
+		backgroundColor: "#FFF8E1",
+		borderRadius: "30px",
+		padding: "10px 50px"
+	};
+
+	var liStyles = {
 		textAlign: "left"
 	};
 
@@ -27596,13 +27612,22 @@
 			textAlign: "center",
 			color: "#9E9E9E"
 		},
+		titleRowStyles: {
+			backgroundColor: "#FFB300"
+		},
 		titleStyles: {
-			color: "black",
-			paddingBottom: "10px",
-			borderBottom: "1px solid black"
+			color: "white",
+			paddingBottom: "10px"
+		},
+		//borderBottom: "1px solid black"
+		paragraphRowStyles: {
+			backgroundColor: "#FFF8E1"
 		},
 		paragraphStyles: {
 			lineHeight: "1.5"
+		},
+		altParagraphRowStyles: {
+			backgroundColor: "#FFB300"
 		},
 		glyphiconStyles: {
 			top: "4px"
@@ -27653,10 +27678,10 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
@@ -27664,8 +27689,9 @@
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
-								"About Us"
-							)
+								"Who We Are"
+							),
+							_react2.default.createElement("br", null)
 						)
 					),
 					_react2.default.createElement("br", null),
@@ -27723,13 +27749,12 @@
 		_createClass(Services, [{
 			key: "render",
 			value: function render() {
-				console.log({ SharedStyles: _sharedStyles2.default });
 				return _react2.default.createElement(
 					"div",
-					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
@@ -27737,21 +27762,21 @@
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
-								"Services"
-							)
+								"Service Details"
+							),
+							_react2.default.createElement("br", null)
 						)
 					),
-					_react2.default.createElement("br", null),
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
 							_react2.default.createElement(
 								"h3",
 								{ style: _sharedStyles2.default.paragraphStyles },
-								"Services offered include evaluation, intervention, and consultation for disorders of speech (i.e., articulation, fluency, resonance, voice) and language (i.e., phonology, morphology, syntax, semantics, and pragmatics) in pediatric, adolescent, adult, and geriatric populations. Communication-related cognitive rehabilitation services in improving attention, memory, and executive functioning (e.g., problem-solving, reasoning, planning) are also offered to clients with neurogenic impairments secondary to acquired brain injury and/or stroke."
+								texts.mainParagraph
 							)
 						)
 					),
@@ -27760,33 +27785,52 @@
 					_react2.default.createElement("br", null),
 					_react2.default.createElement(
 						"div",
+						{ className: "row", style: rowStyle },
+						_react2.default.createElement(
+							"ul",
+							{ className: "list-unstyled" },
+							_react2.default.createElement(
+								"li",
+								{ className: "col-md-4", style: serviceButtonStyles },
+								_react2.default.createElement("img", { src: "app/assets/logos/logo-sm.jpg", alt: "logo", height: 50 }),
+								_react2.default.createElement(
+									"p",
+									null,
+									"Therapy"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "col-md-4", style: serviceButtonStyles },
+								_react2.default.createElement("img", { src: "app/assets/logos/logo-sm.jpg", alt: "logo", height: 50 }),
+								_react2.default.createElement(
+									"p",
+									null,
+									"Evaluation"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "col-md-4", style: serviceButtonStyles },
+								_react2.default.createElement("img", { src: "app/assets/logos/logo-sm.jpg", alt: "logo", height: 50 }),
+								_react2.default.createElement(
+									"p",
+									null,
+									"Consultation"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
 						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-lg-offset-1 col-lg-3", style: colFlexStyle },
+							{ className: "col-md-offset-2 col-md-8" },
 							_react2.default.createElement(
-								"button",
-								{ style: serviceButtonStyles },
-								"Therapy"
-							),
-							_react2.default.createElement(
-								"button",
-								{ style: serviceButtonStyles },
-								"Evaluation"
-							),
-							_react2.default.createElement(
-								"button",
-								{ style: serviceButtonStyles },
-								"Consultation"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-lg-7" },
-							_react2.default.createElement(
-								"h3",
+								"h4",
 								null,
-								"Content"
+								texts.therapy
 							)
 						)
 					)
@@ -27797,15 +27841,24 @@
 		return Services;
 	})(_react2.default.Component);
 
+	var rowStyle = {
+		maxWidth: "992px"
+	};
+
 	var colFlexStyle = {
 		display: "flex",
-		flexFlow: "column nowrap"
+		flexFlow: "row nowrap"
 	};
 
 	var serviceButtonStyles = {
-		height: "60px",
-		color: "black",
 		fontSize: "1.5em"
+	};
+
+	var texts = {
+		mainParagraph: "Services offered include evaluation, intervention, and consultation for disorders of speech (i.e., articulation, fluency, resonance, voice) and language (i.e., phonology, morphology, syntax, semantics, and pragmatics) in pediatric, adolescent, adult, and geriatric populations. Communication-related cognitive rehabilitation services in improving attention, memory, and executive functioning (e.g., problem-solving, reasoning, planning) are also offered to clients with neurogenic impairments secondary to acquired brain injury and/or stroke.",
+		therapy: "Therapy sessions are provided by speech-language pathologists (SLPs). Clients are typically seen individually, (1:1), and small group sessions can be arranged depending on the client's needs. Sessions are 60 minutes in duration, with 50 minutes of direct therapy followed by 10 minutes of documentation and discussion.",
+		evaluation: "",
+		consultation: ""
 	};
 
 	exports.default = Services;
@@ -27852,10 +27905,10 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
@@ -27864,7 +27917,8 @@
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
 								"Client Resources"
-							)
+							),
+							_react2.default.createElement("br", null)
 						)
 					),
 					_react2.default.createElement("br", null),
@@ -27924,10 +27978,10 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ className: "container", style: _sharedStyles2.default.mainStyles },
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
@@ -27935,14 +27989,14 @@
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
-								"Contact"
-							)
+								"Contact Info"
+							),
+							_react2.default.createElement("br", null)
 						)
 					),
-					_react2.default.createElement("br", null),
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10" },
@@ -27983,7 +28037,9 @@
 									{ href: "http://www.facebook.com/LanguageLiftoff", target: "_blank" },
 									_react2.default.createElement("img", { src: "app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png", width: 114 })
 								)
-							)
+							),
+							_react2.default.createElement("br", null),
+							_react2.default.createElement("br", null)
 						)
 					)
 				);

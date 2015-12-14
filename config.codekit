@@ -13,6 +13,105 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-100.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2685,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-100.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-100.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-1024.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13737,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-1024.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-1024.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-114.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2706,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-114.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-114.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2705,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-144.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-512.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7687,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-512.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-512.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-58.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1879,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-58.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-58.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-72.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2177,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-72.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/fb\/png\/FB-FindUsonFacebook-online-72.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/logo-full-lg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 889642,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/logo-full-lg.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/logo-full-lg.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/assets\/logos\/logo-full-sm.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 75879,
+		"inputAbbreviatedPath": "\/app\/assets\/logos\/logo-full-sm.png",
+		"outputAbbreviatedPath": "\/app\/assets\/logos\/logo-full-sm.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/app\/assets\/logos\/logo-lg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -90,6 +189,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 2
 		},
+	"\/app\/components\/HomeAttributeList.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/app\/components\/HomeAttributeList.js",
+		"outputAbbreviatedPath": "\/app\/components\/min\/HomeAttributeList-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/app\/components\/Main.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -118,6 +228,17 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/config\/routes.js",
 		"outputAbbreviatedPath": "\/app\/config\/min\/routes-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/app\/styles\/sharedStyles.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/app\/styles\/sharedStyles.js",
+		"outputAbbreviatedPath": "\/app\/styles\/min\/sharedStyles-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

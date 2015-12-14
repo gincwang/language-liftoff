@@ -4,11 +4,12 @@ import SharedStyles from "../styles/sharedStyles.js";
 class ClientResources extends React.Component {
 	render(){
 		return (
-			<div className="container" style={SharedStyles.mainStyles}>
-				<div className="row">
+			<div className="container-fluid" style={SharedStyles.mainStyles}>
+				<div className="row" style={SharedStyles.titleRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
 						<br/>
 						<h2 style={SharedStyles.titleStyles}>Client Resources</h2>
+						<br/>
 					</div>
 				</div>
 				<br/>

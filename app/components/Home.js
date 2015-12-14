@@ -8,26 +8,22 @@ class Home extends React.Component {
 			<div className="container-fluid" style={SharedStyles.mainStyles}>
 				<div className="row" style={SharedStyles.titleRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<br/>
 						<h2 style={SharedStyles.titleStyles}>{text.title}</h2>
-						<br/>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+					<div className="col-md-offset-1 col-md-10 col-lg-offset-3 col-lg-6">
 						<h3 style={paragraphStyle}>{text.mainParagraph1}</h3>
 						<br/>
 						<h3 style={paragraphStyle}>{text.mainParagraph2}</h3>
-						<br/>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
-					<br/>
-					<div className="col-md-offset-1 col-md-4 col-md-offset-1">
+					<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
 						<h3 style={SharedStyles.titleStyles}>What We Specialize In:</h3>
 						<HomeAttributeList data={data.specialize}/>
 					</div>
-					<div className="col-md-offset-1 col-md-4 col-md-offset-1">
+					<div className="col-md-5 col-lg-4">
 						<h3 style={SharedStyles.titleStyles}>What We Offer:</h3>
 						<HomeAttributeList data={data.offer}/>
 					</div>

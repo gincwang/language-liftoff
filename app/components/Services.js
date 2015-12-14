@@ -7,9 +7,7 @@ class Services extends React.Component {
 			<div className="container-fluid" style={SharedStyles.mainStyles}>
 				<div className="row" style={SharedStyles.titleRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<br/>
 						<h2 style={SharedStyles.titleStyles}>Service Details</h2>
-						<br/>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
@@ -17,19 +15,14 @@ class Services extends React.Component {
 						<h3 style={SharedStyles.paragraphStyles}>{texts.mainParagraph}</h3>
 					</div>
 				</div>
-				<br/>
-				<br/>
-				<br/>
-				<div className="row" style={rowStyle}>
+				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<ul className="list-unstyled">
-						<li className="col-md-4" style={serviceButtonStyles}><img src={"app/assets/logos/logo-sm.jpg"} alt="logo" height={50} /><p>Therapy</p></li>
-						<li className="col-md-4" style={serviceButtonStyles}><img src={"app/assets/logos/logo-sm.jpg"} alt="logo" height={50} /><p>Evaluation</p></li>
-						<li className="col-md-4" style={serviceButtonStyles}><img src={"app/assets/logos/logo-sm.jpg"} alt="logo" height={50} /><p>Consultation</p></li>
+						<li className="col-sm-offset-1 col-sm-3" style={serviceLinkStyles}><img src={"app/assets/logos/logo-sm.jpg"} alt="logo" height={50} /><p>Therapy</p></li>
+						<li className="col-sm-3" style={serviceLinkStyles}><img src={"app/assets/logos/logo-sm.jpg"} alt="logo" height={50} /><p>Evaluation</p></li>
+						<li className="col-sm-3" style={serviceLinkStyles}><img src={"app/assets/logos/logo-sm.jpg"} alt="logo" height={50} /><p>Consultation</p></li>
 					</ul>
-				</div>
-				<div className="row">
-					<div className="col-md-offset-2 col-md-8">
-						<h4>{texts.therapy}</h4>
+					<div className="col-sm-offset-2 col-sm-8">
+						<h4 style={SharedStyles.paragraphStyles}>{texts.therapy}</h4>
 					</div>
 				</div>
 			</div>
@@ -47,8 +40,9 @@ let colFlexStyle = {
 	flexFlow: "row nowrap"
 };
 
-let serviceButtonStyles = {
-	fontSize: "1.5em"
+let serviceLinkStyles = {
+	fontSize: "1.5em",
+	padding: "20px"
 };
 
 let texts = {

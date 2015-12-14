@@ -21,6 +21,16 @@ class Main extends React.Component{
 		            </nav>
 		        </div>
 	            {this.props.children}
+	            <div style={footerStyles}>
+					<Link to="/"><img style={navLogoStyles} src={"app/assets/logos/logo.png"} alt="logo" height={40}/></Link>	            
+            		<ul style={footerUlStyles}>
+	                	<li style={footerLiStyles}><Link to="/" style={navLinkStyles}>HOME</Link></li>
+	                    <li style={footerLiStyles}><Link to="/services" style={navLinkStyles}>SERVICES</Link></li>
+	                    <li style={footerLiStyles}><Link to="/client-resources" style={navLinkStyles}>RESOURCES</Link></li>
+	                    <li style={footerLiStyles}><Link to="/about" style={navLinkStyles}>ABOUT US</Link></li>
+	                    <li style={footerLiStyles}><Link to="/contact" style={navLinkStyles}>CONTACT</Link></li>
+	                </ul>
+	            </div>
 	        </div>
         );
     }
@@ -42,7 +52,6 @@ let navUlStyles = {
 	fontSize: "1em",
 	listStyle: "none",
 	margin: "auto",
-	//backgroundColor: "#FFCA28",
 	padding: "0"
 };
 
@@ -66,5 +75,23 @@ let navLinkStyles = {
 		textDecoration: "underline"
 	}
 };
+
+let footerStyles = {
+	backgroundColor: "#FFF8E1",
+	fontSize: "0.8em",
+	display: "flex",
+	flexFlow: "row nowrap",
+	justifyContent: "center"
+}
+
+let footerUlStyles = {
+	padding: "5px 0 0 0",
+	display: "flex",
+	listStyle: "none",
+}
+
+let footerLiStyles = {
+	margin: "0 5px"
+}
 
 export default Radium(Main);

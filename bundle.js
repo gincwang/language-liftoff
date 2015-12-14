@@ -24627,7 +24627,65 @@
 							)
 						)
 					),
-					this.props.children
+					this.props.children,
+					_react2.default.createElement(
+						'div',
+						{ style: footerStyles },
+						_react2.default.createElement(
+							Link,
+							{ to: '/' },
+							_react2.default.createElement('img', { style: navLogoStyles, src: "app/assets/logos/logo.png", alt: 'logo', height: 40 })
+						),
+						_react2.default.createElement(
+							'ul',
+							{ style: footerUlStyles },
+							_react2.default.createElement(
+								'li',
+								{ style: footerLiStyles },
+								_react2.default.createElement(
+									Link,
+									{ to: '/', style: navLinkStyles },
+									'HOME'
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ style: footerLiStyles },
+								_react2.default.createElement(
+									Link,
+									{ to: '/services', style: navLinkStyles },
+									'SERVICES'
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ style: footerLiStyles },
+								_react2.default.createElement(
+									Link,
+									{ to: '/client-resources', style: navLinkStyles },
+									'RESOURCES'
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ style: footerLiStyles },
+								_react2.default.createElement(
+									Link,
+									{ to: '/about', style: navLinkStyles },
+									'ABOUT US'
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ style: footerLiStyles },
+								_react2.default.createElement(
+									Link,
+									{ to: '/contact', style: navLinkStyles },
+									'CONTACT'
+								)
+							)
+						)
+					)
 				);
 			}
 		}]);
@@ -24651,7 +24709,6 @@
 		fontSize: "1em",
 		listStyle: "none",
 		margin: "auto",
-		//backgroundColor: "#FFCA28",
 		padding: "0"
 	};
 
@@ -24674,6 +24731,24 @@
 			color: "gray",
 			textDecoration: "underline"
 		}
+	};
+
+	var footerStyles = {
+		backgroundColor: "#FFF8E1",
+		fontSize: "0.8em",
+		display: "flex",
+		flexFlow: "row nowrap",
+		justifyContent: "center"
+	};
+
+	var footerUlStyles = {
+		padding: "5px 0 0 0",
+		display: "flex",
+		listStyle: "none"
+	};
+
+	var footerLiStyles = {
+		margin: "0 5px"
 	};
 
 	exports.default = (0, _radium2.default)(Main);
@@ -27445,13 +27520,11 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement("br", null),
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
 								text.title
-							),
-							_react2.default.createElement("br", null)
+							)
 						)
 					),
 					_react2.default.createElement(
@@ -27459,7 +27532,7 @@
 						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-3 col-lg-6" },
 							_react2.default.createElement(
 								"h3",
 								{ style: paragraphStyle },
@@ -27470,17 +27543,15 @@
 								"h3",
 								{ style: paragraphStyle },
 								text.mainParagraph2
-							),
-							_react2.default.createElement("br", null)
+							)
 						)
 					),
 					_react2.default.createElement(
 						"div",
 						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
-						_react2.default.createElement("br", null),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-4 col-md-offset-1" },
+							{ className: "col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4" },
 							_react2.default.createElement(
 								"h3",
 								{ style: _sharedStyles2.default.titleStyles },
@@ -27490,7 +27561,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-4 col-md-offset-1" },
+							{ className: "col-md-5 col-lg-4" },
 							_react2.default.createElement(
 								"h3",
 								{ style: _sharedStyles2.default.titleStyles },
@@ -27621,13 +27692,15 @@
 		},
 		//borderBottom: "1px solid black"
 		paragraphRowStyles: {
-			backgroundColor: "#FFF8E1"
+			backgroundColor: "#FFF8E1",
+			padding: "25px 0"
 		},
 		paragraphStyles: {
 			lineHeight: "1.5"
 		},
 		altParagraphRowStyles: {
-			backgroundColor: "#FFB300"
+			backgroundColor: "#FFB300",
+			padding: "20px 0 50px 0"
 		},
 		glyphiconStyles: {
 			top: "4px"
@@ -27685,16 +27758,13 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement("br", null),
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
 								"Who We Are"
-							),
-							_react2.default.createElement("br", null)
+							)
 						)
 					),
-					_react2.default.createElement("br", null),
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
@@ -27758,13 +27828,11 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement("br", null),
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
 								"Service Details"
-							),
-							_react2.default.createElement("br", null)
+							)
 						)
 					),
 					_react2.default.createElement(
@@ -27780,18 +27848,15 @@
 							)
 						)
 					),
-					_react2.default.createElement("br", null),
-					_react2.default.createElement("br", null),
-					_react2.default.createElement("br", null),
 					_react2.default.createElement(
 						"div",
-						{ className: "row", style: rowStyle },
+						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
 						_react2.default.createElement(
 							"ul",
 							{ className: "list-unstyled" },
 							_react2.default.createElement(
 								"li",
-								{ className: "col-md-4", style: serviceButtonStyles },
+								{ className: "col-sm-offset-1 col-sm-3", style: serviceLinkStyles },
 								_react2.default.createElement("img", { src: "app/assets/logos/logo-sm.jpg", alt: "logo", height: 50 }),
 								_react2.default.createElement(
 									"p",
@@ -27801,7 +27866,7 @@
 							),
 							_react2.default.createElement(
 								"li",
-								{ className: "col-md-4", style: serviceButtonStyles },
+								{ className: "col-sm-3", style: serviceLinkStyles },
 								_react2.default.createElement("img", { src: "app/assets/logos/logo-sm.jpg", alt: "logo", height: 50 }),
 								_react2.default.createElement(
 									"p",
@@ -27811,7 +27876,7 @@
 							),
 							_react2.default.createElement(
 								"li",
-								{ className: "col-md-4", style: serviceButtonStyles },
+								{ className: "col-sm-3", style: serviceLinkStyles },
 								_react2.default.createElement("img", { src: "app/assets/logos/logo-sm.jpg", alt: "logo", height: 50 }),
 								_react2.default.createElement(
 									"p",
@@ -27819,17 +27884,13 @@
 									"Consultation"
 								)
 							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
+						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-2 col-md-8" },
+							{ className: "col-sm-offset-2 col-sm-8" },
 							_react2.default.createElement(
 								"h4",
-								null,
+								{ style: _sharedStyles2.default.paragraphStyles },
 								texts.therapy
 							)
 						)
@@ -27850,8 +27911,9 @@
 		flexFlow: "row nowrap"
 	};
 
-	var serviceButtonStyles = {
-		fontSize: "1.5em"
+	var serviceLinkStyles = {
+		fontSize: "1.5em",
+		padding: "20px"
 	};
 
 	var texts = {
@@ -27912,16 +27974,13 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement("br", null),
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
 								"Client Resources"
-							),
-							_react2.default.createElement("br", null)
+							)
 						)
 					),
-					_react2.default.createElement("br", null),
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
@@ -27985,13 +28044,11 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement("br", null),
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
 								"Contact Info"
-							),
-							_react2.default.createElement("br", null)
+							)
 						)
 					),
 					_react2.default.createElement(
@@ -28009,37 +28066,57 @@
 								"h3",
 								null,
 								"Please feel free to contact us with any questions or service inquiries."
-							),
-							_react2.default.createElement("br", null),
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-offset-3 col-sm-6" },
 							_react2.default.createElement(
-								"h3",
-								null,
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-earphone", style: _sharedStyles2.default.glyphiconStyles }),
-								" : 425-395-4671"
-							),
-							_react2.default.createElement(
-								"h3",
-								null,
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
-								" : ",
+								"ul",
+								{ style: ulStyles },
 								_react2.default.createElement(
-									"a",
-									{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries" },
-									"services@languageliftoff.com"
-								)
-							),
-							_react2.default.createElement("br", null),
-							_react2.default.createElement(
-								"h3",
-								null,
+									"li",
+									null,
+									_react2.default.createElement(
+										"h3",
+										null,
+										_react2.default.createElement("span", { className: "glyphicon glyphicon-earphone", style: _sharedStyles2.default.glyphiconStyles }),
+										" : 425-395-4671"
+									)
+								),
 								_react2.default.createElement(
-									"a",
-									{ href: "http://www.facebook.com/LanguageLiftoff", target: "_blank" },
-									_react2.default.createElement("img", { src: "app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png", width: 114 })
+									"li",
+									null,
+									_react2.default.createElement(
+										"h3",
+										null,
+										_react2.default.createElement("span", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
+										" : ",
+										_react2.default.createElement(
+											"a",
+											{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries" },
+											"services@languageliftoff.com"
+										)
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"h3",
+										null,
+										_react2.default.createElement(
+											"a",
+											{ href: "http://www.facebook.com/LanguageLiftoff", target: "_blank" },
+											_react2.default.createElement("img", { src: "app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png", width: 114 })
+										)
+									)
 								)
-							),
-							_react2.default.createElement("br", null),
-							_react2.default.createElement("br", null)
+							)
 						)
 					)
 				);
@@ -28048,6 +28125,14 @@
 
 		return Contact;
 	})(_react2.default.Component);
+
+	var ulStyles = {
+		listStyle: "none",
+		marginTop: "30px",
+		backgroundColor: "#FFF8E1",
+		borderRadius: "30px",
+		padding: "15px 10px 20px"
+	};
 
 	exports.default = Contact;
 

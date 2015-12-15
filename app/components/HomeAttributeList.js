@@ -1,4 +1,5 @@
 import React from "react";
+import SharedStyles from "../styles/sharedStyles.js";
 
 class HomeAttributeList extends React.Component {
 	render(){
@@ -17,7 +18,7 @@ class HomeAttributeList extends React.Component {
 }
 
 let ulStyles = {
-	backgroundColor: "#FFF8E1",
+	backgroundColor: SharedStyles.altColor,
 	borderRadius: "30px",
 	padding: "10px 50px"
 };

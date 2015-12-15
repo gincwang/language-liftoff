@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-DOM';
 import Radium from 'radium';
+import SharedStyles from "../styles/sharedStyles.js";
 var Link = require('react-router').Link;
 Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
@@ -8,27 +9,27 @@ class Main extends React.Component{
     render(){
         return (
         	<div className="container-fluid" style={{padding: "0"}}>
-        		<div style={{backgroundColor: "#FFF8E1"}}>
-		            <nav style={navStyles}>
-		            	<Link to="/"><img style={navLogoStyles} src={"app/assets/logos/logo-full-sm.png"} alt="logo" height={60}/></Link>
-		                <ul style={navUlStyles}>
-		                	<li style={navLiStyles}><Link to="/" style={navLinkStyles}>HOME</Link></li>
-		                    <li style={navLiStyles}><Link to="/services" style={navLinkStyles}>SERVICES</Link></li>
-		                    <li style={navLiStyles}><Link to="/client-resources" style={navLinkStyles}>RESOURCES</Link></li>
-		                    <li style={navLiStyles}><Link to="/about" style={navLinkStyles}>ABOUT US</Link></li>
-		                    <li style={navLiStyles}><Link to="/contact" style={navLinkStyles}>CONTACT</Link></li>
+        		<div style={{backgroundColor: "white"}}>
+		            <nav style={inline.navStyles}>
+		            	<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/logo-full-sm.png"} alt="logo" height={60}/></Link>
+		                <ul style={inline.navUlStyles}>
+		                	<li style={inline.navLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
+		                    <li style={inline.navLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
+		                    <li style={inline.navLiStyles}><Link to="/client-resources" style={inline.navLinkStyles}>RESOURCES</Link></li>
+		                    <li style={inline.navLiStyles}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
+		                    <li style={inline.navLiStyles}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>
 		            </nav>
 		        </div>
 	            {this.props.children}
-	            <div style={footerStyles}>
-					<Link to="/"><img style={navLogoStyles} src={"app/assets/logos/logo.png"} alt="logo" height={40}/></Link>	            
-            		<ul style={footerUlStyles}>
-	                	<li style={footerLiStyles}><Link to="/" style={navLinkStyles}>HOME</Link></li>
-	                    <li style={footerLiStyles}><Link to="/services" style={navLinkStyles}>SERVICES</Link></li>
-	                    <li style={footerLiStyles}><Link to="/client-resources" style={navLinkStyles}>RESOURCES</Link></li>
-	                    <li style={footerLiStyles}><Link to="/about" style={navLinkStyles}>ABOUT US</Link></li>
-	                    <li style={footerLiStyles}><Link to="/contact" style={navLinkStyles}>CONTACT</Link></li>
+	            <div style={inline.footerStyles}>
+					<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/logo.png"} alt="logo" height={40}/></Link>	            
+            		<ul style={inline.footerUlStyles}>
+	                	<li style={inline.footerLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
+	                    <li style={inline.footerLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
+	                    <li style={inline.footerLiStyles}><Link to="/client-resources" style={inline.navLinkStyles}>RESOURCES</Link></li>
+	                    <li style={inline.footerLiStyles}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
+	                    <li style={inline.footerLiStyles}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 	                </ul>
 	            </div>
 	        </div>
@@ -36,62 +37,59 @@ class Main extends React.Component{
     }
 }
 
-let navStyles = {
-	fontFamily: "'Comfortaa', cursive",
-	display: "flex",
-	flexFlow: "row nowrap",
-	alignItems: "stretch",
-	maxWidth: "850px",
-	margin: "0 auto"
-};
+let inline = {
+	navStyles: {
+		fontFamily: "'Comfortaa', cursive",
+		display: "flex",
+		flexFlow: "row nowrap",
+		alignItems: "stretch",
+		maxWidth: "850px",
+		margin: "0 auto"
+	},
+	navUlStyles: {
+		flex: "2 auto",
+		display: "flex",
+		flexFlow: "row nowrap",
+		fontSize: "1em",
+		listStyle: "none",
+		margin: "auto",
+		padding: "0"
+	},
+	navLogoStyles: {
+		margin: "15px 20px",
+	},
+	navLiStyles: {
+		flex: "1 20%",
+	},
+	navLinkStyles: {
+		color: SharedStyles.navTextColor,
+		padding: "20px 0",
+		textDecoration: "none",
+		display: "block",
+		textAlign: "center",
 
-let navUlStyles = {
-	flex: "2 auto",
-	display: "flex",
-	flexFlow: "row nowrap",
-	fontSize: "1em",
-	listStyle: "none",
-	margin: "auto",
-	padding: "0"
-};
-
-let navLogoStyles = {
-	margin: "15px 20px",
-};
-
-let navLiStyles = {
-	flex: "1 20%",
-};
-
-let navLinkStyles = {
-	color: "#3E2723",
-	padding: "20px 0",
-	textDecoration: "none",
-	display: "block",
-	textAlign: "center",
-
-	':hover': {
-		color: "gray",
-		textDecoration: "underline"
+		':hover': {
+			color: SharedStyles.navTextColorHover,
+			textDecoration: "underline"
+		}
+	},
+	footerStyles: {
+		backgroundColor: SharedStyles.altColor,
+		fontSize: "0.8em",
+		display: "flex",
+		flexFlow: "row nowrap",
+		justifyContent: "center"
+	},
+	footerUlStyles: {
+		padding: "5px 0 0 0",
+		display: "flex",
+		listStyle: "none",
+	},
+	footerLiStyles: {
+		margin: "0 5px"
 	}
 };
 
-let footerStyles = {
-	backgroundColor: "#FFF8E1",
-	fontSize: "0.8em",
-	display: "flex",
-	flexFlow: "row nowrap",
-	justifyContent: "center"
-}
 
-let footerUlStyles = {
-	padding: "5px 0 0 0",
-	display: "flex",
-	listStyle: "none",
-}
-
-let footerLiStyles = {
-	margin: "0 5px"
-}
 
 export default Radium(Main);

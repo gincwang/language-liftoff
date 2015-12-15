@@ -12,16 +12,16 @@ class Contact extends React.Component {
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
 					<div className="col-md-offset-1 col-md-10">
-						<h3>Thank you for visiting us at Language Liftoff!</h3>
-						<h3>Please feel free to contact us with any questions or service inquiries.</h3>
+						<h4>Thank you for visiting us at Language Liftoff!</h4>
+						<h4>Please feel free to contact us with any questions or service inquiries.</h4>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<div className="col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
-						<ul style={ulStyles}>
-							<li><h3><span className="glyphicon glyphicon-earphone" style={SharedStyles.glyphiconStyles}></span> : <a href="tel:4253954671" style={linkStyles}>425-395-4671</a></h3></li>
-							<li><h3><span className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></span> : <a href="mailto:services@languageliftoff.com?subject=Speech%20Inquiries" style={linkStyles}>services@languageliftoff.com</a></h3></li>
-							<li><h3><a href={"http://www.facebook.com/LanguageLiftoff"} target={"_blank"} ><img src={"app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png"} width={114} /></a></h3></li>
+						<ul style={inline.ulStyles}>
+							<li><h4><span className="glyphicon glyphicon-earphone" style={SharedStyles.glyphiconStyles}></span> : <a href="tel:4253954671" style={inline.linkStyles}>425-395-4671</a></h4></li>
+							<li><h4><span className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></span> : <a href="mailto:services@languageliftoff.com?subject=Speech%20Inquiries" style={inline.linkStyles}>services@languageliftoff.com</a></h4></li>
+							<li><h4><a href={"http://www.facebook.com/LanguageLiftoff"} target={"_blank"} ><img src={"app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png"} width={114} /></a></h4></li>
 						</ul>
 					</div>
 				</div>
@@ -30,16 +30,18 @@ class Contact extends React.Component {
 	}	
 }
 
-let ulStyles = {
-	listStyle: "none",
-	marginTop: "30px",
-	backgroundColor: "#FFF8E1",
-	borderRadius: "30px",
-	padding: "15px 10px 20px"
+let inline = {
+	ulStyles: {
+		listStyle: "none",
+		marginTop: "30px",
+		backgroundColor: SharedStyles.altColor,
+		borderRadius: "30px",
+		padding: "15px 10px 20px"
+	},
+	linkStyles: {
+		color: "#9E9E9E"
+	}
 };
 
-let linkStyles = {
-	color: "#9E9E9E"
-};
 
 export default Contact;

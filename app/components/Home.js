@@ -11,12 +11,18 @@ class Home extends React.Component {
 						<h2 style={SharedStyles.titleStyles}>{text.title}</h2>
 					</div>
 				</div>
-				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-3 col-lg-6">
-						<h3 style={paragraphStyle}>{text.mainParagraph1}</h3>
-						<br/>
-						<h3 style={paragraphStyle}>{text.mainParagraph2}</h3>
+				<div className="row">
+					<div className="col-sm-offset-2 col-sm-8" >
+						<h4 style={inline.paragraphStyle}>Using evidence-based practices, we pride ourselves in providing caring and effective services and tailoring treatment plans to individual client needs!</h4>
 					</div>
+				</div>
+				<div className="row" style={SharedStyles.paragraphRowStyles}>
+					<ul className="list-unstyled">
+						<li className="col-sm-3 col-md-3 col-lg-offset-2 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>home</i><p>Home</p></li>
+						<li className="col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>store_mall_directory</i><p>Clinic</p></li>
+						<li className="col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>domain</i><p>Community</p></li>
+						<li className="col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>computer</i><p>Teletherapy</p></li>
+					</ul>					
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
@@ -33,16 +39,25 @@ class Home extends React.Component {
 	}	
 }
 
+let inline = {
+	paragraphStyle: {
+		lineHeight: SharedStyles.lineHeight
+	},
+	iconStyles: {
+		fontSize: "3.5em"
+	},
+	serviceLinkStyles: {
+		fontSize: "1.5em",
+		padding: "20px",
+		color: "black"
+	}
+}
 
-let paragraphStyle = {
-	lineHeight: "1.5"
-};
 
 let text = {
-	title: "Speech and Language Services For All",
-	mainParagraph1: "Language Liftoff is a growing speech-language pathology private practice providing home-based, clinic, and telepractice speech and language services to clients in the Eastside Seattle suburbs of King County. We offer a wide range of services that enable our clients to reach their full potential and become successful communicators in the home, school, work, and community settings.",
-	mainParagraph2: "We pride ourselves in providing high quality services and differential diagnoses, utilizing evidence-based methods, assessment tools, training, and resources/materials. Caring and effective services are our utmost priority!"
+	title: "Speech and Language Services For All"
 };
+
 
 let data = {
 	specialize: [
@@ -64,7 +79,8 @@ let data = {
 		"Creative, goal-oriented, and hierarchal therapy that are tailored to each client's individual needs.",
 		"Observations are welcomed anytime by client's family members and/or caregivers.",
 		"Clear explanations of the activities during therapy, and how these skills can be applied and reinforced at home or in the community.",
-		"Challenging therapy process that is also fun, functional, and motivating to the clients."
+		"Challenging therapy process that is also fun, functional, and motivating to the clients.",
+
 	]
 };
 

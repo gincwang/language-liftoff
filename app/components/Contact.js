@@ -17,10 +17,10 @@ class Contact extends React.Component {
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
-					<div className="col-sm-offset-3 col-sm-6">
+					<div className="col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
 						<ul style={ulStyles}>
-							<li><h3><span className="glyphicon glyphicon-earphone" style={SharedStyles.glyphiconStyles}></span> : 425-395-4671</h3></li>
-							<li><h3><span className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></span> : <a href="mailto:services@languageliftoff.com?subject=Speech%20Inquiries">services@languageliftoff.com</a></h3></li>
+							<li><h3><span className="glyphicon glyphicon-earphone" style={SharedStyles.glyphiconStyles}></span> : <a href="tel:4253954671" style={linkStyles}>425-395-4671</a></h3></li>
+							<li><h3><span className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></span> : <a href="mailto:services@languageliftoff.com?subject=Speech%20Inquiries" style={linkStyles}>services@languageliftoff.com</a></h3></li>
 							<li><h3><a href={"http://www.facebook.com/LanguageLiftoff"} target={"_blank"} ><img src={"app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png"} width={114} /></a></h3></li>
 						</ul>
 					</div>
@@ -36,7 +36,10 @@ let ulStyles = {
 	backgroundColor: "#FFF8E1",
 	borderRadius: "30px",
 	padding: "15px 10px 20px"
-}
+};
 
+let linkStyles = {
+	color: "#9E9E9E"
+};
 
 export default Contact;

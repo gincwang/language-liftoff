@@ -27679,7 +27679,7 @@
 
 	var SharedStyles = {
 		mainStyles: {
-			fontFamily: "'Simonetta', cursive",
+			fontFamily: "'Open Sans', sans-serif",
 			textAlign: "center",
 			color: "#9E9E9E"
 		},

@@ -27531,11 +27531,17 @@
 						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-offset-2 col-sm-8" },
+							{ className: "col-md-offset-3 col-md-6" },
 							_react2.default.createElement(
-								"h4",
+								"h3",
 								{ style: inline.paragraphStyle },
-								"Using evidence-based practices, we pride ourselves in providing caring and effective services and tailoring treatment plans to individual client needs!"
+								text.intro
+							),
+							_react2.default.createElement("hr", { style: inline.hrStyles }),
+							_react2.default.createElement(
+								"h3",
+								{ style: inline.paragraphStyle },
+								"Our services are offered in a variety of settings:"
 							)
 						)
 					),
@@ -27636,7 +27642,8 @@
 
 	var inline = {
 		paragraphStyle: {
-			lineHeight: _sharedStyles2.default.lineHeight
+			lineHeight: _sharedStyles2.default.lineHeight,
+			marginTop: "20px"
 		},
 		iconStyles: {
 			fontSize: "3.5em"
@@ -27645,11 +27652,18 @@
 			fontSize: "1.5em",
 			padding: "20px",
 			color: "black"
+		},
+		hrStyles: {
+			width: "70%",
+			borderTop: "1px solid gray",
+			borderBottom: "1px solid lightGray"
 		}
 	};
 
 	var text = {
-		title: "Speech and Language Services For All"
+		title: "Speech and Language Services For All",
+		intro: "Using evidence-based practices, we pride ourselves in providing caring and effective services and tailoring treatment plans to individual client needs!",
+		icontext: ["Our SLP can come to the client's home"]
 	};
 
 	var data = {

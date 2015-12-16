@@ -12,8 +12,10 @@ class Home extends React.Component {
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-sm-offset-2 col-sm-8" >
-						<h4 style={inline.paragraphStyle}>Using evidence-based practices, we pride ourselves in providing caring and effective services and tailoring treatment plans to individual client needs!</h4>
+					<div className="col-md-offset-3 col-md-6" >
+						<h3 style={inline.paragraphStyle}>{text.intro}</h3>
+						<hr style={inline.hrStyles}/>
+						<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings:</h3>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
@@ -41,7 +43,8 @@ class Home extends React.Component {
 
 let inline = {
 	paragraphStyle: {
-		lineHeight: SharedStyles.lineHeight
+		lineHeight: SharedStyles.lineHeight,
+		marginTop: "20px"
 	},
 	iconStyles: {
 		fontSize: "3.5em"
@@ -50,12 +53,19 @@ let inline = {
 		fontSize: "1.5em",
 		padding: "20px",
 		color: "black"
+	},
+	hrStyles: {
+		width: "70%",
+		borderTop: "1px solid gray",
+		borderBottom: "1px solid lightGray"
 	}
 }
 
 
 let text = {
-	title: "Speech and Language Services For All"
+	title: "Speech and Language Services For All",
+	intro: "Using evidence-based practices, we pride ourselves in providing caring and effective services and tailoring treatment plans to individual client needs!",
+	icontext: ["Our SLP can come to the client's home"]
 };
 
 

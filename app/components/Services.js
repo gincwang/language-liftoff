@@ -22,7 +22,7 @@ class Services extends React.Component {
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h3 style={inline.paragraphStyles}>{texts.mainParagraph}</h3>
+						<h4 style={inline.paragraphStyles}>{texts.mainParagraph}</h4>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
@@ -47,7 +47,7 @@ class Services extends React.Component {
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h3 style={inline.paragraphStyles}>{texts.settingIntro}</h3>
+						<h4 style={inline.paragraphStyles}>{texts.settingIntro}</h4>
 					</div>
 				</div>				
 				<div >

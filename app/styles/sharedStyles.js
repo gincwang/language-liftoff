@@ -2,7 +2,7 @@
 // This is the main shared styles of the website
 
 var mainColor = "#A5D6A7";
-var mainTextColor = "#9E9E9E";
+var mainTextColor = "gray";
 var altColor = "white";
 var navTextColor = "#3E2723";
 var navTextColorHover = "gray";

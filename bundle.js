@@ -27490,6 +27490,10 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
+	var _radium = __webpack_require__(212);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27497,6 +27501,9 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Link = __webpack_require__(159).Link;
+	Link = (0, _radium2.default)(Link); //Needs to be wrapped in Radium due to Raidum not working with all components
 
 	var Home = (function (_React$Component) {
 		_inherits(Home, _React$Component);
@@ -27531,7 +27538,7 @@
 						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-3 col-md-6" },
+							{ className: "col-md-offset-2 col-md-8" },
 							_react2.default.createElement(
 								"h3",
 								{ style: inline.paragraphStyle },
@@ -27547,7 +27554,7 @@
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						{ className: "row", style: inline.paragraphIcons },
 						_react2.default.createElement(
 							"ul",
 							{ className: "list-unstyled" },
@@ -27611,6 +27618,24 @@
 					),
 					_react2.default.createElement(
 						"div",
+						{ className: "row", style: inline.linkStyles },
+						_react2.default.createElement(
+							Link,
+							{ to: "/services" },
+							_react2.default.createElement(
+								"h4",
+								null,
+								"Learn more",
+								_react2.default.createElement(
+									"i",
+									{ className: "material-icons", style: inline.iconAltStyles },
+									"play_arrow"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
 						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
 						_react2.default.createElement(
 							"div",
@@ -27643,26 +27668,40 @@
 	var inline = {
 		paragraphStyle: {
 			lineHeight: _sharedStyles2.default.lineHeight,
-			marginTop: "20px"
+			margin: "40px 0"
 		},
 		iconStyles: {
 			fontSize: "3.5em"
 		},
+		iconAltStyles: {
+			position: "relative",
+			top: "6px"
+		},
 		serviceLinkStyles: {
 			fontSize: "1.5em",
 			padding: "20px",
-			color: "black"
+			color: "gray"
 		},
 		hrStyles: {
 			width: "70%",
 			borderTop: "1px solid gray",
 			borderBottom: "1px solid lightGray"
+		},
+		paragraphIcons: {
+			backgroundColor: _sharedStyles2.default.altColor
+		},
+		linkStyles: {
+			margin: "20px 0"
 		}
 	};
 
 	var text = {
 		title: "Speech and Language Services For All",
-		intro: "Using evidence-based practices, we pride ourselves in providing caring and effective services and tailoring treatment plans to individual client needs!",
+		intro: _react2.default.createElement(
+			"span",
+			null,
+			"Using Evidence-Based Practices(EBP) we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!"
+		),
 		icontext: ["Our SLP can come to the client's home"]
 	};
 
@@ -27761,7 +27800,7 @@
 	// This is the main shared styles of the website
 
 	var mainColor = "#A5D6A7";
-	var mainTextColor = "#9E9E9E";
+	var mainTextColor = "gray";
 	var altColor = "white";
 	var navTextColor = "#3E2723";
 	var navTextColorHover = "gray";
@@ -27974,9 +28013,22 @@
 							"div",
 							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
 							_react2.default.createElement(
-								"h4",
+								"h3",
 								{ style: inline.paragraphStyles },
 								texts.mainParagraph
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h4",
+								{ style: inline.paragraphStyles },
+								texts.mainParagraphAddOn
 							)
 						)
 					),
@@ -27994,13 +28046,13 @@
 									{ href: "#", onClick: this.handleClick.bind(this) },
 									_react2.default.createElement(
 										"i",
-										{ className: "material-icons", id: "therapy", key: "therapy", style: inline.iconStyles },
+										{ className: "material-icons", id: "therapy", key: "therapy", style: inline.serviceIconStyles },
 										"local_florist"
 									)
 								),
 								_react2.default.createElement(
 									"p",
-									{ style: { borderBottom: this.state.toggleText === "therapy" ? "2px solid white" : "none" } },
+									{ style: { borderBottom: this.state.toggleText === "therapy" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
 									"Therapy"
 								)
 							),
@@ -28012,13 +28064,13 @@
 									{ href: "#", onClick: this.handleClick.bind(this) },
 									_react2.default.createElement(
 										"i",
-										{ className: "material-icons", id: "evaluation", key: "evaluation", style: inline.iconStyles },
+										{ className: "material-icons", id: "evaluation", key: "evaluation", style: inline.serviceIconStyles },
 										"assignment"
 									)
 								),
 								_react2.default.createElement(
 									"p",
-									{ style: { borderBottom: this.state.toggleText === "evaluation" ? "2px solid white" : "none" } },
+									{ style: { borderBottom: this.state.toggleText === "evaluation" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
 									"Evaluation"
 								)
 							),
@@ -28030,13 +28082,13 @@
 									{ href: "#", onClick: this.handleClick.bind(this) },
 									_react2.default.createElement(
 										"i",
-										{ className: "material-icons", id: "consultation", key: "consultation", style: inline.iconStyles },
+										{ className: "material-icons", id: "consultation", key: "consultation", style: inline.serviceIconStyles },
 										"record_voice_over"
 									)
 								),
 								_react2.default.createElement(
 									"p",
-									{ style: { borderBottom: this.state.toggleText === "consultation" ? "2px solid white" : "none" } },
+									{ style: { borderBottom: this.state.toggleText === "consultation" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
 									"Consultation"
 								)
 							)
@@ -28050,6 +28102,124 @@
 								texts[this.state.toggleText]
 							)
 						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h2",
+								{ style: inline.paragraphStyles },
+								_react2.default.createElement(
+									"span",
+									{ style: inline.settingStyles },
+									"Therapy Settings"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h3",
+								{ style: inline.paragraphStyles },
+								texts.settingIntro
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						null,
+						_react2.default.createElement(
+							"ul",
+							{ className: "list-unstyled" },
+							_react2.default.createElement(
+								"li",
+								{ style: inline.serviceLinkStyles },
+								_react2.default.createElement(
+									"div",
+									{ className: "row" },
+									_react2.default.createElement(
+										"div",
+										null,
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+											"home"
+										)
+									),
+									_react2.default.createElement(
+										"div",
+										null,
+										_react2.default.createElement(
+											"p",
+											{ style: inline.settingPStyles, className: "col-sm-10" },
+											texts.settingHome
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ style: inline.serviceLinkStyles },
+								_react2.default.createElement(
+									"div",
+									{ className: "row" },
+									_react2.default.createElement(
+										"i",
+										{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+										"store_mall_directory"
+									),
+									_react2.default.createElement(
+										"p",
+										{ style: inline.settingPStyles, className: "col-sm-10" },
+										texts.settingClinic
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ style: inline.serviceLinkStyles },
+								_react2.default.createElement(
+									"div",
+									{ className: "row" },
+									_react2.default.createElement(
+										"i",
+										{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+										"domain"
+									),
+									_react2.default.createElement(
+										"p",
+										{ style: inline.settingPStyles, className: "col-sm-10" },
+										texts.settingCommunity
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ style: inline.serviceLinkStyles },
+								_react2.default.createElement(
+									"div",
+									{ className: "row" },
+									_react2.default.createElement(
+										"i",
+										{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+										"computer"
+									),
+									_react2.default.createElement(
+										"p",
+										{ style: inline.settingPStyles, className: "col-sm-10" },
+										texts.settingTeletherapy
+									)
+								)
+							)
+						)
 					)
 				);
 			}
@@ -28060,7 +28230,8 @@
 
 	var inline = {
 		paragraphStyles: {
-			lineHeight: _sharedStyles2.default.lineHeight
+			lineHeight: _sharedStyles2.default.lineHeight,
+			textAlign: "center"
 		},
 		textToggleStyles: {
 			lineHeight: _sharedStyles2.default.lineHeight,
@@ -28068,7 +28239,7 @@
 			borderRadius: "30px",
 			padding: "30px 30px"
 		},
-		iconStyles: {
+		serviceIconStyles: {
 			fontSize: "3.5em",
 			color: _sharedStyles2.default.altColor,
 			':hover': {
@@ -28079,14 +28250,114 @@
 			fontSize: "1.5em",
 			padding: "20px",
 			color: _sharedStyles2.default.altColor
+		},
+		settingStyles: {
+			border: "2px solid gray",
+			padding: "10px 25px",
+			borderRadius: "10px"
+		},
+		serviceLinkStyles: {
+			fontSize: "1.5em",
+			padding: "20px",
+			color: "gray"
+		},
+		settingIconStyles: {
+			fontSize: "4em"
+		},
+		settingPStyles: {
+			textAlign: "left"
 		}
 	};
 
 	var texts = {
-		mainParagraph: "Services offered include evaluation, intervention, and consultation for disorders of speech (i.e., articulation, fluency, resonance, voice) and language (i.e., phonology, morphology, syntax, semantics, and pragmatics) in pediatric, adolescent, adult, and geriatric populations. Communication-related cognitive rehabilitation services in improving attention, memory, and executive functioning (e.g., problem-solving, reasoning, planning) are also offered to clients with neurogenic impairments secondary to acquired brain injury and/or stroke.",
+		mainParagraph: _react2.default.createElement(
+			"span",
+			null,
+			"Services offered include ",
+			_react2.default.createElement(
+				"strong",
+				null,
+				"Therapy, Evaluation,"
+			),
+			" and ",
+			_react2.default.createElement(
+				"strong",
+				null,
+				"Consultation"
+			),
+			" for disorders of speech (i.e., articulation, fluency, resonance, voice) and language (i.e., phonology, morphology, syntax, semantics, and pragmatics) in pediatric, adolescent, adult, and geriatric populations. Communication-related cognitive rehabilitation services in improving attention, memory, and executive functioning (e.g., problem-solving, reasoning, planning) are also offered to clients with neurogenic impairments secondary to acquired brain injury and/or stroke."
+		),
+		mainParagraphAddOn: _react2.default.createElement(
+			"span",
+			null,
+			"Bilingual services in ",
+			_react2.default.createElement(
+				"strong",
+				null,
+				"Mandarin Chinese"
+			),
+			" and ",
+			_react2.default.createElement(
+				"strong",
+				null,
+				"Spanish"
+			),
+			" are also offered."
+		),
 		therapy: "Therapy sessions are provided by speech-language pathologists (SLPs). Clients are typically seen individually, (1:1), and small group sessions can be arranged depending on the client's needs. Sessions are 60 minutes in duration, with 50 minutes of direct therapy followed by 10 minutes of documentation and discussion.",
 		evaluation: "A comprehensive evaluation is conducted to determine what (if any) communication disorders exist. The SLP will collect client history and information through an interview with the client/caregivers. A battery of formal, standardized tests and informal/dynamic assessment measures will be utilized. This is typically a 1.5- to 2-hour process (3-hour maximum). After compiling the data, scoring the tests, interpreting the results, and writing an assessment report, the SLP will schedule a follow-up appointment to explain the findings to the client/caregiver and determine the next best plan of treatment, if needed.",
-		consultation: "A consultation refers to a review of the client's previous reports, informal observation of the client, discussion with the client/caregiver about concerns, and input from the SLP as to the next best course of action. This is a 60-minute service, and no reports are provided with a consultative appointment. If a recommended comprehensive evaluation is scheduled with our practice within 60 days following the consultation, we will deduct the consultation fee from the total fee for the assessment."
+		consultation: "A consultation refers to a review of the client's previous reports, informal observation of the client, discussion with the client/caregiver about concerns, and input from the SLP as to the next best course of action. This is a 60-minute service, and no reports are provided with a consultative appointment. If a recommended comprehensive evaluation is scheduled with our practice within 60 days following the consultation, we will deduct the consultation fee from the total fee for the assessment.",
+		settingIntro: _react2.default.createElement(
+			"span",
+			null,
+			"Therapy services can be provided in a variety of settings.  ",
+			_react2.default.createElement(
+				"a",
+				{ target: "_blank", href: "http://www.asha.org/Research/EBP/" },
+				"Evidence-based practice (EBP)"
+			),
+			" is used across all settings, and is the integration of (1) clinical expertise/expert opinion, (2) external scientific evidence, and (3) client/patient/caregiver perspectives to provide high-quality services, reflecting the interests, values, needs, and choices of the individuals served. "
+		),
+		settingHome: _react2.default.createElement(
+			"span",
+			null,
+			_react2.default.createElement(
+				"strong",
+				null,
+				"HOME"
+			),
+			" - A home-based therapy session is provided in the client's home.  It may be helpful for clients who work well in their natural environment.  We use a routines-based approach, which is family-centered, involving family members such as parents, caregivers, and siblings.  "
+		),
+		settingClinic: _react2.default.createElement(
+			"span",
+			null,
+			_react2.default.createElement(
+				"strong",
+				null,
+				"CLINIC"
+			),
+			" - A clinic setting may be helpful for clients who (1) perform better in a structured setting, (2) benefit from using a wide variety of therapy tools and instruments, and/or (3) may be distracted by objects in the home."
+		),
+		settingCommunity: _react2.default.createElement(
+			"span",
+			null,
+			_react2.default.createElement(
+				"strong",
+				null,
+				"COMMUNITY"
+			),
+			" - Therapy can take place in the community, which lends to the opportunity to work on generalizing functional speech and language skills in a variety of settings.  This may include places that the client frequently visits, such as the library, grocery store, restaurant, city bus, etc.  This setting is particularly helpful for clients focused on community reintegration."
+		),
+		settingTeletherapy: _react2.default.createElement(
+			"span",
+			null,
+			_react2.default.createElement(
+				"strong",
+				null,
+				"TELETHERAPY"
+			),
+			" - Therapy services can also be provided over the internet by video call.  This type of therapy is done individually between the therapist and one client.  "
+		)
 	};
 
 	exports.default = (0, _radium2.default)(Services);

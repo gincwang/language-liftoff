@@ -1,6 +1,9 @@
 import React from "react";
 import HomeAttributeList from "./HomeAttributeList.js";
 import SharedStyles from "../styles/sharedStyles.js";
+import Radium from "radium";
+var Link = require('react-router').Link;
+Link = Radium(Link);	//Needs to be wrapped in Radium due to Raidum not working with all components
 
 class Home extends React.Component {
 	render(){
@@ -12,19 +15,22 @@ class Home extends React.Component {
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-md-offset-3 col-md-6" >
+					<div className="col-md-offset-2 col-md-8" >
 						<h3 style={inline.paragraphStyle}>{text.intro}</h3>
 						<hr style={inline.hrStyles}/>
 						<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings:</h3>
 					</div>
 				</div>
-				<div className="row" style={SharedStyles.paragraphRowStyles}>
+				<div className="row" style={inline.paragraphIcons}>
 					<ul className="list-unstyled">
 						<li className="col-sm-3 col-md-3 col-lg-offset-2 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>home</i><p>Home</p></li>
 						<li className="col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>store_mall_directory</i><p>Clinic</p></li>
 						<li className="col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>domain</i><p>Community</p></li>
 						<li className="col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>computer</i><p>Teletherapy</p></li>
 					</ul>					
+				</div>
+				<div className="row" style={inline.linkStyles}>
+					<Link to="/services"><h4>Learn more<i className="material-icons" style={inline.iconAltStyles}>play_arrow</i></h4></Link>
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
@@ -44,27 +50,37 @@ class Home extends React.Component {
 let inline = {
 	paragraphStyle: {
 		lineHeight: SharedStyles.lineHeight,
-		marginTop: "20px"
+		margin: "40px 0"
 	},
 	iconStyles: {
 		fontSize: "3.5em"
 	},
+	iconAltStyles: {
+		position: "relative",
+		top: "6px"
+	},
 	serviceLinkStyles: {
 		fontSize: "1.5em",
 		padding: "20px",
-		color: "black"
+		color: "gray"
 	},
 	hrStyles: {
 		width: "70%",
 		borderTop: "1px solid gray",
 		borderBottom: "1px solid lightGray"
+	},
+	paragraphIcons:{
+		backgroundColor: SharedStyles.altColor
+	},
+	linkStyles: {
+		margin: "20px 0"
 	}
 }
 
 
 let text = {
 	title: "Speech and Language Services For All",
-	intro: "Using evidence-based practices, we pride ourselves in providing caring and effective services and tailoring treatment plans to individual client needs!",
+	intro: <span>Using Evidence-Based Practices(EBP) we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!</span>,
 	icontext: ["Our SLP can come to the client's home"]
 };
 

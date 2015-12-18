@@ -24483,7 +24483,7 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _Home = __webpack_require__(247);
+	var _Home = __webpack_require__(248);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
@@ -24495,9 +24495,13 @@
 
 	var _Services2 = _interopRequireDefault(_Services);
 
-	var _ClientResources = __webpack_require__(252);
+	var _ClientResourcesDisorders = __webpack_require__(255);
 
-	var _ClientResources2 = _interopRequireDefault(_ClientResources);
+	var _ClientResourcesDisorders2 = _interopRequireDefault(_ClientResourcesDisorders);
+
+	var _ClientResourcesDevelopment = __webpack_require__(256);
+
+	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
 	var _Contact = __webpack_require__(253);
 
@@ -24510,7 +24514,12 @@
 		{ path: "/", component: _Main2.default },
 		_react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: "services", component: _Services2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: "client-resources", component: _ClientResources2.default }),
+		_react2.default.createElement(
+			_reactRouter.Route,
+			{ path: "client-resources" },
+			_react2.default.createElement(_reactRouter.Route, { path: "common-disorders", component: _ClientResourcesDisorders2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: "typical-development", component: _ClientResourcesDevelopment2.default })
+		),
 		_react2.default.createElement(_reactRouter.Route, { path: "about", component: _About2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: "contact", component: _Contact2.default })
 	);
@@ -24539,9 +24548,13 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _sharedStyles = __webpack_require__(249);
+	var _sharedStyles = __webpack_require__(247);
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	var _dropDownBtn = __webpack_require__(254);
+
+	var _dropDownBtn2 = _interopRequireDefault(_dropDownBtn);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24604,11 +24617,7 @@
 								_react2.default.createElement(
 									'li',
 									{ style: inline.navLiStyles },
-									_react2.default.createElement(
-										Link,
-										{ to: '/client-resources', style: inline.navLinkStyles },
-										'RESOURCES'
-									)
+									_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDowntext, links: dropDownLink, minWidth: 150 })
 								),
 								_react2.default.createElement(
 									'li',
@@ -24696,6 +24705,9 @@
 
 		return Main;
 	})(_react2.default.Component);
+
+	var dropDowntext = ["Common Disorders", "Typical Development"];
+	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development"];
 
 	var inline = {
 		navStyles: {
@@ -27468,6 +27480,59 @@
 
 /***/ },
 /* 247 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	// This is the main shared styles of the website
+
+	var mainColor = "#A5D6A7";
+	var mainTextColor = "gray";
+	var altColor = "white";
+	var navTextColor = "#3E2723";
+	var navTextColorHover = "gray";
+	var lineHeight = "1.5";
+
+	var SharedStyles = {
+		mainColor: mainColor,
+		mainTextColor: mainTextColor,
+		altColor: altColor,
+		lineHeight: lineHeight,
+		navTextColor: navTextColor,
+		navTextColorHover: navTextColorHover,
+		mainStyles: {
+			fontFamily: "'Open Sans', sans-serif",
+			textAlign: "center",
+			color: mainTextColor
+		},
+		titleRowStyles: {
+			backgroundColor: mainColor
+		},
+		titleStyles: {
+			color: altColor,
+			paddingBottom: "10px"
+		},
+		paragraphRowStyles: {
+			backgroundColor: altColor,
+			padding: "25px 0"
+		},
+		altParagraphRowStyles: {
+			backgroundColor: mainColor,
+			padding: "20px 0 50px 0"
+		},
+		glyphiconStyles: {
+			top: "4px"
+		}
+	};
+
+	exports.default = SharedStyles;
+
+/***/ },
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27482,11 +27547,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _HomeAttributeList = __webpack_require__(248);
+	var _list = __webpack_require__(258);
 
-	var _HomeAttributeList2 = _interopRequireDefault(_HomeAttributeList);
+	var _list2 = _interopRequireDefault(_list);
 
-	var _sharedStyles = __webpack_require__(249);
+	var _sharedStyles = __webpack_require__(247);
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
@@ -27645,7 +27710,7 @@
 								{ style: _sharedStyles2.default.titleStyles },
 								"What We Specialize In:"
 							),
-							_react2.default.createElement(_HomeAttributeList2.default, { data: data.specialize })
+							_react2.default.createElement(_list2.default, { data: data.specialize, ulStyles: dataUlStyles, liStyles: dataLiStyles })
 						),
 						_react2.default.createElement(
 							"div",
@@ -27655,7 +27720,7 @@
 								{ style: _sharedStyles2.default.titleStyles },
 								"What We Offer:"
 							),
-							_react2.default.createElement(_HomeAttributeList2.default, { data: data.offer })
+							_react2.default.createElement(_list2.default, { data: data.offer, ulStyles: dataUlStyles, liStyles: dataLiStyles })
 						)
 					)
 				);
@@ -27664,6 +27729,8 @@
 
 		return Home;
 	})(_react2.default.Component);
+
+	exports.default = Home;
 
 	var inline = {
 		paragraphStyle: {
@@ -27705,142 +27772,23 @@
 		icontext: ["Our SLP can come to the client's home"]
 	};
 
-	var data = {
-		specialize: ["Autism Spectrum Disorders", "Articulation/speech sound disorders", "Fluency disorders (stuttering)", "Expressive and/or receptive language skills", "Specific language impairments", "Pragmatics/social language & cognition skills", "Auditory memory / auditory processing disorders", "Literacy and phonological awareness", "Aphasia", "Dysarthria", "Cognitive communication rehab for improved attention, memory, and executive functioning", "Augmentative and alternative communication (AAC)"],
-		offer: ["Warm and positive connection with the client.", "Creative, goal-oriented, and hierarchal therapy that are tailored to each client's individual needs.", "Observations are welcomed anytime by client's family members and/or caregivers.", "Clear explanations of the activities during therapy, and how these skills can be applied and reinforced at home or in the community.", "Challenging therapy process that is also fun, functional, and motivating to the clients."]
-	};
-
-	exports.default = Home;
-
-/***/ },
-/* 248 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _sharedStyles = __webpack_require__(249);
-
-	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var HomeAttributeList = (function (_React$Component) {
-		_inherits(HomeAttributeList, _React$Component);
-
-		function HomeAttributeList() {
-			_classCallCheck(this, HomeAttributeList);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(HomeAttributeList).apply(this, arguments));
-		}
-
-		_createClass(HomeAttributeList, [{
-			key: "render",
-			value: function render() {
-				var elements = this.props.data.sort().map(function (em, index) {
-					return _react2.default.createElement(
-						"li",
-						{ style: liStyles, key: index },
-						_react2.default.createElement(
-							"h4",
-							null,
-							em
-						)
-					);
-				});
-
-				return _react2.default.createElement(
-					"ul",
-					{ style: ulStyles },
-					elements
-				);
-			}
-		}]);
-
-		return HomeAttributeList;
-	})(_react2.default.Component);
-
-	var ulStyles = {
+	var dataUlStyles = {
 		backgroundColor: _sharedStyles2.default.altColor,
 		borderRadius: "30px",
 		padding: "10px 50px"
 	};
 
-	var liStyles = {
+	var dataLiStyles = {
 		textAlign: "left"
 	};
 
-	exports.default = HomeAttributeList;
-
-/***/ },
-/* 249 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	// This is the main shared styles of the website
-
-	var mainColor = "#A5D6A7";
-	var mainTextColor = "gray";
-	var altColor = "white";
-	var navTextColor = "#3E2723";
-	var navTextColorHover = "gray";
-	var lineHeight = "1.5";
-
-	var SharedStyles = {
-		mainColor: mainColor,
-		mainTextColor: mainTextColor,
-		altColor: altColor,
-		lineHeight: lineHeight,
-		navTextColor: navTextColor,
-		navTextColorHover: navTextColorHover,
-		mainStyles: {
-			fontFamily: "'Open Sans', sans-serif",
-			textAlign: "center",
-			color: mainTextColor
-		},
-		titleRowStyles: {
-			backgroundColor: mainColor
-		},
-		titleStyles: {
-			color: altColor,
-			paddingBottom: "10px"
-		},
-		paragraphRowStyles: {
-			backgroundColor: altColor,
-			padding: "25px 0"
-		},
-		altParagraphRowStyles: {
-			backgroundColor: mainColor,
-			padding: "20px 0 50px 0"
-		},
-		glyphiconStyles: {
-			top: "4px"
-		}
+	var data = {
+		specialize: ["Autism Spectrum Disorders", "Articulation/speech sound disorders", "Fluency disorders (stuttering)", "Expressive and/or receptive language skills", "Specific language impairments", "Pragmatics/social language & cognition skills", "Auditory memory / auditory processing disorders", "Literacy and phonological awareness", "Aphasia", "Dysarthria", "Cognitive communication rehab for improved attention, memory, and executive functioning", "Augmentative and alternative communication (AAC)"],
+		offer: ["Warm and positive connection with the client.", "Creative, goal-oriented, and hierarchal therapy that are tailored to each client's individual needs.", "Observations are welcomed anytime by client's family members and/or caregivers.", "Clear explanations of the activities during therapy, and how these skills can be applied and reinforced at home or in the community.", "Challenging therapy process that is also fun, functional, and motivating to the clients."]
 	};
 
-	exports.default = SharedStyles;
-
 /***/ },
+/* 249 */,
 /* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27856,7 +27804,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _sharedStyles = __webpack_require__(249);
+	var _sharedStyles = __webpack_require__(247);
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
@@ -27946,7 +27894,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-12 col-sm-8 col-md-12 col-lg-8" },
+							{ className: "col-xs-12 col-sm-8 col-md-offset-1 col-md-10 col-lg-offset-0 col-lg-8" },
 							_react2.default.createElement(
 								"h4",
 								{ style: inline.therapistParagraphStyle },
@@ -28049,7 +27997,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _sharedStyles = __webpack_require__(249);
+	var _sharedStyles = __webpack_require__(247);
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
@@ -28109,15 +28057,8 @@
 								"h4",
 								{ style: inline.paragraphStyles },
 								texts.mainParagraph
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							),
+							_react2.default.createElement("br", null),
 							_react2.default.createElement(
 								"h4",
 								{ style: inline.paragraphStyles },
@@ -28456,76 +28397,7 @@
 	exports.default = (0, _radium2.default)(Services);
 
 /***/ },
-/* 252 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _sharedStyles = __webpack_require__(249);
-
-	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ClientResources = (function (_React$Component) {
-		_inherits(ClientResources, _React$Component);
-
-		function ClientResources() {
-			_classCallCheck(this, ClientResources);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResources).apply(this, arguments));
-		}
-
-		_createClass(ClientResources, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement(
-								"h2",
-								{ style: _sharedStyles2.default.titleStyles },
-								"Client Resources"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement("div", { className: "col-md-offset-1 col-md-10" })
-					)
-				);
-			}
-		}]);
-
-		return ClientResources;
-	})(_react2.default.Component);
-
-	exports.default = ClientResources;
-
-/***/ },
+/* 252 */,
 /* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28541,7 +28413,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _sharedStyles = __webpack_require__(249);
+	var _sharedStyles = __webpack_require__(247);
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
@@ -28675,6 +28547,471 @@
 	};
 
 	exports.default = Contact;
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(212);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Link = __webpack_require__(159).Link;
+	Link = (0, _radium2.default)(Link);
+
+	var DropDownBtn = (function (_React$Component) {
+		_inherits(DropDownBtn, _React$Component);
+
+		function DropDownBtn(props) {
+			_classCallCheck(this, DropDownBtn);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DropDownBtn).call(this, props));
+
+			_this.state = { toggleVisible: false };
+			return _this;
+		}
+
+		_createClass(DropDownBtn, [{
+			key: "handleClick",
+			value: function handleClick(e) {
+				e.preventDefault();
+				this.setState({ toggleVisible: !this.state.toggleVisible });
+			}
+		}, {
+			key: "renderList",
+			value: function renderList() {
+				var list = [];
+				var listStyle = {
+					display: this.state.toggleVisible ? "block" : "none",
+					listStyle: "none"
+				};
+				var linkStyle = {
+					display: "block",
+					fontSize: "1.2em",
+					padding: "5px 15px",
+					color: "black",
+					textDecoration: "none",
+					':hover': {
+						backgroundColor: "lightGray"
+					}
+				};
+
+				for (var i = 0, length = this.props.texts.length; i < length; i++) {
+
+					list.push(_react2.default.createElement(
+						"li",
+						{ key: i, style: listStyle },
+						_react2.default.createElement(
+							Link,
+							{ to: this.props.links[i], style: linkStyle },
+							this.props.texts[i]
+						)
+					));
+				}
+				return list;
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var ulStyles = {
+					minWidth: this.props.minWidth,
+					position: "absolute",
+					background: "white",
+					padding: "0",
+					zIndex: "1000",
+					marginTop: "15px",
+					opacity: "0.7"
+
+				};
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"a",
+						{ style: this.props.anchorStyles, href: "#", onClick: this.handleClick.bind(this) },
+						"RESOURCES ",
+						_react2.default.createElement("span", { className: "glyphicon glyphicon-triangle-bottom", "aria-hidden": "true", style: { fontSize: "0.8em" } })
+					),
+					_react2.default.createElement(
+						"ul",
+						{ style: ulStyles },
+						this.renderList()
+					)
+				);
+			}
+		}]);
+
+		return DropDownBtn;
+	})(_react2.default.Component);
+
+	exports.default = (0, _radium2.default)(DropDownBtn);
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(247);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	var _listWithAnchor = __webpack_require__(259);
+
+	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ClientResourcesDisorders = (function (_React$Component) {
+		_inherits(ClientResourcesDisorders, _React$Component);
+
+		function ClientResourcesDisorders() {
+			_classCallCheck(this, ClientResourcesDisorders);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesDisorders).apply(this, arguments));
+		}
+
+		_createClass(ClientResourcesDisorders, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Common Disorders"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: topRowStyle },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Speech Disorders"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: speechDO, links: speechDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Language Disorders"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: languageDO, links: languageDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: topRowStyle },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Communication Options"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: commOptions, links: commOptionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Medical and Developmental Conditions"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: medConditions, links: medConditionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						)
+					)
+				);
+			}
+		}]);
+
+		return ClientResourcesDisorders;
+	})(_react2.default.Component);
+
+	exports.default = ClientResourcesDisorders;
+
+	var topRowStyle = {
+		margin: "20px 20px"
+	};
+
+	var categoryTitleStyle = {
+		borderRadius: "20px",
+		border: "3px solid gray",
+		padding: "10px 0"
+	};
+
+	var dataUlStyles = {
+		backgroundColor: _sharedStyles2.default.altColor,
+		borderRadius: "30px",
+		padding: "10px 50px"
+	};
+
+	var dataLiStyles = {
+		textAlign: "left",
+		listStyle: "none",
+		fontSize: "1.3em",
+		padding: "5px 0"
+	};
+
+	var speechDO = ["Apraxia", "Childhood Apraxia of Speech", "Dysarthria", "Speech Sound Disorders: Articulation and Phonological Processes", "Stuttering"];
+	var speechDOLinks = ["http://www.asha.org/public/speech/disorders/ApraxiaAdults/", "http://www.asha.org/public/speech/disorders/ChildhoodApraxia/", "http://www.asha.org/public/speech/disorders/dysarthria/", "http://www.asha.org/public/speech/disorders/SpeechSoundDisorders/", "http://www.asha.org/public/speech/disorders/stuttering/"];
+
+	var languageDO = ["Aphasia", "Language-Based Learning Disabilities", "Preschool Language Disorders", "Selective Mutism"];
+	var languageDOLinks = ["http://www.asha.org/public/speech/disorders/Aphasia/", "http://www.asha.org/public/speech/disorders/LBLD/", "http://www.asha.org/public/speech/disorders/Preschool-Language-Disorders/", "http://www.asha.org/public/speech/disorders/SelectiveMutism/"];
+
+	var commOptions = ["Augmentative and Alternative Communication (AAC)"];
+	var commOptionsLinks = ["http://www.asha.org/public/speech/disorders/AAC/"];
+
+	var medConditions = ["Attention Deficit/Hyperactivity Disorder (ADHD)", "Autism (Autism Spectrum Disorders)", "Dementia", "Stroke", "Traumatic Brain Injury"];
+	var medConditionsLinks = ["http://www.asha.org/public/speech/disorders/ADHD/", "http://www.asha.org/public/speech/disorders/Autism/", "http://www.asha.org/public/speech/disorders/dementia/", "http://www.asha.org/public/speech/disorders/Stroke/", "http://www.asha.org/public/speech/disorders/TBI/"];
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(247);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ClientResourcesDevelopment = (function (_React$Component) {
+		_inherits(ClientResourcesDevelopment, _React$Component);
+
+		function ClientResourcesDevelopment() {
+			_classCallCheck(this, ClientResourcesDevelopment);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesDevelopment).apply(this, arguments));
+		}
+
+		_createClass(ClientResourcesDevelopment, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Typical Development"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement("div", { className: "col-md-offset-1 col-md-10" })
+					)
+				);
+			}
+		}]);
+
+		return ClientResourcesDevelopment;
+	})(_react2.default.Component);
+
+	exports.default = ClientResourcesDevelopment;
+
+/***/ },
+/* 257 */,
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var List = (function (_React$Component) {
+		_inherits(List, _React$Component);
+
+		function List() {
+			_classCallCheck(this, List);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+		}
+
+		_createClass(List, [{
+			key: "render",
+			value: function render() {
+				console.log(this.props);
+				var elements = this.props.data.sort().map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						_react2.default.createElement(
+							"h4",
+							null,
+							em
+						)
+					);
+				}, this);
+
+				return _react2.default.createElement(
+					"ul",
+					{ style: this.props.ulStyles },
+					elements
+				);
+			}
+		}]);
+
+		return List;
+	})(_react2.default.Component);
+
+	exports.default = List;
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ListWithAnchor = (function (_React$Component) {
+		_inherits(ListWithAnchor, _React$Component);
+
+		function ListWithAnchor() {
+			_classCallCheck(this, ListWithAnchor);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithAnchor).apply(this, arguments));
+		}
+
+		_createClass(ListWithAnchor, [{
+			key: "render",
+			value: function render() {
+				console.log(this.props);
+				var elements = this.props.texts.map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						_react2.default.createElement(
+							"a",
+							{ href: this.props.links[index], target: "_blank" },
+							em
+						)
+					);
+				}, this);
+
+				return _react2.default.createElement(
+					"ul",
+					{ style: this.props.ulStyles },
+					elements
+				);
+			}
+		}]);
+
+		return ListWithAnchor;
+	})(_react2.default.Component);
+
+	exports.default = ListWithAnchor;
 
 /***/ }
 /******/ ]);

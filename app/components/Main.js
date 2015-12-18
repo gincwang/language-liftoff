@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from 'react-DOM';
 import Radium from 'radium';
 import SharedStyles from "../styles/sharedStyles.js";
+import DropDownButton from "./shared/dropDownBtn.js";
 var Link = require('react-router').Link;
 Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
@@ -15,7 +16,7 @@ class Main extends React.Component{
 		                <ul style={inline.navUlStyles}>
 		                	<li style={inline.navLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={inline.navLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-		                    <li style={inline.navLiStyles}><Link to="/client-resources" style={inline.navLinkStyles}>RESOURCES</Link></li>
+		                    <li style={inline.navLiStyles}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink} minWidth={150} /></li>
 		                    <li style={inline.navLiStyles}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
 		                    <li style={inline.navLiStyles}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>
@@ -36,6 +37,9 @@ class Main extends React.Component{
         );
     }
 }
+
+let dropDowntext = ["Common Disorders", "Typical Development"];
+let dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development"];
 
 let inline = {
 	navStyles: {

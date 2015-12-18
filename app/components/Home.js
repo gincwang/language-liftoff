@@ -1,5 +1,5 @@
 import React from "react";
-import HomeAttributeList from "./HomeAttributeList.js";
+import List from "./shared/list.js";
 import SharedStyles from "../styles/sharedStyles.js";
 import Radium from "radium";
 var Link = require('react-router').Link;
@@ -35,17 +35,20 @@ class Home extends React.Component {
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
 						<h3 style={SharedStyles.titleStyles}>What We Specialize In:</h3>
-						<HomeAttributeList data={data.specialize}/>
+						<List data={data.specialize} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
 					</div>
 					<div className="col-md-5 col-lg-4">
 						<h3 style={SharedStyles.titleStyles}>What We Offer:</h3>
-						<HomeAttributeList data={data.offer}/>
+						<List data={data.offer} ulStyles={dataUlStyles} liStyles={dataLiStyles}/>
 					</div>
 				</div>
 			</div>
 		);
 	}	
 }
+
+export default Home;
+
 
 let inline = {
 	paragraphStyle: {
@@ -84,6 +87,15 @@ let text = {
 	icontext: ["Our SLP can come to the client's home"]
 };
 
+let dataUlStyles = {
+	backgroundColor: SharedStyles.altColor,
+	borderRadius: "30px",
+	padding: "10px 50px"
+};
+
+let dataLiStyles = {
+	textAlign: "left"
+};
 
 let data = {
 	specialize: [
@@ -109,5 +121,3 @@ let data = {
 
 	]
 };
-
-export default Home;

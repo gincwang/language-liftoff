@@ -24,7 +24,7 @@ export default class About extends React.Component {
 				<div className="row" style={inline.therapistRowStyle}>
 					<div className="col-xs-offset-3 col-xs-6 col-sm-offset-0 col-sm-4 col-md-offset-1 col-md-2"><img className="img-responsive" style={inline.photoStyle} src={"app/assets/slp/jasmin.jpg"} alt="slp" height={400} /></div>
 					<div className="col-xs-12 col-sm-8 col-md-8"><h4 style={inline.therapistParagraphStyle}>{text.therapistIntro}</h4></div>
-					<div className="col-xs-12 col-sm-8 col-md-12 col-lg-8"><h4 style={inline.therapistParagraphStyle}>{text.therapistMain}</h4></div>
+					<div className="col-xs-12 col-sm-8 col-md-offset-1 col-md-10 col-lg-offset-0 col-lg-8"><h4 style={inline.therapistParagraphStyle}>{text.therapistMain}</h4></div>
 				</div>
 			</div>
 		);

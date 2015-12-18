@@ -23,10 +23,7 @@ class Services extends React.Component {
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
 						<h4 style={inline.paragraphStyles}>{texts.mainParagraph}</h4>
-					</div>
-				</div>
-				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+						<br/>
 						<h4 style={inline.paragraphStyles}>{texts.mainParagraphAddOn}</h4>
 					</div>
 				</div>

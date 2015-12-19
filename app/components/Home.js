@@ -90,11 +90,12 @@ let text = {
 let dataUlStyles = {
 	backgroundColor: SharedStyles.altColor,
 	borderRadius: "30px",
-	padding: "10px 50px"
+	padding: "10px 50px",
+	textAlign: "left"
 };
 
 let dataLiStyles = {
-	textAlign: "left"
+
 };
 
 let data = {

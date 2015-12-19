@@ -24483,27 +24483,27 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _Home = __webpack_require__(248);
+	var _Home = __webpack_require__(249);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(250);
+	var _About = __webpack_require__(251);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Services = __webpack_require__(251);
+	var _Services = __webpack_require__(252);
 
 	var _Services2 = _interopRequireDefault(_Services);
 
-	var _ClientResourcesDisorders = __webpack_require__(255);
+	var _ClientResourcesDisorders = __webpack_require__(253);
 
 	var _ClientResourcesDisorders2 = _interopRequireDefault(_ClientResourcesDisorders);
 
-	var _ClientResourcesDevelopment = __webpack_require__(256);
+	var _ClientResourcesDevelopment = __webpack_require__(255);
 
 	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
-	var _Contact = __webpack_require__(253);
+	var _Contact = __webpack_require__(256);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
@@ -24552,7 +24552,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _dropDownBtn = __webpack_require__(254);
+	var _dropDownBtn = __webpack_require__(248);
 
 	var _dropDownBtn2 = _interopRequireDefault(_dropDownBtn);
 
@@ -27547,7 +27547,125 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _list = __webpack_require__(258);
+	var _radium = __webpack_require__(212);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Link = __webpack_require__(159).Link;
+	Link = (0, _radium2.default)(Link);
+
+	var DropDownBtn = (function (_React$Component) {
+		_inherits(DropDownBtn, _React$Component);
+
+		function DropDownBtn(props) {
+			_classCallCheck(this, DropDownBtn);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DropDownBtn).call(this, props));
+
+			_this.state = { toggleVisible: false };
+			return _this;
+		}
+
+		_createClass(DropDownBtn, [{
+			key: "handleClick",
+			value: function handleClick(e) {
+				e.preventDefault();
+				this.setState({ toggleVisible: !this.state.toggleVisible });
+			}
+		}, {
+			key: "renderList",
+			value: function renderList() {
+				var list = [];
+				var listStyle = {
+					display: this.state.toggleVisible ? "block" : "none",
+					listStyle: "none"
+				};
+				var linkStyle = {
+					display: "block",
+					fontSize: "1.2em",
+					padding: "5px 15px",
+					color: "black",
+					textDecoration: "none",
+					':hover': {
+						backgroundColor: "lightGray"
+					}
+				};
+
+				for (var i = 0, length = this.props.texts.length; i < length; i++) {
+
+					list.push(_react2.default.createElement(
+						"li",
+						{ key: i, style: listStyle },
+						_react2.default.createElement(
+							Link,
+							{ to: this.props.links[i], style: linkStyle },
+							this.props.texts[i]
+						)
+					));
+				}
+				return list;
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var ulStyles = {
+					minWidth: this.props.minWidth,
+					position: "absolute",
+					background: "white",
+					padding: "0",
+					zIndex: "1000",
+					marginTop: "15px",
+					opacity: "0.7"
+
+				};
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"a",
+						{ style: this.props.anchorStyles, href: "#", onClick: this.handleClick.bind(this) },
+						"RESOURCES ",
+						_react2.default.createElement("span", { className: "glyphicon glyphicon-triangle-bottom", "aria-hidden": "true", style: { fontSize: "0.8em" } })
+					),
+					_react2.default.createElement(
+						"ul",
+						{ style: ulStyles },
+						this.renderList()
+					)
+				);
+			}
+		}]);
+
+		return DropDownBtn;
+	})(_react2.default.Component);
+
+	exports.default = (0, _radium2.default)(DropDownBtn);
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _list = __webpack_require__(250);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -27775,12 +27893,11 @@
 	var dataUlStyles = {
 		backgroundColor: _sharedStyles2.default.altColor,
 		borderRadius: "30px",
-		padding: "10px 50px"
-	};
-
-	var dataLiStyles = {
+		padding: "10px 50px",
 		textAlign: "left"
 	};
+
+	var dataLiStyles = {};
 
 	var data = {
 		specialize: ["Autism Spectrum Disorders", "Articulation/speech sound disorders", "Fluency disorders (stuttering)", "Expressive and/or receptive language skills", "Specific language impairments", "Pragmatics/social language & cognition skills", "Auditory memory / auditory processing disorders", "Literacy and phonological awareness", "Aphasia", "Dysarthria", "Cognitive communication rehab for improved attention, memory, and executive functioning", "Augmentative and alternative communication (AAC)"],
@@ -27788,8 +27905,78 @@
 	};
 
 /***/ },
-/* 249 */,
 /* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var List = (function (_React$Component) {
+		_inherits(List, _React$Component);
+
+		function List() {
+			_classCallCheck(this, List);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+		}
+
+		_createClass(List, [{
+			key: "render",
+			value: function render() {
+
+				var elements = this.props.data.sort().map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						_react2.default.createElement(
+							"h4",
+							null,
+							em
+						)
+					);
+				}, this);
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"h4",
+						{ style: { fontWeight: "bold" } },
+						this.props.title
+					),
+					_react2.default.createElement(
+						"ul",
+						{ style: this.props.ulStyles },
+						elements
+					)
+				);
+			}
+		}]);
+
+		return List;
+	})(_react2.default.Component);
+
+	exports.default = List;
+
+/***/ },
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27978,7 +28165,7 @@
 	};
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28397,8 +28584,609 @@
 	exports.default = (0, _radium2.default)(Services);
 
 /***/ },
-/* 252 */,
 /* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(247);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	var _listWithAnchor = __webpack_require__(254);
+
+	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ClientResourcesDisorders = (function (_React$Component) {
+		_inherits(ClientResourcesDisorders, _React$Component);
+
+		function ClientResourcesDisorders() {
+			_classCallCheck(this, ClientResourcesDisorders);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesDisorders).apply(this, arguments));
+		}
+
+		_createClass(ClientResourcesDisorders, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Common Disorders"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: topRowStyle },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Speech Disorders"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: speechDO, links: speechDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Language Disorders"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: languageDO, links: languageDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: topRowStyle },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Communication Options"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: commOptions, links: commOptionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-4" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Medical and Developmental Conditions"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: medConditions, links: medConditionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						)
+					)
+				);
+			}
+		}]);
+
+		return ClientResourcesDisorders;
+	})(_react2.default.Component);
+
+	exports.default = ClientResourcesDisorders;
+
+	var topRowStyle = {
+		margin: "20px 20px"
+	};
+
+	var categoryTitleStyle = {
+		borderRadius: "20px",
+		border: "3px solid gray",
+		padding: "10px 0"
+	};
+
+	var dataUlStyles = {
+		backgroundColor: _sharedStyles2.default.altColor,
+		borderRadius: "30px",
+		padding: "10px 50px"
+	};
+
+	var dataLiStyles = {
+		textAlign: "left",
+		listStyle: "none",
+		fontSize: "1.3em",
+		padding: "5px 0"
+	};
+
+	var speechDO = ["Apraxia", "Childhood Apraxia of Speech", "Dysarthria", "Speech Sound Disorders: Articulation and Phonological Processes", "Stuttering"];
+	var speechDOLinks = ["http://www.asha.org/public/speech/disorders/ApraxiaAdults/", "http://www.asha.org/public/speech/disorders/ChildhoodApraxia/", "http://www.asha.org/public/speech/disorders/dysarthria/", "http://www.asha.org/public/speech/disorders/SpeechSoundDisorders/", "http://www.asha.org/public/speech/disorders/stuttering/"];
+
+	var languageDO = ["Aphasia", "Language-Based Learning Disabilities", "Preschool Language Disorders", "Selective Mutism"];
+	var languageDOLinks = ["http://www.asha.org/public/speech/disorders/Aphasia/", "http://www.asha.org/public/speech/disorders/LBLD/", "http://www.asha.org/public/speech/disorders/Preschool-Language-Disorders/", "http://www.asha.org/public/speech/disorders/SelectiveMutism/"];
+
+	var commOptions = ["Augmentative and Alternative Communication (AAC)"];
+	var commOptionsLinks = ["http://www.asha.org/public/speech/disorders/AAC/"];
+
+	var medConditions = ["Attention Deficit/Hyperactivity Disorder (ADHD)", "Autism (Autism Spectrum Disorders)", "Dementia", "Stroke", "Traumatic Brain Injury"];
+	var medConditionsLinks = ["http://www.asha.org/public/speech/disorders/ADHD/", "http://www.asha.org/public/speech/disorders/Autism/", "http://www.asha.org/public/speech/disorders/dementia/", "http://www.asha.org/public/speech/disorders/Stroke/", "http://www.asha.org/public/speech/disorders/TBI/"];
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ListWithAnchor = (function (_React$Component) {
+		_inherits(ListWithAnchor, _React$Component);
+
+		function ListWithAnchor() {
+			_classCallCheck(this, ListWithAnchor);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithAnchor).apply(this, arguments));
+		}
+
+		_createClass(ListWithAnchor, [{
+			key: "render",
+			value: function render() {
+				console.log(this.props);
+				var elements = this.props.texts.map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						_react2.default.createElement(
+							"a",
+							{ href: this.props.links[index], target: "_blank" },
+							em
+						)
+					);
+				}, this);
+
+				return _react2.default.createElement(
+					"ul",
+					{ style: this.props.ulStyles },
+					elements
+				);
+			}
+		}]);
+
+		return ListWithAnchor;
+	})(_react2.default.Component);
+
+	exports.default = ListWithAnchor;
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(247);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	var _list = __webpack_require__(250);
+
+	var _list2 = _interopRequireDefault(_list);
+
+	var _ListWithToggleList = __webpack_require__(258);
+
+	var _ListWithToggleList2 = _interopRequireDefault(_ListWithToggleList);
+
+	var _ListWithList = __webpack_require__(259);
+
+	var _ListWithList2 = _interopRequireDefault(_ListWithList);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ClientResourcesDevelopment = (function (_React$Component) {
+		_inherits(ClientResourcesDevelopment, _React$Component);
+
+		function ClientResourcesDevelopment(props) {
+			_classCallCheck(this, ClientResourcesDevelopment);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesDevelopment).call(this, props));
+
+			_this.state = {
+				selectedSection: null,
+				selectedTitle: "",
+				zeroToOneVisible: false
+			};
+			return _this;
+		}
+
+		_createClass(ClientResourcesDevelopment, [{
+			key: "handleClick",
+			value: function handleClick(e) {
+				e.preventDefault();
+				switch (e.target.innerHTML) {
+					case "0-3 Months":
+						this.setState({ selectedSection: development.zeroToOneYear.zeroToThreeMonths, selectedTitle: "0-3 months" });
+						break;
+					case "4-6 Months":
+						this.setState({ selectedSection: development.zeroToOneYear.fourToSixMonths, selectedTitle: "4-6 months" });
+						break;
+					case "7-12 Months":
+						this.setState({ selectedSection: development.zeroToOneYear.sevenToTwelveMonths, selectedTitle: "7-12 months" });
+						break;
+					case "1-2 Years":
+						this.setState({ selectedSection: development.oneToTwoYears, selectedTitle: "1-2 Years" });
+						break;
+					case "2-3 Years":
+						this.setState({ selectedSection: development.twoToThreeYears, selectedTitle: "2-3 Years" });
+						break;
+					case "3-4 Years":
+						this.setState({ selectedSection: development.threeToFourYears, selectedTitle: "3-4 Years" });
+						break;
+					case "4-5 Years":
+						this.setState({ selectedSection: development.fourToFiveYears, selectedTitle: "4-5 Years" });
+						break;
+					case "End of Kindergarten":
+						this.setState({ selectedSection: development.endOfKindergarten, selectedTitle: "End of Kindergarten" });
+						break;
+					case "End of First Grade":
+						this.setState({ selectedSection: development.firstGrade, selectedTitle: "End of First Grade" });
+						break;
+					case "End of Second Grade":
+						this.setState({ selectedSection: development.secondGrade, selectedTitle: "End of Second Grade" });
+						break;
+					case "End of Third Grade":
+						this.setState({ selectedSection: development.thirdGrade, selectedTitle: "End of Third Grade" });
+						break;
+					case "End of Fourth Grade":
+						this.setState({ selectedSection: development.fourthGrade, selectedTitle: "End of Fourth Grade" });
+						break;
+					case "End of Fifth Grade":
+						this.setState({ selectedSection: development.fifthGrade, selectedTitle: "End of Fifth Grade" });
+						break;
+					default:
+						this.setState({ selectedSection: null, selectedTitle: "null" });
+				}
+			}
+		}, {
+			key: "handleZeroOneClick",
+			value: function handleZeroOneClick(e) {
+				e.preventDefault();
+				this.setState({ zeroToOneVisible: !this.state.zeroToOneVisible });
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var ulStyles = {
+					listStyle: "none",
+					textAlign: "left",
+					fontSize: "1.3em"
+				};
+				var liStyles = {
+					padding: "20px 0 0 0"
+				};
+
+				var innerUlStyles = {
+					listStyle: "none",
+					display: this.state.zeroToOneVisible ? "block" : "none"
+				};
+				var innerLiStyles = {
+					padding: "5px 0"
+				};
+				return _react2.default.createElement(
+					"div",
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Typical Development"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-3" },
+							_react2.default.createElement(
+								"ul",
+								{ style: ulStyles },
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleZeroOneClick.bind(this) },
+										"0-1 Year"
+									),
+									_react2.default.createElement(
+										"ul",
+										{ style: innerUlStyles },
+										_react2.default.createElement(
+											"li",
+											{ style: innerLiStyles },
+											_react2.default.createElement(
+												"a",
+												{ href: "#", onClick: this.handleClick.bind(this) },
+												"0-3 Months"
+											)
+										),
+										_react2.default.createElement(
+											"li",
+											{ style: innerLiStyles },
+											_react2.default.createElement(
+												"a",
+												{ href: "#", onClick: this.handleClick.bind(this) },
+												"4-6 Months"
+											)
+										),
+										_react2.default.createElement(
+											"li",
+											{ style: innerLiStyles },
+											_react2.default.createElement(
+												"a",
+												{ href: "#", onClick: this.handleClick.bind(this) },
+												"7-12 Months"
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"1-2 Years"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"2-3 Years"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"3-4 Years"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"4-5 Years"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"End of Kindergarten"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"End of First Grade"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"End of Second Grade"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"End of Third Grade"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"End of Fourth Grade"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: liStyles },
+									_react2.default.createElement(
+										"a",
+										{ href: "#", onClick: this.handleClick.bind(this) },
+										"End of Fifth Grade"
+									)
+								)
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-9" },
+							_react2.default.createElement(_ListWithList2.default, { title: this.state.selectedTitle, data: this.state.selectedSection })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-12" },
+							_react2.default.createElement(
+								"h6",
+								null,
+								"Information obtained from American Speech & Hearing Association ",
+								_react2.default.createElement(
+									"a",
+									{ href: "http://www.asha.org", target: "_blank" },
+									"(http://www.asha.org)"
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return ClientResourcesDevelopment;
+	})(_react2.default.Component);
+
+	exports.default = ClientResourcesDevelopment;
+
+	var development = {
+		zeroToOneYear: {
+			zeroToThreeMonths: {
+				hearingAndUnderstanding: ["Startles to loud sounds", "Quiets or smiles when spoken to", "Seems to recognize your voice and quiets if crying", "Increases or decreases sucking behavior in response to sound"],
+				talking: ["Makes pleasure sounds (cooing, gooing)", "Cries differently for different needs", "Smiles when sees you"]
+			},
+			fourToSixMonths: {
+				hearingAndUnderstanding: ["Moves eyes in direction of sounds", "Responds to changes in tone of your voice", "Notices toys that make sounds", "Pays attention to music"],
+				talking: ["Babbling sounds more speech-like with many different sounds, including p, b and m", "Chuckles and laughs", "Vocalizes excitement and displeasure", "Makes gurgling sounds when left alone and when playing with you"]
+			},
+			sevenToTwelveMonths: {
+				hearingAndUnderstanding: ["Enjoys games like peek-a-boo and pat-a-cake", "Turns and looks in direction of sounds", "Listens when spoken to", 'Recognizes words for common items like "cup", "shoe", "book", or "juice"', 'Begins to respond to requests (e.g. "Come here" or "Want more?")'],
+				talking: ['Babbling has both long and short groups of sounds such as "tata upup bibibibi"', 'Uses speech or noncrying sounds to get and keep attention', 'Uses gestures to communicate (waving, holding arms to be picked up)', 'Imitates different speech sounds', 'Has one or two words (hi, dog, dada, mama) around first birthday, although sounds may not be clear']
+			}
+		},
+		oneToTwoYears: {
+			hearingAndUnderstanding: ['Points to a few body parts when asked.', 'Follows simple commands and understands simple questions ("Roll the ball," "Kiss the baby," "Where\'s your shoe?").', 'Listens to simple stories, songs, and rhymes.', 'Points to pictures in a book when named.'],
+			talking: ['Says more words every month.', 'Uses some one- or two- word questions ("Where kitty?" "Go bye-bye?" "What\'s that?").', 'Puts two words together ("more cookie," "no juice," "mommy book").', 'Uses many different consonant sounds at the beginning of words.']
+		},
+		twoToThreeYears: {
+			hearingAndUnderstanding: ['Understands differences in meaning ("go-stop," "in-on," "big-little," "up-down").', 'Follows two requests ("Get the book and put it on the table").', 'Listens to and enjoys hearing stories for longer periods of time'],
+			talking: ['Has a word for almost everything.', 'Uses two- or three- words to talk about and ask for things.', 'Uses k, g, f, t, d, and n sounds.', 'Speech is understood by familiar listeners most of the time.', 'Often asks for or directs attention to objects by naming them.', 'Asks why?', 'May stutter on words or sounds']
+		},
+		threeToFourYears: {
+			hearingAndUnderstanding: ['Hears you when you call from another room.', 'Hears television or radio at the same loudness level as other family members.', 'Understands words for some colors, like red, blue, and green', 'Understands words for some shapes, like circle and square', 'Understands words for family, like brother, grandmother, and aunt'],
+			talking: ['Talks about activities at school or at friends\' homes.', 'Talks about what happened during the day. Uses about 4 sentences at a time.', 'People outside of the family usually understand child\'s speech.', 'Answers simple "who?", "what?", and "where?" questions.', 'Asks when and how questions.', 'Says rhyming words, like hat-cat', 'Uses pronouns, like I, you, me, we, and they', 'Uses some plural words, like toys, birds, and buses', 'Uses a lot of sentences that have 4 or more words.', 'Usually talks easily without repeating syllables or words.']
+		},
+		fourToFiveYears: {
+			hearingAndUnderstanding: ['Understands words for order, like first, next, and last.', 'Understands words for time, like yesterday, today, and tomorrow.', 'Follows longer directions, like "Put your pajamas on, brush your teeth, and then pick out a book."', 'Follows classroom directions, like "Draw a circle on your paper around something you eat."', 'Hears and understands most of what is said at home and in school.'],
+			talking: ['Says all speech sounds in words. May make mistakes on sounds that are harder to say, like l, s, r, v, z, ch, sh, th. ', 'Responds to "What did you say?"', 'Talks without repeating sounds or words most of the time.', 'Names letters and numbers.', 'Uses sentences that have more than 1 action word, like jump, play, and get. May make some mistakes, like "Zach got 2 video games, but I got one."', 'Tells a short story.', 'Keeps a conversation going.', 'Talks in different ways depending on the listener and place. May use short sentences with younger children or talk louder outside than inside.']
+		},
+		endOfKindergarten: {
+			listening: ['Follow 1-2 simple directions in a sequence', 'Listen to and understand age-appropriate stories read aloud', 'Follow a simple conversation'],
+			speaking: ['Be understood by most people', 'Answer simple "yes/no" questions', 'Answer open-ended questions (e.g., "What did you have for lunch today?")', 'Retell a story or talk about an event', 'Participate appropriately in conversations', 'Show interest in and start conversations'],
+			reading: ['Know how a book works (e.g., read from left to right and top to bottom in English)', 'Understand that spoken words are made up of sounds', 'Identify words that rhyme (e.g., cat and hat)', 'Compare and match words based on their sounds', 'Understand that letters represent speech sounds and match sounds to letters', 'Identify upper- and lowercase letters', 'Recognize some words by sight', '"Read" a few picture books from memory', 'Imitate reading by talking about pictures in a book'],
+			writing: ['Print own first and last name', 'Draw a picture that tells a story and label and write about the picture', 'Write upper- and lowercase letters (may not be clearly written)']
+		},
+		firstGrade: {
+			listening: ['Remember information', 'Respond to instructions', 'Follow 2-3 step directions in a sequence'],
+			speaking: ['Be easily understood', 'Answer more complex "yes/no" questions', 'Tell and retell stories and events in a logical order', 'Express ideas with a variety of complete sentences', 'Use most parts of speech (grammar) correctly', 'Ask and respond to "wh" questions (who, what, where, when, why)', 'Stay on topic and take turns in conversation', 'Give directions', 'Start conversations'],
+			reading: ['Create rhyming words', 'Identify all sounds in short words', 'Blend separate sounds to form words', 'Match spoken words with print', 'Know how a book works (e.g., read from left to right and top to bottom in English)', 'Identify letters, words, and sentences', 'Sound out words when reading', 'Have a sight vocabulary of 100 common words', 'Read grade-level material fluently', 'Understand what is read'],
+			writing: ['Express ideas through writing', 'Print clearly', 'Spell frequently used words correctly', 'Begin each sentence with capital letters and use ending punctuation', 'Write a variety of stories, journal entries, or letters/notes']
+		},
+		secondGrade: {
+			listening: ['Follow 3-4 oral directions in a sequence', 'Understand direction words (e.g., location, space, and time words)', 'Correctly answer questions about a grade-level story'],
+			speaking: ['Be easily understood', 'Answer more complex "yes/no" questions', 'Ask and answer "wh" questions (e.g., who, what, where, when, why)', 'Use increasingly complex sentence structures', 'Clarify and explain words and ideas', 'Give directions with 3-4 steps', 'Use oral language to inform, to persuade, and to entertain', 'Stay on topic, take turns, and use appropriate eye contact during conversation', 'Open and close conversation appropriately'],
+			reading: ['Have fully mastered phonics/sound awareness', 'Associate speech sounds, syllables, words, and phrases with their written forms', 'Recognize many words by sight', 'Use meaning clues when reading (e.g., pictures, titles/headings, information in the story)', 'Reread and self-correct when necessary', 'Locate information to answer questions', 'Explain key elements of a story (e.g., main idea, main characters, plot)', 'Use own experience to predict and justify what will happen in grade-level stories', 'Read, paraphrase/retell a story in a sequence', 'Read grade-level stories, poetry, or dramatic text silently and aloud with fluency', 'Read spontaneously', 'Identify and use spelling patterns in words when reading'],
+			writing: ['Write legibly', 'Use a variety of sentence types in writing essays, poetry, or short stories (fiction and nonfiction)', 'Use basic punctuation and capitalization appropriately', 'Organize writing to include beginning, middle, and end', 'Spell frequently used words correctly', 'Progress from inventive spelling (e.g., spelling by sound) to more accurate spelling']
+		},
+		thirdGrade: {
+			listening: ['Listen attentively in group situations', 'Understand grade-level material'],
+			speaking: ['Speak clearly with an appropriate voice', 'Ask and respond to questions', 'Participate in conversations and group discussions', 'Use subject-related vocabulary', 'Stay on topic, use appropriate eye contact, and take turns in conversation', 'Summarize a story accurately', 'Explain what has been learned'],
+			reading: ['Demonstrate full mastery of basic phonics', 'Use word analysis skills when reading', 'Use clues from language content and structure to help understand what is read', 'Predict and justify what will happen next in stories and compare and contrast stories', 'Ask and answer questions regarding reading material', 'Use acquired information to learn about new topics', 'Read grade-level books fluently (fiction and nonfiction)', 'Reread and correct errors when necessary'],
+			writing: ['Plan, organize, revise, and edit', 'Include details in writing', 'Write stories, letters, simple explanations, and brief reports', 'Spell simple words correctly, correct most spelling independently, and use a dictionary to correct spelling', 'Write clearly in cursive']
+		},
+		fourthGrade: {
+			listening: ['Listen to and understand information presented by others', 'Form opinions based on evidence', 'Listen for specific purposes'],
+			speaking: ['Use words appropriately in conversation', 'Use language effectively for a variety of purposes', 'Understand some figurative language (e.g., "the forest stretched acrossâ€¦")', 'Participate in group discussions', 'Give accurate directions to others', 'Summarize and restate ideas', 'Organize information for clarity', 'Use subject area information and vocabulary (e.g., social studies) for learning', 'Make effective oral presentations'],
+			reading: ['Read for specific purposes', 'Read grade-level books fluently', 'Use previously learned information to understand new material', 'Follow written directions', 'Take brief notes', 'Link information learned to different subjects', 'Learn meanings of new words through knowledge of word origins, synonyms, and multiple meanings', 'Use reference materials (e.g., dictionary)', 'Explain the author\'s purpose and writing style', 'Read and understand a variety of types of literature, including fiction, nonfiction, historical fiction, and poetry', 'Compare and contrast in content areas', 'Make inferences from texts', 'Paraphrase content, including the main idea and details'],
+			writing: ['Write effective stories and explanations, including several paragraphs about the same topic', 'Develop a plan for writing, including a beginning, middle, and end', 'Organize writing to convey a central idea', 'Edit final copies for grammar, punctuation, and spelling']
+		},
+		fifthGrade: {
+			listening: ['Listen and draw conclusions in subject area learning activities'],
+			speaking: ['Make planned oral presentations appropriate to the audience', 'Maintain eye contact and use gestures, facial expressions, and appropriate voice during group presentations', 'Participate in class discussions across subject areas', 'Summarize main points', 'Report about information gathered in group activities'],
+			reading: ['Read grade-level books fluently', 'Learn meanings of unfamiliar words through knowledge of root words, prefixes, and suffixes', 'Prioritize information according to the purpose of reading', 'Read a variety of literary forms', 'Describe development of character and plot', 'Describe characteristics of poetry', 'Analyze author\'s language and style', 'Use reference materials to support opinions'],
+			writing: ['Write for a variety of purposes', 'Use vocabulary effectively', 'Vary sentence structure', 'Revise writing for clarity', 'Edit final copies']
+		}
+	};
+
+/***/ },
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28549,7 +29337,7 @@
 	exports.default = Contact;
 
 /***/ },
-/* 254 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28564,10 +29352,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _radium = __webpack_require__(212);
-
-	var _radium2 = _interopRequireDefault(_radium);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28576,320 +29360,66 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Link = __webpack_require__(159).Link;
-	Link = (0, _radium2.default)(Link);
+	var ListWithToggle = (function (_React$Component) {
+		_inherits(ListWithToggle, _React$Component);
 
-	var DropDownBtn = (function (_React$Component) {
-		_inherits(DropDownBtn, _React$Component);
+		function ListWithToggle(props) {
+			_classCallCheck(this, ListWithToggle);
 
-		function DropDownBtn(props) {
-			_classCallCheck(this, DropDownBtn);
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggle).call(this, props));
 
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DropDownBtn).call(this, props));
-
-			_this.state = { toggleVisible: false };
+			_this.state = { visible: false };
 			return _this;
 		}
 
-		_createClass(DropDownBtn, [{
+		_createClass(ListWithToggle, [{
 			key: "handleClick",
 			value: function handleClick(e) {
 				e.preventDefault();
-				this.setState({ toggleVisible: !this.state.toggleVisible });
-			}
-		}, {
-			key: "renderList",
-			value: function renderList() {
-				var list = [];
-				var listStyle = {
-					display: this.state.toggleVisible ? "block" : "none",
-					listStyle: "none"
-				};
-				var linkStyle = {
-					display: "block",
-					fontSize: "1.2em",
-					padding: "5px 15px",
-					color: "black",
-					textDecoration: "none",
-					':hover': {
-						backgroundColor: "lightGray"
-					}
-				};
-
-				for (var i = 0, length = this.props.texts.length; i < length; i++) {
-
-					list.push(_react2.default.createElement(
-						"li",
-						{ key: i, style: listStyle },
-						_react2.default.createElement(
-							Link,
-							{ to: this.props.links[i], style: linkStyle },
-							this.props.texts[i]
-						)
-					));
-				}
-				return list;
+				this.setState({ visible: !this.state.visible });
 			}
 		}, {
 			key: "render",
 			value: function render() {
 				var ulStyles = {
-					minWidth: this.props.minWidth,
-					position: "absolute",
-					background: "white",
-					padding: "0",
-					zIndex: "1000",
-					marginTop: "15px",
-					opacity: "0.7"
-
+					display: this.state.visible ? "block" : "none"
 				};
+
+				var elements = this.props.data.map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						em
+					);
+				}, this);
+
 				return _react2.default.createElement(
 					"div",
 					null,
 					_react2.default.createElement(
-						"a",
-						{ style: this.props.anchorStyles, href: "#", onClick: this.handleClick.bind(this) },
-						"RESOURCES ",
-						_react2.default.createElement("span", { className: "glyphicon glyphicon-triangle-bottom", "aria-hidden": "true", style: { fontSize: "0.8em" } })
+						"h3",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ href: "#", onClick: this.handleClick.bind(this) },
+							this.props.title
+						)
 					),
 					_react2.default.createElement(
 						"ul",
 						{ style: ulStyles },
-						this.renderList()
+						elements
 					)
 				);
 			}
 		}]);
 
-		return DropDownBtn;
+		return ListWithToggle;
 	})(_react2.default.Component);
 
-	exports.default = (0, _radium2.default)(DropDownBtn);
+	exports.default = ListWithToggle;
 
 /***/ },
-/* 255 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _sharedStyles = __webpack_require__(247);
-
-	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
-
-	var _listWithAnchor = __webpack_require__(259);
-
-	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ClientResourcesDisorders = (function (_React$Component) {
-		_inherits(ClientResourcesDisorders, _React$Component);
-
-		function ClientResourcesDisorders() {
-			_classCallCheck(this, ClientResourcesDisorders);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesDisorders).apply(this, arguments));
-		}
-
-		_createClass(ClientResourcesDisorders, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement(
-								"h2",
-								{ style: _sharedStyles2.default.titleStyles },
-								"Common Disorders"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: topRowStyle },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
-							_react2.default.createElement(
-								"h3",
-								{ style: categoryTitleStyle },
-								"Speech Disorders"
-							),
-							_react2.default.createElement(_listWithAnchor2.default, { texts: speechDO, links: speechDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-6 col-lg-4" },
-							_react2.default.createElement(
-								"h3",
-								{ style: categoryTitleStyle },
-								"Language Disorders"
-							),
-							_react2.default.createElement(_listWithAnchor2.default, { texts: languageDO, links: languageDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: topRowStyle },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
-							_react2.default.createElement(
-								"h3",
-								{ style: categoryTitleStyle },
-								"Communication Options"
-							),
-							_react2.default.createElement(_listWithAnchor2.default, { texts: commOptions, links: commOptionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-6 col-lg-4" },
-							_react2.default.createElement(
-								"h3",
-								{ style: categoryTitleStyle },
-								"Medical and Developmental Conditions"
-							),
-							_react2.default.createElement(_listWithAnchor2.default, { texts: medConditions, links: medConditionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
-						)
-					)
-				);
-			}
-		}]);
-
-		return ClientResourcesDisorders;
-	})(_react2.default.Component);
-
-	exports.default = ClientResourcesDisorders;
-
-	var topRowStyle = {
-		margin: "20px 20px"
-	};
-
-	var categoryTitleStyle = {
-		borderRadius: "20px",
-		border: "3px solid gray",
-		padding: "10px 0"
-	};
-
-	var dataUlStyles = {
-		backgroundColor: _sharedStyles2.default.altColor,
-		borderRadius: "30px",
-		padding: "10px 50px"
-	};
-
-	var dataLiStyles = {
-		textAlign: "left",
-		listStyle: "none",
-		fontSize: "1.3em",
-		padding: "5px 0"
-	};
-
-	var speechDO = ["Apraxia", "Childhood Apraxia of Speech", "Dysarthria", "Speech Sound Disorders: Articulation and Phonological Processes", "Stuttering"];
-	var speechDOLinks = ["http://www.asha.org/public/speech/disorders/ApraxiaAdults/", "http://www.asha.org/public/speech/disorders/ChildhoodApraxia/", "http://www.asha.org/public/speech/disorders/dysarthria/", "http://www.asha.org/public/speech/disorders/SpeechSoundDisorders/", "http://www.asha.org/public/speech/disorders/stuttering/"];
-
-	var languageDO = ["Aphasia", "Language-Based Learning Disabilities", "Preschool Language Disorders", "Selective Mutism"];
-	var languageDOLinks = ["http://www.asha.org/public/speech/disorders/Aphasia/", "http://www.asha.org/public/speech/disorders/LBLD/", "http://www.asha.org/public/speech/disorders/Preschool-Language-Disorders/", "http://www.asha.org/public/speech/disorders/SelectiveMutism/"];
-
-	var commOptions = ["Augmentative and Alternative Communication (AAC)"];
-	var commOptionsLinks = ["http://www.asha.org/public/speech/disorders/AAC/"];
-
-	var medConditions = ["Attention Deficit/Hyperactivity Disorder (ADHD)", "Autism (Autism Spectrum Disorders)", "Dementia", "Stroke", "Traumatic Brain Injury"];
-	var medConditionsLinks = ["http://www.asha.org/public/speech/disorders/ADHD/", "http://www.asha.org/public/speech/disorders/Autism/", "http://www.asha.org/public/speech/disorders/dementia/", "http://www.asha.org/public/speech/disorders/Stroke/", "http://www.asha.org/public/speech/disorders/TBI/"];
-
-/***/ },
-/* 256 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _sharedStyles = __webpack_require__(247);
-
-	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ClientResourcesDevelopment = (function (_React$Component) {
-		_inherits(ClientResourcesDevelopment, _React$Component);
-
-		function ClientResourcesDevelopment() {
-			_classCallCheck(this, ClientResourcesDevelopment);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesDevelopment).apply(this, arguments));
-		}
-
-		_createClass(ClientResourcesDevelopment, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement(
-								"h2",
-								{ style: _sharedStyles2.default.titleStyles },
-								"Typical Development"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement("div", { className: "col-md-offset-1 col-md-10" })
-					)
-				);
-			}
-		}]);
-
-		return ClientResourcesDevelopment;
-	})(_react2.default.Component);
-
-	exports.default = ClientResourcesDevelopment;
-
-/***/ },
-/* 257 */,
 /* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28905,6 +29435,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _listWithToggle = __webpack_require__(257);
+
+	var _listWithToggle2 = _interopRequireDefault(_listWithToggle);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28913,43 +29447,61 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var List = (function (_React$Component) {
-		_inherits(List, _React$Component);
+	var ListWithToggleList = (function (_React$Component) {
+		_inherits(ListWithToggleList, _React$Component);
 
-		function List() {
-			_classCallCheck(this, List);
+		function ListWithToggleList(props) {
+			_classCallCheck(this, ListWithToggleList);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggleList).call(this, props));
+
+			_this.state = { visible: false };
+			return _this;
 		}
 
-		_createClass(List, [{
+		_createClass(ListWithToggleList, [{
+			key: "handleClick",
+			value: function handleClick(e) {
+				e.preventDefault();
+				this.setState({ visible: !this.state.visible });
+			}
+		}, {
 			key: "render",
 			value: function render() {
-				console.log(this.props);
-				var elements = this.props.data.sort().map(function (em, index) {
-					return _react2.default.createElement(
-						"li",
-						{ style: this.props.liStyles, key: index },
-						_react2.default.createElement(
-							"h4",
-							null,
-							em
-						)
-					);
-				}, this);
+				var ulStyles = {
+					display: this.state.visible ? "block" : "none"
+				};
+
+				var elements = [];
+				for (var obj in this.props.data) {
+					elements.push(_react2.default.createElement(_listWithToggle2.default, { title: obj, data: this.props.data[obj], key: obj }));
+				}
 
 				return _react2.default.createElement(
-					"ul",
-					{ style: this.props.ulStyles },
-					elements
+					"div",
+					null,
+					_react2.default.createElement(
+						"h4",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ href: "#", onClick: this.handleClick.bind(this) },
+							this.props.title
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ style: ulStyles },
+						elements
+					)
 				);
 			}
 		}]);
 
-		return List;
+		return ListWithToggleList;
 	})(_react2.default.Component);
 
-	exports.default = List;
+	exports.default = ListWithToggleList;
 
 /***/ },
 /* 259 */
@@ -28967,6 +29519,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _list = __webpack_require__(250);
+
+	var _list2 = _interopRequireDefault(_list);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28975,43 +29531,81 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ListWithAnchor = (function (_React$Component) {
-		_inherits(ListWithAnchor, _React$Component);
+	var ListWithList = (function (_React$Component) {
+		_inherits(ListWithList, _React$Component);
 
-		function ListWithAnchor() {
-			_classCallCheck(this, ListWithAnchor);
+		function ListWithList() {
+			_classCallCheck(this, ListWithList);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithAnchor).apply(this, arguments));
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithList).apply(this, arguments));
 		}
 
-		_createClass(ListWithAnchor, [{
+		_createClass(ListWithList, [{
 			key: "render",
 			value: function render() {
-				console.log(this.props);
-				var elements = this.props.texts.map(function (em, index) {
+				var titleStyle = {
+					border: "2px solid gray",
+					borderRadius: "20px",
+					padding: "10px 20px"
+				};
+
+				var ulStyles = {
+					textAlign: "left"
+				};
+
+				var innerUlStyles = {
+					margin: "10px 0"
+				};
+
+				var elements = [];
+				var title = "";
+				for (var obj in this.props.data) {
+					if (obj === "hearingAndUnderstanding") {
+						title = "Hearing And Understanding";
+					} else if (obj === "talking") {
+						title = "Talking";
+					} else if (obj === "writing") {
+						title = "Writing";
+					} else if (obj === "reading") {
+						title = "Reading";
+					} else if (obj === "speaking") {
+						title = "Speaking";
+					} else if (obj === "listening") {
+						title = "Listening";
+					} else {
+						title = obj;
+					}
+					elements.push(_react2.default.createElement(_list2.default, { title: title, data: this.props.data[obj], key: obj, ulStyles: innerUlStyles }));
+				}
+				if (this.props.data) {
 					return _react2.default.createElement(
-						"li",
-						{ style: this.props.liStyles, key: index },
+						"div",
+						{ style: { textAlign: "left" } },
 						_react2.default.createElement(
-							"a",
-							{ href: this.props.links[index], target: "_blank" },
-							em
+							"h3",
+							{ style: { margin: "40px 0" } },
+							_react2.default.createElement(
+								"span",
+								{ style: titleStyle },
+								this.props.title
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ style: ulStyles },
+							elements
 						)
 					);
-				}, this);
-
-				return _react2.default.createElement(
-					"ul",
-					{ style: this.props.ulStyles },
-					elements
-				);
+				} else {
+					return _react2.default.createElement("div", null);
+				}
 			}
 		}]);
 
-		return ListWithAnchor;
+		return ListWithList;
 	})(_react2.default.Component);
 
-	exports.default = ListWithAnchor;
+	exports.default = ListWithList;
 
 /***/ }
 /******/ ]);

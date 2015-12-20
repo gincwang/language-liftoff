@@ -145,16 +145,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/app\/assets\/slp\/jasmin.JPG": {
+	"\/app\/assets\/slp\/jasmin.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 222223,
-		"inputAbbreviatedPath": "\/app\/assets\/slp\/jasmin.JPG",
-		"outputAbbreviatedPath": "\/app\/assets\/slp\/jasmin.JPG",
+		"inputAbbreviatedPath": "\/app\/assets\/slp\/jasmin.jpg",
+		"outputAbbreviatedPath": "\/app\/assets\/slp\/jasmin.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 1
+		"processed": 0
 		},
 	"\/app\/components\/About.js": {
 		"fileType": 64,
@@ -268,8 +268,8 @@
 		},
 	"\/app\/components\/shared\/listWithList.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/components\/shared\/listWithList.js",
 		"outputAbbreviatedPath": "\/app\/components\/shared\/min\/listWithList-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -290,8 +290,8 @@
 		},
 	"\/app\/components\/shared\/listWithToggleList.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/components\/shared\/listWithToggleList.js",
 		"outputAbbreviatedPath": "\/app\/components\/shared\/min\/listWithToggleList-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -362,6 +362,27 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
+		},
+	"\/README.md": {
+		"criticStyle": 0,
+		"enableFootnotes": 1,
+		"enableLabels": 1,
+		"enableSmartQuotes": 1,
+		"escapeLineBreaks": 0,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/README.md",
+		"maskEmailAddresses": 1,
+		"outputAbbreviatedPath": "\/README.html",
+		"outputFormat": 0,
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"parseMetadata": 1,
+		"processHTML": 0,
+		"randomFootnoteNumbers": 0,
+		"useCompatibilityMode": 0
 		},
 	"\/webpack.config.js": {
 		"fileType": 64,

@@ -83,7 +83,7 @@ let inline = {
 
 let text = {
 	title: "Speech and Language Services For All",
-	intro: <span>Using Evidence-Based Practices(EBP) we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!</span>,
+	intro: <span>Using evidence-based practices, we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!</span>,
 	icontext: ["Our SLP can come to the client's home"]
 };
 

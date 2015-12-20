@@ -24503,7 +24503,7 @@
 
 	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
-	var _Contact = __webpack_require__(256);
+	var _Contact = __webpack_require__(259);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
@@ -27885,7 +27885,7 @@
 		intro: _react2.default.createElement(
 			"span",
 			null,
-			"Using Evidence-Based Practices(EBP) we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!"
+			"Using evidence-based practices, we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!"
 		),
 		icontext: ["Our SLP can come to the client's home"]
 	};
@@ -28821,11 +28821,11 @@
 
 	var _list2 = _interopRequireDefault(_list);
 
-	var _ListWithToggleList = __webpack_require__(258);
+	var _ListWithToggleList = __webpack_require__(256);
 
 	var _ListWithToggleList2 = _interopRequireDefault(_ListWithToggleList);
 
-	var _ListWithList = __webpack_require__(259);
+	var _ListWithList = __webpack_require__(258);
 
 	var _ListWithList2 = _interopRequireDefault(_ListWithList);
 
@@ -29201,6 +29201,277 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _listWithToggle = __webpack_require__(257);
+
+	var _listWithToggle2 = _interopRequireDefault(_listWithToggle);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ListWithToggleList = (function (_React$Component) {
+		_inherits(ListWithToggleList, _React$Component);
+
+		function ListWithToggleList(props) {
+			_classCallCheck(this, ListWithToggleList);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggleList).call(this, props));
+
+			_this.state = { visible: false };
+			return _this;
+		}
+
+		_createClass(ListWithToggleList, [{
+			key: "handleClick",
+			value: function handleClick(e) {
+				e.preventDefault();
+				this.setState({ visible: !this.state.visible });
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var ulStyles = {
+					display: this.state.visible ? "block" : "none"
+				};
+
+				var elements = [];
+				for (var obj in this.props.data) {
+					elements.push(_react2.default.createElement(_listWithToggle2.default, { title: obj, data: this.props.data[obj], key: obj }));
+				}
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"h4",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ href: "#", onClick: this.handleClick.bind(this) },
+							this.props.title
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ style: ulStyles },
+						elements
+					)
+				);
+			}
+		}]);
+
+		return ListWithToggleList;
+	})(_react2.default.Component);
+
+	exports.default = ListWithToggleList;
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ListWithToggle = (function (_React$Component) {
+		_inherits(ListWithToggle, _React$Component);
+
+		function ListWithToggle(props) {
+			_classCallCheck(this, ListWithToggle);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggle).call(this, props));
+
+			_this.state = { visible: false };
+			return _this;
+		}
+
+		_createClass(ListWithToggle, [{
+			key: "handleClick",
+			value: function handleClick(e) {
+				e.preventDefault();
+				this.setState({ visible: !this.state.visible });
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var ulStyles = {
+					display: this.state.visible ? "block" : "none"
+				};
+
+				var elements = this.props.data.map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						em
+					);
+				}, this);
+
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"h3",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ href: "#", onClick: this.handleClick.bind(this) },
+							this.props.title
+						)
+					),
+					_react2.default.createElement(
+						"ul",
+						{ style: ulStyles },
+						elements
+					)
+				);
+			}
+		}]);
+
+		return ListWithToggle;
+	})(_react2.default.Component);
+
+	exports.default = ListWithToggle;
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _list = __webpack_require__(250);
+
+	var _list2 = _interopRequireDefault(_list);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ListWithList = (function (_React$Component) {
+		_inherits(ListWithList, _React$Component);
+
+		function ListWithList() {
+			_classCallCheck(this, ListWithList);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithList).apply(this, arguments));
+		}
+
+		_createClass(ListWithList, [{
+			key: "render",
+			value: function render() {
+				var titleStyle = {
+					border: "2px solid gray",
+					borderRadius: "20px",
+					padding: "10px 20px"
+				};
+
+				var ulStyles = {
+					textAlign: "left"
+				};
+
+				var innerUlStyles = {
+					margin: "10px 0"
+				};
+
+				var elements = [];
+				var title = "";
+				for (var obj in this.props.data) {
+					if (obj === "hearingAndUnderstanding") {
+						title = "Hearing And Understanding";
+					} else if (obj === "talking") {
+						title = "Talking";
+					} else if (obj === "writing") {
+						title = "Writing";
+					} else if (obj === "reading") {
+						title = "Reading";
+					} else if (obj === "speaking") {
+						title = "Speaking";
+					} else if (obj === "listening") {
+						title = "Listening";
+					} else {
+						title = obj;
+					}
+					elements.push(_react2.default.createElement(_list2.default, { title: title, data: this.props.data[obj], key: obj, ulStyles: innerUlStyles }));
+				}
+				if (this.props.data) {
+					return _react2.default.createElement(
+						"div",
+						{ style: { textAlign: "left" } },
+						_react2.default.createElement(
+							"h3",
+							{ style: { margin: "40px 0" } },
+							_react2.default.createElement(
+								"span",
+								{ style: titleStyle },
+								this.props.title
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ style: ulStyles },
+							elements
+						)
+					);
+				} else {
+					return _react2.default.createElement("div", null);
+				}
+			}
+		}]);
+
+		return ListWithList;
+	})(_react2.default.Component);
+
+	exports.default = ListWithList;
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
 	var _sharedStyles = __webpack_require__(247);
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
@@ -29335,277 +29606,6 @@
 	};
 
 	exports.default = Contact;
-
-/***/ },
-/* 257 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ListWithToggle = (function (_React$Component) {
-		_inherits(ListWithToggle, _React$Component);
-
-		function ListWithToggle(props) {
-			_classCallCheck(this, ListWithToggle);
-
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggle).call(this, props));
-
-			_this.state = { visible: false };
-			return _this;
-		}
-
-		_createClass(ListWithToggle, [{
-			key: "handleClick",
-			value: function handleClick(e) {
-				e.preventDefault();
-				this.setState({ visible: !this.state.visible });
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				var ulStyles = {
-					display: this.state.visible ? "block" : "none"
-				};
-
-				var elements = this.props.data.map(function (em, index) {
-					return _react2.default.createElement(
-						"li",
-						{ style: this.props.liStyles, key: index },
-						em
-					);
-				}, this);
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"h3",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ href: "#", onClick: this.handleClick.bind(this) },
-							this.props.title
-						)
-					),
-					_react2.default.createElement(
-						"ul",
-						{ style: ulStyles },
-						elements
-					)
-				);
-			}
-		}]);
-
-		return ListWithToggle;
-	})(_react2.default.Component);
-
-	exports.default = ListWithToggle;
-
-/***/ },
-/* 258 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _listWithToggle = __webpack_require__(257);
-
-	var _listWithToggle2 = _interopRequireDefault(_listWithToggle);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ListWithToggleList = (function (_React$Component) {
-		_inherits(ListWithToggleList, _React$Component);
-
-		function ListWithToggleList(props) {
-			_classCallCheck(this, ListWithToggleList);
-
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggleList).call(this, props));
-
-			_this.state = { visible: false };
-			return _this;
-		}
-
-		_createClass(ListWithToggleList, [{
-			key: "handleClick",
-			value: function handleClick(e) {
-				e.preventDefault();
-				this.setState({ visible: !this.state.visible });
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				var ulStyles = {
-					display: this.state.visible ? "block" : "none"
-				};
-
-				var elements = [];
-				for (var obj in this.props.data) {
-					elements.push(_react2.default.createElement(_listWithToggle2.default, { title: obj, data: this.props.data[obj], key: obj }));
-				}
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"h4",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ href: "#", onClick: this.handleClick.bind(this) },
-							this.props.title
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ style: ulStyles },
-						elements
-					)
-				);
-			}
-		}]);
-
-		return ListWithToggleList;
-	})(_react2.default.Component);
-
-	exports.default = ListWithToggleList;
-
-/***/ },
-/* 259 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _list = __webpack_require__(250);
-
-	var _list2 = _interopRequireDefault(_list);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ListWithList = (function (_React$Component) {
-		_inherits(ListWithList, _React$Component);
-
-		function ListWithList() {
-			_classCallCheck(this, ListWithList);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithList).apply(this, arguments));
-		}
-
-		_createClass(ListWithList, [{
-			key: "render",
-			value: function render() {
-				var titleStyle = {
-					border: "2px solid gray",
-					borderRadius: "20px",
-					padding: "10px 20px"
-				};
-
-				var ulStyles = {
-					textAlign: "left"
-				};
-
-				var innerUlStyles = {
-					margin: "10px 0"
-				};
-
-				var elements = [];
-				var title = "";
-				for (var obj in this.props.data) {
-					if (obj === "hearingAndUnderstanding") {
-						title = "Hearing And Understanding";
-					} else if (obj === "talking") {
-						title = "Talking";
-					} else if (obj === "writing") {
-						title = "Writing";
-					} else if (obj === "reading") {
-						title = "Reading";
-					} else if (obj === "speaking") {
-						title = "Speaking";
-					} else if (obj === "listening") {
-						title = "Listening";
-					} else {
-						title = obj;
-					}
-					elements.push(_react2.default.createElement(_list2.default, { title: title, data: this.props.data[obj], key: obj, ulStyles: innerUlStyles }));
-				}
-				if (this.props.data) {
-					return _react2.default.createElement(
-						"div",
-						{ style: { textAlign: "left" } },
-						_react2.default.createElement(
-							"h3",
-							{ style: { margin: "40px 0" } },
-							_react2.default.createElement(
-								"span",
-								{ style: titleStyle },
-								this.props.title
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ style: ulStyles },
-							elements
-						)
-					);
-				} else {
-					return _react2.default.createElement("div", null);
-				}
-			}
-		}]);
-
-		return ListWithList;
-	})(_react2.default.Component);
-
-	exports.default = ListWithList;
 
 /***/ }
 /******/ ]);

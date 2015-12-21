@@ -9,10 +9,25 @@ class Services extends React.Component {
 	}
 	handleClick(event){
 		event.preventDefault();
-		console.log(event.target);
 		this.setState({toggleText: event.target.id});
 	}
+	setIconStyles(text){
+		console.log(text);
+		var iconColor = this.state.toggleText === text ? "orange" : "transparent";
+		console.log("iconColor: " + iconColor);
+		return{
+			fontSize: "3.5em",
+			backgroundColor: iconColor,
+			borderRadius: "50px",
+			padding: "8px",
+			color: SharedStyles.altColor,
+			':hover': {
+				color: "#ECEFF1"
+			}
+		};
+	}
 	render(){
+
 		return (
 			<div className="container-fluid" style={SharedStyles.mainStyles}>
 				<div className="row" style={SharedStyles.titleRowStyles}>
@@ -29,9 +44,9 @@ class Services extends React.Component {
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<ul className="list-unstyled">
-						<li className="col-sm-offset-3 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="therapy" key="therapy" style={inline.serviceIconStyles}>local_florist</i></a><p style={{borderBottom:this.state.toggleText==="therapy" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Therapy</p></li>
-						<li className="col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="evaluation" key="evaluation" style={inline.serviceIconStyles}>assignment</i></a><p style={{borderBottom:this.state.toggleText==="evaluation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Evaluation</p></li>
-						<li className="col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="consultation" key="consultation" style={inline.serviceIconStyles}>record_voice_over</i></a><p style={{borderBottom:this.state.toggleText==="consultation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Consultation</p></li>
+						<li className="col-sm-offset-3 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="therapy" key="therapy" style={this.setIconStyles("therapy")}>local_florist</i></a><p style={{borderBottom:this.state.toggleText==="therapy" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Therapy</p></li>
+						<li className="col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="evaluation" key="evaluation" style={this.setIconStyles("evaluation")}>assignment</i></a><p style={{borderBottom:this.state.toggleText==="evaluation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Evaluation</p></li>
+						<li className="col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="consultation" key="consultation" style={this.setIconStyles("consultation")}>record_voice_over</i></a><p style={{borderBottom:this.state.toggleText==="consultation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Consultation</p></li>
 					</ul>
 					<div className="col-sm-offset-2 col-sm-8">
 						<h4 style={inline.textToggleStyles}>{texts[this.state.toggleText]}</h4>
@@ -59,8 +74,6 @@ class Services extends React.Component {
 		);
 	}
 }
-
-
 let inline = {
 	paragraphStyles: {
 		lineHeight: SharedStyles.lineHeight,
@@ -71,13 +84,6 @@ let inline = {
 		backgroundColor: SharedStyles.altColor,
 		borderRadius: "30px",
 		padding: "30px 30px"
-	},
-	serviceIconStyles: {
-		fontSize: "3.5em",
-		color: SharedStyles.altColor,
-		':hover': {
-			color: "#ECEFF1"
-		}
 	},
 	serviceLinkStyles: {
 		fontSize: "1.5em",
@@ -100,6 +106,7 @@ let inline = {
 	settingPStyles: {
 		textAlign: "left"
 	}
+
 }
 
 

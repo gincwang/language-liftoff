@@ -28212,12 +28212,29 @@
 			key: "handleClick",
 			value: function handleClick(event) {
 				event.preventDefault();
-				console.log(event.target);
 				this.setState({ toggleText: event.target.id });
+			}
+		}, {
+			key: "setIconStyles",
+			value: function setIconStyles(text) {
+				console.log(text);
+				var iconColor = this.state.toggleText === text ? "orange" : "transparent";
+				console.log("iconColor: " + iconColor);
+				return {
+					fontSize: "3.5em",
+					backgroundColor: iconColor,
+					borderRadius: "50px",
+					padding: "8px",
+					color: _sharedStyles2.default.altColor,
+					':hover': {
+						color: "#ECEFF1"
+					}
+				};
 			}
 		}, {
 			key: "render",
 			value: function render() {
+
 				return _react2.default.createElement(
 					"div",
 					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
@@ -28267,7 +28284,7 @@
 									{ href: "#", onClick: this.handleClick.bind(this) },
 									_react2.default.createElement(
 										"i",
-										{ className: "material-icons", id: "therapy", key: "therapy", style: inline.serviceIconStyles },
+										{ className: "material-icons", id: "therapy", key: "therapy", style: this.setIconStyles("therapy") },
 										"local_florist"
 									)
 								),
@@ -28285,7 +28302,7 @@
 									{ href: "#", onClick: this.handleClick.bind(this) },
 									_react2.default.createElement(
 										"i",
-										{ className: "material-icons", id: "evaluation", key: "evaluation", style: inline.serviceIconStyles },
+										{ className: "material-icons", id: "evaluation", key: "evaluation", style: this.setIconStyles("evaluation") },
 										"assignment"
 									)
 								),
@@ -28303,7 +28320,7 @@
 									{ href: "#", onClick: this.handleClick.bind(this) },
 									_react2.default.createElement(
 										"i",
-										{ className: "material-icons", id: "consultation", key: "consultation", style: inline.serviceIconStyles },
+										{ className: "material-icons", id: "consultation", key: "consultation", style: this.setIconStyles("consultation") },
 										"record_voice_over"
 									)
 								),
@@ -28460,13 +28477,6 @@
 			borderRadius: "30px",
 			padding: "30px 30px"
 		},
-		serviceIconStyles: {
-			fontSize: "3.5em",
-			color: _sharedStyles2.default.altColor,
-			':hover': {
-				color: "#ECEFF1"
-			}
-		},
 		serviceLinkStyles: {
 			fontSize: "1.5em",
 			padding: "20px",
@@ -28488,6 +28498,7 @@
 		settingPStyles: {
 			textAlign: "left"
 		}
+
 	};
 
 	var texts = {
@@ -28771,7 +28782,6 @@
 		_createClass(ListWithAnchor, [{
 			key: "render",
 			value: function render() {
-				console.log(this.props);
 				var elements = this.props.texts.map(function (em, index) {
 					return _react2.default.createElement(
 						"li",

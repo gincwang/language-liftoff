@@ -8,9 +8,9 @@ class ClientResourcesDevelopment extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			selectedSection: null,
-			selectedTitle: "",
-			zeroToOneVisible: false
+			selectedSection: development.zeroToOneYear.zeroToThreeMonths,
+			selectedTitle: "0-3 Months",
+			zeroToOneVisible: true
 		};
 	}
 	handleClick(e){

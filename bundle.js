@@ -28856,9 +28856,9 @@
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesDevelopment).call(this, props));
 
 			_this.state = {
-				selectedSection: null,
-				selectedTitle: "",
-				zeroToOneVisible: false
+				selectedSection: development.zeroToOneYear.zeroToThreeMonths,
+				selectedTitle: "0-3 Months",
+				zeroToOneVisible: true
 			};
 			return _this;
 		}

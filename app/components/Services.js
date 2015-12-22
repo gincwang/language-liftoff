@@ -13,7 +13,7 @@ class Services extends React.Component {
 	}
 	setIconStyles(text){
 		console.log(text);
-		var iconColor = this.state.toggleText === text ? "orange" : "transparent";
+		var iconColor = this.state.toggleText === text ? "#2E7D32" : "transparent";
 		console.log("iconColor: " + iconColor);
 		return{
 			fontSize: "3.5em",

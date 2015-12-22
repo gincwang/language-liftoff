@@ -85,11 +85,6 @@ let inline = {
 		borderRadius: "30px",
 		padding: "30px 30px"
 	},
-	serviceLinkStyles: {
-		fontSize: "1.5em",
-		padding: "20px",
-		color: SharedStyles.altColor
-	},
 	settingStyles: {
 		border: "2px solid gray",
 		padding: "10px 25px",

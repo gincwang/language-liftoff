@@ -19,7 +19,7 @@ class Services extends React.Component {
 			fontSize: "3.5em",
 			backgroundColor: iconColor,
 			borderRadius: "50px",
-			padding: "8px",
+			padding: "15px",
 			color: SharedStyles.altColor,
 			':hover': {
 				color: "#ECEFF1"

@@ -28224,7 +28224,7 @@
 					fontSize: "3.5em",
 					backgroundColor: iconColor,
 					borderRadius: "50px",
-					padding: "8px",
+					padding: "15px",
 					color: _sharedStyles2.default.altColor,
 					':hover': {
 						color: "#ECEFF1"

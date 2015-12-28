@@ -24577,11 +24577,25 @@
 		}
 
 		_createClass(Main, [{
+			key: 'handleClick',
+			value: function handleClick(e) {
+				//e.stopPropagation();
+				var node = e.target;
+				for (var i = 0; i < 4; i++) {
+					if (node.className === "navClass") {
+						console.log("triggered");
+						break;
+					} else {
+						node = node.parentNode;
+					}
+				}
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ className: 'container-fluid', style: { padding: "0" } },
+					{ className: 'container-fluid', style: { padding: "0" }, onClick: this.handleClick.bind(this) },
 					_react2.default.createElement(
 						'div',
 						{ style: { backgroundColor: "white" } },
@@ -24617,7 +24631,7 @@
 								_react2.default.createElement(
 									'li',
 									{ style: inline.navLiStyles },
-									_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDowntext, links: dropDownLink, minWidth: 150 })
+									_react2.default.createElement(_dropDownBtn2.default, { className: "navClass", anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDowntext, links: dropDownLink, minWidth: 150 })
 								),
 								_react2.default.createElement(
 									'li',
@@ -27584,7 +27598,6 @@
 			key: "handleLiClick",
 			value: function handleLiClick(e) {
 				e.preventDefault();
-				console.log("logging clicks");
 				if (this.state.toggleVisible) {
 					this.setState({ toggleVisible: false });
 				}
@@ -27637,7 +27650,7 @@
 				};
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: this.props.className },
 					_react2.default.createElement(
 						"a",
 						{ style: this.props.anchorStyles, href: "#", onClick: this.handleClick.bind(this) },
@@ -28076,12 +28089,12 @@
 						{ className: "row", style: inline.therapistRowStyle },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-offset-3 col-xs-6 col-sm-offset-0 col-sm-4 col-md-offset-1 col-md-2" },
-							_react2.default.createElement("img", { className: "img-responsive", style: inline.photoStyle, src: "app/assets/slp/jasmin.jpg", alt: "slp", height: 400 })
+							{ className: "col-xs-offset-3 col-xs-6 col-sm-offset-0 col-sm-4 col-md-offset-1 col-md-3" },
+							_react2.default.createElement("img", { className: "img-responsive", style: inline.photoStyle, src: "app/assets/slp/language-liftoff-slp-jasmin.jpg", alt: "slp", width: 550 })
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-12 col-sm-8 col-md-8" },
+							{ className: "col-xs-12 col-sm-8 col-md-7" },
 							_react2.default.createElement(
 								"h4",
 								{ style: inline.therapistParagraphStyle },
@@ -28090,7 +28103,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-12 col-sm-8 col-md-offset-1 col-md-10 col-lg-offset-0 col-lg-8" },
+							{ className: "col-xs-12 col-sm-12 col-md-offset-1 col-md-10" },
 							_react2.default.createElement(
 								"h4",
 								{ style: inline.therapistParagraphStyle },

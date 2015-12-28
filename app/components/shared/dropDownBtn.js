@@ -14,7 +14,6 @@ class DropDownBtn extends React.Component {
 	}
 	handleLiClick(e){
 		e.preventDefault();
-		console.log("logging clicks");
 		if(this.state.toggleVisible){
 			this.setState({toggleVisible: false});
 		}
@@ -56,7 +55,7 @@ class DropDownBtn extends React.Component {
 
 		};
 		return (
-			<div><a style={this.props.anchorStyles} href="#" onClick={this.handleClick.bind(this)} >RESOURCES <span className="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style={{fontSize: "0.8em"}}></span></a>
+			<div className={this.props.className}><a style={this.props.anchorStyles} href="#" onClick={this.handleClick.bind(this)}>RESOURCES <span className="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style={{fontSize: "0.8em"}}></span></a>
 				<ul style={ulStyles}>
 					{this.renderList()}
 				</ul>

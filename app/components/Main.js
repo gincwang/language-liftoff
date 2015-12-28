@@ -7,16 +7,28 @@ var Link = require('react-router').Link;
 Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
 class Main extends React.Component{
+	handleClick(e){
+		//e.stopPropagation();
+		let node = e.target;
+		for(let i=0; i<4; i++){
+			if(node.className === "navClass"){
+				console.log("triggered");
+				break;
+			}else {
+				node = node.parentNode;
+			}
+		}
+	}
     render(){
         return (
-        	<div className="container-fluid" style={{padding: "0"}}>
+        	<div className="container-fluid" style={{padding: "0"}} onClick={this.handleClick.bind(this)}>
         		<div style={{backgroundColor: "white"}}>
 		            <nav style={inline.navStyles}>
 		            	<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={60}/></Link>
 		                <ul style={inline.navUlStyles}>
 		                	<li style={inline.navLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={inline.navLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-		                    <li style={inline.navLiStyles}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink} minWidth={150} /></li>
+		                    <li style={inline.navLiStyles}><DropDownButton className={"navClass"} anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink}  minWidth={150} /></li>
 		                    <li style={inline.navLiStyles}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
 		                    <li style={inline.navLiStyles}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>

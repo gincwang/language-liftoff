@@ -1,5 +1,5 @@
 # language-liftoff
-This is an informational website for my wife's private speech and language clinic, to find out more please visit www.languageliftoff.com
+This is an informational website I made for my wife's private speech and language clinic, to find out more please visit www.languageliftoff.com
 
 I wanted to create this website as an opportunity to learn about how React JS works, so here are the few libraries/concepts I've played with in this project:
 * React JS

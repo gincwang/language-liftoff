@@ -12,6 +12,13 @@ class DropDownBtn extends React.Component {
 		e.preventDefault();
 		this.setState({toggleVisible: !this.state.toggleVisible});
 	}
+	handleLiClick(e){
+		e.preventDefault();
+		console.log("logging clicks");
+		if(this.state.toggleVisible){
+			this.setState({toggleVisible: false});
+		}
+	}
 	renderList(){
 		var list = [];
 		let listStyle = {
@@ -32,7 +39,7 @@ class DropDownBtn extends React.Component {
 		for(let i=0, length=this.props.texts.length; i < length; i++){
 
 			list.push(
-				<li key={i} style={listStyle}><Link to={this.props.links[i]} style={linkStyle} >{this.props.texts[i]}</Link></li>
+				<li key={i} style={listStyle} onClick={this.handleLiClick.bind(this)}><Link to={this.props.links[i]} style={linkStyle} >{this.props.texts[i]}</Link></li>
 			);
 		}
 		return list;

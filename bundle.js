@@ -27581,6 +27581,15 @@
 				this.setState({ toggleVisible: !this.state.toggleVisible });
 			}
 		}, {
+			key: "handleLiClick",
+			value: function handleLiClick(e) {
+				e.preventDefault();
+				console.log("logging clicks");
+				if (this.state.toggleVisible) {
+					this.setState({ toggleVisible: false });
+				}
+			}
+		}, {
 			key: "renderList",
 			value: function renderList() {
 				var list = [];
@@ -27603,7 +27612,7 @@
 
 					list.push(_react2.default.createElement(
 						"li",
-						{ key: i, style: listStyle },
+						{ key: i, style: listStyle, onClick: this.handleLiClick.bind(this) },
 						_react2.default.createElement(
 							Link,
 							{ to: this.props.links[i], style: linkStyle },

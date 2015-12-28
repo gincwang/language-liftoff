@@ -24591,7 +24591,7 @@
 							_react2.default.createElement(
 								Link,
 								{ to: '/' },
-								_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/logo-full-sm.png", alt: 'logo', height: 60 })
+								_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 60 })
 							),
 							_react2.default.createElement(
 								'ul',
@@ -24647,7 +24647,7 @@
 						_react2.default.createElement(
 							Link,
 							{ to: '/' },
-							_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/logo.png", alt: 'logo', height: 40 })
+							_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff.png", alt: 'language-liftoff-logo', height: 40 })
 						),
 						_react2.default.createElement(
 							'ul',

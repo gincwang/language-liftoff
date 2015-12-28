@@ -12,7 +12,7 @@ class Main extends React.Component{
         	<div className="container-fluid" style={{padding: "0"}}>
         		<div style={{backgroundColor: "white"}}>
 		            <nav style={inline.navStyles}>
-		            	<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/logo-full-sm.png"} alt="logo" height={60}/></Link>
+		            	<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={60}/></Link>
 		                <ul style={inline.navUlStyles}>
 		                	<li style={inline.navLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={inline.navLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
@@ -24,7 +24,7 @@ class Main extends React.Component{
 		        </div>
 	            {this.props.children}
 	            <div style={inline.footerStyles}>
-					<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/logo.png"} alt="logo" height={40}/></Link>	            
+					<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff.png"} alt="language-liftoff-logo" height={40}/></Link>	            
             		<ul style={inline.footerUlStyles}>
 	                	<li style={inline.footerLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 	                    <li style={inline.footerLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>

@@ -89,12 +89,12 @@ let inline = {
 		borderRadius: "10px"
 	},
 	serviceLinkStyles: {
-		fontSize: "1.5em",
+		fontSize: "1.35em",
 		padding: "20px",
 		color: "gray"
 	},
 	settingIconStyles: {
-		fontSize: "4em"
+		fontSize: "3.5em"
 	},
 	settingPStyles: {
 		textAlign: "left"

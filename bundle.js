@@ -24570,25 +24570,30 @@
 	var Main = (function (_React$Component) {
 		_inherits(Main, _React$Component);
 
-		function Main() {
+		function Main(props) {
 			_classCallCheck(this, Main);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
+
+			_this.state = {
+				hideDropDown: true
+			};
+			return _this;
 		}
 
 		_createClass(Main, [{
 			key: 'handleClick',
 			value: function handleClick(e) {
-				//e.stopPropagation();
+				//Checks if user clicked on any dropdown button, then trigger state change.
 				var node = e.target;
 				for (var i = 0; i < 4; i++) {
-					if (node.className === "navClass") {
-						console.log("triggered");
-						break;
+					if (node.className === "dropDownBtn") {
+						return;
 					} else {
 						node = node.parentNode;
 					}
 				}
+				this.setState({ hideDropDown: !this.state.hideDropDown });
 			}
 		}, {
 			key: 'render',
@@ -24631,7 +24636,7 @@
 								_react2.default.createElement(
 									'li',
 									{ style: inline.navLiStyles },
-									_react2.default.createElement(_dropDownBtn2.default, { className: "navClass", anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDowntext, links: dropDownLink, minWidth: 150 })
+									_react2.default.createElement(_dropDownBtn2.default, { className: "dropDownBtn", anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDowntext, links: dropDownLink, minWidth: 150, hideDropDown: this.state.hideDropDown })
 								),
 								_react2.default.createElement(
 									'li',
@@ -27589,6 +27594,16 @@
 		}
 
 		_createClass(DropDownBtn, [{
+			key: "componentWillUpdate",
+			value: function componentWillUpdate(nextProps) {
+				//check if hideDropDwn prop has changed, and hides this component if visible
+				if (this.props.hideDropDown !== nextProps.hideDropDown) {
+					if (this.state.toggleVisible) {
+						this.setState({ toggleVisible: false });
+					}
+				}
+			}
+		}, {
 			key: "handleClick",
 			value: function handleClick(e) {
 				e.preventDefault();

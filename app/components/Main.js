@@ -7,17 +7,23 @@ var Link = require('react-router').Link;
 Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
 class Main extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			hideDropDown: true
+		};
+	}
 	handleClick(e){
-		//e.stopPropagation();
+		//Checks if user clicked on any dropdown button, then trigger state change.
 		let node = e.target;
 		for(let i=0; i<4; i++){
-			if(node.className === "navClass"){
-				console.log("triggered");
-				break;
+			if(node.className === "dropDownBtn"){
+				return;
 			}else {
 				node = node.parentNode;
 			}
 		}
+		this.setState({hideDropDown: !this.state.hideDropDown});
 	}
     render(){
         return (
@@ -28,7 +34,7 @@ class Main extends React.Component{
 		                <ul style={inline.navUlStyles}>
 		                	<li style={inline.navLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={inline.navLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-		                    <li style={inline.navLiStyles}><DropDownButton className={"navClass"} anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink}  minWidth={150} /></li>
+		                    <li style={inline.navLiStyles}><DropDownButton className={"dropDownBtn"} anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink} minWidth={150} hideDropDown={this.state.hideDropDown}/></li>
 		                    <li style={inline.navLiStyles}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
 		                    <li style={inline.navLiStyles}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>

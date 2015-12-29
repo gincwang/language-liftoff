@@ -8,6 +8,15 @@ class DropDownBtn extends React.Component {
 		super(props);
 		this.state = {toggleVisible: false};
 	}
+	componentWillUpdate(nextProps){
+		//check if hideDropDwn prop has changed, and hides this component if visible
+		if(this.props.hideDropDown !== nextProps.hideDropDown){
+			if(this.state.toggleVisible){
+				this.setState({toggleVisible: false});
+			}
+		}
+
+	}
 	handleClick(e){
 		e.preventDefault();
 		this.setState({toggleVisible: !this.state.toggleVisible});

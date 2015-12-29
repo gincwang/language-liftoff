@@ -28143,11 +28143,7 @@
 								"h4",
 								{ style: inline.therapistParagraphStyle },
 								text.therapistIntro
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-xs-12 col-sm-12 col-md-offset-1 col-md-10" },
+							),
 							_react2.default.createElement(
 								"h4",
 								{ style: inline.therapistParagraphStyle },
@@ -28178,7 +28174,7 @@
 			borderRadius: "10px"
 		},
 		photoStyle: {
-			margin: "40px 0 0 0",
+			margin: "20px 0",
 			border: "5px solid white",
 			borderRadius: "20px"
 		},

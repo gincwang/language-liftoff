@@ -59,12 +59,12 @@ class DropDownBtn extends React.Component {
 			background: "white",
 			padding: "0",
 			zIndex: "1000",
-			marginTop: "15px",
+			marginTop: "0",
 			opacity: "0.7"
 
 		};
 		return (
-			<div className={this.props.className}><a style={this.props.anchorStyles} href="#" onClick={this.handleClick.bind(this)}>RESOURCES <span className="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style={{fontSize: "0.8em"}}></span></a>
+			<div className={this.props.className}><a style={this.props.anchorStyles} href="#" onClick={this.handleClick.bind(this)}> {this.props.title} <span className="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style={{fontSize: "0.8em"}}></span></a>
 				<ul style={ulStyles}>
 					{this.renderList()}
 				</ul>

@@ -12,9 +12,7 @@ class Services extends React.Component {
 		this.setState({toggleText: event.target.id});
 	}
 	setIconStyles(text){
-		console.log(text);
 		var iconColor = this.state.toggleText === text ? "#2E7D32" : "transparent";
-		console.log("iconColor: " + iconColor);
 		return{
 			fontSize: "3.5em",
 			backgroundColor: iconColor,

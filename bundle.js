@@ -24576,7 +24576,8 @@
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
 
 			_this.state = {
-				hideDropDown: true
+				hideDropDown: true,
+				selectedTab: "HOME"
 			};
 			return _this;
 		}
@@ -24585,8 +24586,8 @@
 			key: 'handleClick',
 			value: function handleClick(e) {
 				//Checks if user clicked on any dropdown button, then trigger state change.
-				var node = e.target;
-				for (var i = 0; i < 4; i++) {
+				var node = e.target.parentNode.parentNode;
+				for (var i = 0; i < 2; i++) {
 					if (node.className === "dropDownBtn") {
 						return;
 					} else {
@@ -24594,6 +24595,34 @@
 					}
 				}
 				this.setState({ hideDropDown: !this.state.hideDropDown });
+			}
+		}, {
+			key: 'navLiStyles',
+			value: function navLiStyles(tabTitle) {
+				return {
+					flex: "1 20%",
+					backgroundColor: tabTitle === this.state.selectedTab ? _sharedStyles2.default.mainColor : _sharedStyles2.default.altColor
+				};
+			}
+		}, {
+			key: 'handleTabClick',
+			value: function handleTabClick(e) {
+
+				//there's edge cases when clicking on dropdown menu:
+				//	 if the carrot is clicked the textContent will show only space,
+				//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
+				var tabText = e.target.textContent.trim();
+				var node = e.target.parentNode.parentNode;
+				for (var i = 0; i < 2; i++) {
+					if (node.className === "dropDownBtn") {
+						tabText = "RESOURCES";
+						break;
+					} else {
+						node = node.parentNode;
+					}
+				}
+
+				this.setState({ selectedTab: tabText });
 			}
 		}, {
 			key: 'render',
@@ -24617,7 +24646,7 @@
 								{ style: inline.navUlStyles },
 								_react2.default.createElement(
 									'li',
-									{ style: inline.navLiStyles },
+									{ style: this.navLiStyles("HOME"), onClick: this.handleTabClick.bind(this) },
 									_react2.default.createElement(
 										Link,
 										{ to: '/', style: inline.navLinkStyles },
@@ -24626,7 +24655,7 @@
 								),
 								_react2.default.createElement(
 									'li',
-									{ style: inline.navLiStyles },
+									{ style: this.navLiStyles("SERVICES"), onClick: this.handleTabClick.bind(this) },
 									_react2.default.createElement(
 										Link,
 										{ to: '/services', style: inline.navLinkStyles },
@@ -24635,12 +24664,12 @@
 								),
 								_react2.default.createElement(
 									'li',
-									{ style: inline.navLiStyles },
+									{ style: this.navLiStyles("RESOURCES"), onClick: this.handleTabClick.bind(this) },
 									_react2.default.createElement(_dropDownBtn2.default, { className: "dropDownBtn", anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDowntext, links: dropDownLink, minWidth: 150, hideDropDown: this.state.hideDropDown })
 								),
 								_react2.default.createElement(
 									'li',
-									{ style: inline.navLiStyles },
+									{ style: this.navLiStyles("ABOUT US"), onClick: this.handleTabClick.bind(this) },
 									_react2.default.createElement(
 										Link,
 										{ to: '/about', style: inline.navLinkStyles },
@@ -24649,7 +24678,7 @@
 								),
 								_react2.default.createElement(
 									'li',
-									{ style: inline.navLiStyles },
+									{ style: this.navLiStyles("CONTACT"), onClick: this.handleTabClick.bind(this) },
 									_react2.default.createElement(
 										Link,
 										{ to: '/contact', style: inline.navLinkStyles },
@@ -24725,6 +24754,8 @@
 		return Main;
 	})(_react2.default.Component);
 
+	exports.default = (0, _radium2.default)(Main);
+
 	var dropDowntext = ["Common Disorders", "Typical Development"];
 	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development"];
 
@@ -24743,14 +24774,12 @@
 			flexFlow: "row nowrap",
 			fontSize: "1em",
 			listStyle: "none",
-			margin: "auto",
+			margin: "0",
 			padding: "0"
 		},
 		navLogoStyles: {
-			margin: "15px 20px"
-		},
-		navLiStyles: {
-			flex: "1 20%"
+			margin: "0 20px",
+			padding: "4px 0"
 		},
 		navLinkStyles: {
 			color: _sharedStyles2.default.navTextColor,
@@ -24780,8 +24809,6 @@
 			margin: "0 5px"
 		}
 	};
-
-	exports.default = (0, _radium2.default)(Main);
 
 /***/ },
 /* 212 */
@@ -27659,7 +27686,7 @@
 					background: "white",
 					padding: "0",
 					zIndex: "1000",
-					marginTop: "15px",
+					marginTop: "0",
 					opacity: "0.7"
 
 				};
@@ -27669,7 +27696,9 @@
 					_react2.default.createElement(
 						"a",
 						{ style: this.props.anchorStyles, href: "#", onClick: this.handleClick.bind(this) },
-						"RESOURCES ",
+						" ",
+						this.props.title,
+						" ",
 						_react2.default.createElement("span", { className: "glyphicon glyphicon-triangle-bottom", "aria-hidden": "true", style: { fontSize: "0.8em" } })
 					),
 					_react2.default.createElement(
@@ -28254,9 +28283,7 @@
 		}, {
 			key: "setIconStyles",
 			value: function setIconStyles(text) {
-				console.log(text);
 				var iconColor = this.state.toggleText === text ? "#2E7D32" : "transparent";
-				console.log("iconColor: " + iconColor);
 				return {
 					fontSize: "3.5em",
 					backgroundColor: iconColor,

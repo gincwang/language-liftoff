@@ -76,7 +76,7 @@ let inline = {
 		backgroundColor: SharedStyles.altColor
 	},
 	linkStyles: {
-		margin: "20px 0"
+		margin: "0 0 35px"
 	}
 }
 

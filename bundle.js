@@ -27942,7 +27942,7 @@
 			backgroundColor: _sharedStyles2.default.altColor
 		},
 		linkStyles: {
-			margin: "20px 0"
+			margin: "0 0 35px"
 		}
 	};
 

@@ -22,7 +22,8 @@ class Contact extends React.Component {
 						<ul style={inline.ulStyles}>
 							<li><h4><span className="glyphicon glyphicon-earphone" style={SharedStyles.glyphiconStyles}></span> : <a href="tel:4253954671" style={inline.linkStyles}>425-395-4671</a></h4></li>
 							<li><h4><span className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></span> : <a href="mailto:services@languageliftoff.com?subject=Speech%20Inquiries" style={inline.linkStyles}>services@languageliftoff.com</a></h4></li>
-							<li><h4><a href={"http://www.facebook.com/LanguageLiftoff"} target={"_blank"} ><img src={"app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png"} width={114} /></a></h4></li>
+							<li><h4><i className="material-icons" style={inline.iconStyles}>store_mall_directory</i> : <a target="_blank" style={inline.linkStyles} href="https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015">Renton, WA 98059</a></h4></li>
+							<li style={{marginTop: "20px"}}><h4><a href={"http://www.facebook.com/LanguageLiftoff"} target={"_blank"} ><img src={"app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png"} width={114} /></a></h4></li>
 						</ul>
 					</div>
 				</div>
@@ -62,6 +63,9 @@ let inline = {
 		borderRadius: "15px",
 		border: "2px solid gray",
 		padding: "10px 25px"
+	},
+	iconStyles: {
+		verticalAlign: "middle"
 	}
 };
 

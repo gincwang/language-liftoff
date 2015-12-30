@@ -27733,6 +27733,9 @@
 		}
 
 		_createClass(Home, [{
+			key: "handleServiceClick",
+			value: function handleServiceClick(e) {}
+		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -27838,16 +27841,20 @@
 						"div",
 						{ className: "row", style: inline.linkStyles },
 						_react2.default.createElement(
-							Link,
-							{ to: "/services" },
+							"div",
+							{ onClick: this.handleServiceClick.bind(this) },
 							_react2.default.createElement(
-								"h4",
-								null,
-								"Learn more",
+								Link,
+								{ to: "/services" },
 								_react2.default.createElement(
-									"i",
-									{ className: "material-icons", style: inline.iconAltStyles },
-									"play_arrow"
+									"h4",
+									null,
+									"Learn more",
+									_react2.default.createElement(
+										"i",
+										{ className: "material-icons", style: inline.iconAltStyles },
+										"play_arrow"
+									)
 								)
 							)
 						)
@@ -29620,6 +29627,25 @@
 										"h4",
 										null,
 										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconStyles },
+											"store_mall_directory"
+										),
+										" : ",
+										_react2.default.createElement(
+											"a",
+											{ target: "_blank", style: inline.linkStyles, href: "https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015" },
+											"Renton, WA 98059"
+										)
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ style: { marginTop: "20px" } },
+									_react2.default.createElement(
+										"h4",
+										null,
+										_react2.default.createElement(
 											"a",
 											{ href: "http://www.facebook.com/LanguageLiftoff", target: "_blank" },
 											_react2.default.createElement("img", { src: "app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png", width: 114 })
@@ -29687,6 +29713,9 @@
 			borderRadius: "15px",
 			border: "2px solid gray",
 			padding: "10px 25px"
+		},
+		iconStyles: {
+			verticalAlign: "middle"
 		}
 	};
 

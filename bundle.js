@@ -24607,10 +24607,10 @@
 		}, {
 			key: 'handleTabClick',
 			value: function handleTabClick(e) {
-
 				//there's edge cases when clicking on dropdown menu:
 				//	 if the carrot is clicked the textContent will show only space,
 				//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
+				//	 so look for if its parent class name equals dropDownBtn
 				var tabText = e.target.textContent.trim();
 				var node = e.target.parentNode.parentNode;
 				for (var i = 0; i < 2; i++) {
@@ -27809,7 +27809,7 @@
 							{ className: "list-unstyled" },
 							_react2.default.createElement(
 								"li",
-								{ className: "col-sm-3 col-md-3 col-lg-offset-2 col-lg-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2", style: inline.serviceLinkStyles },
 								_react2.default.createElement(
 									"i",
 									{ className: "material-icons", style: inline.iconStyles },
@@ -27823,7 +27823,7 @@
 							),
 							_react2.default.createElement(
 								"li",
-								{ className: "col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
 								_react2.default.createElement(
 									"i",
 									{ className: "material-icons", style: inline.iconStyles },
@@ -27837,7 +27837,7 @@
 							),
 							_react2.default.createElement(
 								"li",
-								{ className: "col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
 								_react2.default.createElement(
 									"i",
 									{ className: "material-icons", style: inline.iconStyles },
@@ -27851,7 +27851,7 @@
 							),
 							_react2.default.createElement(
 								"li",
-								{ className: "col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
 								_react2.default.createElement(
 									"i",
 									{ className: "material-icons", style: inline.iconStyles },
@@ -28338,7 +28338,7 @@
 							{ className: "list-unstyled" },
 							_react2.default.createElement(
 								"li",
-								{ className: "col-sm-offset-3 col-sm-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-4 col-sm-offset-3 col-sm-2", style: inline.serviceLinkStyles },
 								_react2.default.createElement(
 									"a",
 									{ href: "#", onClick: this.handleClick.bind(this) },
@@ -28356,7 +28356,7 @@
 							),
 							_react2.default.createElement(
 								"li",
-								{ className: "col-sm-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-4 col-sm-2", style: inline.serviceLinkStyles },
 								_react2.default.createElement(
 									"a",
 									{ href: "#", onClick: this.handleClick.bind(this) },
@@ -28374,7 +28374,7 @@
 							),
 							_react2.default.createElement(
 								"li",
-								{ className: "col-sm-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-4 col-sm-2", style: inline.serviceLinkStyles },
 								_react2.default.createElement(
 									"a",
 									{ href: "#", onClick: this.handleClick.bind(this) },
@@ -28393,7 +28393,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-offset-2 col-sm-8" },
+							{ className: "col-xs-12 col-sm-offset-2 col-sm-8" },
 							_react2.default.createElement(
 								"h4",
 								{ style: inline.textToggleStyles },
@@ -29541,6 +29541,10 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
+	var _faqDiv = __webpack_require__(260);
+
+	var _faqDiv2 = _interopRequireDefault(_faqDiv);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29600,7 +29604,7 @@
 						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4" },
+							{ className: "col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4" },
 							_react2.default.createElement(
 								"ul",
 								{ style: inline.ulStyles },
@@ -29649,6 +29653,42 @@
 								)
 							)
 						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10" },
+							_react2.default.createElement(
+								"h2",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ style: inline.sectionTitleStyles },
+									"FAQ"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: { padding: "10px" } },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							_react2.default.createElement(_faqDiv2.default, { faq: faq.one })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							_react2.default.createElement(_faqDiv2.default, { faq: faq.two })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							_react2.default.createElement(_faqDiv2.default, { faq: faq.three })
+						)
 					)
 				);
 			}
@@ -29667,10 +29707,113 @@
 		},
 		linkStyles: {
 			color: "#9E9E9E"
+		},
+		sectionTitleStyles: {
+			borderRadius: "15px",
+			border: "2px solid gray",
+			padding: "10px 25px"
 		}
 	};
 
+	var faq = {
+		one: {
+			question: "What forms of payment are accepted?",
+			answer: _react2.default.createElement(
+				"span",
+				null,
+				"We are in-network providers with ",
+				_react2.default.createElement(
+					"a",
+					{ href: "https://www.premera.com/wa/visitor/" },
+					"Premera Blue Cross."
+				),
+				" We accept cash or check as payment."
+			)
+		},
+		two: {
+			question: "In which areas can in-home therapy services be provided?",
+			answer: "We can provide in-home therapy services in the cities of Renton, Newcastle, Bellevue, Issaquah, Tukwila, and Kent."
+		},
+		three: {
+			question: "Do you provide services in other languages?",
+			answer: "We provide services in English, Mandarin Chinese, and Spanish."
+		}
+
+	};
+
 	exports.default = Contact;
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FaqDiv = (function (_React$Component) {
+		_inherits(FaqDiv, _React$Component);
+
+		function FaqDiv() {
+			_classCallCheck(this, FaqDiv);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(FaqDiv).apply(this, arguments));
+		}
+
+		_createClass(FaqDiv, [{
+			key: "render",
+			value: function render() {
+				var divStyle = {
+					textAlign: "left",
+					fontSize: "1.2em",
+					lineHeight: "1.5",
+					margin: "5px 0"
+				};
+				var questionStyle = {
+					fontWeight: "bold",
+					margin: "0 0 7px"
+				};
+				var answerStyle = {
+					margin: "0 0 7px"
+				};
+				console.log(this.props);
+				return _react2.default.createElement(
+					"div",
+					{ style: divStyle },
+					_react2.default.createElement(
+						"div",
+						{ style: questionStyle },
+						this.props.faq.question
+					),
+					_react2.default.createElement(
+						"div",
+						{ style: answerStyle },
+						this.props.faq.answer
+					)
+				);
+			}
+		}]);
+
+		return FaqDiv;
+	})(_react2.default.Component);
+
+	exports.default = FaqDiv;
 
 /***/ }
 /******/ ]);

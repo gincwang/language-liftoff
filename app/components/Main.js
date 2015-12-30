@@ -33,10 +33,10 @@ class Main extends React.Component{
 		};		
 	}
 	handleTabClick(e){
-
 		//there's edge cases when clicking on dropdown menu:
 		//	 if the carrot is clicked the textContent will show only space,
 		//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
+		//	 so look for if its parent class name equals dropDownBtn
 		let tabText = e.target.textContent.trim();
 		let node = e.target.parentNode.parentNode;
 		for(let i=0; i<2; i++){

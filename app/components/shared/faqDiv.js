@@ -6,7 +6,7 @@ export default class FaqDiv extends React.Component {
 			textAlign: "left",
 			fontSize: "1.2em",
 			lineHeight: "1.5",
-			margin: "5px 0"
+			margin: "15px 0"
 		};
 		let questionStyle = {
 			fontWeight: "bold",

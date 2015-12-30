@@ -29783,7 +29783,7 @@
 					textAlign: "left",
 					fontSize: "1.2em",
 					lineHeight: "1.5",
-					margin: "5px 0"
+					margin: "15px 0"
 				};
 				var questionStyle = {
 					fontWeight: "bold",

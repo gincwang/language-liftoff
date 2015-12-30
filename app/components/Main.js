@@ -38,6 +38,8 @@ class Main extends React.Component{
 		//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
 		//	 so look for if its parent class name equals dropDownBtn
 		let tabText = e.target.textContent.trim();
+		if(!tabText.length){tabText = "HOME";}
+
 		let node = e.target.parentNode.parentNode;
 		for(let i=0; i<2; i++){
 			if(node.className === "dropDownBtn"){
@@ -47,7 +49,7 @@ class Main extends React.Component{
 				node = node.parentNode;
 			}
 		}
-
+		console.log(tabText);
 		this.setState({selectedTab: tabText});
 	}
     render(){
@@ -55,7 +57,7 @@ class Main extends React.Component{
         	<div className="container-fluid" style={{padding: "0"}} onClick={this.handleClick.bind(this)}>
         		<div style={{backgroundColor: "white"}}>
 		            <nav style={inline.navStyles}>
-		            	<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={60}/></Link>
+		            	<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={60}/></Link></div>
 		                <ul style={inline.navUlStyles}>
 		                	<li style={this.navLiStyles("HOME")} onClick={this.handleTabClick.bind(this)}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={this.navLiStyles("SERVICES")} onClick={this.handleTabClick.bind(this)}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
@@ -67,14 +69,7 @@ class Main extends React.Component{
 		        </div>
 	            {this.props.children}
 	            <div style={inline.footerStyles}>
-					<Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff.png"} alt="language-liftoff-logo" height={40}/></Link>	            
-            		<ul style={inline.footerUlStyles}>
-	                	<li style={inline.footerLiStyles}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
-	                    <li style={inline.footerLiStyles}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-	                    <li style={inline.footerLiStyles}><Link to="/client-resources" style={inline.navLinkStyles}>RESOURCES</Link></li>
-	                    <li style={inline.footerLiStyles}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
-	                    <li style={inline.footerLiStyles}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
-	                </ul>
+					<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015 Language Liftoff</span></div>	            
 	            </div>
 	        </div>
         );
@@ -125,7 +120,8 @@ let inline = {
 			fontSize: "0.8em",
 			display: "flex",
 			flexFlow: "row nowrap",
-			justifyContent: "center"
+			justifyContent: "center",
+			margin: "30px 0"
 		},
 		footerUlStyles: {
 			padding: "5px 0 0 0",

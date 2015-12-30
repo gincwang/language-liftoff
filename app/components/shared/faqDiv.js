@@ -15,7 +15,7 @@ export default class FaqDiv extends React.Component {
 		let answerStyle = {
 			margin: "0 0 7px"
 		};
-		console.log(this.props);
+
 		return (
 			<div style={divStyle}>
 				<div style={questionStyle}>

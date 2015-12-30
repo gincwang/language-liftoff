@@ -24612,6 +24612,10 @@
 				//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
 				//	 so look for if its parent class name equals dropDownBtn
 				var tabText = e.target.textContent.trim();
+				if (!tabText.length) {
+					tabText = "HOME";
+				}
+
 				var node = e.target.parentNode.parentNode;
 				for (var i = 0; i < 2; i++) {
 					if (node.className === "dropDownBtn") {
@@ -24621,7 +24625,7 @@
 						node = node.parentNode;
 					}
 				}
-
+				console.log(tabText);
 				this.setState({ selectedTab: tabText });
 			}
 		}, {
@@ -24637,9 +24641,13 @@
 							'nav',
 							{ style: inline.navStyles },
 							_react2.default.createElement(
-								Link,
-								{ to: '/' },
-								_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 60 })
+								'div',
+								{ onClick: this.handleTabClick.bind(this) },
+								_react2.default.createElement(
+									Link,
+									{ to: '/' },
+									_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 60 })
+								)
 							),
 							_react2.default.createElement(
 								'ul',
@@ -24693,57 +24701,17 @@
 						'div',
 						{ style: inline.footerStyles },
 						_react2.default.createElement(
-							Link,
-							{ to: '/' },
-							_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff.png", alt: 'language-liftoff-logo', height: 40 })
-						),
-						_react2.default.createElement(
-							'ul',
-							{ style: inline.footerUlStyles },
+							'div',
+							{ onClick: this.handleTabClick.bind(this) },
 							_react2.default.createElement(
-								'li',
-								{ style: inline.footerLiStyles },
-								_react2.default.createElement(
-									Link,
-									{ to: '/', style: inline.navLinkStyles },
-									'HOME'
-								)
+								Link,
+								{ to: '/' },
+								_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 50 })
 							),
 							_react2.default.createElement(
-								'li',
-								{ style: inline.footerLiStyles },
-								_react2.default.createElement(
-									Link,
-									{ to: '/services', style: inline.navLinkStyles },
-									'SERVICES'
-								)
-							),
-							_react2.default.createElement(
-								'li',
-								{ style: inline.footerLiStyles },
-								_react2.default.createElement(
-									Link,
-									{ to: '/client-resources', style: inline.navLinkStyles },
-									'RESOURCES'
-								)
-							),
-							_react2.default.createElement(
-								'li',
-								{ style: inline.footerLiStyles },
-								_react2.default.createElement(
-									Link,
-									{ to: '/about', style: inline.navLinkStyles },
-									'ABOUT US'
-								)
-							),
-							_react2.default.createElement(
-								'li',
-								{ style: inline.footerLiStyles },
-								_react2.default.createElement(
-									Link,
-									{ to: '/contact', style: inline.navLinkStyles },
-									'CONTACT'
-								)
+								'span',
+								null,
+								'2015 Language Liftoff'
 							)
 						)
 					)
@@ -24798,7 +24766,8 @@
 			fontSize: "0.8em",
 			display: "flex",
 			flexFlow: "row nowrap",
-			justifyContent: "center"
+			justifyContent: "center",
+			margin: "30px 0"
 		},
 		footerUlStyles: {
 			padding: "5px 0 0 0",
@@ -29163,7 +29132,13 @@
 							_react2.default.createElement(
 								"h6",
 								null,
-								"Information obtained from American Speech & Hearing Association ",
+								"Information obtained from ",
+								_react2.default.createElement(
+									"span",
+									{ style: { fontStyle: "italic" } },
+									"American Speech-Language-Hearing Association"
+								),
+								" ",
 								_react2.default.createElement(
 									"a",
 									{ href: "http://www.asha.org", target: "_blank" },
@@ -29792,7 +29767,7 @@
 				var answerStyle = {
 					margin: "0 0 7px"
 				};
-				console.log(this.props);
+
 				return _react2.default.createElement(
 					"div",
 					{ style: divStyle },

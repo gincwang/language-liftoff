@@ -116,12 +116,12 @@ let inline = {
 			}
 		},
 		footerStyles: {
-			backgroundColor: SharedStyles.altColor,
+			backgroundColor: "#EEEEEE",
 			fontSize: "0.8em",
 			display: "flex",
 			flexFlow: "row nowrap",
 			justifyContent: "center",
-			margin: "30px 0"
+			padding: "30px 0"
 		},
 		footerUlStyles: {
 			padding: "5px 0 0 0",

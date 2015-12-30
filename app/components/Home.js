@@ -6,6 +6,9 @@ var Link = require('react-router').Link;
 Link = Radium(Link);	//Needs to be wrapped in Radium due to Raidum not working with all components
 
 class Home extends React.Component {
+	handleServiceClick(e){
+		
+	}
 	render(){
 		return (
 			<div className="container-fluid" style={SharedStyles.mainStyles}>
@@ -30,7 +33,7 @@ class Home extends React.Component {
 					</ul>					
 				</div>
 				<div className="row" style={inline.linkStyles}>
-					<Link to="/services"><h4>Learn more<i className="material-icons" style={inline.iconAltStyles}>play_arrow</i></h4></Link>
+					<div onClick={this.handleServiceClick.bind(this)}><Link to="/services"><h4>Learn more<i className="material-icons" style={inline.iconAltStyles}>play_arrow</i></h4></Link></div>
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">

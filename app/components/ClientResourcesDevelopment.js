@@ -141,7 +141,7 @@ class ClientResourcesDevelopment extends React.Component {
 				</div>
 				<div className="row">
 					<div className="col-sm-12">
-						<h6>Information obtained from American Speech & Hearing Association <a href="http://www.asha.org" target="_blank">(http://www.asha.org)</a></h6>
+						<h6>Information obtained from <span style={{fontStyle: "italic"}}>American Speech-Language-Hearing Association</span> <a href="http://www.asha.org" target="_blank">(http://www.asha.org)</a></h6>
 					</div>
 				</div>
 			</div>

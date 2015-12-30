@@ -68,7 +68,7 @@ let inline = {
 let faq = {
 	one: {
 		question: "What forms of payment are accepted?",
-		answer: <span>We are in-network providers with <a href="https://www.premera.com/wa/visitor/">Premera Blue Cross.</a> We accept cash or check as payment.</span>
+		answer: <span>We are in-network providers with <a target="_blank" href="https://www.premera.com/wa/visitor/">Premera Blue Cross.</a> We accept cash or check as payment.</span>
 	},
 	two: {
 		question: "In which areas can in-home therapy services be provided?",

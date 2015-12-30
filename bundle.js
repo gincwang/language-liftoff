@@ -29724,7 +29724,7 @@
 				"We are in-network providers with ",
 				_react2.default.createElement(
 					"a",
-					{ href: "https://www.premera.com/wa/visitor/" },
+					{ target: "_blank", href: "https://www.premera.com/wa/visitor/" },
 					"Premera Blue Cross."
 				),
 				" We accept cash or check as payment."

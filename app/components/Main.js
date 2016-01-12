@@ -3,16 +3,24 @@ import ReactDOM from 'react-DOM';
 import Radium from 'radium';
 import SharedStyles from "../styles/sharedStyles.js";
 import DropDownButton from "./shared/dropDownBtn.js";
+import NavigationStore from "../stores/NavigationStore";
+import NavigationActions from "../actions/NavigationActions";
 var Link = require('react-router').Link;
 Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
 class Main extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {
-			hideDropDown: true,
-			selectedTab: "HOME"
-		};
+		this.state = NavigationStore.getState();
+	}
+	componentDidMount(){
+		NavigationStore.listen(this.handleStoreChange.bind(this));
+	}
+	componentWillUnmount(){
+		NavigationStore.unlisten(this.handleStoreChange);
+	}
+	handleStoreChange(state){
+		this.setState(state);
 	}
 	handleClick(e){
 		//Checks if user clicked on any dropdown button, then trigger state change.
@@ -24,7 +32,7 @@ class Main extends React.Component{
 				node = node.parentNode;
 			}
 		}
-		this.setState({hideDropDown: !this.state.hideDropDown});
+		NavigationActions.updateHideDropDown(!this.state.hideDropDown);
 	}
 	navLiStyles(tabTitle){
 		return {
@@ -37,20 +45,32 @@ class Main extends React.Component{
 		//	 if the carrot is clicked the textContent will show only space,
 		//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
 		//	 so look for if its parent class name equals dropDownBtn
+		let changeTab = true;
 		let tabText = e.target.textContent.trim();
-		if(!tabText.length){tabText = "HOME";}
+		console.log(tabText);
 
+		if(!tabText.length){tabText = "HOME";}
+		else if (dropDowntext.indexOf(tabText) !== -1){
+			changeTab = true;
+			tabText = "RESOURCES"
+		}
+
+
+		//check if clicked element is part of a dropdown component, and don't change tab if resource is clicked
 		let node = e.target.parentNode.parentNode;
 		for(let i=0; i<2; i++){
-			if(node.className === "dropDownBtn"){
-				tabText = "RESOURCES";
+			if(node.className === "dropDownBtn" && this.state.selectedTab !== "RESOURCES"){
+				changeTab = false;
 				break;
 			}else {
 				node = node.parentNode;
 			}
 		}
-		console.log(tabText);
-		this.setState({selectedTab: tabText});
+
+
+		if(changeTab) {
+			NavigationActions.updateSelectedNav(tabText);
+		}
 	}
     render(){
         return (
@@ -61,7 +81,7 @@ class Main extends React.Component{
 		                <ul style={inline.navUlStyles}>
 		                	<li style={this.navLiStyles("HOME")} onClick={this.handleTabClick.bind(this)}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={this.navLiStyles("SERVICES")} onClick={this.handleTabClick.bind(this)}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)}><DropDownButton className={"dropDownBtn"} anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink} minWidth={150} hideDropDown={this.state.hideDropDown}/></li>
+		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink} minWidth={150} hideDropDown={this.state.hideDropDown}/></li>
 		                    <li style={this.navLiStyles("ABOUT US")} onClick={this.handleTabClick.bind(this)}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
 		                    <li style={this.navLiStyles("CONTACT")} onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>

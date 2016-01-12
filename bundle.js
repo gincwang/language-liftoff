@@ -27741,6 +27741,10 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
+	var _NavigationActions = __webpack_require__(263);
+
+	var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27763,7 +27767,9 @@
 
 		_createClass(Home, [{
 			key: "handleServiceClick",
-			value: function handleServiceClick(e) {}
+			value: function handleServiceClick(e) {
+				_NavigationActions2.default.updateSelectedNav("SERVICES");
+			}
 		}, {
 			key: "render",
 			value: function render() {

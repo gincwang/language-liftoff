@@ -2,12 +2,13 @@ import React from "react";
 import List from "./shared/list.js";
 import SharedStyles from "../styles/sharedStyles.js";
 import Radium from "radium";
+import NavigationActions from "../actions/NavigationActions";
 var Link = require('react-router').Link;
 Link = Radium(Link);	//Needs to be wrapped in Radium due to Raidum not working with all components
 
 class Home extends React.Component {
 	handleServiceClick(e){
-		
+		NavigationActions.updateSelectedNav("SERVICES");
 	}
 	render(){
 		return (

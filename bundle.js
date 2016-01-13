@@ -24483,27 +24483,27 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _Home = __webpack_require__(265);
+	var _Home = __webpack_require__(266);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(267);
+	var _About = __webpack_require__(268);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Services = __webpack_require__(268);
+	var _Services = __webpack_require__(269);
 
 	var _Services2 = _interopRequireDefault(_Services);
 
-	var _ClientResourcesDisorders = __webpack_require__(269);
+	var _ClientResourcesDisorders = __webpack_require__(270);
 
 	var _ClientResourcesDisorders2 = _interopRequireDefault(_ClientResourcesDisorders);
 
-	var _ClientResourcesDevelopment = __webpack_require__(271);
+	var _ClientResourcesDevelopment = __webpack_require__(272);
 
 	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
-	var _Contact = __webpack_require__(275);
+	var _Contact = __webpack_require__(276);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
@@ -24564,7 +24564,7 @@
 
 	var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
 
-	var _popUp = __webpack_require__(277);
+	var _popUp = __webpack_require__(265);
 
 	var _popUp2 = _interopRequireDefault(_popUp);
 
@@ -29542,7 +29542,164 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _list = __webpack_require__(266);
+	var _radium = __webpack_require__(212);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	var _NavigationActions = __webpack_require__(264);
+
+	var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Link = __webpack_require__(159).Link;
+	Link = (0, _radium2.default)(Link);
+
+	var PopUp = (function (_React$Component) {
+		_inherits(PopUp, _React$Component);
+
+		function PopUp(props) {
+			_classCallCheck(this, PopUp);
+
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PopUp).call(this, props));
+
+			if (!sessionStorage.getItem('isClosed')) {
+				sessionStorage.setItem('isClosed', "notClosed");
+				_this.state = { isClosed: "notClosed" };
+			} else {
+				_this.state = { isClosed: sessionStorage.getItem('isClosed') };
+			}
+			return _this;
+		}
+
+		_createClass(PopUp, [{
+			key: "handleClick",
+			value: function handleClick(e) {
+				this.setState({ isClosed: "closed" });
+				sessionStorage.setItem('isClosed', "closed");
+			}
+		}, {
+			key: "handleTabClick",
+			value: function handleTabClick(e) {
+				_NavigationActions2.default.updateSelectedNav("CONTACT");
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var popWindowStyle = {
+					fontSize: "1.5em",
+					width: "220px",
+					height: "220px",
+					backgroundColor: bgColor,
+					position: "fixed",
+					zIndex: "999",
+					top: "45px",
+					right: "10px",
+					borderRadius: "10px",
+					border: "7px solid #FFC400",
+					animation: "x 3s ease",
+					animationName: slideInKeyframes,
+					display: this.state.isClosed === "closed" ? "none" : "block"
+				};
+
+				return _react2.default.createElement(
+					"div",
+					{ style: popWindowStyle },
+					_react2.default.createElement(
+						"p",
+						{ style: pStyle },
+						this.props.content
+					),
+					_react2.default.createElement(
+						"div",
+						{ onClick: this.handleTabClick.bind(this) },
+						_react2.default.createElement(
+							Link,
+							{ to: "/contact", style: linkStyle },
+							_react2.default.createElement(
+								"i",
+								{ style: iconStyle, className: "material-icons" },
+								"contact_phone"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"button",
+						{ onClick: this.handleClick.bind(this), style: buttonStyle },
+						"x"
+					)
+				);
+			}
+		}]);
+
+		return PopUp;
+	})(_react2.default.Component);
+
+	exports.default = PopUp;
+
+	var bgColor = "#FFECB3";
+
+	var pStyle = {
+		padding: "40px 20px 0px",
+		textAlign: "center"
+	};
+
+	var buttonStyle = {
+		fontSize: "0.8em",
+		position: "absolute",
+		top: "5px",
+		right: "5px",
+		backgroundColor: bgColor,
+		border: "none",
+		color: "black",
+		':hover': {
+			color: "gray"
+		}
+
+	};
+
+	var iconStyle = {
+		fontSize: "2em",
+		display: "block",
+		textAlign: "center",
+		color: "black",
+		':hover': {
+			color: "gray"
+		}
+	};
+
+	var linkStyle = {
+		textDecoration: "none"
+	};
+
+	var slideInKeyframes = _radium2.default.keyframes({
+		'0%': { right: '-250px' },
+		'100%': { right: '10px' }
+	}, 'slideIn');
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _list = __webpack_require__(267);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -29795,7 +29952,7 @@
 	};
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29866,7 +30023,7 @@
 	exports.default = List;
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30051,7 +30208,7 @@
 	};
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30474,7 +30631,7 @@
 	exports.default = (0, _radium2.default)(Services);
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30493,7 +30650,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _listWithAnchor = __webpack_require__(270);
+	var _listWithAnchor = __webpack_require__(271);
 
 	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
 
@@ -30626,7 +30783,7 @@
 	var medConditionsLinks = ["http://www.asha.org/public/speech/disorders/ADHD/", "http://www.asha.org/public/speech/disorders/Autism/", "http://www.asha.org/public/speech/disorders/dementia/", "http://www.asha.org/public/speech/disorders/Stroke/", "http://www.asha.org/public/speech/disorders/TBI/"];
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30687,7 +30844,7 @@
 	exports.default = ListWithAnchor;
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30706,15 +30863,15 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _list = __webpack_require__(266);
+	var _list = __webpack_require__(267);
 
 	var _list2 = _interopRequireDefault(_list);
 
-	var _ListWithToggleList = __webpack_require__(272);
+	var _ListWithToggleList = __webpack_require__(273);
 
 	var _ListWithToggleList2 = _interopRequireDefault(_ListWithToggleList);
 
-	var _ListWithList = __webpack_require__(274);
+	var _ListWithList = __webpack_require__(275);
 
 	var _ListWithList2 = _interopRequireDefault(_ListWithList);
 
@@ -31081,7 +31238,7 @@
 	};
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31096,7 +31253,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _listWithToggle = __webpack_require__(273);
+	var _listWithToggle = __webpack_require__(274);
 
 	var _listWithToggle2 = _interopRequireDefault(_listWithToggle);
 
@@ -31165,7 +31322,7 @@
 	exports.default = ListWithToggleList;
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31248,7 +31405,7 @@
 	exports.default = ListWithToggle;
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31263,7 +31420,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _list = __webpack_require__(266);
+	var _list = __webpack_require__(267);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -31352,7 +31509,7 @@
 	exports.default = ListWithList;
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31371,7 +31528,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _faqDiv = __webpack_require__(276);
+	var _faqDiv = __webpack_require__(277);
 
 	var _faqDiv2 = _interopRequireDefault(_faqDiv);
 
@@ -31596,7 +31753,7 @@
 	exports.default = Contact;
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31666,162 +31823,6 @@
 	})(_react2.default.Component);
 
 	exports.default = FaqDiv;
-
-/***/ },
-/* 277 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _radium = __webpack_require__(212);
-
-	var _radium2 = _interopRequireDefault(_radium);
-
-	var _NavigationActions = __webpack_require__(264);
-
-	var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Link = __webpack_require__(159).Link;
-	Link = (0, _radium2.default)(Link);
-
-	var PopUp = (function (_React$Component) {
-		_inherits(PopUp, _React$Component);
-
-		function PopUp(props) {
-			_classCallCheck(this, PopUp);
-
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PopUp).call(this, props));
-
-			if (!sessionStorage.getItem('isClosed')) {
-				sessionStorage.setItem('isClosed', "notClosed");
-				_this.state = { isClosed: "notClosed" };
-			} else {
-				_this.state = { isClosed: sessionStorage.getItem('isClosed') };
-			}
-			return _this;
-		}
-
-		_createClass(PopUp, [{
-			key: "handleClick",
-			value: function handleClick(e) {
-				this.setState({ isClosed: "closed" });
-				sessionStorage.setItem('isClosed', "closed");
-			}
-		}, {
-			key: "handleTabClick",
-			value: function handleTabClick(e) {
-				_NavigationActions2.default.updateSelectedNav("CONTACT");
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				var popWindowStyle = {
-					fontSize: "1.5em",
-					width: "220px",
-					height: "220px",
-					backgroundColor: bgColor,
-					position: "fixed",
-					top: "45px",
-					right: "10px",
-					borderRadius: "10px",
-					border: "7px solid #FFC400",
-					animation: "x 3s ease",
-					animationName: slideInKeyframes,
-					display: this.state.isClosed === "closed" ? "none" : "block"
-				};
-
-				return _react2.default.createElement(
-					"div",
-					{ style: popWindowStyle },
-					_react2.default.createElement(
-						"p",
-						{ style: pStyle },
-						this.props.content
-					),
-					_react2.default.createElement(
-						"div",
-						{ onClick: this.handleTabClick.bind(this) },
-						_react2.default.createElement(
-							Link,
-							{ to: "/contact", style: linkStyle },
-							_react2.default.createElement(
-								"i",
-								{ style: iconStyle, className: "material-icons" },
-								"contact_phone"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"button",
-						{ onClick: this.handleClick.bind(this), style: buttonStyle },
-						"x"
-					)
-				);
-			}
-		}]);
-
-		return PopUp;
-	})(_react2.default.Component);
-
-	exports.default = PopUp;
-
-	var bgColor = "#FFECB3";
-
-	var pStyle = {
-		padding: "40px 20px 0px",
-		textAlign: "center"
-	};
-
-	var buttonStyle = {
-		fontSize: "0.8em",
-		position: "absolute",
-		top: "5px",
-		right: "5px",
-		backgroundColor: bgColor,
-		border: "none",
-		color: "black",
-		':hover': {
-			color: "gray"
-		}
-
-	};
-
-	var iconStyle = {
-		fontSize: "2em",
-		display: "block",
-		textAlign: "center",
-		color: "black",
-		':hover': {
-			color: "gray"
-		}
-	};
-
-	var linkStyle = {
-		textDecoration: "none"
-	};
-
-	var slideInKeyframes = _radium2.default.keyframes({
-		'0%': { right: '-250px' },
-		'100%': { right: '10px' }
-	}, 'slideIn');
 
 /***/ }
 /******/ ]);

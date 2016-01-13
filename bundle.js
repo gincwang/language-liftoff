@@ -24625,7 +24625,34 @@
 			value: function navLiStyles(tabTitle) {
 				return {
 					flex: "1 20%",
-					backgroundColor: tabTitle === this.state.selectedTab ? _sharedStyles2.default.mainColor : _sharedStyles2.default.altColor
+					backgroundColor: tabTitle === this.state.selectedTab ? _sharedStyles2.default.mainColor : _sharedStyles2.default.altColor,
+					'@media (max-width: 992px)': {
+						flex: "1 100%"
+					}
+				};
+			}
+		}, {
+			key: 'navUlStyles',
+			value: function navUlStyles(isHidden) {
+				return {
+					zIndex: "100",
+					flex: "2 auto",
+					display: "flex",
+					flexFlow: "row nowrap",
+					fontSize: "1em",
+					listStyle: "none",
+					margin: "0",
+					padding: "0",
+					'@media (max-width: 992px)': {
+						display: isHidden ? "none" : "block",
+						position: "absolute",
+						top: "60px",
+						right: "0px",
+						width: "100%",
+						borderTop: "1px solid gray",
+						borderBottom: "2px solid black",
+						transition: "all 1s ease"
+					}
 				};
 			}
 		}, {
@@ -24659,7 +24686,13 @@
 
 				if (changeTab) {
 					_NavigationActions2.default.updateSelectedNav(tabText);
+					_NavigationActions2.default.updateHideMobileNav(!this.state.hideMobileNav);
 				}
+			}
+		}, {
+			key: 'handleHideMobileNavClick',
+			value: function handleHideMobileNavClick(e) {
+				_NavigationActions2.default.updateHideMobileNav(!this.state.hideMobileNav);
 			}
 		}, {
 			key: 'render',
@@ -24684,7 +24717,7 @@
 							),
 							_react2.default.createElement(
 								'ul',
-								{ style: inline.navUlStyles },
+								{ style: this.navUlStyles(this.state.hideMobileNav) },
 								_react2.default.createElement(
 									'li',
 									{ style: this.navLiStyles("HOME"), onClick: this.handleTabClick.bind(this) },
@@ -24726,6 +24759,15 @@
 										'CONTACT'
 									)
 								)
+							)
+						),
+						_react2.default.createElement(
+							'button',
+							{ onClick: this.handleHideMobileNavClick.bind(this), style: inline.navToggleButtonStyle },
+							_react2.default.createElement(
+								'i',
+								{ className: 'material-icons' },
+								'dehaze'
 							)
 						)
 					),
@@ -24775,15 +24817,7 @@
 			maxWidth: "850px",
 			margin: "0 auto"
 		},
-		navUlStyles: {
-			flex: "2 auto",
-			display: "flex",
-			flexFlow: "row nowrap",
-			fontSize: "1em",
-			listStyle: "none",
-			margin: "0",
-			padding: "0"
-		},
+		navUlStyles: {},
 		navLogoStyles: {
 			margin: "0 20px",
 			padding: "4px 0"
@@ -24798,6 +24832,17 @@
 			':hover': {
 				color: _sharedStyles2.default.navTextColorHover,
 				textDecoration: "underline"
+			}
+		},
+		navToggleButtonStyle: {
+			position: "absolute",
+			top: "13px",
+			right: "10px",
+			padding: "6px 6px 0",
+			backgroundColor: "#F5F5F5",
+			border: "none",
+			'@media (min-width: 992px)': {
+				display: "none"
 			}
 		},
 		footerStyles: {
@@ -27691,11 +27736,18 @@
 				var ulStyles = {
 					minWidth: this.props.minWidth,
 					position: "absolute",
-					background: "white",
+					backgroundColor: "white",
 					padding: "0",
 					zIndex: "1000",
 					marginTop: "0",
-					opacity: "0.7"
+					opacity: "0.7",
+					'@media (max-width: 992px)': {
+						backgroundColor: "#FFE0B2",
+						opacity: "1.0",
+						display: "block",
+						textAlign: "center",
+						width: "100%"
+					}
 
 				};
 				return _react2.default.createElement(
@@ -27759,11 +27811,13 @@
 			}
 			this.selectedTab = sessionStorage.getItem('selectedTab');
 			this.hideDropDown = true;
+			this.hideMobileNav = true;
 
 			//bind action handler to actions
 			this.bindListeners({
 				handleUpdateNavigation: _NavigationActions2.default.UPDATE_SELECTED_NAV,
-				handleUpdateHideDropDown: _NavigationActions2.default.UPDATE_HIDE_DROP_DOWN
+				handleUpdateHideDropDown: _NavigationActions2.default.UPDATE_HIDE_DROP_DOWN,
+				handleUpdateHideMobileNav: _NavigationActions2.default.UPDATE_HIDE_MOBILE_NAV
 			});
 		}
 
@@ -27778,6 +27832,12 @@
 			value: function handleUpdateHideDropDown(drop) {
 				console.log("store: " + drop);
 				this.hideDropDown = drop;
+			}
+		}, {
+			key: "handleUpdateHideMobileNav",
+			value: function handleUpdateHideMobileNav(val) {
+				console.log("store: hideMobileNav: " + val);
+				this.hideMobileNav = val;
 			}
 		}]);
 
@@ -29453,6 +29513,11 @@
 			key: 'updateHideDropDown',
 			value: function updateHideDropDown(drop) {
 				return drop;
+			}
+		}, {
+			key: 'updateHideMobileNav',
+			value: function updateHideMobileNav(val) {
+				return val;
 			}
 		}]);
 

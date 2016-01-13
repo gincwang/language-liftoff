@@ -9,6 +9,9 @@ class NavigationActions {
 	updateHideDropDown(drop) {
 		return drop;
 	}
+	updateHideMobileNav(val) {
+		return val;
+	}
 }
 
 export default alt.createActions(NavigationActions);

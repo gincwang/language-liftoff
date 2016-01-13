@@ -10,11 +10,13 @@ class NavigationStore {
 		}
 		this.selectedTab = sessionStorage.getItem('selectedTab');
 		this.hideDropDown = true;
+		this.hideMobileNav = true;
 
 		//bind action handler to actions
 		this.bindListeners({
 			handleUpdateNavigation: NavigationActions.UPDATE_SELECTED_NAV,
-			handleUpdateHideDropDown: NavigationActions.UPDATE_HIDE_DROP_DOWN
+			handleUpdateHideDropDown: NavigationActions.UPDATE_HIDE_DROP_DOWN,
+			handleUpdateHideMobileNav: NavigationActions.UPDATE_HIDE_MOBILE_NAV
 		});
 	}
 	handleUpdateNavigation(tab) {
@@ -24,6 +26,10 @@ class NavigationStore {
 	handleUpdateHideDropDown(drop) {
 		console.log("store: " + drop);
 		this.hideDropDown = drop;
+	}
+	handleUpdateHideMobileNav(val) {
+		console.log("store: hideMobileNav: " + val);
+		this.hideMobileNav = val;
 	}
 }
 

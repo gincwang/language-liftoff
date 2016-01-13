@@ -38,8 +38,33 @@ class Main extends React.Component{
 	navLiStyles(tabTitle){
 		return {
 			flex: "1 20%",
-			backgroundColor: tabTitle === this.state.selectedTab ? SharedStyles.mainColor : SharedStyles.altColor
+			backgroundColor: tabTitle === this.state.selectedTab ? SharedStyles.mainColor : SharedStyles.altColor,
+			'@media (max-width: 992px)': {
+				flex: "1 100%"
+			}
 		};		
+	}
+	navUlStyles(isHidden){
+		return {
+			zIndex: "100",
+			flex: "2 auto",
+			display: "flex",
+			flexFlow: "row nowrap",
+			fontSize: "1em",
+			listStyle: "none",
+			margin: "0",
+			padding: "0",
+			'@media (max-width: 992px)': {
+				display: isHidden ? "none" : "block",
+				position: "absolute",
+				top: "60px",
+				right: "0px",
+				width: "100%",
+				borderTop: "1px solid gray",
+				borderBottom: "2px solid black",
+				transition: "all 1s ease"
+			}
+		}
 	}
 	handleTabClick(e){
 		//there's edge cases when clicking on dropdown menu:
@@ -68,10 +93,13 @@ class Main extends React.Component{
 			}
 		}
 
-
 		if(changeTab) {
 			NavigationActions.updateSelectedNav(tabText);
+			NavigationActions.updateHideMobileNav(!this.state.hideMobileNav);
 		}
+	}
+	handleHideMobileNavClick(e){
+		NavigationActions.updateHideMobileNav(!this.state.hideMobileNav);
 	}
     render(){
         return (
@@ -79,7 +107,7 @@ class Main extends React.Component{
         		<div style={{backgroundColor: "white"}}>
 		            <nav style={inline.navStyles}>
 		            	<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={60}/></Link></div>
-		                <ul style={inline.navUlStyles}>
+		                <ul style={this.navUlStyles(this.state.hideMobileNav)}>
 		                	<li style={this.navLiStyles("HOME")} onClick={this.handleTabClick.bind(this)}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={this.navLiStyles("SERVICES")} onClick={this.handleTabClick.bind(this)}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
 		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink} minWidth={150} hideDropDown={this.state.hideDropDown}/></li>
@@ -87,6 +115,7 @@ class Main extends React.Component{
 		                    <li style={this.navLiStyles("CONTACT")} onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>
 		            </nav>
+		            <button onClick={this.handleHideMobileNavClick.bind(this)} style={inline.navToggleButtonStyle}><i className="material-icons">dehaze</i></button>
 		        </div>
 	            {this.props.children}
 	            <div style={inline.footerStyles}>
@@ -116,13 +145,7 @@ let inline = {
 			margin: "0 auto",
 		},
 		navUlStyles: {
-			flex: "2 auto",
-			display: "flex",
-			flexFlow: "row nowrap",
-			fontSize: "1em",
-			listStyle: "none",
-			margin: "0",
-			padding: "0"
+
 		},
 		navLogoStyles: {
 			margin: "0 20px",
@@ -138,6 +161,17 @@ let inline = {
 			':hover': {
 				color: SharedStyles.navTextColorHover,
 				textDecoration: "underline"
+			}
+		},
+		navToggleButtonStyle: {
+			position: "absolute",
+			top: "13px",
+			right: "10px",
+			padding: "6px 6px 0",
+			backgroundColor: "#F5F5F5",
+			border: "none",
+			'@media (min-width: 992px)': {
+				display: "none"
 			}
 		},
 		footerStyles: {

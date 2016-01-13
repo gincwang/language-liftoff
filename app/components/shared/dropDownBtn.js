@@ -56,11 +56,18 @@ class DropDownBtn extends React.Component {
 		let ulStyles = {
 			minWidth: this.props.minWidth,
 			position: "absolute",
-			background: "white",
+			backgroundColor: "white",
 			padding: "0",
 			zIndex: "1000",
 			marginTop: "0",
-			opacity: "0.7"
+			opacity: "0.7",
+			'@media (max-width: 992px)': {
+				backgroundColor: "#FFE0B2",
+				opacity: "1.0",
+				display: "block",
+				textAlign: "center",
+				width: "100%"
+			}
 
 		};
 		return (

@@ -27753,7 +27753,11 @@
 		function NavigationStore() {
 			_classCallCheck(this, NavigationStore);
 
-			this.selectedTab = "HOME";
+			if (!sessionStorage.getItem('selectedTab')) {
+				this.selectedTab = "HOME";
+				sessionStorage.setItem('selectedTab', 'HOME');
+			}
+			this.selectedTab = sessionStorage.getItem('selectedTab');
 			this.hideDropDown = true;
 
 			//bind action handler to actions
@@ -29417,7 +29421,7 @@
 /* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -29439,13 +29443,14 @@
 		}
 
 		_createClass(NavigationActions, [{
-			key: "updateSelectedNav",
+			key: 'updateSelectedNav',
 			value: function updateSelectedNav(tab) {
 				console.log("action: " + tab);
+				sessionStorage.setItem('selectedTab', tab);
 				return tab;
 			}
 		}, {
-			key: "updateHideDropDown",
+			key: 'updateHideDropDown',
 			value: function updateHideDropDown(drop) {
 				return drop;
 			}

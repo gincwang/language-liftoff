@@ -4,7 +4,11 @@ import NavigationActions from "../actions/NavigationActions";
 //NavigationStore will store the nav bar status
 class NavigationStore {
 	constructor(){
-		this.selectedTab = "HOME";
+		if(!sessionStorage.getItem('selectedTab')) {
+			this.selectedTab = "HOME";
+			sessionStorage.setItem('selectedTab', 'HOME');
+		}
+		this.selectedTab = sessionStorage.getItem('selectedTab');
 		this.hideDropDown = true;
 
 		//bind action handler to actions

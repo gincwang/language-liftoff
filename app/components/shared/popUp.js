@@ -28,7 +28,7 @@ class PopUp extends React.Component {
 			height: "220px",
 			backgroundColor: bgColor,
 			position: "fixed",
-			top: "10px",
+			top: "45px",
 			right: "10px",
 			borderRadius: "10px",
 			border: "7px solid #FFC400",

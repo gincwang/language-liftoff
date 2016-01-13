@@ -5,6 +5,7 @@ import SharedStyles from "../styles/sharedStyles.js";
 import DropDownButton from "./shared/dropDownBtn.js";
 import NavigationStore from "../stores/NavigationStore";
 import NavigationActions from "../actions/NavigationActions";
+import PopUp from "./shared/popUp";
 var Link = require('react-router').Link;
 Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
@@ -91,6 +92,9 @@ class Main extends React.Component{
 	            <div style={inline.footerStyles}>
 					<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015 Language Liftoff</span></div>	            
 	            </div>
+	            <div>
+	            	<PopUp content={popUpText.content}/>
+	            </div>
 	        </div>
         );
     }
@@ -100,6 +104,7 @@ export default Radium(Main);
 
 let dropDowntext = ["Common Disorders", "Typical Development"];
 let dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development"];
+let popUpText = {content: "Contact us for a free 30-minute consultation!"};
 
 let inline = {
 		navStyles:{

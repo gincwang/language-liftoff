@@ -30955,6 +30955,10 @@
 
 	var _ListWithList2 = _interopRequireDefault(_ListWithList);
 
+	var _radium = __webpack_require__(212);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31039,7 +31043,10 @@
 				var ulStyles = {
 					listStyle: "none",
 					textAlign: "left",
-					fontSize: "1.3em"
+					fontSize: "1.3em",
+					'@media (max-width: 768px)': {
+						padding: "0"
+					}
 				};
 				var liStyles = {
 					padding: "20px 0 0 0"
@@ -31073,7 +31080,7 @@
 						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-3" },
+							{ className: "col-xs-4 col-sm-3" },
 							_react2.default.createElement(
 								"ul",
 								{ style: ulStyles },
@@ -31211,7 +31218,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-9" },
+							{ className: "col-xs-8 col-sm-9" },
 							_react2.default.createElement(_ListWithList2.default, { title: this.state.selectedTitle, data: this.state.selectedSection })
 						)
 					),
@@ -31246,7 +31253,7 @@
 		return ClientResourcesDevelopment;
 	})(_react2.default.Component);
 
-	exports.default = ClientResourcesDevelopment;
+	exports.default = (0, _radium2.default)(ClientResourcesDevelopment);
 
 	var development = {
 		zeroToOneYear: {

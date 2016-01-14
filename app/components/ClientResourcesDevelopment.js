@@ -1,8 +1,9 @@
 import React from 'react';
 import SharedStyles from "../styles/sharedStyles.js";
 import List from "./shared/list.js";
-import ListWithToggleList from "./shared/ListWithToggleList.js"
-import ListWithList from "./shared/ListWithList.js"
+import ListWithToggleList from "./shared/ListWithToggleList.js";
+import ListWithList from "./shared/ListWithList.js";
+import Radium from "radium";
 
 class ClientResourcesDevelopment extends React.Component {
 	constructor(props){
@@ -67,7 +68,10 @@ class ClientResourcesDevelopment extends React.Component {
 		let ulStyles = {
 			listStyle: "none",
 			textAlign: "left",
-			fontSize: "1.3em"
+			fontSize: "1.3em",
+			'@media (max-width: 768px)': {
+				padding: "0"
+			}
 		};
 		let liStyles = {
 			padding: "20px 0 0 0"
@@ -88,7 +92,7 @@ class ClientResourcesDevelopment extends React.Component {
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-sm-3">
+					<div className="col-xs-4 col-sm-3">
 						<ul style={ulStyles}>
 							<li style={liStyles}><a href="#" onClick={this.handleZeroOneClick.bind(this)}>0-1 Year</a>
 								<ul style={innerUlStyles}>
@@ -135,7 +139,7 @@ class ClientResourcesDevelopment extends React.Component {
 							</li>																																												
 						</ul>
 					</div>
-					<div className="col-sm-9">
+					<div className="col-xs-8 col-sm-9">
 						<ListWithList title={this.state.selectedTitle} data={this.state.selectedSection}/>
 					</div>
 				</div>
@@ -149,7 +153,7 @@ class ClientResourcesDevelopment extends React.Component {
 	}
 }
 
-export default ClientResourcesDevelopment;
+export default Radium(ClientResourcesDevelopment);
 
 
 let development = {

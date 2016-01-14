@@ -73,7 +73,7 @@ class Main extends React.Component{
 		//	 so look for if its parent class name equals dropDownBtn
 		let changeTab = true;
 		let tabText = e.target.textContent.trim();
-		
+
 		if(!tabText.length){tabText = "HOME";}
 		else if (dropDowntext.indexOf(tabText) !== -1){
 			changeTab = true;
@@ -143,9 +143,6 @@ let inline = {
 			maxWidth: "850px",
 			margin: "0 auto",
 		},
-		navUlStyles: {
-
-		},
 		navLogoStyles: {
 			margin: "0 20px",
 			padding: "4px 0"
@@ -165,8 +162,8 @@ let inline = {
 		navToggleButtonStyle: {
 			position: "absolute",
 			top: "13px",
-			right: "10px",
-			padding: "6px 6px 0",
+			right: "15px",
+			padding: "6px 12px 0",
 			backgroundColor: "#F5F5F5",
 			border: "none",
 			'@media (min-width: 992px)': {

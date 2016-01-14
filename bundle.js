@@ -24664,7 +24664,6 @@
 				//	 so look for if its parent class name equals dropDownBtn
 				var changeTab = true;
 				var tabText = e.target.textContent.trim();
-				console.log(tabText);
 
 				if (!tabText.length) {
 					tabText = "HOME";
@@ -27683,12 +27682,16 @@
 					}
 				}
 			}
+			//toggle dropdown state
+
 		}, {
 			key: "handleClick",
 			value: function handleClick(e) {
 				e.preventDefault();
 				this.setState({ toggleVisible: !this.state.toggleVisible });
 			}
+			//trigger nav UI change when router is triggered
+
 		}, {
 			key: "handleLiClick",
 			value: function handleLiClick(e) {
@@ -27805,11 +27808,17 @@
 		function NavigationStore() {
 			_classCallCheck(this, NavigationStore);
 
-			if (!sessionStorage.getItem('selectedTab')) {
+			//handles page refresh to not direct to other page in nav UI
+			this.hasSessionStorage = checkStorage('sessionStorage');
+			if (this.hasSessionStorage) {
+				if (!sessionStorage.getItem('selectedTab')) {
+					this.selectedTab = "HOME";
+					sessionStorage.setItem('selectedTab', 'HOME');
+				}
+				this.selectedTab = sessionStorage.getItem('selectedTab');
+			} else {
 				this.selectedTab = "HOME";
-				sessionStorage.setItem('selectedTab', 'HOME');
 			}
-			this.selectedTab = sessionStorage.getItem('selectedTab');
 			this.hideDropDown = true;
 			this.hideMobileNav = true;
 
@@ -27824,19 +27833,19 @@
 		_createClass(NavigationStore, [{
 			key: "handleUpdateNavigation",
 			value: function handleUpdateNavigation(tab) {
-				console.log("store: " + tab);
+				if (this.hasSessionStorage) {
+					sessionStorage.setItem('selectedTab', tab);
+				}
 				this.selectedTab = tab;
 			}
 		}, {
 			key: "handleUpdateHideDropDown",
 			value: function handleUpdateHideDropDown(drop) {
-				console.log("store: " + drop);
 				this.hideDropDown = drop;
 			}
 		}, {
 			key: "handleUpdateHideMobileNav",
 			value: function handleUpdateHideMobileNav(val) {
-				console.log("store: hideMobileNav: " + val);
 				this.hideMobileNav = val;
 			}
 		}]);
@@ -27845,6 +27854,18 @@
 	})();
 
 	exports.default = _alt2.default.createStore(NavigationStore, 'NavigationStore');
+
+	function checkStorage(type) {
+		try {
+			var storage = window[type];
+			var x = '_try_';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			return true;
+		} catch (e) {
+			return false;
+		}
+	}
 
 /***/ },
 /* 250 */
@@ -29505,8 +29526,6 @@
 		_createClass(NavigationActions, [{
 			key: 'updateSelectedNav',
 			value: function updateSelectedNav(tab) {
-				console.log("action: " + tab);
-				sessionStorage.setItem('selectedTab', tab);
 				return tab;
 			}
 		}, {
@@ -29569,11 +29588,16 @@
 
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PopUp).call(this, props));
 
-			if (!sessionStorage.getItem('isClosed')) {
-				sessionStorage.setItem('isClosed', "notClosed");
-				_this.state = { isClosed: "notClosed" };
+			_this.hasStorage = checkStorage('sessionStorage');
+			if (_this.hasStorage) {
+				if (!sessionStorage.getItem('isClosed')) {
+					sessionStorage.setItem('isClosed', "notClosed");
+					_this.state = { isClosed: "notClosed" };
+				} else {
+					_this.state = { isClosed: sessionStorage.getItem('isClosed') };
+				}
 			} else {
-				_this.state = { isClosed: sessionStorage.getItem('isClosed') };
+				_this.state = { isClosed: "notClosed" };
 			}
 			return _this;
 		}
@@ -29581,13 +29605,17 @@
 		_createClass(PopUp, [{
 			key: "handleClick",
 			value: function handleClick(e) {
-				this.setState({ isClosed: "closed" });
+				if (this.hasStorage) {
+					this.setState({ isClosed: "closed" });
+				}
 				sessionStorage.setItem('isClosed', "closed");
 			}
 		}, {
 			key: "handleTabClick",
 			value: function handleTabClick(e) {
-				_NavigationActions2.default.updateSelectedNav("CONTACT");
+				if (this.hasStorage) {
+					_NavigationActions2.default.updateSelectedNav("CONTACT");
+				}
 				this.setState({ isClosed: "closed" });
 			}
 		}, {
@@ -29643,6 +29671,18 @@
 	})(_react2.default.Component);
 
 	exports.default = PopUp;
+
+	function checkStorage(type) {
+		try {
+			var storage = window[type];
+			var x = '_try_';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			return true;
+		} catch (e) {
+			return false;
+		}
+	}
 
 	var bgColor = "#FFECB3";
 

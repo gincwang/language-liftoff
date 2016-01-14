@@ -73,8 +73,7 @@ class Main extends React.Component{
 		//	 so look for if its parent class name equals dropDownBtn
 		let changeTab = true;
 		let tabText = e.target.textContent.trim();
-		console.log(tabText);
-
+		
 		if(!tabText.length){tabText = "HOME";}
 		else if (dropDowntext.indexOf(tabText) !== -1){
 			changeTab = true;

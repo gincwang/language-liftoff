@@ -119,7 +119,7 @@ class Main extends React.Component{
 		        </div>
 	            {this.props.children}
 	            <div style={inline.footerStyles}>
-					<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015 Language Liftoff</span></div>	            
+					<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015-16 Language Liftoff</span></div>	            
 	            </div>
 	            <div>
 	            	<PopUp content={popUpText.content}/>

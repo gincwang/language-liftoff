@@ -24786,7 +24786,7 @@
 							_react2.default.createElement(
 								'span',
 								null,
-								'2015 Language Liftoff'
+								'2015-16 Language Liftoff'
 							)
 						)
 					),
@@ -29588,6 +29588,7 @@
 			key: "handleTabClick",
 			value: function handleTabClick(e) {
 				_NavigationActions2.default.updateSelectedNav("CONTACT");
+				this.setState({ isClosed: "closed" });
 			}
 		}, {
 			key: "render",

@@ -15,12 +15,13 @@ class DropDownBtn extends React.Component {
 				this.setState({toggleVisible: false});
 			}
 		}
-
 	}
+	//toggle dropdown state
 	handleClick(e){
 		e.preventDefault();
 		this.setState({toggleVisible: !this.state.toggleVisible});
 	}
+	//trigger nav UI change when router is triggered
 	handleLiClick(e){
 		e.preventDefault();
 		if(this.state.toggleVisible){

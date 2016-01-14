@@ -4,11 +4,17 @@ import NavigationActions from "../actions/NavigationActions";
 //NavigationStore will store the nav bar status
 class NavigationStore {
 	constructor(){
-		if(!sessionStorage.getItem('selectedTab')) {
+		//handles page refresh to not direct to other page in nav UI
+		this.hasSessionStorage = checkStorage('sessionStorage');
+		if(this.hasSessionStorage){
+			if(!sessionStorage.getItem('selectedTab')) {
+				this.selectedTab = "HOME";
+				sessionStorage.setItem('selectedTab', 'HOME');
+			}
+			this.selectedTab = sessionStorage.getItem('selectedTab');
+		}else {
 			this.selectedTab = "HOME";
-			sessionStorage.setItem('selectedTab', 'HOME');
 		}
-		this.selectedTab = sessionStorage.getItem('selectedTab');
 		this.hideDropDown = true;
 		this.hideMobileNav = true;
 
@@ -20,17 +26,30 @@ class NavigationStore {
 		});
 	}
 	handleUpdateNavigation(tab) {
-		console.log("store: " + tab);
+		if(this.hasSessionStorage){
+			sessionStorage.setItem('selectedTab', tab);
+		}
 		this.selectedTab = tab;
 	}
 	handleUpdateHideDropDown(drop) {
-		console.log("store: " + drop);
 		this.hideDropDown = drop;
 	}
 	handleUpdateHideMobileNav(val) {
-		console.log("store: hideMobileNav: " + val);
 		this.hideMobileNav = val;
 	}
 }
 
 export default alt.createStore(NavigationStore, 'NavigationStore');
+
+function checkStorage(type) {
+	try {
+		let storage = window[type];
+		let x = '_try_';
+		storage.setItem(x, x);
+		storage.removeItem(x);
+		return true;
+	} 
+	catch(e) {
+		return false;
+	}
+}

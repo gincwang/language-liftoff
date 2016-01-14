@@ -7,19 +7,30 @@ Link = Radium(Link);
 class PopUp extends React.Component {
 	constructor(props){
 		super(props);
-		if(!sessionStorage.getItem('isClosed')){
-			sessionStorage.setItem('isClosed', "notClosed")
+		this.hasStorage = checkStorage('sessionStorage');
+		if(this.hasStorage){
+			if(!sessionStorage.getItem('isClosed')){
+				sessionStorage.setItem('isClosed', "notClosed")
+				this.state = {isClosed: "notClosed"};
+			}else {
+				this.state = {isClosed: sessionStorage.getItem('isClosed')};
+			}
+		}
+		else {
 			this.state = {isClosed: "notClosed"};
-		}else {
-			this.state = {isClosed: sessionStorage.getItem('isClosed')};
 		}
 	}
 	handleClick(e){
-		this.setState({isClosed: "closed"});
+		if(this.hasStorage){
+			this.setState({isClosed: "closed"});
+		}
 		sessionStorage.setItem('isClosed', "closed");
 	}
 	handleTabClick(e){
-		NavigationActions.updateSelectedNav("CONTACT");
+		if(this.hasStorage){
+			NavigationActions.updateSelectedNav("CONTACT");			
+		}
+		this.setState({isClosed: "closed"});
 	}
 	render(){
 		let popWindowStyle = {
@@ -49,6 +60,21 @@ class PopUp extends React.Component {
 }
 
 export default PopUp;
+
+function checkStorage(type) {
+	try {
+		let storage = window[type];
+		let x = '_try_';
+		storage.setItem(x, x);
+		storage.removeItem(x);
+		return true;
+	} 
+	catch(e) {
+		return false;
+	}
+}
+
+
 var bgColor = "#FFECB3";
 
 var pStyle = {

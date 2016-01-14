@@ -67,39 +67,73 @@ class Main extends React.Component{
 		}
 	}
 	handleTabClick(e){
-		//there's edge cases when clicking on dropdown menu:
-		//	 if the carrot is clicked the textContent will show only space,
-		//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
-		//	 so look for if its parent class name equals dropDownBtn
-		let changeTab = true;
 		let tabText = e.target.textContent.trim();
-
-		//empty clicked string will default to HOME
-		if(!tabText.length){tabText = "HOME";}
-		//if clicking on one of RESOURCE's dropdown item, consider it clicked on RESOURCE instead
-		else if (dropDowntext.indexOf(tabText) !== -1){
-			changeTab = true;
-			tabText = "RESOURCES"
-		}
-
-
-		//check if clicked element is part of a dropdown component, and don't change tab if resource is clicked
+		let mobileNavHidden = this.state.hideMobileNav;
+		let isDropDownBtnClass = false;
+		//find if clicked element is part of "dropDownBtn" class
 		let node = e.target.parentNode.parentNode;
-		for(let i=0; i<2; i++){
-			if(node.className === "dropDownBtn" && this.state.selectedTab !== "RESOURCES"){
-				changeTab = false;
-				tabText = "RESOURCES";
+		for(let i=0; i<3; i++){
+			if(node.className === "dropDownBtn"){
+				isDropDownBtnClass = true;
+				if(!tabText){tabText = "RESOURCES";}
 				break;
 			}else {
 				node = node.parentNode;
 			}
 		}
 
-		if(changeTab && tabText !== this.state.selectedTab) {
+		//check if empty string, assign and navigate to HOME
+		if(!tabText) {
+			console.log("1");
+			tabText = "HOME";
 			NavigationActions.updateSelectedNav(tabText);
-			if(!this.state.hideMobileNav){
-				NavigationActions.updateHideMobileNav(!this.state.hideMobileNav);
+			if(!mobileNavHidden){
+				NavigationActions.updateHideMobileNav(true);
 			}
+		}
+		//check if it's already in RESOURCES tab
+		else if (this.state.selectedTab === "RESOURCES") {
+			console.log("2");
+			//check if clicked on one of dropdown item insde RESOURCES
+			if(dropDownText.indexOf(tabText) !== -1) {
+				console.log("2.1");			
+				//if true, change site, tabtext to RESOURCES
+				tabText = "RESOURCES";
+				NavigationActions.updateSelectedNav(tabText);
+				if(!mobileNavHidden){
+					NavigationActions.updateHideMobileNav(true);
+				}
+			}
+			//else just navigate to clicked page if not part of "dropDownBtn" class
+			else {
+				console.log("2.2");			
+				if (!isDropDownBtnClass){
+					NavigationActions.updateSelectedNav(tabText);
+					if(!mobileNavHidden){
+						NavigationActions.updateHideMobileNav(true);
+					}
+				}
+			}
+		}
+		//else, if clicked element is part of "dropDownBtn" class,
+		else if (isDropDownBtnClass){
+			console.log("3");
+			if(dropDownText.indexOf(tabText) !== -1) {
+				console.log("2.1");			
+				//if true, change site, tabtext to RESOURCES
+				tabText = "RESOURCES";
+				NavigationActions.updateSelectedNav(tabText);
+				if(!mobileNavHidden){
+					NavigationActions.updateHideMobileNav(true);
+				}
+			}
+		}
+		else {
+			console.log("4");			
+			NavigationActions.updateSelectedNav(tabText);
+			if(!mobileNavHidden){
+				NavigationActions.updateHideMobileNav(true);
+			}			
 		}
 	}
 	handleHideMobileNavClick(e){
@@ -114,7 +148,7 @@ class Main extends React.Component{
 		                <ul style={this.navUlStyles(this.state.hideMobileNav)}>
 		                	<li style={this.navLiStyles("HOME")} onClick={this.handleTabClick.bind(this)}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={this.navLiStyles("SERVICES")} onClick={this.handleTabClick.bind(this)}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDowntext} links={dropDownLink} minWidth={150} hideDropDown={this.state.hideDropDown}/></li>
+		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDownText} links={dropDownLink} minWidth={150} hideDropDown={this.state.hideDropDown}/></li>
 		                    <li style={this.navLiStyles("ABOUT US")} onClick={this.handleTabClick.bind(this)}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
 		                    <li style={this.navLiStyles("CONTACT")} onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>
@@ -135,7 +169,7 @@ class Main extends React.Component{
 
 export default Radium(Main);
 
-let dropDowntext = ["Common Disorders", "Typical Development"];
+let dropDownText = ["Common Disorders", "Typical Development"];
 let dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development"];
 let popUpText = {content: "Contact us for a free 30-minute consultation!"};
 

@@ -24658,41 +24658,75 @@
 		}, {
 			key: 'handleTabClick',
 			value: function handleTabClick(e) {
-				//there's edge cases when clicking on dropdown menu:
-				//	 if the carrot is clicked the textContent will show only space,
-				//	 if dropdown text is clicked it will be shown with dropdown title + carrot (space)
-				//	 so look for if its parent class name equals dropDownBtn
-				var changeTab = true;
 				var tabText = e.target.textContent.trim();
-
-				//empty clicked string will default to HOME
-				if (!tabText.length) {
-					tabText = "HOME";
-				}
-				//if clicking on one of RESOURCE's dropdown item, consider it clicked on RESOURCE instead
-				else if (dropDowntext.indexOf(tabText) !== -1) {
-						changeTab = true;
-						tabText = "RESOURCES";
-					}
-
-				//check if clicked element is part of a dropdown component, and don't change tab if resource is clicked
+				var mobileNavHidden = this.state.hideMobileNav;
+				var isDropDownBtnClass = false;
+				//find if clicked element is part of "dropDownBtn" class
 				var node = e.target.parentNode.parentNode;
-				for (var i = 0; i < 2; i++) {
-					if (node.className === "dropDownBtn" && this.state.selectedTab !== "RESOURCES") {
-						changeTab = false;
-						tabText = "RESOURCES";
+				for (var i = 0; i < 3; i++) {
+					if (node.className === "dropDownBtn") {
+						isDropDownBtnClass = true;
+						if (!tabText) {
+							tabText = "RESOURCES";
+						}
 						break;
 					} else {
 						node = node.parentNode;
 					}
 				}
 
-				if (changeTab && tabText !== this.state.selectedTab) {
+				//check if empty string, assign and navigate to HOME
+				if (!tabText) {
+					console.log("1");
+					tabText = "HOME";
 					_NavigationActions2.default.updateSelectedNav(tabText);
-					if (!this.state.hideMobileNav) {
-						_NavigationActions2.default.updateHideMobileNav(!this.state.hideMobileNav);
+					if (!mobileNavHidden) {
+						_NavigationActions2.default.updateHideMobileNav(true);
 					}
 				}
+				//check if it's already in RESOURCES tab
+				else if (this.state.selectedTab === "RESOURCES") {
+						console.log("2");
+						//check if clicked on one of dropdown item insde RESOURCES
+						if (dropDownText.indexOf(tabText) !== -1) {
+							console.log("2.1");
+							//if true, change site, tabtext to RESOURCES
+							tabText = "RESOURCES";
+							_NavigationActions2.default.updateSelectedNav(tabText);
+							if (!mobileNavHidden) {
+								_NavigationActions2.default.updateHideMobileNav(true);
+							}
+						}
+						//else just navigate to clicked page if not part of "dropDownBtn" class
+						else {
+								console.log("2.2");
+								if (!isDropDownBtnClass) {
+									_NavigationActions2.default.updateSelectedNav(tabText);
+									if (!mobileNavHidden) {
+										_NavigationActions2.default.updateHideMobileNav(true);
+									}
+								}
+							}
+					}
+					//else, if clicked element is part of "dropDownBtn" class,
+					else if (isDropDownBtnClass) {
+							console.log("3");
+							if (dropDownText.indexOf(tabText) !== -1) {
+								console.log("2.1");
+								//if true, change site, tabtext to RESOURCES
+								tabText = "RESOURCES";
+								_NavigationActions2.default.updateSelectedNav(tabText);
+								if (!mobileNavHidden) {
+									_NavigationActions2.default.updateHideMobileNav(true);
+								}
+							}
+						} else {
+							console.log("4");
+							_NavigationActions2.default.updateSelectedNav(tabText);
+							if (!mobileNavHidden) {
+								_NavigationActions2.default.updateHideMobileNav(true);
+							}
+						}
 			}
 		}, {
 			key: 'handleHideMobileNavClick',
@@ -24744,7 +24778,7 @@
 								_react2.default.createElement(
 									'li',
 									{ style: this.navLiStyles("RESOURCES"), onClick: this.handleTabClick.bind(this), className: "dropDownBtn" },
-									_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDowntext, links: dropDownLink, minWidth: 150, hideDropDown: this.state.hideDropDown })
+									_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDownText, links: dropDownLink, minWidth: 150, hideDropDown: this.state.hideDropDown })
 								),
 								_react2.default.createElement(
 									'li',
@@ -24809,7 +24843,7 @@
 
 	exports.default = (0, _radium2.default)(Main);
 
-	var dropDowntext = ["Common Disorders", "Typical Development"];
+	var dropDownText = ["Common Disorders", "Typical Development"];
 	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development"];
 	var popUpText = { content: "Contact us for a free 30-minute consultation!" };
 

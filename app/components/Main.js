@@ -74,7 +74,9 @@ class Main extends React.Component{
 		let changeTab = true;
 		let tabText = e.target.textContent.trim();
 
+		//empty clicked string will default to HOME
 		if(!tabText.length){tabText = "HOME";}
+		//if clicking on one of RESOURCE's dropdown item, consider it clicked on RESOURCE instead
 		else if (dropDowntext.indexOf(tabText) !== -1){
 			changeTab = true;
 			tabText = "RESOURCES"
@@ -86,15 +88,18 @@ class Main extends React.Component{
 		for(let i=0; i<2; i++){
 			if(node.className === "dropDownBtn" && this.state.selectedTab !== "RESOURCES"){
 				changeTab = false;
+				tabText = "RESOURCES";
 				break;
 			}else {
 				node = node.parentNode;
 			}
 		}
 
-		if(changeTab) {
+		if(changeTab && tabText !== this.state.selectedTab) {
 			NavigationActions.updateSelectedNav(tabText);
-			NavigationActions.updateHideMobileNav(!this.state.hideMobileNav);
+			if(!this.state.hideMobileNav){
+				NavigationActions.updateHideMobileNav(!this.state.hideMobileNav);
+			}
 		}
 	}
 	handleHideMobileNavClick(e){

@@ -24665,27 +24665,33 @@
 				var changeTab = true;
 				var tabText = e.target.textContent.trim();
 
+				//empty clicked string will default to HOME
 				if (!tabText.length) {
 					tabText = "HOME";
-				} else if (dropDowntext.indexOf(tabText) !== -1) {
-					changeTab = true;
-					tabText = "RESOURCES";
 				}
+				//if clicking on one of RESOURCE's dropdown item, consider it clicked on RESOURCE instead
+				else if (dropDowntext.indexOf(tabText) !== -1) {
+						changeTab = true;
+						tabText = "RESOURCES";
+					}
 
 				//check if clicked element is part of a dropdown component, and don't change tab if resource is clicked
 				var node = e.target.parentNode.parentNode;
 				for (var i = 0; i < 2; i++) {
 					if (node.className === "dropDownBtn" && this.state.selectedTab !== "RESOURCES") {
 						changeTab = false;
+						tabText = "RESOURCES";
 						break;
 					} else {
 						node = node.parentNode;
 					}
 				}
 
-				if (changeTab) {
+				if (changeTab && tabText !== this.state.selectedTab) {
 					_NavigationActions2.default.updateSelectedNav(tabText);
-					_NavigationActions2.default.updateHideMobileNav(!this.state.hideMobileNav);
+					if (!this.state.hideMobileNav) {
+						_NavigationActions2.default.updateHideMobileNav(!this.state.hideMobileNav);
+					}
 				}
 			}
 		}, {

@@ -13,14 +13,22 @@ class Services extends React.Component {
 		this.setState({toggleText: event.target.id});
 	}
 	setIconStyles(text){
-		var iconColor = this.state.toggleText === text ? "#2E7D32" : "transparent";
+		var padding, color;
+		if(this.state.toggleText === text){
+			padding = "15px";
+			color = "#2E7D32";
+		}else {
+			padding = "10px";
+			color = "transparent";
+		}
+
 		return{
 			fontSize: "3.5em",
-			backgroundColor: iconColor,
-			borderRadius: "50px",
-			padding: "15px",
+			backgroundColor: color,
+			borderRadius: "50%",
+			padding: padding,
 			color: SharedStyles.altColor,
-			transition: "all 0.5s ease",
+			transition: 'all 0.3s ease-out',
 			':hover': {
 				color: "#ECEFF1"
 			}
@@ -110,9 +118,7 @@ let inline = {
 	settingPStyles: {
 		textAlign: "left"
 	}
-
 }
-
 
 let texts = {
 	mainParagraph: <span>Services offered include <strong>Therapy, Evaluation,</strong> and <strong>Consultation</strong> for disorders of speech (i.e., articulation, fluency, resonance, voice) and language (i.e., phonology, morphology, syntax, semantics, and pragmatics) in pediatric, adolescent, adult, and geriatric populations. Communication-related cognitive rehabilitation services in improving attention, memory, and executive functioning (e.g., problem-solving, reasoning, planning) are also offered to clients with neurogenic impairments secondary to acquired brain injury and/or stroke.</span>,

@@ -30024,14 +30024,22 @@
 		}, {
 			key: "setIconStyles",
 			value: function setIconStyles(text) {
-				var iconColor = this.state.toggleText === text ? "#2E7D32" : "transparent";
+				var padding, color;
+				if (this.state.toggleText === text) {
+					padding = "15px";
+					color = "#2E7D32";
+				} else {
+					padding = "10px";
+					color = "transparent";
+				}
+
 				return {
 					fontSize: "3.5em",
-					backgroundColor: iconColor,
-					borderRadius: "50px",
-					padding: "15px",
+					backgroundColor: color,
+					borderRadius: "50%",
+					padding: padding,
 					color: _sharedStyles2.default.altColor,
-					transition: "all 0.5s ease",
+					transition: 'all 0.3s ease-out',
 					':hover': {
 						color: "#ECEFF1"
 					}
@@ -30307,7 +30315,6 @@
 		settingPStyles: {
 			textAlign: "left"
 		}
-
 	};
 
 	var texts = {

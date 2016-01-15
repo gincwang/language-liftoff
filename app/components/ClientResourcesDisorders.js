@@ -30,7 +30,8 @@ class ClientResourcesDisorders extends React.Component {
 						<h3 style={categoryTitleStyle}>Medical and Developmental Conditions</h3>
 						<ListWithAnchor texts={medConditions} links={medConditionsLinks} ulStyles={dataUlStyles} liStyles={dataLiStyles}/>
 					</div>
-				</div>				
+				</div>
+				<div style={SharedStyles.bottomPadding}></div>			
 			</div>
 		);
 	}

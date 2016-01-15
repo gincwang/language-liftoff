@@ -42,7 +42,8 @@ class Contact extends React.Component {
 					<div className="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
 						<FaqDiv faq={faq.three}/>
 					</div>														
-				</div>				
+				</div>
+				<div style={SharedStyles.bottomPadding}></div>			
 			</div>
 		);
 	}	

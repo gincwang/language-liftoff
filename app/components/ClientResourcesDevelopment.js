@@ -88,7 +88,7 @@ class ClientResourcesDevelopment extends React.Component {
 			<div className="container-fluid" style={SharedStyles.mainStyles}>
 				<div className="row" style={SharedStyles.titleRowStyles}>
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h2 style={SharedStyles.titleStyles}>Typical Development</h2>
+						<h2 style={SharedStyles.titleStyles}>Typical Language Development</h2>
 					</div>
 				</div>
 				<div className="row">
@@ -143,9 +143,10 @@ class ClientResourcesDevelopment extends React.Component {
 						<ListWithList title={this.state.selectedTitle} data={this.state.selectedSection}/>
 					</div>
 				</div>
+				<div style={SharedStyles.bottomPadding}></div>
 				<div className="row">
 					<div className="col-sm-12">
-						<h6>Information obtained from <span style={{fontStyle: "italic"}}>American Speech-Language-Hearing Association</span> <a href="http://www.asha.org" target="_blank">(http://www.asha.org)</a></h6>
+						<h6 style={SharedStyles.referenceStyle}>Information obtained from <span style={{fontStyle: "italic"}}>American Speech-Language-Hearing Association</span> <a href="http://www.asha.org" target="_blank">(http://www.asha.org)</a></h6>
 					</div>
 				</div>
 			</div>

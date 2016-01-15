@@ -37,6 +37,15 @@ var SharedStyles = {
 	},
 	glyphiconStyles: {
 		top: "4px"
+	},
+	topPadding: {
+		margin: "25px 0"
+	},
+	bottomPadding: {
+		margin: "50px 0"
+	},
+	referenceStyle: {
+		marginBottom: "30px"
 	}
 };
 

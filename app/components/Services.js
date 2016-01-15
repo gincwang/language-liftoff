@@ -68,6 +68,7 @@ class Services extends React.Component {
 						<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>computer</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingTeletherapy}</p></div></li>
 					</ul>						
 				</div>
+				<div style={SharedStyles.bottomPadding}></div>
 			</div>
 		);
 	}

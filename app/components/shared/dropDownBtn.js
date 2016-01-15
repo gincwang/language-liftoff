@@ -17,7 +17,7 @@ class DropDownBtn extends React.Component {
 		}
 	}
 	//toggle dropdown state
-	handleClick(e){
+	handleDivClick(e){
 		e.preventDefault();
 		this.setState({toggleVisible: !this.state.toggleVisible});
 	}
@@ -72,7 +72,7 @@ class DropDownBtn extends React.Component {
 
 		};
 		return (
-			<div><a style={this.props.anchorStyles} href="#" onClick={this.handleClick.bind(this)}> {this.props.title} <span className="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style={{fontSize: "0.8em"}}></span></a>
+			<div><a style={this.props.anchorStyles} href="#" onClick={this.handleDivClick.bind(this)}> {this.props.title} <span className="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style={{fontSize: "0.8em"}}></span></a>
 				<ul style={ulStyles}>
 					{this.renderList()}
 				</ul>

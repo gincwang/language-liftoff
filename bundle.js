@@ -27668,6 +27668,15 @@
 		},
 		glyphiconStyles: {
 			top: "4px"
+		},
+		topPadding: {
+			margin: "25px 0"
+		},
+		bottomPadding: {
+			margin: "50px 0"
+		},
+		referenceStyle: {
+			marginBottom: "30px"
 		}
 	};
 
@@ -27729,8 +27738,8 @@
 			//toggle dropdown state
 
 		}, {
-			key: "handleClick",
-			value: function handleClick(e) {
+			key: "handleDivClick",
+			value: function handleDivClick(e) {
 				e.preventDefault();
 				this.setState({ toggleVisible: !this.state.toggleVisible });
 			}
@@ -27802,7 +27811,7 @@
 					null,
 					_react2.default.createElement(
 						"a",
-						{ style: this.props.anchorStyles, href: "#", onClick: this.handleClick.bind(this) },
+						{ style: this.props.anchorStyles, href: "#", onClick: this.handleDivClick.bind(this) },
 						" ",
 						this.props.title,
 						" ",
@@ -30584,7 +30593,8 @@
 								)
 							)
 						)
-					)
+					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding })
 				);
 			}
 		}]);
@@ -30822,7 +30832,8 @@
 							),
 							_react2.default.createElement(_listWithAnchor2.default, { texts: medConditions, links: medConditionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
 						)
-					)
+					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding })
 				);
 			}
 		}]);
@@ -31076,7 +31087,7 @@
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
-								"Typical Development"
+								"Typical Language Development"
 							)
 						)
 					),
@@ -31227,6 +31238,7 @@
 							_react2.default.createElement(_ListWithList2.default, { title: this.state.selectedTitle, data: this.state.selectedSection })
 						)
 					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding }),
 					_react2.default.createElement(
 						"div",
 						{ className: "row" },
@@ -31235,7 +31247,7 @@
 							{ className: "col-sm-12" },
 							_react2.default.createElement(
 								"h6",
-								null,
+								{ style: _sharedStyles2.default.referenceStyle },
 								"Information obtained from ",
 								_react2.default.createElement(
 									"span",
@@ -31794,7 +31806,8 @@
 							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
 							_react2.default.createElement(_faqDiv2.default, { faq: faq.three })
 						)
-					)
+					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding })
 				);
 			}
 		}]);
@@ -31963,10 +31976,89 @@
 		_createClass(ClientResourcesEarlyConcerns, [{
 			key: "render",
 			value: function render() {
+				var paragraphStyles = {
+					lineHeight: _sharedStyles2.default.lineHeight,
+					textAlign: "left",
+					padding: "5px 0"
+				};
+
+				var altStyles = {
+					lineHeight: _sharedStyles2.default.lineHeight,
+					textAlign: "center",
+					padding: "5px 50px",
+					fontStyle: "italic"
+				};
+
 				return _react2.default.createElement(
 					"div",
-					null,
-					contentTitle
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								contentTitle
+							)
+						)
+					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.topPadding }),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6" },
+							_react2.default.createElement(
+								"h4",
+								{ style: paragraphStyles },
+								contentText[0]
+							),
+							_react2.default.createElement(
+								"h4",
+								{ style: altStyles },
+								contentText[1]
+							),
+							_react2.default.createElement(
+								"h4",
+								{ style: paragraphStyles },
+								contentText[2]
+							),
+							_react2.default.createElement(
+								"h4",
+								{ style: paragraphStyles },
+								contentText[3]
+							)
+						)
+					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding }),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-12" },
+							_react2.default.createElement(
+								"h6",
+								{ style: _sharedStyles2.default.referenceStyle },
+								"Information obtained from ",
+								_react2.default.createElement(
+									"span",
+									{ style: { fontStyle: "italic" } },
+									"American Speech-Language-Hearing Association"
+								),
+								" ",
+								_react2.default.createElement(
+									"a",
+									{ href: "http://www.asha.org", target: "_blank" },
+									"(http://www.asha.org)"
+								)
+							)
+						)
+					)
 				);
 			}
 		}]);
@@ -31977,12 +32069,33 @@
 	exports.default = ClientResourcesEarlyConcerns;
 
 	var contentTitle = _react2.default.createElement(
-		"h2",
+		"span",
 		null,
 		"Early Detection of Speech, Language, and Hearing Disorders"
 	);
 
-	var contentText = [];
+	var contentText = [_react2.default.createElement(
+		"span",
+		null,
+		"Do you have a child 3 years old or younger? Are you worried because your child doesn't seem to listen? Has your child started to say any words? Does your child cry a lot or have tantrums? Your child may have early signs of a speech, language, or hearing disorder."
+	), _react2.default.createElement(
+		"span",
+		null,
+		"\"My 2½-year-old, Evan, doesn't talk at all. He doesn't respond when I call his name. He turns the pages of a book, but doesn't pay any attention when I read to him. He shows me what he wants, but doesn't use words. He doesn't do what I ask him to do. He gets upset when I don't understand him. Is this normal? Does he just need more time to catch up?\""
+	), _react2.default.createElement(
+		"span",
+		null,
+		"Don't wait and hope your child will outgrow a communication problem. Early detection leads to early treatment. The earlier you get help for your child, the better. "
+	), _react2.default.createElement(
+		"span",
+		null,
+		"Speech-language pathologists (SLPs) and audiologists can help your infant or toddler who has a speech, language, or hearing disorder. SLPs help with ",
+		_react2.default.createElement(
+			"strong",
+			null,
+			"language disorders, speech sound disorders, stuttering (disfluency), and voice disorders."
+		)
+	)];
 
 /***/ }
 /******/ ]);

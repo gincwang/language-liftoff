@@ -1,0 +1,9 @@
+.toggleText-enter {
+  opacity: 0.01; }
+  .toggleText-enter.toggleText-enter-active {
+    opacity: 1;
+    -webkit-transition: all 500ms ease-out;
+    transition: all 500ms ease-out; }
+
+.toggleText-leave {
+  display: none; }

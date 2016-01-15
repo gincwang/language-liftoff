@@ -1,0 +1,13 @@
+
+
+.toggleText-enter {
+	opacity: 0.01;
+	&.toggleText-enter-active {
+		opacity: 1;
+		transition: all 500ms ease-out;
+	}
+}
+
+.toggleText-leave {
+	display: none;
+}

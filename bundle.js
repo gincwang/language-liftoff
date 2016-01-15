@@ -32085,7 +32085,7 @@
 				if (this.props.data) {
 					return _react2.default.createElement(
 						_reactAddonsCssTransitionGroup2.default,
-						{ transitionName: "development", transitionEnterTimeout: 800, transitionLeaveTimeout: 500 },
+						{ transitionName: "development", transitionEnterTimeout: 300, transitionLeaveTimeout: 100 },
 						_react2.default.createElement(
 							"div",
 							{ style: { textAlign: "left" }, key: this.props.title },

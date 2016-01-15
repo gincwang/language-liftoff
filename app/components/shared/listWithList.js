@@ -39,7 +39,7 @@ class ListWithList extends React.Component {
 		}
 		if(this.props.data){
 			return (
-				<ReactCSSTransitionGroup transitionName="development" transitionEnterTimeout={800} transitionLeaveTimeout={500}>
+				<ReactCSSTransitionGroup transitionName="development" transitionEnterTimeout={300} transitionLeaveTimeout={100}>
 					<div style={{textAlign: "left"}} key={this.props.title}>
 						<h3 style={{margin: "40px 0"}}><span style={titleStyle}>{this.props.title}</span></h3>
 						<div style={ulStyles}>{elements}</div>

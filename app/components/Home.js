@@ -9,6 +9,7 @@ Link = Radium(Link);	//Needs to be wrapped in Radium due to Raidum not working w
 class Home extends React.Component {
 	handleServiceClick(e){
 		NavigationActions.updateSelectedNav("SERVICES");
+		window.scroll(0, document.body.clientHeight/2);
 	}
 	render(){
 		return (

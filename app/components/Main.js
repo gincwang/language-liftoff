@@ -66,7 +66,9 @@ class Main extends React.Component{
 			}
 		}
 	}
+	//checks whether or not to hide mobile nav, expand/hide drop down, or just navigate to different page
 	handleTabClick(e){
+
 		let tabText = e.target.textContent.trim();
 		let mobileNavHidden = this.state.hideMobileNav;
 		let isDropDownBtnClass = false;
@@ -87,6 +89,7 @@ class Main extends React.Component{
 			console.log("1");
 			tabText = "HOME";
 			NavigationActions.updateSelectedNav(tabText);
+			window.scroll(0,0);
 			if(!mobileNavHidden){
 				NavigationActions.updateHideMobileNav(true);
 			}

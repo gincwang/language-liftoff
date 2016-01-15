@@ -31,6 +31,7 @@ class PopUp extends React.Component {
 			NavigationActions.updateSelectedNav("CONTACT");			
 		}
 		this.setState({isClosed: "closed"});
+		window.scroll(0,0);
 	}
 	render(){
 		let popWindowStyle = {

@@ -24665,9 +24665,12 @@
 					}
 				};
 			}
+			//checks whether or not to hide mobile nav, expand/hide drop down, or just navigate to different page
+
 		}, {
 			key: 'handleTabClick',
 			value: function handleTabClick(e) {
+
 				var tabText = e.target.textContent.trim();
 				var mobileNavHidden = this.state.hideMobileNav;
 				var isDropDownBtnClass = false;
@@ -24690,6 +24693,7 @@
 					console.log("1");
 					tabText = "HOME";
 					_NavigationActions2.default.updateSelectedNav(tabText);
+					window.scroll(0, 0);
 					if (!mobileNavHidden) {
 						_NavigationActions2.default.updateHideMobileNav(true);
 					}
@@ -29672,6 +29676,7 @@
 					_NavigationActions2.default.updateSelectedNav("CONTACT");
 				}
 				this.setState({ isClosed: "closed" });
+				window.scroll(0, 0);
 			}
 		}, {
 			key: "render",
@@ -29835,6 +29840,7 @@
 			key: "handleServiceClick",
 			value: function handleServiceClick(e) {
 				_NavigationActions2.default.updateSelectedNav("SERVICES");
+				window.scroll(0, document.body.clientHeight / 2);
 			}
 		}, {
 			key: "render",

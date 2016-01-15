@@ -9,7 +9,7 @@
   display: none; }
 
 .development-enter {
-  opacity: 0.2; }
+  opacity: 0.5; }
   .development-enter.development-enter-active {
     opacity: 1;
     -webkit-transition: all 300ms ease-in-out;

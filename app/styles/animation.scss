@@ -11,3 +11,17 @@
 .toggleText-leave {
 	display: none;
 }
+
+
+.development-enter {
+	opacity: 0.05;
+	&.development-enter-active {
+		opacity: 1;
+		transition: all 800ms ease-in-out;
+	}
+}
+
+.development-leave {
+	display: none;
+}
+

@@ -1,6 +1,7 @@
 import React from "react";
 import List from "./list.js";
 import Radium from 'radium';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class ListWithList extends React.Component {
@@ -38,10 +39,12 @@ class ListWithList extends React.Component {
 		}
 		if(this.props.data){
 			return (
-				<div style={{textAlign: "left"}}>
-					<h3 style={{margin: "40px 0"}}><span style={titleStyle}>{this.props.title}</span></h3>
-					<div style={ulStyles}>{elements}</div>
-				</div>
+				<ReactCSSTransitionGroup transitionName="development" transitionEnterTimeout={800} transitionLeaveTimeout={500}>
+					<div style={{textAlign: "left"}} key={this.props.title}>
+						<h3 style={{margin: "40px 0"}}><span style={titleStyle}>{this.props.title}</span></h3>
+						<div style={ulStyles}>{elements}</div>
+					</div>
+				</ReactCSSTransitionGroup>
 			);
 		}else {
 			return <div/>

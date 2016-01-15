@@ -32021,6 +32021,10 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
+	var _reactAddonsCssTransitionGroup = __webpack_require__(268);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32080,21 +32084,25 @@
 				}
 				if (this.props.data) {
 					return _react2.default.createElement(
-						"div",
-						{ style: { textAlign: "left" } },
-						_react2.default.createElement(
-							"h3",
-							{ style: { margin: "40px 0" } },
-							_react2.default.createElement(
-								"span",
-								{ style: titleStyle },
-								this.props.title
-							)
-						),
+						_reactAddonsCssTransitionGroup2.default,
+						{ transitionName: "development", transitionEnterTimeout: 800, transitionLeaveTimeout: 500 },
 						_react2.default.createElement(
 							"div",
-							{ style: ulStyles },
-							elements
+							{ style: { textAlign: "left" }, key: this.props.title },
+							_react2.default.createElement(
+								"h3",
+								{ style: { margin: "40px 0" } },
+								_react2.default.createElement(
+									"span",
+									{ style: titleStyle },
+									this.props.title
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ style: ulStyles },
+								elements
+							)
 						)
 					);
 				} else {

@@ -7,3 +7,13 @@
 
 .toggleText-leave {
   display: none; }
+
+.development-enter {
+  opacity: 0.05; }
+  .development-enter.development-enter-active {
+    opacity: 1;
+    -webkit-transition: all 800ms ease-in-out;
+    transition: all 800ms ease-in-out; }
+
+.development-leave {
+  display: none; }

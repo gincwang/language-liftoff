@@ -24503,6 +24503,10 @@
 
 	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
+	var _ClientResourcesEarlyConcerns = __webpack_require__(278);
+
+	var _ClientResourcesEarlyConcerns2 = _interopRequireDefault(_ClientResourcesEarlyConcerns);
+
 	var _Contact = __webpack_require__(276);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
@@ -24518,7 +24522,8 @@
 			_reactRouter.Route,
 			{ path: "client-resources" },
 			_react2.default.createElement(_reactRouter.Route, { path: "common-disorders", component: _ClientResourcesDisorders2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: "typical-development", component: _ClientResourcesDevelopment2.default })
+			_react2.default.createElement(_reactRouter.Route, { path: "typical-development", component: _ClientResourcesDevelopment2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: "early-concerns", component: _ClientResourcesEarlyConcerns2.default })
 		),
 		_react2.default.createElement(_reactRouter.Route, { path: "about", component: _About2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: "contact", component: _Contact2.default })
@@ -24843,8 +24848,8 @@
 
 	exports.default = (0, _radium2.default)(Main);
 
-	var dropDownText = ["Common Disorders", "Typical Development"];
-	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development"];
+	var dropDownText = ["Common Disorders", "Typical Development", "Early Concerns"];
+	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns"];
 	var popUpText = { content: "Contact us for a free 30-minute consultation!" };
 
 	var inline = {
@@ -31917,6 +31922,67 @@
 	})(_react2.default.Component);
 
 	exports.default = FaqDiv;
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(247);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ClientResourcesEarlyConcerns = (function (_React$Component) {
+		_inherits(ClientResourcesEarlyConcerns, _React$Component);
+
+		function ClientResourcesEarlyConcerns(props) {
+			_classCallCheck(this, ClientResourcesEarlyConcerns);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesEarlyConcerns).call(this, props));
+		}
+
+		_createClass(ClientResourcesEarlyConcerns, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					contentTitle
+				);
+			}
+		}]);
+
+		return ClientResourcesEarlyConcerns;
+	})(_react2.default.Component);
+
+	exports.default = ClientResourcesEarlyConcerns;
+
+	var contentTitle = _react2.default.createElement(
+		"h2",
+		null,
+		"Early Detection of Speech, Language, and Hearing Disorders"
+	);
+
+	var contentText = [];
 
 /***/ }
 /******/ ]);

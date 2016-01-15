@@ -61,7 +61,7 @@ class Main extends React.Component{
 				right: "0px",
 				width: "100%",
 				borderTop: "1px solid gray",
-				borderBottom: "2px solid black",
+				borderBottom: "3px solid black",
 				transition: "all 1s ease"
 			}
 		}
@@ -148,7 +148,7 @@ class Main extends React.Component{
 		                <ul style={this.navUlStyles(this.state.hideMobileNav)}>
 		                	<li style={this.navLiStyles("HOME")} onClick={this.handleTabClick.bind(this)}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
 		                    <li style={this.navLiStyles("SERVICES")} onClick={this.handleTabClick.bind(this)}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDownText} links={dropDownLink} minWidth={150} hideDropDown={this.state.hideDropDown}/></li>
+		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDownText} links={dropDownLink} minWidth={200} hideDropDown={this.state.hideDropDown}/></li>
 		                    <li style={this.navLiStyles("ABOUT US")} onClick={this.handleTabClick.bind(this)}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
 		                    <li style={this.navLiStyles("CONTACT")} onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
 		                </ul>
@@ -169,8 +169,8 @@ class Main extends React.Component{
 
 export default Radium(Main);
 
-let dropDownText = ["Common Disorders", "Typical Development", "Early Concerns"];
-let dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns"];
+let dropDownText = ["Common Disorders", "Typical Development", "Early Concerns", "Bilingual Concerns"];
+let dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns", "/client-resources/bilingual-concerns"];
 let popUpText = {content: "Contact us for a free 30-minute consultation!"};
 
 let inline = {

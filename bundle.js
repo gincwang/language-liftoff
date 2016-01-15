@@ -24507,6 +24507,10 @@
 
 	var _ClientResourcesEarlyConcerns2 = _interopRequireDefault(_ClientResourcesEarlyConcerns);
 
+	var _ClientResourcesBilingualConcerns = __webpack_require__(279);
+
+	var _ClientResourcesBilingualConcerns2 = _interopRequireDefault(_ClientResourcesBilingualConcerns);
+
 	var _Contact = __webpack_require__(276);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
@@ -24523,7 +24527,8 @@
 			{ path: "client-resources" },
 			_react2.default.createElement(_reactRouter.Route, { path: "common-disorders", component: _ClientResourcesDisorders2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: "typical-development", component: _ClientResourcesDevelopment2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: "early-concerns", component: _ClientResourcesEarlyConcerns2.default })
+			_react2.default.createElement(_reactRouter.Route, { path: "early-concerns", component: _ClientResourcesEarlyConcerns2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: "bilingual-concerns", component: _ClientResourcesBilingualConcerns2.default })
 		),
 		_react2.default.createElement(_reactRouter.Route, { path: "about", component: _About2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: "contact", component: _Contact2.default })
@@ -24655,7 +24660,7 @@
 						right: "0px",
 						width: "100%",
 						borderTop: "1px solid gray",
-						borderBottom: "2px solid black",
+						borderBottom: "3px solid black",
 						transition: "all 1s ease"
 					}
 				};
@@ -24783,7 +24788,7 @@
 								_react2.default.createElement(
 									'li',
 									{ style: this.navLiStyles("RESOURCES"), onClick: this.handleTabClick.bind(this), className: "dropDownBtn" },
-									_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDownText, links: dropDownLink, minWidth: 150, hideDropDown: this.state.hideDropDown })
+									_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDownText, links: dropDownLink, minWidth: 200, hideDropDown: this.state.hideDropDown })
 								),
 								_react2.default.createElement(
 									'li',
@@ -24848,8 +24853,8 @@
 
 	exports.default = (0, _radium2.default)(Main);
 
-	var dropDownText = ["Common Disorders", "Typical Development", "Early Concerns"];
-	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns"];
+	var dropDownText = ["Common Disorders", "Typical Development", "Early Concerns", "Bilingual Concerns"];
+	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns", "/client-resources/bilingual-concerns"];
 	var popUpText = { content: "Contact us for a free 30-minute consultation!" };
 
 	var inline = {
@@ -27768,7 +27773,7 @@
 					color: "black",
 					textDecoration: "none",
 					':hover': {
-						backgroundColor: "lightGray"
+						backgroundColor: "#FF9800"
 					}
 				};
 
@@ -27792,14 +27797,11 @@
 				var ulStyles = {
 					minWidth: this.props.minWidth,
 					position: "absolute",
-					backgroundColor: "white",
+					backgroundColor: "#FFE0B2",
 					padding: "0",
 					zIndex: "1000",
 					marginTop: "0",
-					opacity: "0.7",
 					'@media (max-width: 992px)': {
-						backgroundColor: "#FFE0B2",
-						opacity: "1.0",
 						display: "block",
 						textAlign: "center",
 						width: "100%"
@@ -30602,6 +30604,8 @@
 		return Services;
 	})(_react2.default.Component);
 
+	exports.default = (0, _radium2.default)(Services);
+
 	var inline = {
 		paragraphStyles: {
 			lineHeight: _sharedStyles2.default.lineHeight,
@@ -30722,8 +30726,6 @@
 			" - Therapy services can also be provided over the internet by video call.  This type of therapy is done individually between the therapist and one client.  "
 		)
 	};
-
-	exports.default = (0, _radium2.default)(Services);
 
 /***/ },
 /* 270 */
@@ -32096,6 +32098,413 @@
 			"language disorders, speech sound disorders, stuttering (disfluency), and voice disorders."
 		)
 	)];
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(247);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	var _listWithAnchor = __webpack_require__(271);
+
+	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ClientResourcesBilingualConcerns = (function (_React$Component) {
+		_inherits(ClientResourcesBilingualConcerns, _React$Component);
+
+		function ClientResourcesBilingualConcerns(props) {
+			_classCallCheck(this, ClientResourcesBilingualConcerns);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesBilingualConcerns).call(this, props));
+		}
+
+		_createClass(ClientResourcesBilingualConcerns, [{
+			key: 'render',
+			value: function render() {
+				var paragraphStyles = {
+					lineHeight: _sharedStyles2.default.lineHeight,
+					textAlign: "left",
+					padding: "5px 0"
+				};
+
+				var simpleList = function simpleList(array) {
+					var liStyle = {
+						textAlign: "left",
+						fontSize: "1.2em"
+					};
+
+					return array.map(function (em, i) {
+						return _react2.default.createElement(
+							'li',
+							{ key: i, style: liStyle },
+							em
+						);
+					});
+				};
+
+				return _react2.default.createElement(
+					'div',
+					{ className: 'container-fluid', style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row', style: _sharedStyles2.default.titleRowStyles },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8' },
+							_react2.default.createElement(
+								'h2',
+								{ style: _sharedStyles2.default.titleStyles },
+								contentTitle
+							)
+						)
+					),
+					_react2.default.createElement('div', { style: _sharedStyles2.default.topPadding }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6' },
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[0]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[1]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[2]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[3]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[4]
+							),
+							_react2.default.createElement(
+								'ul',
+								null,
+								simpleList(contentText[5])
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[6]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[7]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[8]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[9]
+							),
+							_react2.default.createElement(
+								'ul',
+								null,
+								simpleList(contentText[10])
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[11]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[12]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[13]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[14]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[15]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[16]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[17]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[18]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[19]
+							),
+							_react2.default.createElement(
+								'h4',
+								{ style: paragraphStyles },
+								contentText[20]
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { links: additionalLinks, texts: contentText[21], ulStyles: linkUlStyle })
+						)
+					),
+					_react2.default.createElement('div', { style: _sharedStyles2.default.bottomPadding }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-12' },
+							_react2.default.createElement(
+								'h6',
+								{ style: _sharedStyles2.default.referenceStyle },
+								'Information obtained from ',
+								_react2.default.createElement(
+									'span',
+									{ style: { fontStyle: "italic" } },
+									'American Speech-Language-Hearing Association'
+								),
+								' ',
+								_react2.default.createElement(
+									'a',
+									{ href: 'http://www.asha.org', target: '_blank' },
+									'(http://www.asha.org)'
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return ClientResourcesBilingualConcerns;
+	})(_react2.default.Component);
+
+	exports.default = ClientResourcesBilingualConcerns;
+
+	var questionStyle = {
+		textDecoration: "underline",
+		fontSize: '1.2em',
+		color: 'black'
+	};
+
+	var linkUlStyle = {
+		textAlign: "left",
+		fontSize: "1.2em"
+	};
+
+	var contentTitle = _react2.default.createElement(
+		'span',
+		null,
+		'Learning Two Languages'
+	);
+
+	var contentText = [_react2.default.createElement(
+		'span',
+		null,
+		'Anyone can learn a new language. Some people find it easier than others, but all of us can do it. People who can use two languages are bilingual.'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Children can learn to be bilingual. They can learn two languages at home, at school, or in the community. Some children learn both languages very well. But sometimes they know one language better than the other. The language a child knows better is called the dominant language. Over time the dominant language may change, especially if a child doesn\'t use it regularly.'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Speaking two languages is like any other skill. To do it well, children need lots of practice, which parents can help provide. Without practice, it may be difficult for children to understand or talk to people in both languages. '
+	), _react2.default.createElement(
+		'span',
+		{ style: questionStyle },
+		'How do I teach my child to be bilingual? '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'There are a number of ways to teach children to speak more than one language. You can do the following: '
+	), [_react2.default.createElement(
+		'span',
+		null,
+		'Use two languages from the start. Many children grow up learning two languages at the same time. '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Use only one language at home. Your child can learn the second language when he or she starts school. '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Give your child many opportunities to hear and practice using both languages in everyday situations. '
+	)], _react2.default.createElement(
+		'span',
+		{ style: questionStyle },
+		'Will learning two languages cause speech or language problems? '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'No. Children all over the world learn more than one language without developing speech or language problems. Bilingual children develop language skills just as other children do. '
+	), _react2.default.createElement(
+		'span',
+		{ style: questionStyle },
+		'What should I expect when my child learns more than one language? '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Every bilingual child is unique. Developing skills in two languages depends on the quality and amount of experience the child has using both languages. The following are some basic guidelines: '
+	), [_react2.default.createElement(
+		'span',
+		null,
+		'Like other children, most bilingual children speak their first words by the time they are 1 year old (e.g., "mama" or "dada"). By age 2, most bilingual children can use two-word phrases (e.g., "my ball" or "no juice"). These are the same language developmental milestones seen in children who learn only one language.'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'From time to time, children may mix grammar rules, or they might use words from both languages in the same sentence. This is a normal part of bilingual language development.'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'When a second language is introduced, some children may not talk much for a while. This "silent period" can sometimes last several months. Again, this is normal and will go away.'
+	)], _react2.default.createElement(
+		'span',
+		{ style: questionStyle },
+		'What resources can I use to help my child be bilingual? '
+	), _react2.default.createElement(
+		'span',
+		null,
+		_react2.default.createElement(
+			'strong',
+			null,
+			'Books'
+		),
+		' You can read to your child in both languages. You can find the books you need at bookstores, at libraries, and on the Internet. '
+	), _react2.default.createElement(
+		'span',
+		null,
+		_react2.default.createElement(
+			'strong',
+			null,
+			'Audiotapes and CDs'
+		),
+		' Tapes and CDs in other languages can help too. Singing is a great way to introduce a second language to your child, and it can be lots of fun! '
+	), _react2.default.createElement(
+		'span',
+		null,
+		_react2.default.createElement(
+			'strong',
+			null,
+			'Videotapes and DVDs'
+		),
+		' Children\'s programs are available in many languages. These programs often teach children about numbers, letters, colors, and basic vocabulary. '
+	), _react2.default.createElement(
+		'span',
+		null,
+		_react2.default.createElement(
+			'strong',
+			null,
+			'Language programs'
+		),
+		' Children can also learn to be bilingual at language camps or in bilingual education programs. These give children the chance to use two languages with other children. Some school districts offer programs to help children learn another language from an early age. '
+	), _react2.default.createElement(
+		'span',
+		{ style: questionStyle },
+		'If my child is having trouble communicating, should we use only one language? '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'In this case, it\'s best to talk to your child in the language you\'re most comfortable with. This is true even if he or she uses a different language at school. But try not to make a sudden change in your child\'s routine. This can be stressful. '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Children who are having problems in both languages may need professional help. '
+	), _react2.default.createElement(
+		'span',
+		{ style: questionStyle },
+		'What are some additional resources? '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'This list is not exhaustive, and inclusion does not imply endorsement of the organization or the content of the Web site by ASHA. '
+	), [_react2.default.createElement(
+		'span',
+		null,
+		'Bilingual Language Development'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Can Special Needs Kids be Bilingual? '
+	), _react2.default.createElement(
+		'span',
+		null,
+		'¡Colorín Colorado!'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'International Reading Association'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Myths About Bilingual Children'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'National Clearinghouse for English Language Acquisition'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'National Association for Bilingual Education'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'Talk to your baby in your own language'
+	), _react2.default.createElement(
+		'span',
+		null,
+		'The Advantages of Being Bilingual'
+	)]];
+
+	var additionalLinks = ['http://www.youtube.com/watch?v=SNRqJo9niFY', 'http://youtu.be/vOhWg0YeIMs', 'http://www.colorincolorado.com', 'http://www.reading.org', 'http://youtu.be/LVYhpCprtzQ', 'http://www.ncela.gwu.edu', 'http://www.nabe.org', 'http://www.literacytrust.org.uk/talktoyourbaby/quicktips.html#language', 'http://www.asha.org/public/speech/development/The-Advantages-of-Being-Bilingual/'];
 
 /***/ }
 /******/ ]);

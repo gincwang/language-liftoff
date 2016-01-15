@@ -7,6 +7,7 @@ import Services from '../components/Services.js';
 import ClientResourcesDisorders from '../components/ClientResourcesDisorders.js';
 import ClientResourcesDevelopment from '../components/ClientResourcesDevelopment.js';
 import ClientResourcesEarlyConcerns from '../components/ClientResourcesEarlyConcerns';
+import ClientResourcesBilingualConcerns from '../components/ClientResourcesBilingualConcerns';
 import Contact from '../components/Contact.js';
 
 export default (
@@ -16,7 +17,8 @@ export default (
 		<Route path="client-resources">
 			<Route path="common-disorders" component={ClientResourcesDisorders} />
 			<Route path="typical-development" component={ClientResourcesDevelopment} />	
-			<Route path="early-concerns" component={ClientResourcesEarlyConcerns} />				
+			<Route path="early-concerns" component={ClientResourcesEarlyConcerns} />
+			<Route path="bilingual-concerns" component={ClientResourcesBilingualConcerns} />						
 		</Route>
 		<Route path="about" component={About}/>
 		<Route path="contact" component={Contact}/>

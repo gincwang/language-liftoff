@@ -73,6 +73,9 @@ class Services extends React.Component {
 		);
 	}
 }
+
+export default Radium(Services);
+
 let inline = {
 	paragraphStyles: {
 		lineHeight: SharedStyles.lineHeight,
@@ -117,5 +120,3 @@ let texts = {
 	settingTeletherapy: <span><strong>TELETHERAPY</strong> - Therapy services can also be provided over the internet by video call.  This type of therapy is done individually between the therapist and one client.  </span>	
 };
 
-
-export default Radium(Services);

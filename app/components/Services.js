@@ -1,6 +1,7 @@
 import React from "react";
 import Radium from "radium";
 import SharedStyles from "../styles/sharedStyles.js";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Services extends React.Component {
 	constructor(props){
@@ -19,6 +20,7 @@ class Services extends React.Component {
 			borderRadius: "50px",
 			padding: "15px",
 			color: SharedStyles.altColor,
+			transition: "all 0.5s ease",
 			':hover': {
 				color: "#ECEFF1"
 			}
@@ -47,7 +49,11 @@ class Services extends React.Component {
 						<li className="col-xs-4 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="consultation" key="consultation" style={this.setIconStyles("consultation")}>record_voice_over</i></a><p style={{borderBottom:this.state.toggleText==="consultation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Consultation</p></li>
 					</ul>
 					<div className="col-xs-12 col-sm-offset-2 col-sm-8">
-						<h4 style={inline.textToggleStyles}>{texts[this.state.toggleText]}</h4>
+						<h4 style={inline.textToggleStyles}>
+							<ReactCSSTransitionGroup transitionName="toggleText" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+								{texts[this.state.toggleText]}
+							</ReactCSSTransitionGroup>
+						</h4>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
@@ -85,7 +91,8 @@ let inline = {
 		lineHeight: SharedStyles.lineHeight,
 		backgroundColor: SharedStyles.altColor,
 		borderRadius: "30px",
-		padding: "30px 30px"
+		padding: "30px 30px",
+		transition: "all 1s ease"
 	},
 	settingStyles: {
 		border: "2px solid gray",

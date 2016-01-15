@@ -29696,16 +29696,16 @@
 					"div",
 					{ style: popWindowStyle },
 					_react2.default.createElement(
-						"p",
-						{ style: pStyle },
-						this.props.content
-					),
-					_react2.default.createElement(
 						"div",
 						{ onClick: this.handleTabClick.bind(this) },
 						_react2.default.createElement(
 							Link,
 							{ to: "/contact", style: linkStyle },
+							_react2.default.createElement(
+								"p",
+								{ style: pStyle },
+								this.props.content
+							),
 							_react2.default.createElement(
 								"i",
 								{ style: iconStyle, className: "material-icons" },
@@ -29743,7 +29743,8 @@
 
 	var pStyle = {
 		padding: "40px 20px 0px",
-		textAlign: "center"
+		textAlign: "center",
+		textDecoration: 'none'
 	};
 
 	var buttonStyle = {
@@ -32349,11 +32350,23 @@
 	var contentText = [_react2.default.createElement(
 		'span',
 		null,
-		'Anyone can learn a new language. Some people find it easier than others, but all of us can do it. People who can use two languages are bilingual.'
+		'Anyone can learn a new language. Some people find it easier than others, but all of us can do it. People who can use two languages are ',
+		_react2.default.createElement(
+			'strong',
+			null,
+			'bilingual'
+		),
+		'.'
 	), _react2.default.createElement(
 		'span',
 		null,
-		'Children can learn to be bilingual. They can learn two languages at home, at school, or in the community. Some children learn both languages very well. But sometimes they know one language better than the other. The language a child knows better is called the dominant language. Over time the dominant language may change, especially if a child doesn\'t use it regularly.'
+		'Children can learn to be bilingual. They can learn two languages at home, at school, or in the community. Some children learn both languages very well. But sometimes they know one language better than the other. The language a child knows better is called the ',
+		_react2.default.createElement(
+			'strong',
+			null,
+			'dominant language'
+		),
+		'. Over time the dominant language may change, especially if a child doesn\'t use it regularly.'
 	), _react2.default.createElement(
 		'span',
 		null,
@@ -32445,7 +32458,19 @@
 			null,
 			'Language programs'
 		),
-		' Children can also learn to be bilingual at language camps or in bilingual education programs. These give children the chance to use two languages with other children. Some school districts offer programs to help children learn another language from an early age. '
+		' Children can also learn to be bilingual at ',
+		_react2.default.createElement(
+			'strong',
+			null,
+			'language camps'
+		),
+		' or in ',
+		_react2.default.createElement(
+			'strong',
+			null,
+			'bilingual education programs'
+		),
+		'. These give children the chance to use two languages with other children. Some school districts offer programs to help children learn another language from an early age. '
 	), _react2.default.createElement(
 		'span',
 		{ style: questionStyle },

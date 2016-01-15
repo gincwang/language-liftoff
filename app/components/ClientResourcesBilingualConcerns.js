@@ -85,8 +85,8 @@ var linkUlStyle = {
 
 var contentTitle = <span>Learning Two Languages</span>;
 
-var contentText = [<span>Anyone can learn a new language. Some people find it easier than others, but all of us can do it. People who can use two languages are bilingual.</span>,
-<span>Children can learn to be bilingual. They can learn two languages at home, at school, or in the community. Some children learn both languages very well. But sometimes they know one language better than the other. The language a child knows better is called the dominant language. Over time the dominant language may change, especially if a child doesn't use it regularly.</span>,
+var contentText = [<span>Anyone can learn a new language. Some people find it easier than others, but all of us can do it. People who can use two languages are <strong>bilingual</strong>.</span>,
+<span>Children can learn to be bilingual. They can learn two languages at home, at school, or in the community. Some children learn both languages very well. But sometimes they know one language better than the other. The language a child knows better is called the <strong>dominant language</strong>. Over time the dominant language may change, especially if a child doesn't use it regularly.</span>,
 <span>Speaking two languages is like any other skill. To do it well, children need lots of practice, which parents can help provide. Without practice, it may be difficult for children to understand or talk to people in both languages. </span>,
 <span style={questionStyle}>How do I teach my child to be bilingual? </span>,
 <span>There are a number of ways to teach children to speak more than one language. You can do the following: </span>,
@@ -108,7 +108,7 @@ var contentText = [<span>Anyone can learn a new language. Some people find it ea
 <span><strong>Books</strong> You can read to your child in both languages. You can find the books you need at bookstores, at libraries, and on the Internet. </span>,
 <span><strong>Audiotapes and CDs</strong> Tapes and CDs in other languages can help too. Singing is a great way to introduce a second language to your child, and it can be lots of fun! </span>,
 <span><strong>Videotapes and DVDs</strong> Children's programs are available in many languages. These programs often teach children about numbers, letters, colors, and basic vocabulary. </span>,
-<span><strong>Language programs</strong> Children can also learn to be bilingual at language camps or in bilingual education programs. These give children the chance to use two languages with other children. Some school districts offer programs to help children learn another language from an early age. </span>,
+<span><strong>Language programs</strong> Children can also learn to be bilingual at <strong>language camps</strong> or in <strong>bilingual education programs</strong>. These give children the chance to use two languages with other children. Some school districts offer programs to help children learn another language from an early age. </span>,
 <span style={questionStyle}>If my child is having trouble communicating, should we use only one language? </span>,
 <span>In this case, it's best to talk to your child in the language you're most comfortable with. This is true even if he or she uses a different language at school. But try not to make a sudden change in your child's routine. This can be stressful. </span>,
 <span>Children who are having problems in both languages may need professional help. </span>,

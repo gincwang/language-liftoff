@@ -51,8 +51,7 @@ class PopUp extends React.Component {
 
 		return (
 			<div style={popWindowStyle} >
-				<p style={pStyle}>{this.props.content}</p>
-				<div onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={linkStyle}><i style={iconStyle} className="material-icons">contact_phone</i></Link></div>
+				<div onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={linkStyle}><p style={pStyle}>{this.props.content}</p><i style={iconStyle} className="material-icons">contact_phone</i></Link></div>
 				<button onClick={this.handleClick.bind(this)} style={buttonStyle}>x</button>
 			</div>
 		);
@@ -79,7 +78,8 @@ var bgColor = "#FFECB3";
 
 var pStyle = {
 	padding: "40px 20px 0px",
-	textAlign: "center"
+	textAlign: "center",
+	textDecoration: 'none'
 };
 
 var buttonStyle = {

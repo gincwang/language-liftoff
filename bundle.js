@@ -31511,6 +31511,10 @@
 
 	var _list2 = _interopRequireDefault(_list);
 
+	var _radium = __webpack_require__(212);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31534,7 +31538,10 @@
 				var titleStyle = {
 					border: "2px solid gray",
 					borderRadius: "20px",
-					padding: "10px 20px"
+					padding: "10px 20px",
+					'@media (max-width: 768px)': {
+						fontSize: "0.79em"
+					}
 				};
 
 				var ulStyles = {
@@ -31593,7 +31600,7 @@
 		return ListWithList;
 	})(_react2.default.Component);
 
-	exports.default = ListWithList;
+	exports.default = (0, _radium2.default)(ListWithList);
 
 /***/ },
 /* 276 */

@@ -1,5 +1,6 @@
 import React from "react";
 import List from "./list.js";
+import Radium from 'radium';
 
 
 class ListWithList extends React.Component {
@@ -8,6 +9,9 @@ class ListWithList extends React.Component {
 			border: "2px solid gray",
 			borderRadius: "20px",
 			padding: "10px 20px",
+			'@media (max-width: 768px)': {
+				fontSize: "0.79em"
+			}
 		};
 
 		let ulStyles = {
@@ -46,5 +50,5 @@ class ListWithList extends React.Component {
 }
 
 
-export default ListWithList;
+export default Radium(ListWithList);
 

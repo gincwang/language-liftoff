@@ -29758,7 +29758,6 @@
 		':hover': {
 			color: "gray"
 		}
-
 	};
 
 	var iconStyle = {

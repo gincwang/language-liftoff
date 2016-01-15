@@ -93,7 +93,6 @@ var buttonStyle = {
 	':hover': {
 		color: "gray"
 	}
-
 };
 
 var iconStyle = {

@@ -124,7 +124,7 @@ let inline = {
 	linkText: {
 		fontSize: '1.8em',
 		position: 'absolute',
-		top: '50%',
+		top: '45%',
 		left: '20%',
 		right: '20%',
 		lineHeight: '1.8',

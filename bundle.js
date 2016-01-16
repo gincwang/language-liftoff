@@ -24161,15 +24161,15 @@
 
 	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
-	var _ClientResourcesEarlyConcerns = __webpack_require__(281);
+	var _ClientResourcesEarlyConcerns = __webpack_require__(279);
 
 	var _ClientResourcesEarlyConcerns2 = _interopRequireDefault(_ClientResourcesEarlyConcerns);
 
-	var _ClientResourcesBilingualConcerns = __webpack_require__(282);
+	var _ClientResourcesBilingualConcerns = __webpack_require__(280);
 
 	var _ClientResourcesBilingualConcerns2 = _interopRequireDefault(_ClientResourcesBilingualConcerns);
 
-	var _Contact = __webpack_require__(283);
+	var _Contact = __webpack_require__(281);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
@@ -29755,7 +29755,7 @@
 		linkText: {
 			fontSize: '1.8em',
 			position: 'absolute',
-			top: '50%',
+			top: '45%',
 			left: '20%',
 			right: '20%',
 			lineHeight: '1.8',
@@ -31528,7 +31528,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _ListWithList = __webpack_require__(280);
+	var _ListWithList = __webpack_require__(278);
 
 	var _ListWithList2 = _interopRequireDefault(_ListWithList);
 
@@ -31903,9 +31903,7 @@
 	};
 
 /***/ },
-/* 278 */,
-/* 279 */,
-/* 280 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32024,7 +32022,7 @@
 	exports.default = (0, _radium2.default)(ListWithList);
 
 /***/ },
-/* 281 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32185,7 +32183,7 @@
 	)];
 
 /***/ },
-/* 282 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32616,7 +32614,7 @@
 	var additionalLinks = ['http://www.youtube.com/watch?v=SNRqJo9niFY', 'http://youtu.be/vOhWg0YeIMs', 'http://www.colorincolorado.com', 'http://www.reading.org', 'http://youtu.be/LVYhpCprtzQ', 'http://www.ncela.gwu.edu', 'http://www.nabe.org', 'http://www.literacytrust.org.uk/talktoyourbaby/quicktips.html#language', 'http://www.asha.org/public/speech/development/The-Advantages-of-Being-Bilingual/'];
 
 /***/ },
-/* 283 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32635,7 +32633,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _faqDiv = __webpack_require__(284);
+	var _faqDiv = __webpack_require__(282);
 
 	var _faqDiv2 = _interopRequireDefault(_faqDiv);
 
@@ -32874,7 +32872,7 @@
 	};
 
 /***/ },
-/* 284 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

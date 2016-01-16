@@ -51,15 +51,15 @@ class PopUp extends React.Component {
 		};
 
 		return (
-			<div style={popWindowStyle} >
-				<div onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={linkStyle}><p style={pStyle}>{this.props.content}</p><i style={iconStyle} className="material-icons">contact_phone</i></Link></div>
-				<button onClick={this.handleClick.bind(this)} style={buttonStyle}>x</button>
+			<div style={popWindowStyle} key={this.props.content.length}>
+				<div onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={linkStyle}><p style={pStyle}>{this.props.content}</p><i style={iconStyle} className="material-icons" key='popup-contact-phone'>contact_phone</i></Link></div>
+				<button onClick={this.handleClick.bind(this)} style={buttonStyle} key='close'>x</button>
 			</div>
 		);
 	}
 }
 
-export default PopUp;
+export default Radium(PopUp);
 
 function checkStorage(type) {
 	try {

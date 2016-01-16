@@ -24293,6 +24293,7 @@
 			value: function navLiStyles(tabTitle) {
 				return {
 					flex: "1 20%",
+					transition: "all 0.3s ease",
 					backgroundColor: tabTitle === this.state.selectedTab ? _sharedStyles2.default.mainColor : _sharedStyles2.default.altColor,
 					'@media (max-width: 992px)': {
 						flex: "1 100%"
@@ -27434,6 +27435,7 @@
 					padding: "5px 15px",
 					color: "black",
 					textDecoration: "none",
+					transition: "all 0.3s ease",
 					':hover': {
 						backgroundColor: "#FF9800"
 					}
@@ -29357,7 +29359,7 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ style: popWindowStyle },
+					{ style: popWindowStyle, key: this.props.content.length },
 					_react2.default.createElement(
 						"div",
 						{ onClick: this.handleTabClick.bind(this) },
@@ -29371,14 +29373,14 @@
 							),
 							_react2.default.createElement(
 								"i",
-								{ style: iconStyle, className: "material-icons" },
+								{ style: iconStyle, className: "material-icons", key: "popup-contact-phone" },
 								"contact_phone"
 							)
 						)
 					),
 					_react2.default.createElement(
 						"button",
-						{ onClick: this.handleClick.bind(this), style: buttonStyle },
+						{ onClick: this.handleClick.bind(this), style: buttonStyle, key: "close" },
 						"x"
 					)
 				);
@@ -29388,7 +29390,7 @@
 		return PopUp;
 	}(_react2.default.Component);
 
-	exports.default = PopUp;
+	exports.default = (0, _radium2.default)(PopUp);
 
 	function checkStorage(type) {
 		try {
@@ -29498,7 +29500,19 @@
 			key: "handleServiceClick",
 			value: function handleServiceClick(e) {
 				_NavigationActions2.default.updateSelectedNav("SERVICES");
-				window.scroll(0, document.body.clientHeight / 2);
+				window.scrollTo(0, document.body.scrollHeight);
+			}
+		}, {
+			key: "handleDisorderClick",
+			value: function handleDisorderClick(e) {
+				_NavigationActions2.default.updateSelectedNav("RESOURCES");
+				window.scrollTo(0, 0);
+			}
+		}, {
+			key: "handleAboutClick",
+			value: function handleAboutClick(e) {
+				_NavigationActions2.default.updateSelectedNav("ABOUT US");
+				window.scrollTo(0, 0);
 			}
 		}, {
 			key: "render",
@@ -29546,84 +29560,79 @@
 							{ className: "list-unstyled" },
 							_react2.default.createElement(
 								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2", style: inline.serviceLinkStyles },
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
 								_react2.default.createElement(
-									"i",
-									{ className: "material-icons", style: inline.iconStyles },
-									"home"
-								),
-								_react2.default.createElement(
-									"p",
-									null,
-									"Home"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"i",
-									{ className: "material-icons", style: inline.iconStyles },
-									"store_mall_directory"
-								),
-								_react2.default.createElement(
-									"p",
-									null,
-									"Clinic"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"i",
-									{ className: "material-icons", style: inline.iconStyles },
-									"domain"
-								),
-								_react2.default.createElement(
-									"p",
-									null,
-									"Community"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"i",
-									{ className: "material-icons", style: inline.iconStyles },
-									"computer"
-								),
-								_react2.default.createElement(
-									"p",
-									null,
-									"Teletherapy"
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: inline.linkStyles },
-						_react2.default.createElement(
-							"div",
-							{ onClick: this.handleServiceClick.bind(this) },
-							_react2.default.createElement(
-								Link,
-								{ to: "/services" },
-								_react2.default.createElement(
-									"h4",
-									null,
-									"Learn more",
+									Link,
+									{ to: "/services", className: "home" },
 									_react2.default.createElement(
 										"i",
-										{ className: "material-icons", style: inline.iconAltStyles },
-										"play_arrow"
+										{ className: "material-icons", style: inline.iconStyles, key: "home-home" },
+										"home"
+									),
+									_react2.default.createElement(
+										"p",
+										null,
+										"Home"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
+								_react2.default.createElement(
+									Link,
+									{ to: "/services", className: "clinic" },
+									_react2.default.createElement(
+										"i",
+										{ className: "material-icons", style: inline.iconStyles, key: "home-clinic" },
+										"store_mall_directory"
+									),
+									_react2.default.createElement(
+										"p",
+										null,
+										"Clinic"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
+								_react2.default.createElement(
+									Link,
+									{ to: "/services", className: "community" },
+									_react2.default.createElement(
+										"i",
+										{ className: "material-icons", style: inline.iconStyles, key: "home-community" },
+										"domain"
+									),
+									_react2.default.createElement(
+										"p",
+										null,
+										"Community"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
+								_react2.default.createElement(
+									Link,
+									{ to: "/services", className: "teletherapy" },
+									_react2.default.createElement(
+										"i",
+										{ className: "material-icons", style: inline.iconStyles, key: "home-teletherapy" },
+										"computer"
+									),
+									_react2.default.createElement(
+										"p",
+										null,
+										"Teletherapy"
 									)
 								)
 							)
 						)
 					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.topPadding }),
 					_react2.default.createElement(
 						"div",
 						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
@@ -29635,7 +29644,29 @@
 								{ style: _sharedStyles2.default.titleStyles },
 								"What We Specialize In:"
 							),
-							_react2.default.createElement(_list2.default, { data: data.specialize, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+							_react2.default.createElement(
+								"div",
+								{ style: inline.linkDiv, onClick: this.handleDisorderClick },
+								_react2.default.createElement(
+									Link,
+									{ to: "/client-resources/common-disorders", style: inline.linkStyles },
+									_react2.default.createElement(
+										"h4",
+										{ style: inline.linkText },
+										"Learn more about",
+										_react2.default.createElement(
+											"p",
+											{ style: { fontSize: '0.7em' } },
+											_react2.default.createElement(
+												"strong",
+												null,
+												"Common Language Disorders"
+											)
+										)
+									),
+									_react2.default.createElement(_list2.default, { data: data.specialize, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+								)
+							)
 						),
 						_react2.default.createElement(
 							"div",
@@ -29645,7 +29676,29 @@
 								{ style: _sharedStyles2.default.titleStyles },
 								"What We Offer:"
 							),
-							_react2.default.createElement(_list2.default, { data: data.offer, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+							_react2.default.createElement(
+								"div",
+								{ style: inline.linkDiv, onClick: this.handleAboutClick },
+								_react2.default.createElement(
+									Link,
+									{ to: "/about", style: inline.linkStyles },
+									_react2.default.createElement(
+										"h4",
+										{ style: inline.linkText },
+										"Get to know us at",
+										_react2.default.createElement(
+											"p",
+											{ style: { fontSize: '0.7em' } },
+											_react2.default.createElement(
+												"strong",
+												null,
+												"Language Liftoff !"
+											)
+										)
+									),
+									_react2.default.createElement(_list2.default, { data: data.offer, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+								)
+							)
 						)
 					)
 				);
@@ -29655,7 +29708,7 @@
 		return Home;
 	}(_react2.default.Component);
 
-	exports.default = Home;
+	exports.default = (0, _radium2.default)(Home);
 
 	var inline = {
 		paragraphStyle: {
@@ -29663,7 +29716,12 @@
 			margin: "40px 0"
 		},
 		iconStyles: {
-			fontSize: "3.5em"
+			fontSize: "3.5em",
+			transform: 'scale(1)',
+			transition: "all 0.3s ease",
+			':hover': {
+				transform: 'scale(1.1)'
+			}
 		},
 		iconAltStyles: {
 			position: "relative",
@@ -29683,7 +29741,28 @@
 			backgroundColor: _sharedStyles2.default.altColor
 		},
 		linkStyles: {
-			margin: "0 0 35px"
+			textDecoration: "none",
+			color: "gray",
+			borderRadius: "30px",
+			transition: "all 0.5s ease",
+			display: 'block',
+			opacity: '1',
+			':hover': {
+				backgroundColor: "black",
+				opacity: '0.6'
+			}
+		},
+		linkText: {
+			fontSize: '1.8em',
+			position: 'absolute',
+			top: '50%',
+			left: '20%',
+			right: '20%',
+			lineHeight: '1.8',
+			color: 'orange'
+		},
+		linkDiv: {
+			posiiton: 'relative'
 		}
 	};
 
@@ -29701,7 +29780,13 @@
 		backgroundColor: _sharedStyles2.default.altColor,
 		borderRadius: "30px",
 		padding: "10px 50px",
-		textAlign: "left"
+		textAlign: "left",
+		transform: 'translateX(0)',
+		transition: 'all 0.5s ease',
+		':hover': {
+			transform: 'translateX(50px)',
+			opacity: '0'
+		}
 	};
 
 	var dataLiStyles = {};
@@ -29726,6 +29811,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(210);
+
+	var _radium2 = _interopRequireDefault(_radium);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29761,18 +29850,9 @@
 				}, this);
 
 				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"h4",
-						{ style: { fontWeight: "bold" } },
-						this.props.title
-					),
-					_react2.default.createElement(
-						"ul",
-						{ style: this.props.ulStyles },
-						elements
-					)
+					"ul",
+					{ style: this.props.ulStyles, key: this.props.data.length },
+					elements
 				);
 			}
 		}]);
@@ -29780,7 +29860,7 @@
 		return List;
 	}(_react2.default.Component);
 
-	exports.default = List;
+	exports.default = (0, _radium2.default)(List);
 
 /***/ },
 /* 266 */
@@ -29874,8 +29954,8 @@
 						{ className: "row", style: inline.therapistRowStyle },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-offset-3 col-xs-6 col-sm-offset-0 col-sm-4 col-md-offset-1 col-md-3" },
-							_react2.default.createElement("img", { className: "img-responsive", style: inline.photoStyle, src: "app/assets/slp/language-liftoff-slp-jasmin.jpg", alt: "slp", width: 550 })
+							{ className: "col-xs-12 col-sm-offset-0 col-sm-4 col-md-offset-1 col-md-3" },
+							_react2.default.createElement("div", { className: "slp", style: inline.photoStyle })
 						),
 						_react2.default.createElement(
 							"div",
@@ -31448,14 +31528,6 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _list = __webpack_require__(265);
-
-	var _list2 = _interopRequireDefault(_list);
-
-	var _ListWithToggleList = __webpack_require__(278);
-
-	var _ListWithToggleList2 = _interopRequireDefault(_ListWithToggleList);
-
 	var _ListWithList = __webpack_require__(280);
 
 	var _ListWithList2 = _interopRequireDefault(_ListWithList);
@@ -31831,173 +31903,8 @@
 	};
 
 /***/ },
-/* 278 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _listWithToggle = __webpack_require__(279);
-
-	var _listWithToggle2 = _interopRequireDefault(_listWithToggle);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ListWithToggleList = function (_React$Component) {
-		_inherits(ListWithToggleList, _React$Component);
-
-		function ListWithToggleList(props) {
-			_classCallCheck(this, ListWithToggleList);
-
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggleList).call(this, props));
-
-			_this.state = { visible: false };
-			return _this;
-		}
-
-		_createClass(ListWithToggleList, [{
-			key: "handleClick",
-			value: function handleClick(e) {
-				e.preventDefault();
-				this.setState({ visible: !this.state.visible });
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				var ulStyles = {
-					display: this.state.visible ? "block" : "none"
-				};
-
-				var elements = [];
-				for (var obj in this.props.data) {
-					elements.push(_react2.default.createElement(_listWithToggle2.default, { title: obj, data: this.props.data[obj], key: obj }));
-				}
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"h4",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ href: "#", onClick: this.handleClick.bind(this) },
-							this.props.title
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ style: ulStyles },
-						elements
-					)
-				);
-			}
-		}]);
-
-		return ListWithToggleList;
-	}(_react2.default.Component);
-
-	exports.default = ListWithToggleList;
-
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ListWithToggle = function (_React$Component) {
-		_inherits(ListWithToggle, _React$Component);
-
-		function ListWithToggle(props) {
-			_classCallCheck(this, ListWithToggle);
-
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListWithToggle).call(this, props));
-
-			_this.state = { visible: false };
-			return _this;
-		}
-
-		_createClass(ListWithToggle, [{
-			key: "handleClick",
-			value: function handleClick(e) {
-				e.preventDefault();
-				this.setState({ visible: !this.state.visible });
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				var ulStyles = {
-					display: this.state.visible ? "block" : "none"
-				};
-
-				var elements = this.props.data.map(function (em, index) {
-					return _react2.default.createElement(
-						"li",
-						{ style: this.props.liStyles, key: index },
-						em
-					);
-				}, this);
-
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"h3",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ href: "#", onClick: this.handleClick.bind(this) },
-							this.props.title
-						)
-					),
-					_react2.default.createElement(
-						"ul",
-						{ style: ulStyles },
-						elements
-					)
-				);
-			}
-		}]);
-
-		return ListWithToggle;
-	}(_react2.default.Component);
-
-	exports.default = ListWithToggle;
-
-/***/ },
+/* 278 */,
+/* 279 */,
 /* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -32732,6 +32639,14 @@
 
 	var _faqDiv2 = _interopRequireDefault(_faqDiv);
 
+	var _radium = __webpack_require__(210);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(268);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32793,67 +32708,71 @@
 							"div",
 							{ className: "col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4" },
 							_react2.default.createElement(
-								"ul",
-								{ style: inline.ulStyles },
+								_reactAddonsCssTransitionGroup2.default,
+								{ transitionName: "contact", transitionAppear: true, transitionAppearTimeout: 1000, transitionEnterTimeout: 500, transitionLeaveTimeout: 100 },
 								_react2.default.createElement(
-									"li",
-									null,
+									"ul",
+									{ style: inline.ulStyles, key: "contact-zone" },
 									_react2.default.createElement(
-										"h4",
-										null,
-										_react2.default.createElement("span", { className: "glyphicon glyphicon-earphone", style: _sharedStyles2.default.glyphiconStyles }),
-										" : ",
+										"li",
+										{ key: "phone" },
 										_react2.default.createElement(
-											"a",
-											{ href: "tel:4253954671", style: inline.linkStyles },
-											"425-395-4671"
+											"h4",
+											null,
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-earphone", style: _sharedStyles2.default.glyphiconStyles }),
+											" : ",
+											_react2.default.createElement(
+												"a",
+												{ href: "tel:4253954671", style: inline.linkStyles },
+												"425-395-4671"
+											)
 										)
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
+									),
 									_react2.default.createElement(
-										"h4",
-										null,
-										_react2.default.createElement("span", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
-										" : ",
+										"li",
+										{ key: "mail" },
 										_react2.default.createElement(
-											"a",
-											{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries", style: inline.linkStyles },
-											"services@languageliftoff.com"
+											"h4",
+											null,
+											_react2.default.createElement("i", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
+											" : ",
+											_react2.default.createElement(
+												"a",
+												{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries", style: inline.linkStyles },
+												"services@languageliftoff.com"
+											)
 										)
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
+									),
 									_react2.default.createElement(
-										"h4",
-										null,
+										"li",
+										{ key: "address" },
 										_react2.default.createElement(
-											"i",
-											{ className: "material-icons", style: inline.iconStyles },
-											"store_mall_directory"
-										),
-										" : ",
-										_react2.default.createElement(
-											"a",
-											{ target: "_blank", style: inline.linkStyles, href: "https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015" },
-											"Renton, WA 98059"
+											"h4",
+											null,
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons", style: inline.iconStyles },
+												"store_mall_directory"
+											),
+											": ",
+											_react2.default.createElement(
+												"a",
+												{ target: "_blank", style: inline.linkStyles, href: "https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015" },
+												"Renton, WA 98059"
+											)
 										)
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: { marginTop: "20px" } },
+									),
 									_react2.default.createElement(
-										"h4",
-										null,
+										"li",
+										{ key: "facebook", style: { marginTop: "20px" } },
 										_react2.default.createElement(
-											"a",
-											{ href: "http://www.facebook.com/LanguageLiftoff", target: "_blank" },
-											_react2.default.createElement("img", { src: "app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png", width: 114 })
+											"h4",
+											null,
+											_react2.default.createElement(
+												"a",
+												{ href: "http://www.facebook.com/LanguageLiftoff", target: "_blank" },
+												_react2.default.createElement("img", { src: "app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png", width: 114 })
+											)
 										)
 									)
 								)
@@ -32904,13 +32823,16 @@
 		return Contact;
 	}(_react2.default.Component);
 
+	exports.default = (0, _radium2.default)(Contact);
+
 	var inline = {
 		ulStyles: {
 			listStyle: "none",
 			marginTop: "30px",
 			backgroundColor: _sharedStyles2.default.altColor,
 			borderRadius: "30px",
-			padding: "15px 10px 20px"
+			padding: "15px 10px 20px",
+			fontSize: "1.3em"
 		},
 		linkStyles: {
 			color: "#9E9E9E"
@@ -32950,8 +32872,6 @@
 		}
 
 	};
-
-	exports.default = Contact;
 
 /***/ },
 /* 284 */

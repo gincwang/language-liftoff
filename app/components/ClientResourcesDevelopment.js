@@ -1,7 +1,5 @@
 import React from 'react';
 import SharedStyles from "../styles/sharedStyles.js";
-import List from "./shared/list.js";
-import ListWithToggleList from "./shared/ListWithToggleList.js";
 import ListWithList from "./shared/ListWithList.js";
 import Radium from "radium";
 

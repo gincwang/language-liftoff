@@ -40,6 +40,7 @@ class DropDownBtn extends React.Component {
 			padding: "5px 15px",
 			color: "black",
 			textDecoration: "none",
+			transition: "all 0.3s ease",
 			':hover': {
 				backgroundColor: "#FF9800"
 			}

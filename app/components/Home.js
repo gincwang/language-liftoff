@@ -9,7 +9,15 @@ Link = Radium(Link);	//Needs to be wrapped in Radium due to Raidum not working w
 class Home extends React.Component {
 	handleServiceClick(e){
 		NavigationActions.updateSelectedNav("SERVICES");
-		window.scroll(0, document.body.clientHeight/2);
+		window.scrollTo(0, document.body.scrollHeight);
+	}
+	handleDisorderClick(e){
+		NavigationActions.updateSelectedNav("RESOURCES");
+		window.scrollTo(0,0);
+	}
+	handleAboutClick(e){
+		NavigationActions.updateSelectedNav("ABOUT US");
+		window.scrollTo(0,0);
 	}
 	render(){
 		return (
@@ -28,23 +36,39 @@ class Home extends React.Component {
 				</div>
 				<div className="row" style={inline.paragraphIcons}>
 					<ul className="list-unstyled">
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>home</i><p>Home</p></li>
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>store_mall_directory</i><p>Clinic</p></li>
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>domain</i><p>Community</p></li>
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles}><i className="material-icons" style={inline.iconStyles}>computer</i><p>Teletherapy</p></li>
+						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+							<Link to='/services' className='home'><i className="material-icons" style={inline.iconStyles} key='home-home'>home</i><p>Home</p></Link>
+						</li>
+						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+							<Link to='/services' className='clinic'><i className="material-icons" style={inline.iconStyles} key='home-clinic'>store_mall_directory</i><p>Clinic</p></Link>
+						</li>
+						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+							<Link to='/services' className='community'><i className="material-icons" style={inline.iconStyles} key='home-community'>domain</i><p>Community</p></Link>
+						</li>
+						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+							<Link to='/services' className='teletherapy'><i className="material-icons" style={inline.iconStyles} key='home-teletherapy'>computer</i><p>Teletherapy</p></Link>
+						</li>
 					</ul>					
 				</div>
-				<div className="row" style={inline.linkStyles}>
-					<div onClick={this.handleServiceClick.bind(this)}><Link to="/services"><h4>Learn more<i className="material-icons" style={inline.iconAltStyles}>play_arrow</i></h4></Link></div>
-				</div>
+				<div style={SharedStyles.topPadding}></div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
 						<h3 style={SharedStyles.titleStyles}>What We Specialize In:</h3>
-						<List data={data.specialize} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
+						<div style={inline.linkDiv} onClick={this.handleDisorderClick}>
+							<Link to='/client-resources/common-disorders' style={inline.linkStyles}>
+								<h4 style={inline.linkText}>Learn more about<p style={{fontSize: '0.7em'}}><strong>Common Language Disorders</strong></p></h4>
+								<List data={data.specialize} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
+							</Link>
+						</div>
 					</div>
 					<div className="col-md-5 col-lg-4">
 						<h3 style={SharedStyles.titleStyles}>What We Offer:</h3>
-						<List data={data.offer} ulStyles={dataUlStyles} liStyles={dataLiStyles}/>
+						<div style={inline.linkDiv} onClick={this.handleAboutClick}>
+							<Link to='/about' style={inline.linkStyles}>
+								<h4 style={inline.linkText}>Get to know us at<p style={{fontSize: '0.7em'}}><strong>Language Liftoff !</strong></p></h4>
+								<List data={data.offer} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
+							</Link>
+						</div>						
 					</div>
 				</div>
 			</div>
@@ -52,7 +76,7 @@ class Home extends React.Component {
 	}	
 }
 
-export default Home;
+export default Radium(Home);
 
 
 let inline = {
@@ -61,7 +85,12 @@ let inline = {
 		margin: "40px 0"
 	},
 	iconStyles: {
-		fontSize: "3.5em"
+		fontSize: "3.5em",
+		transform: 'scale(1)',
+		transition: "all 0.3s ease",
+		':hover': {
+			transform: 'scale(1.1)'
+		}
 	},
 	iconAltStyles: {
 		position: "relative",
@@ -81,7 +110,28 @@ let inline = {
 		backgroundColor: SharedStyles.altColor
 	},
 	linkStyles: {
-		margin: "0 0 35px"
+		textDecoration: "none",
+		color: "gray",
+		borderRadius: "30px",
+		transition: "all 0.5s ease",
+		display: 'block',
+		opacity: '1',
+		':hover': {
+			backgroundColor: "black",
+			opacity: '0.6'
+		}
+	},
+	linkText: {
+		fontSize: '1.8em',
+		position: 'absolute',
+		top: '50%',
+		left: '20%',
+		right: '20%',
+		lineHeight: '1.8',
+		color: 'orange'
+	},
+	linkDiv: {
+		posiiton: 'relative'
 	}
 }
 
@@ -96,7 +146,13 @@ let dataUlStyles = {
 	backgroundColor: SharedStyles.altColor,
 	borderRadius: "30px",
 	padding: "10px 50px",
-	textAlign: "left"
+	textAlign: "left",
+	transform: 'translateX(0)',
+	transition: 'all 0.5s ease',
+	':hover': {
+		transform: 'translateX(50px)',
+		opacity: '0'
+	}
 };
 
 let dataLiStyles = {

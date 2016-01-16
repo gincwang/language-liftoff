@@ -38,6 +38,7 @@ class Main extends React.Component{
 	navLiStyles(tabTitle){
 		return {
 			flex: "1 20%",
+			transition: "all 0.3s ease",
 			backgroundColor: tabTitle === this.state.selectedTab ? SharedStyles.mainColor : SharedStyles.altColor,
 			'@media (max-width: 992px)': {
 				flex: "1 100%"

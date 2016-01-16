@@ -1,4 +1,5 @@
 import React from "react";
+import Radium from 'radium';
 
 class List extends React.Component {
 	render(){
@@ -11,16 +12,13 @@ class List extends React.Component {
 		}, this);
 
 		return (
-			<div>
-				<h4 style={{fontWeight: "bold"}}>{this.props.title}</h4>
-				<ul style={this.props.ulStyles}>
-					{elements}
-				</ul>
-			</div>
+			<ul style={this.props.ulStyles} key={this.props.data.length}>
+				{elements}
+			</ul>
 		);
 	}
 }
 
 
-export default List;
+export default Radium(List);
 

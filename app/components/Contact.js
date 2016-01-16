@@ -1,6 +1,8 @@
 import React from "react";
 import SharedStyles from "../styles/sharedStyles.js";
 import FaqDiv from "./shared/faqDiv.js";
+import Radium from 'radium';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Contact extends React.Component {
 	render(){
@@ -19,12 +21,14 @@ class Contact extends React.Component {
 				</div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
 					<div className="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
-						<ul style={inline.ulStyles}>
-							<li><h4><span className="glyphicon glyphicon-earphone" style={SharedStyles.glyphiconStyles}></span> : <a href="tel:4253954671" style={inline.linkStyles}>425-395-4671</a></h4></li>
-							<li><h4><span className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></span> : <a href="mailto:services@languageliftoff.com?subject=Speech%20Inquiries" style={inline.linkStyles}>services@languageliftoff.com</a></h4></li>
-							<li><h4><i className="material-icons" style={inline.iconStyles}>store_mall_directory</i> : <a target="_blank" style={inline.linkStyles} href="https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015">Renton, WA 98059</a></h4></li>
-							<li style={{marginTop: "20px"}}><h4><a href={"http://www.facebook.com/LanguageLiftoff"} target={"_blank"} ><img src={"app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png"} width={114} /></a></h4></li>
+						<ReactCSSTransitionGroup transitionName="contact" transitionAppear={true} transitionAppearTimeout={1000} transitionEnterTimeout={500} transitionLeaveTimeout={100}>
+						<ul style={inline.ulStyles} key="contact-zone">
+							<li key='phone'><h4><i className="glyphicon glyphicon-earphone" style={SharedStyles.glyphiconStyles}></i> : <a href="tel:4253954671" style={inline.linkStyles}>425-395-4671</a></h4></li>
+							<li key='mail'><h4><i className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></i> : <a href="mailto:services@languageliftoff.com?subject=Speech%20Inquiries" style={inline.linkStyles}>services@languageliftoff.com</a></h4></li>
+							<li key='address'><h4><i className="material-icons" style={inline.iconStyles}>store_mall_directory</i>: <a target="_blank" style={inline.linkStyles} href="https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015">Renton, WA 98059</a></h4></li>
+							<li key='facebook' style={{marginTop: "20px"}}><h4><a href={"http://www.facebook.com/LanguageLiftoff"} target={"_blank"} ><img src={"app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png"} width={114} /></a></h4></li>
 						</ul>
+						</ReactCSSTransitionGroup>
 					</div>
 				</div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
@@ -49,13 +53,16 @@ class Contact extends React.Component {
 	}	
 }
 
+export default Radium(Contact);
+
 let inline = {
 	ulStyles: {
 		listStyle: "none",
 		marginTop: "30px",
 		backgroundColor: SharedStyles.altColor,
 		borderRadius: "30px",
-		padding: "15px 10px 20px"
+		padding: "15px 10px 20px",
+		fontSize: "1.3em"
 	},
 	linkStyles: {
 		color: "#9E9E9E"
@@ -85,5 +92,3 @@ let faq = {
 	}
 	
 };
-
-export default Contact;

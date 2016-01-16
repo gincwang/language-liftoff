@@ -31318,6 +31318,10 @@
 
 	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
 
+	var _radium = __webpack_require__(210);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31359,7 +31363,7 @@
 						{ className: "row", style: topRowStyle },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4", style: sectionStyle, key: "speechDO" },
 							_react2.default.createElement(
 								"h3",
 								{ style: categoryTitleStyle },
@@ -31369,7 +31373,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-6 col-lg-4" },
+							{ className: "col-sm-6 col-lg-4", style: sectionStyle, key: "languageDO" },
 							_react2.default.createElement(
 								"h3",
 								{ style: categoryTitleStyle },
@@ -31383,7 +31387,7 @@
 						{ className: "row", style: topRowStyle },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-6 col-lg-offset-2 col-lg-4" },
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4", style: sectionStyle, key: "commOptions" },
 							_react2.default.createElement(
 								"h3",
 								{ style: categoryTitleStyle },
@@ -31393,7 +31397,7 @@
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-6 col-lg-4" },
+							{ className: "col-sm-6 col-lg-4", style: sectionStyle, key: "medConditions" },
 							_react2.default.createElement(
 								"h3",
 								{ style: categoryTitleStyle },
@@ -31410,10 +31414,18 @@
 		return ClientResourcesDisorders;
 	}(_react2.default.Component);
 
-	exports.default = ClientResourcesDisorders;
+	exports.default = (0, _radium2.default)(ClientResourcesDisorders);
 
 	var topRowStyle = {
 		margin: "20px 20px"
+	};
+
+	var sectionStyle = {
+		transform: 'scale(1)',
+		transition: 'all 0.3s ease',
+		':hover': {
+			transform: 'scale(1.03)'
+		}
 	};
 
 	var categoryTitleStyle = {
@@ -31432,7 +31444,13 @@
 		textAlign: "left",
 		listStyle: "none",
 		fontSize: "1.3em",
-		padding: "5px 0"
+		padding: "5px 10px",
+		borderRadius: '20px',
+		backgroundColor: 'transparent',
+		transition: 'all 0.3s ease',
+		':hover': {
+			backgroundColor: '#C8E6C9'
+		}
 	};
 
 	var speechDO = ["Apraxia", "Childhood Apraxia of Speech", "Dysarthria", "Speech Sound Disorders: Articulation and Phonological Processes", "Stuttering"];
@@ -31463,6 +31481,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _radium = __webpack_require__(210);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31489,7 +31511,7 @@
 						{ style: this.props.liStyles, key: index },
 						_react2.default.createElement(
 							"a",
-							{ href: this.props.links[index], target: "_blank" },
+							{ href: this.props.links[index], target: "_blank", style: { textDecoration: 'none', color: 'gray', display: 'block' } },
 							em
 						)
 					);
@@ -31497,7 +31519,7 @@
 
 				return _react2.default.createElement(
 					"ul",
-					{ style: this.props.ulStyles },
+					{ style: this.props.ulStyles, key: this.props.texts[0] },
 					elements
 				);
 			}
@@ -31506,7 +31528,7 @@
 		return ListWithAnchor;
 	}(_react2.default.Component);
 
-	exports.default = ListWithAnchor;
+	exports.default = (0, _radium2.default)(ListWithAnchor);
 
 /***/ },
 /* 277 */

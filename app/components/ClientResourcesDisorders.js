@@ -1,6 +1,7 @@
 import React from 'react';
 import SharedStyles from "../styles/sharedStyles.js";
 import ListWithAnchor from "./shared/listWithAnchor.js";
+import Radium from 'radium';
 
 class ClientResourcesDisorders extends React.Component {
 	render(){
@@ -12,21 +13,21 @@ class ClientResourcesDisorders extends React.Component {
 					</div>
 				</div>
 				<div className="row" style={topRowStyle}>
-					<div className="col-sm-6 col-lg-offset-2 col-lg-4">
+					<div className="col-sm-6 col-lg-offset-2 col-lg-4" style={sectionStyle} key='speechDO'>
 						<h3 style={categoryTitleStyle}>Speech Disorders</h3>
 						<ListWithAnchor texts={speechDO} links={speechDOLinks} ulStyles={dataUlStyles} liStyles={dataLiStyles}/>
 					</div>
-					<div className="col-sm-6 col-lg-4">
+					<div className="col-sm-6 col-lg-4" style={sectionStyle} key='languageDO'>
 						<h3 style={categoryTitleStyle}>Language Disorders</h3>
 						<ListWithAnchor texts={languageDO} links={languageDOLinks} ulStyles={dataUlStyles} liStyles={dataLiStyles}/>
 					</div>
 				</div>
 				<div className="row" style={topRowStyle}>
-					<div className="col-sm-6 col-lg-offset-2 col-lg-4">
+					<div className="col-sm-6 col-lg-offset-2 col-lg-4" style={sectionStyle} key='commOptions'>
 						<h3 style={categoryTitleStyle}>Communication Options</h3>
 						<ListWithAnchor texts={commOptions} links={commOptionsLinks} ulStyles={dataUlStyles} liStyles={dataLiStyles}/>
 					</div>
-					<div className="col-sm-6 col-lg-4">
+					<div className="col-sm-6 col-lg-4" style={sectionStyle} key='medConditions'>
 						<h3 style={categoryTitleStyle}>Medical and Developmental Conditions</h3>
 						<ListWithAnchor texts={medConditions} links={medConditionsLinks} ulStyles={dataUlStyles} liStyles={dataLiStyles}/>
 					</div>
@@ -38,10 +39,18 @@ class ClientResourcesDisorders extends React.Component {
 }
 
 
-export default ClientResourcesDisorders;
+export default Radium(ClientResourcesDisorders);
 
 let topRowStyle = {
 	margin: "20px 20px"
+};
+
+let sectionStyle = {
+	transform: 'scale(1)',
+	transition: 'all 0.3s ease',
+	':hover': {
+		transform: 'scale(1.03)'
+	}
 };
 
 let categoryTitleStyle = {
@@ -60,7 +69,13 @@ let dataLiStyles = {
 	textAlign: "left",
 	listStyle: "none",
 	fontSize: "1.3em",
-	padding: "5px 0"
+	padding: "5px 10px",
+	borderRadius: '20px',
+	backgroundColor: 'transparent',
+	transition: 'all 0.3s ease',
+	':hover': {
+		backgroundColor: '#C8E6C9'
+	}
 };
 
 

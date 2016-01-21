@@ -29771,7 +29771,7 @@
 		intro: _react2.default.createElement(
 			"span",
 			null,
-			"Using evidence-based practices, we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!"
+			"Using evidence-based practices, we pride ourselves in providing caring and effective Speech and Language Services, and tailoring treatment plans to individual client needs!"
 		),
 		icontext: ["Our SLP can come to the client's home"]
 	};

@@ -48,7 +48,7 @@ class Home extends React.Component {
 						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
 							<Link to='/services' className='teletherapy'><i className="material-icons" style={inline.iconStyles} key='home-teletherapy'>computer</i><p>Teletherapy</p></Link>
 						</li>
-					</ul>					
+					</ul>
 				</div>
 				<div style={SharedStyles.topPadding}></div>
 				<div className="row" style={SharedStyles.altParagraphRowStyles}>
@@ -68,12 +68,12 @@ class Home extends React.Component {
 								<h4 style={inline.linkText}>Get to know us at<p style={{fontSize: '0.7em'}}><strong>Language Liftoff !</strong></p></h4>
 								<List data={data.offer} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
 							</Link>
-						</div>						
+						</div>
 					</div>
 				</div>
 			</div>
 		);
-	}	
+	}
 }
 
 export default Radium(Home);
@@ -138,7 +138,7 @@ let inline = {
 
 let text = {
 	title: "Speech and Language Services For All",
-	intro: <span>Using evidence-based practices, we pride ourselves in providing caring and effective services, and tailoring treatment plans to individual client needs!</span>,
+	intro: <span>Using evidence-based practices, we pride ourselves in providing caring and effective Speech and Language Services, and tailoring treatment plans to individual client needs!</span>,
 	icontext: ["Our SLP can come to the client's home"]
 };
 

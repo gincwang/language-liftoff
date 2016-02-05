@@ -127,6 +127,7 @@ let inline = {
 		top: '45%',
 		left: '20%',
 		right: '20%',
+		zIndex: '-1',
 		lineHeight: '1.8',
 		color: 'orange'
 	},
@@ -147,10 +148,7 @@ let dataUlStyles = {
 	borderRadius: "30px",
 	padding: "10px 50px",
 	textAlign: "left",
-	transform: 'translateX(0)',
-	transition: 'all 0.5s ease',
 	':hover': {
-		transform: 'translateX(50px)',
 		opacity: '0'
 	}
 };

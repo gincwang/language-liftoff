@@ -106,6 +106,7 @@ class Services extends React.Component {
 						<h4 onClick={this.handleClickContact.bind(this)}><Link to='/contact'>Contact ></Link></h4>
 					</div>
 				</div>
+				<div style={SharedStyles.bottomPadding}></div>
 			</div>
 		);
 	}

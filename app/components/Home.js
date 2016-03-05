@@ -31,7 +31,7 @@ class Home extends React.Component {
 					<div className="col-md-offset-2 col-md-8" >
 						<h3 style={inline.paragraphStyle}>{text.intro}</h3>
 						<hr style={inline.hrStyles}/>
-						<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings:</h3>
+						<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings in <strong>Renton, Issaquah and Bellevue</strong> areas of Washington State:</h3>
 					</div>
 				</div>
 				<div className="row" style={inline.paragraphIcons}>
@@ -138,8 +138,8 @@ let inline = {
 
 
 let text = {
-	title: "Speech and Language Services For All",
-	intro: <span>Using evidence-based practices, we pride ourselves in providing caring and effective Speech and Language Services, and tailoring treatment plans to individual client needs!</span>,
+	title: "Speech and Language Therapy Services For All",
+	intro: <span>Using evidence-based practices, we pride ourselves in providing caring and effective Speech and Language Therapy Services, and tailoring treatment plans to individual client needs!</span>,
 	icontext: ["Our SLP can come to the client's home"]
 };
 

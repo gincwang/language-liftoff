@@ -43,7 +43,7 @@ class Main extends React.Component{
 			'@media (max-width: 992px)': {
 				flex: "1 100%"
 			}
-		};		
+		};
 	}
 	navUlStyles(isHidden){
 		return {
@@ -95,12 +95,12 @@ class Main extends React.Component{
 				NavigationActions.updateHideMobileNav(true);
 			}
 		}
-		//check if it's already in RESOURCES tab
+		//check if it is already in RESOURCES tab
 		else if (this.state.selectedTab === "RESOURCES") {
 			console.log("2");
 			//check if clicked on one of dropdown item insde RESOURCES
 			if(dropDownText.indexOf(tabText) !== -1) {
-				console.log("2.1");			
+				console.log("2.1");
 				//if true, change site, tabtext to RESOURCES
 				tabText = "RESOURCES";
 				NavigationActions.updateSelectedNav(tabText);
@@ -110,7 +110,7 @@ class Main extends React.Component{
 			}
 			//else just navigate to clicked page if not part of "dropDownBtn" class
 			else {
-				console.log("2.2");			
+				console.log("2.2");
 				if (!isDropDownBtnClass){
 					NavigationActions.updateSelectedNav(tabText);
 					if(!mobileNavHidden){
@@ -123,7 +123,7 @@ class Main extends React.Component{
 		else if (isDropDownBtnClass){
 			console.log("3");
 			if(dropDownText.indexOf(tabText) !== -1) {
-				console.log("2.1");			
+				console.log("2.1");
 				//if true, change site, tabtext to RESOURCES
 				tabText = "RESOURCES";
 				NavigationActions.updateSelectedNav(tabText);
@@ -133,11 +133,11 @@ class Main extends React.Component{
 			}
 		}
 		else {
-			console.log("4");			
+			console.log("4");
 			NavigationActions.updateSelectedNav(tabText);
 			if(!mobileNavHidden){
 				NavigationActions.updateHideMobileNav(true);
-			}			
+			}
 		}
 	}
 	handleHideMobileNavClick(e){
@@ -161,7 +161,7 @@ class Main extends React.Component{
 		        </div>
 	            {this.props.children}
 	            <div style={inline.footerStyles}>
-					<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015-16 Language Liftoff</span></div>	            
+					<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015-16 Language Liftoff</span></div>
 	            </div>
 	            <div>
 	            	<PopUp content={popUpText.content}/>
@@ -230,4 +230,3 @@ let inline = {
 			margin: "0 5px"
 		}
 	};
-

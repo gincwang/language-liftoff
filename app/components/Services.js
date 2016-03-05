@@ -2,6 +2,9 @@ import React from "react";
 import Radium from "radium";
 import SharedStyles from "../styles/sharedStyles.js";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import NavigationActions from "../actions/NavigationActions";
+var Link = require('react-router').Link;
+Link = Radium(Link);
 
 class Services extends React.Component {
 	constructor(props){
@@ -11,6 +14,14 @@ class Services extends React.Component {
 	handleClick(event){
 		event.preventDefault();
 		this.setState({toggleText: event.target.id});
+	}
+	handleClickAbout(){
+		NavigationActions.updateSelectedNav("ABOUT US");
+		window.scrollTo(0,0);
+	}
+	handleClickContact(){
+		NavigationActions.updateSelectedNav("CONTACT");
+		window.scrollTo(0,0);
 	}
 	setIconStyles(text){
 		var padding, color;
@@ -73,16 +84,28 @@ class Services extends React.Component {
 					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
 						<h4 style={inline.paragraphStyles}>{texts.settingIntro}</h4>
 					</div>
-				</div>				
+				</div>
 				<div >
 					<ul className="list-unstyled">
 						<li style={inline.serviceLinkStyles}><div className="row"><div><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>home</i></div><div><p style={inline.settingPStyles} className="col-sm-10">{texts.settingHome}</p></div></div></li>
 						<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>store_mall_directory</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingClinic}</p></div></li>
 						<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>domain</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingCommunity}</p></div></li>
 						<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>computer</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingTeletherapy}</p></div></li>
-					</ul>						
+					</ul>
 				</div>
 				<div style={SharedStyles.bottomPadding}></div>
+				<div className="row" style={SharedStyles.paragraphRowStyles}>
+					<div className="col-md-offset-1 col-md-5 ">
+						<h3 style={inline.paragraphStyles}>{texts.linkToAbout}</h3>
+						<h4>And what our clients say about us</h4>
+						<h4 onClick={this.handleClickAbout.bind(this)}><Link to='/about'>About ></Link></h4>
+					</div>
+					<div className="col-md-5">
+						<h3 style={inline.paragraphStyles}>{texts.linkToContact}</h3>
+						<h4>Book a free 30 minute consultation with us!</h4>
+						<h4 onClick={this.handleClickContact.bind(this)}><Link to='/contact'>Contact ></Link></h4>
+					</div>
+				</div>
 			</div>
 		);
 	}
@@ -130,6 +153,7 @@ let texts = {
 	settingHome: <span><strong>HOME</strong> - A home-based therapy session is provided in the client's home.  It may be helpful for clients who work well in their natural environment.  We use a routines-based approach, which is family-centered, involving family members such as parents, caregivers, and siblings.  </span>,
 	settingClinic: <span><strong>CLINIC</strong> - A clinic setting may be helpful for clients who (1) perform better in a structured setting, (2) benefit from using a wide variety of therapy tools and instruments, and/or (3) may be distracted by objects in the home.</span>,
 	settingCommunity: <span><strong>COMMUNITY</strong> - Therapy can take place in the community, which lends to the opportunity to work on generalizing functional speech and language skills in a variety of settings.  This may include places that the client frequently visits, such as the library, grocery store, restaurant, city bus, etc.  This setting is particularly helpful for clients focused on community reintegration.</span>,
-	settingTeletherapy: <span><strong>TELETHERAPY</strong> - Therapy services can also be provided over the internet by video call.  This type of therapy is done individually between the therapist and one client.  </span>	
+	settingTeletherapy: <span><strong>TELETHERAPY</strong> - Therapy services can also be provided over the internet by video call.  This type of therapy is done individually between the therapist and one client.  </span>,
+	linkToContact: <span>Questions or concerns?</span>,
+	linkToAbout: <span>Who We Are.</span>
 };
-

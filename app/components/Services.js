@@ -95,18 +95,17 @@ class Services extends React.Component {
 				</div>
 				<div style={SharedStyles.bottomPadding}></div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div className="col-md-offset-1 col-md-5 ">
+					<div style={{marginBottom: '50px'}} className="col-md-offset-1 col-md-5 ">
 						<h3 style={inline.paragraphStyles}>{texts.linkToAbout}</h3>
 						<h4>And what our clients say about us</h4>
 						<h4 onClick={this.handleClickAbout.bind(this)}><Link to='/about'>About ></Link></h4>
 					</div>
-					<div className="col-md-5">
+					<div style={{marginBottom: '50px'}} className="col-md-5">
 						<h3 style={inline.paragraphStyles}>{texts.linkToContact}</h3>
 						<h4>Book a free 30 minute consultation with us!</h4>
 						<h4 onClick={this.handleClickContact.bind(this)}><Link to='/contact'>Contact ></Link></h4>
 					</div>
 				</div>
-				<div style={SharedStyles.bottomPadding}></div>
 			</div>
 		);
 	}

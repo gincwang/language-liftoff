@@ -24843,7 +24843,7 @@
 						_NavigationActions2.default.updateHideMobileNav(true);
 					}
 				}
-				//check if it's already in RESOURCES tab
+				//check if it is already in RESOURCES tab
 				else if (this.state.selectedTab === "RESOURCES") {
 						console.log("2");
 						//check if clicked on one of dropdown item insde RESOURCES
@@ -30034,7 +30034,13 @@
 							_react2.default.createElement(
 								"h3",
 								{ style: inline.paragraphStyle },
-								"Our services are offered in a variety of settings:"
+								"Our services are offered in a variety of settings in ",
+								_react2.default.createElement(
+									"strong",
+									null,
+									"Renton, Issaquah and Bellevue"
+								),
+								" areas of Washington State:"
 							)
 						)
 					),
@@ -30254,11 +30260,11 @@
 	};
 
 	var text = {
-		title: "Speech and Language Services For All",
+		title: "Speech and Language Therapy Services For All",
 		intro: _react2.default.createElement(
 			"span",
 			null,
-			"Using evidence-based practices, we pride ourselves in providing caring and effective Speech and Language Services, and tailoring treatment plans to individual client needs!"
+			"Using evidence-based practices, we pride ourselves in providing caring and effective Speech and Language Therapy Services, and tailoring treatment plans to individual client needs!"
 		),
 		icontext: ["Our SLP can come to the client's home"]
 	};
@@ -30559,6 +30565,10 @@
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
+	var _NavigationActions = __webpack_require__(270);
+
+	var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30566,6 +30576,9 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Link = __webpack_require__(159).Link;
+	Link = (0, _radium2.default)(Link);
 
 	var Services = function (_React$Component) {
 		_inherits(Services, _React$Component);
@@ -30584,6 +30597,18 @@
 			value: function handleClick(event) {
 				event.preventDefault();
 				this.setState({ toggleText: event.target.id });
+			}
+		}, {
+			key: "handleClickAbout",
+			value: function handleClickAbout() {
+				_NavigationActions2.default.updateSelectedNav("ABOUT US");
+				window.scrollTo(0, 0);
+			}
+		}, {
+			key: "handleClickContact",
+			value: function handleClickContact() {
+				_NavigationActions2.default.updateSelectedNav("CONTACT");
+				window.scrollTo(0, 0);
 			}
 		}, {
 			key: "setIconStyles",
@@ -30841,7 +30866,57 @@
 							)
 						)
 					),
-					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding })
+					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding }),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ style: { marginBottom: '50px' }, className: "col-md-offset-1 col-md-5 " },
+							_react2.default.createElement(
+								"h3",
+								{ style: inline.paragraphStyles },
+								texts.linkToAbout
+							),
+							_react2.default.createElement(
+								"h4",
+								null,
+								"And what our clients say about us"
+							),
+							_react2.default.createElement(
+								"h4",
+								{ onClick: this.handleClickAbout.bind(this) },
+								_react2.default.createElement(
+									Link,
+									{ to: "/about" },
+									"About >"
+								)
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ style: { marginBottom: '50px' }, className: "col-md-5" },
+							_react2.default.createElement(
+								"h3",
+								{ style: inline.paragraphStyles },
+								texts.linkToContact
+							),
+							_react2.default.createElement(
+								"h4",
+								null,
+								"Book a free 30 minute consultation with us!"
+							),
+							_react2.default.createElement(
+								"h4",
+								{ onClick: this.handleClickContact.bind(this) },
+								_react2.default.createElement(
+									Link,
+									{ to: "/contact" },
+									"Contact >"
+								)
+							)
+						)
+					)
 				);
 			}
 		}]);
@@ -30981,6 +31056,16 @@
 				"TELETHERAPY"
 			),
 			" - Therapy services can also be provided over the internet by video call.  This type of therapy is done individually between the therapist and one client.  "
+		),
+		linkToContact: _react2.default.createElement(
+			"span",
+			null,
+			"Questions or concerns?"
+		),
+		linkToAbout: _react2.default.createElement(
+			"span",
+			null,
+			"Who We Are."
 		)
 	};
 

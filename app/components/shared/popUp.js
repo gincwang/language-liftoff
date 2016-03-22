@@ -28,7 +28,7 @@ class PopUp extends React.Component {
 	}
 	handleTabClick(e){
 		if(this.hasStorage){
-			NavigationActions.updateSelectedNav("CONTACT");			
+			NavigationActions.updateSelectedNav("CONTACT");
 		}
 		this.setState({isClosed: "closed"});
 		window.scroll(0,0);
@@ -36,15 +36,15 @@ class PopUp extends React.Component {
 	render(){
 		let popWindowStyle = {
 			fontSize: "1.5em",
-			width: "220px",
-			height: "220px",
+			width: "300px",
+			height: "185px",
 			backgroundColor: bgColor,
 			position: "fixed",
 			zIndex: "999",
 			top: "45px",
 			right: "10px",
 			borderRadius: "10px",
-			border: "7px solid #FFC400",
+			border: "5px solid #FFC400",
 			animation: "x 3s ease",
 			animationName: slideInKeyframes,
 			display: this.state.isClosed === "closed" ? "none" : "block"
@@ -68,7 +68,7 @@ function checkStorage(type) {
 		storage.setItem(x, x);
 		storage.removeItem(x);
 		return true;
-	} 
+	}
 	catch(e) {
 		return false;
 	}
@@ -80,7 +80,8 @@ var bgColor = "#FFECB3";
 var pStyle = {
 	padding: "40px 20px 0px",
 	textAlign: "center",
-	textDecoration: 'none'
+	textDecoration: 'none',
+	color: 'dimgray'
 };
 
 var buttonStyle = {
@@ -90,9 +91,12 @@ var buttonStyle = {
 	right: "5px",
 	backgroundColor: bgColor,
 	border: "none",
+	borderRadius: '50%',
+	padding: '3px 10px',
 	color: "black",
 	':hover': {
-		color: "gray"
+		color: "dimgray",
+		backgroundColor: '#FFC400'
 	}
 };
 

@@ -29822,15 +29822,15 @@
 			value: function render() {
 				var popWindowStyle = {
 					fontSize: "1.5em",
-					width: "220px",
-					height: "220px",
+					width: "300px",
+					height: "185px",
 					backgroundColor: bgColor,
 					position: "fixed",
 					zIndex: "999",
 					top: "45px",
 					right: "10px",
 					borderRadius: "10px",
-					border: "7px solid #FFC400",
+					border: "5px solid #FFC400",
 					animation: "x 3s ease",
 					animationName: slideInKeyframes,
 					display: this.state.isClosed === "closed" ? "none" : "block"
@@ -29888,7 +29888,8 @@
 	var pStyle = {
 		padding: "40px 20px 0px",
 		textAlign: "center",
-		textDecoration: 'none'
+		textDecoration: 'none',
+		color: 'dimgray'
 	};
 
 	var buttonStyle = {
@@ -29898,9 +29899,12 @@
 		right: "5px",
 		backgroundColor: bgColor,
 		border: "none",
+		borderRadius: '50%',
+		padding: '3px 10px',
 		color: "black",
 		':hover': {
-			color: "gray"
+			color: "dimgray",
+			backgroundColor: '#FFC400'
 		}
 	};
 

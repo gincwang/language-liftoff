@@ -24835,7 +24835,6 @@
 
 				//check if empty string, assign and navigate to HOME
 				if (!tabText) {
-					console.log("1");
 					tabText = "HOME";
 					_NavigationActions2.default.updateSelectedNav(tabText);
 					window.scroll(0, 0);
@@ -24845,10 +24844,8 @@
 				}
 				//check if it is already in RESOURCES tab
 				else if (this.state.selectedTab === "RESOURCES") {
-						console.log("2");
 						//check if clicked on one of dropdown item insde RESOURCES
 						if (dropDownText.indexOf(tabText) !== -1) {
-							console.log("2.1");
 							//if true, change site, tabtext to RESOURCES
 							tabText = "RESOURCES";
 							_NavigationActions2.default.updateSelectedNav(tabText);
@@ -24858,7 +24855,6 @@
 						}
 						//else just navigate to clicked page if not part of "dropDownBtn" class
 						else {
-								console.log("2.2");
 								if (!isDropDownBtnClass) {
 									_NavigationActions2.default.updateSelectedNav(tabText);
 									if (!mobileNavHidden) {
@@ -24869,9 +24865,7 @@
 					}
 					//else, if clicked element is part of "dropDownBtn" class,
 					else if (isDropDownBtnClass) {
-							console.log("3");
 							if (dropDownText.indexOf(tabText) !== -1) {
-								console.log("2.1");
 								//if true, change site, tabtext to RESOURCES
 								tabText = "RESOURCES";
 								_NavigationActions2.default.updateSelectedNav(tabText);
@@ -24880,7 +24874,6 @@
 								}
 							}
 						} else {
-							console.log("4");
 							_NavigationActions2.default.updateSelectedNav(tabText);
 							if (!mobileNavHidden) {
 								_NavigationActions2.default.updateHideMobileNav(true);
@@ -32152,6 +32145,10 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
+	var _classnames = __webpack_require__(291);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32177,54 +32174,6 @@
 		}
 
 		_createClass(ClientResourcesDevelopment, [{
-			key: "handleClick",
-			value: function handleClick(e) {
-				e.preventDefault();
-				switch (e.target.innerHTML) {
-					case "0-3 Months":
-						this.setState({ selectedSection: development.zeroToOneYear.zeroToThreeMonths, selectedTitle: "0-3 months" });
-						break;
-					case "4-6 Months":
-						this.setState({ selectedSection: development.zeroToOneYear.fourToSixMonths, selectedTitle: "4-6 months" });
-						break;
-					case "7-12 Months":
-						this.setState({ selectedSection: development.zeroToOneYear.sevenToTwelveMonths, selectedTitle: "7-12 months" });
-						break;
-					case "1-2 Years":
-						this.setState({ selectedSection: development.oneToTwoYears, selectedTitle: "1-2 Years" });
-						break;
-					case "2-3 Years":
-						this.setState({ selectedSection: development.twoToThreeYears, selectedTitle: "2-3 Years" });
-						break;
-					case "3-4 Years":
-						this.setState({ selectedSection: development.threeToFourYears, selectedTitle: "3-4 Years" });
-						break;
-					case "4-5 Years":
-						this.setState({ selectedSection: development.fourToFiveYears, selectedTitle: "4-5 Years" });
-						break;
-					case "End of Kindergarten":
-						this.setState({ selectedSection: development.endOfKindergarten, selectedTitle: "End of Kindergarten" });
-						break;
-					case "End of First Grade":
-						this.setState({ selectedSection: development.firstGrade, selectedTitle: "End of First Grade" });
-						break;
-					case "End of Second Grade":
-						this.setState({ selectedSection: development.secondGrade, selectedTitle: "End of Second Grade" });
-						break;
-					case "End of Third Grade":
-						this.setState({ selectedSection: development.thirdGrade, selectedTitle: "End of Third Grade" });
-						break;
-					case "End of Fourth Grade":
-						this.setState({ selectedSection: development.fourthGrade, selectedTitle: "End of Fourth Grade" });
-						break;
-					case "End of Fifth Grade":
-						this.setState({ selectedSection: development.fifthGrade, selectedTitle: "End of Fifth Grade" });
-						break;
-					default:
-						this.setState({ selectedSection: null, selectedTitle: "null" });
-				}
-			}
-		}, {
 			key: "handleZeroOneClick",
 			value: function handleZeroOneClick(e) {
 				e.preventDefault();
@@ -32233,12 +32182,14 @@
 		}, {
 			key: "render",
 			value: function render() {
+				var _this2 = this;
+
 				var ulStyles = {
 					listStyle: "none",
 					textAlign: "left",
 					fontSize: "1.3em",
 					'@media (max-width: 768px)': {
-						padding: "0"
+						textAlign: 'center'
 					}
 				};
 				var liStyles = {
@@ -32251,6 +32202,55 @@
 				};
 				var innerLiStyles = {
 					padding: "5px 0"
+				};
+				var innerLinkStyles = {
+					padding: '5px 15px',
+					borderRadius: '7px'
+				};
+				var handleClick = function handleClick(em, index) {
+					switch (em) {
+						case "0-3 Months":
+							this.setState({ selectedSection: development.zeroToOneYear.zeroToThreeMonths, selectedTitle: "0-3 Months" });
+							break;
+						case "4-6 Months":
+							this.setState({ selectedSection: development.zeroToOneYear.fourToSixMonths, selectedTitle: "4-6 Months" });
+							break;
+						case "7-12 Months":
+							this.setState({ selectedSection: development.zeroToOneYear.sevenToTwelveMonths, selectedTitle: "7-12 Months" });
+							break;
+						case "1-2 Years":
+							this.setState({ selectedSection: development.oneToTwoYears, selectedTitle: "1-2 Years" });
+							break;
+						case "2-3 Years":
+							this.setState({ selectedSection: development.twoToThreeYears, selectedTitle: "2-3 Years" });
+							break;
+						case "3-4 Years":
+							this.setState({ selectedSection: development.threeToFourYears, selectedTitle: "3-4 Years" });
+							break;
+						case "4-5 Years":
+							this.setState({ selectedSection: development.fourToFiveYears, selectedTitle: "4-5 Years" });
+							break;
+						case "End of Kindergarten":
+							this.setState({ selectedSection: development.endOfKindergarten, selectedTitle: "End of Kindergarten" });
+							break;
+						case "End of First Grade":
+							this.setState({ selectedSection: development.firstGrade, selectedTitle: "End of First Grade" });
+							break;
+						case "End of Second Grade":
+							this.setState({ selectedSection: development.secondGrade, selectedTitle: "End of Second Grade" });
+							break;
+						case "End of Third Grade":
+							this.setState({ selectedSection: development.thirdGrade, selectedTitle: "End of Third Grade" });
+							break;
+						case "End of Fourth Grade":
+							this.setState({ selectedSection: development.fourthGrade, selectedTitle: "End of Fourth Grade" });
+							break;
+						case "End of Fifth Grade":
+							this.setState({ selectedSection: development.fifthGrade, selectedTitle: "End of Fifth Grade" });
+							break;
+						default:
+							this.setState({ selectedSection: null, selectedTitle: "null" });
+					}
 				};
 				return _react2.default.createElement(
 					"div",
@@ -32273,145 +32273,26 @@
 						{ className: "row" },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-4 col-sm-3" },
+							{ className: "col-xs-12 col-sm-3" },
 							_react2.default.createElement(
 								"ul",
-								{ style: ulStyles },
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleZeroOneClick.bind(this) },
-										"0-1 Year"
-									),
-									_react2.default.createElement(
-										"ul",
-										{ style: innerUlStyles },
+								{ style: ulStyles, className: "developmentUl" },
+								yearStrings.map(function (em, i) {
+									return _react2.default.createElement(
+										"li",
+										{ style: liStyles, key: i },
 										_react2.default.createElement(
-											"li",
-											{ style: innerLiStyles },
-											_react2.default.createElement(
-												"a",
-												{ href: "#", onClick: this.handleClick.bind(this) },
-												"0-3 Months"
-											)
-										),
-										_react2.default.createElement(
-											"li",
-											{ style: innerLiStyles },
-											_react2.default.createElement(
-												"a",
-												{ href: "#", onClick: this.handleClick.bind(this) },
-												"4-6 Months"
-											)
-										),
-										_react2.default.createElement(
-											"li",
-											{ style: innerLiStyles },
-											_react2.default.createElement(
-												"a",
-												{ href: "#", onClick: this.handleClick.bind(this) },
-												"7-12 Months"
-											)
+											"a",
+											{ href: "#", className: em === _this2.state.selectedTitle ? 'selected' : '', style: innerLinkStyles, onClick: handleClick.bind(_this2, em, i) },
+											em
 										)
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"1-2 Years"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"2-3 Years"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"3-4 Years"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"4-5 Years"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"End of Kindergarten"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"End of First Grade"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"End of Second Grade"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"End of Third Grade"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"End of Fourth Grade"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									{ style: liStyles },
-									_react2.default.createElement(
-										"a",
-										{ href: "#", onClick: this.handleClick.bind(this) },
-										"End of Fifth Grade"
-									)
-								)
+									);
+								})
 							)
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-8 col-sm-9" },
+							{ className: "col-xs-12 col-sm-9" },
 							_react2.default.createElement(_ListWithList2.default, { title: this.state.selectedTitle, data: this.state.selectedSection })
 						)
 					),
@@ -32517,6 +32398,8 @@
 			writing: ['Write for a variety of purposes', 'Use vocabulary effectively', 'Vary sentence structure', 'Revise writing for clarity', 'Edit final copies']
 		}
 	};
+
+	var yearStrings = ['0-3 Months', '4-6 Months', '7-12 Months', '1-2 Years', '2-3 Years', '3-4 Years', '4-5 Years', 'End of Kindergarten', 'End of First Grade', 'End of Second Grade', 'End of Third Grade', 'End of Fourth Grade', 'End of Fifth Grade'];
 
 /***/ },
 /* 286 */
@@ -33569,6 +33452,60 @@
 	}(_react2.default.Component);
 
 	exports.default = FaqDiv;
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
 
 /***/ }
 /******/ ]);

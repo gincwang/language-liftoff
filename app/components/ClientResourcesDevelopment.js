@@ -2,6 +2,7 @@ import React from 'react';
 import SharedStyles from "../styles/sharedStyles.js";
 import ListWithList from "./shared/ListWithList.js";
 import Radium from "radium";
+import classNames from 'classnames';
 
 
 class ClientResourcesDevelopment extends React.Component {
@@ -13,52 +14,6 @@ class ClientResourcesDevelopment extends React.Component {
 			zeroToOneVisible: true
 		};
 	}
-	handleClick(e){
-		e.preventDefault();
-		switch(e.target.innerHTML){
-			case "0-3 Months":
-				this.setState({selectedSection: development.zeroToOneYear.zeroToThreeMonths, selectedTitle: "0-3 months"});
-				break;
-			case "4-6 Months":
-				this.setState({selectedSection: development.zeroToOneYear.fourToSixMonths, selectedTitle: "4-6 months"});
-				break;
-			case "7-12 Months":
-				this.setState({selectedSection: development.zeroToOneYear.sevenToTwelveMonths, selectedTitle: "7-12 months"});
-				break;
-			case "1-2 Years":
-				this.setState({selectedSection: development.oneToTwoYears, selectedTitle: "1-2 Years"});
-				break;	
-			case "2-3 Years":
-				this.setState({selectedSection: development.twoToThreeYears, selectedTitle: "2-3 Years"});
-				break;
-			case "3-4 Years":
-				this.setState({selectedSection: development.threeToFourYears, selectedTitle: "3-4 Years"});
-				break;
-			case "4-5 Years":
-				this.setState({selectedSection: development.fourToFiveYears, selectedTitle: "4-5 Years"});
-				break;		
-			case "End of Kindergarten":
-				this.setState({selectedSection: development.endOfKindergarten, selectedTitle: "End of Kindergarten"});
-				break;
-			case "End of First Grade":
-				this.setState({selectedSection: development.firstGrade, selectedTitle: "End of First Grade"});
-				break;	
-			case "End of Second Grade":
-				this.setState({selectedSection: development.secondGrade, selectedTitle: "End of Second Grade"});
-				break;	
-			case "End of Third Grade":
-				this.setState({selectedSection: development.thirdGrade, selectedTitle: "End of Third Grade"});
-				break;	
-			case "End of Fourth Grade":
-				this.setState({selectedSection: development.fourthGrade, selectedTitle: "End of Fourth Grade"});
-				break;	
-			case "End of Fifth Grade":
-				this.setState({selectedSection: development.fifthGrade, selectedTitle: "End of Fifth Grade"});
-				break;																																		
-			default:
-				this.setState({selectedSection: null, selectedTitle: "null"});
-		}
-	}
 	handleZeroOneClick(e){
 		e.preventDefault();
 		this.setState({zeroToOneVisible: !this.state.zeroToOneVisible});
@@ -69,7 +24,7 @@ class ClientResourcesDevelopment extends React.Component {
 			textAlign: "left",
 			fontSize: "1.3em",
 			'@media (max-width: 768px)': {
-				padding: "0"
+				textAlign: 'center'
 			}
 		};
 		let liStyles = {
@@ -82,7 +37,56 @@ class ClientResourcesDevelopment extends React.Component {
 		};
 		let innerLiStyles = {
 			padding: "5px 0"
-		}
+		};
+		let innerLinkStyles = {
+			padding: '5px 15px',
+			borderRadius: '7px'
+		};
+		let handleClick = function(em, index){
+				switch(em){
+					case "0-3 Months":
+						this.setState({selectedSection: development.zeroToOneYear.zeroToThreeMonths, selectedTitle: "0-3 Months"});
+						break;
+					case "4-6 Months":
+						this.setState({selectedSection: development.zeroToOneYear.fourToSixMonths, selectedTitle: "4-6 Months"});
+						break;
+					case "7-12 Months":
+						this.setState({selectedSection: development.zeroToOneYear.sevenToTwelveMonths, selectedTitle: "7-12 Months"});
+						break;
+					case "1-2 Years":
+						this.setState({selectedSection: development.oneToTwoYears, selectedTitle: "1-2 Years"});
+						break;
+					case "2-3 Years":
+						this.setState({selectedSection: development.twoToThreeYears, selectedTitle: "2-3 Years"});
+						break;
+					case "3-4 Years":
+						this.setState({selectedSection: development.threeToFourYears, selectedTitle: "3-4 Years"});
+						break;
+					case "4-5 Years":
+						this.setState({selectedSection: development.fourToFiveYears, selectedTitle: "4-5 Years"});
+						break;
+					case "End of Kindergarten":
+						this.setState({selectedSection: development.endOfKindergarten, selectedTitle: "End of Kindergarten"});
+						break;
+					case "End of First Grade":
+						this.setState({selectedSection: development.firstGrade, selectedTitle: "End of First Grade"});
+						break;
+					case "End of Second Grade":
+						this.setState({selectedSection: development.secondGrade, selectedTitle: "End of Second Grade"});
+						break;
+					case "End of Third Grade":
+						this.setState({selectedSection: development.thirdGrade, selectedTitle: "End of Third Grade"});
+						break;
+					case "End of Fourth Grade":
+						this.setState({selectedSection: development.fourthGrade, selectedTitle: "End of Fourth Grade"});
+						break;
+					case "End of Fifth Grade":
+						this.setState({selectedSection: development.fifthGrade, selectedTitle: "End of Fifth Grade"});
+						break;
+					default:
+						this.setState({selectedSection: null, selectedTitle: "null"});
+				}
+		};
 		return (
 			<div className="container-fluid" style={SharedStyles.mainStyles}>
 				<div className="row" style={SharedStyles.titleRowStyles}>
@@ -91,54 +95,14 @@ class ClientResourcesDevelopment extends React.Component {
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-xs-4 col-sm-3">
-						<ul style={ulStyles}>
-							<li style={liStyles}><a href="#" onClick={this.handleZeroOneClick.bind(this)}>0-1 Year</a>
-								<ul style={innerUlStyles}>
-									<li style={innerLiStyles}>
-										<a href="#" onClick={this.handleClick.bind(this)}>0-3 Months</a>
-									</li>
-									<li style={innerLiStyles}>
-										<a href="#" onClick={this.handleClick.bind(this)}>4-6 Months</a>
-									</li>
-									<li style={innerLiStyles}>
-										<a href="#" onClick={this.handleClick.bind(this)}>7-12 Months</a>
-									</li>							
-								</ul>
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>1-2 Years</a>						
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>2-3 Years</a>								
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>3-4 Years</a>								
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>4-5 Years</a>	
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>End of Kindergarten</a>	
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>End of First Grade</a>									
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>End of Second Grade</a>						
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>End of Third Grade</a>
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>End of Fourth Grade</a>					
-							</li>
-							<li style={liStyles}>
-								<a href="#" onClick={this.handleClick.bind(this)}>End of Fifth Grade</a>					
-							</li>																																												
+					<div className="col-xs-12 col-sm-3">
+						<ul style={ulStyles} className='developmentUl'>
+							{yearStrings.map((em, i)=>{
+								return <li style={liStyles} key={i}><a href='#' className={(em===this.state.selectedTitle)?'selected':''} style={innerLinkStyles} onClick={handleClick.bind(this, em, i)} >{em}</a></li>;
+							})}
 						</ul>
 					</div>
-					<div className="col-xs-8 col-sm-9">
+					<div className="col-xs-12 col-sm-9">
 						<ListWithList title={this.state.selectedTitle} data={this.state.selectedSection}/>
 					</div>
 				</div>
@@ -481,3 +445,19 @@ let development = {
 		]
 	}
 };
+
+let yearStrings = [
+	'0-3 Months',
+	'4-6 Months',
+	'7-12 Months',
+	'1-2 Years',
+	'2-3 Years',
+	'3-4 Years',
+	'4-5 Years',
+	'End of Kindergarten',
+	'End of First Grade',
+	'End of Second Grade',
+	'End of Third Grade',
+	'End of Fourth Grade',
+	'End of Fifth Grade'
+];

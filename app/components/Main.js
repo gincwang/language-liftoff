@@ -87,7 +87,6 @@ class Main extends React.Component{
 
 		//check if empty string, assign and navigate to HOME
 		if(!tabText) {
-			console.log("1");
 			tabText = "HOME";
 			NavigationActions.updateSelectedNav(tabText);
 			window.scroll(0,0);
@@ -97,10 +96,8 @@ class Main extends React.Component{
 		}
 		//check if it is already in RESOURCES tab
 		else if (this.state.selectedTab === "RESOURCES") {
-			console.log("2");
 			//check if clicked on one of dropdown item insde RESOURCES
 			if(dropDownText.indexOf(tabText) !== -1) {
-				console.log("2.1");
 				//if true, change site, tabtext to RESOURCES
 				tabText = "RESOURCES";
 				NavigationActions.updateSelectedNav(tabText);
@@ -110,7 +107,6 @@ class Main extends React.Component{
 			}
 			//else just navigate to clicked page if not part of "dropDownBtn" class
 			else {
-				console.log("2.2");
 				if (!isDropDownBtnClass){
 					NavigationActions.updateSelectedNav(tabText);
 					if(!mobileNavHidden){
@@ -121,9 +117,7 @@ class Main extends React.Component{
 		}
 		//else, if clicked element is part of "dropDownBtn" class,
 		else if (isDropDownBtnClass){
-			console.log("3");
 			if(dropDownText.indexOf(tabText) !== -1) {
-				console.log("2.1");
 				//if true, change site, tabtext to RESOURCES
 				tabText = "RESOURCES";
 				NavigationActions.updateSelectedNav(tabText);
@@ -133,7 +127,6 @@ class Main extends React.Component{
 			}
 		}
 		else {
-			console.log("4");
 			NavigationActions.updateSelectedNav(tabText);
 			if(!mobileNavHidden){
 				NavigationActions.updateHideMobileNav(true);

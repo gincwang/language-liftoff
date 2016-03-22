@@ -95,15 +95,19 @@ class Services extends React.Component {
 				</div>
 				<div style={SharedStyles.bottomPadding}></div>
 				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div style={{marginBottom: '50px'}} className="col-md-offset-1 col-md-5 ">
-						<h3 style={inline.paragraphStyles}>{texts.linkToAbout}</h3>
-						<h4>And what our clients say about us</h4>
-						<h4 onClick={this.handleClickAbout.bind(this)}><Link to='/about'>About ></Link></h4>
+					<div style={{marginBottom: '50px'}} className="col-md-offset-1 col-md-5 " onClick={this.handleClickAbout.bind(this)}>
+						<Link style={{':hover':{textDecoration: 'none'}}} key='nav1' className="navLink" to='/about'>
+							<h3 style={inline.paragraphStyles}>{texts.linkToAbout}</h3>
+							<h4 style={inline.paragraphStyles}>And what our clients say about us</h4>
+							<h4 className="navLinkTitle">About ></h4>
+						</Link>
 					</div>
-					<div style={{marginBottom: '50px'}} className="col-md-5">
-						<h3 style={inline.paragraphStyles}>{texts.linkToContact}</h3>
-						<h4>Book a free 30 minute consultation with us!</h4>
-						<h4 onClick={this.handleClickContact.bind(this)}><Link to='/contact'>Contact ></Link></h4>
+					<div style={{marginBottom: '50px'}} className="col-md-5" onClick={this.handleClickContact.bind(this)}>
+						<Link  style={{':hover':{textDecoration: 'none'}}} key='nav2' className="navLink" to='/contact'>
+							<h3 style={inline.paragraphStyles}>{texts.linkToContact}</h3>
+							<h4 style={inline.paragraphStyles}>Book a free 30 minute consultation with us!</h4>
+							<h4 className="navLinkTitle">Contact ></h4>
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -116,7 +120,8 @@ export default Radium(Services);
 let inline = {
 	paragraphStyles: {
 		lineHeight: SharedStyles.lineHeight,
-		textAlign: "center"
+		textAlign: "center",
+		color: "gray"
 	},
 	textToggleStyles: {
 		lineHeight: SharedStyles.lineHeight,
@@ -140,6 +145,9 @@ let inline = {
 	},
 	settingPStyles: {
 		textAlign: "left"
+	},
+	navLinkStyles: {
+		color: 'gray'
 	}
 }
 

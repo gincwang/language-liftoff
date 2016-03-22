@@ -30064,7 +30064,12 @@
 									_react2.default.createElement(
 										"p",
 										null,
-										"Home"
+										"Home",
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconAltStyles },
+											"keyboard_arrow_right"
+										)
 									)
 								)
 							),
@@ -30082,7 +30087,12 @@
 									_react2.default.createElement(
 										"p",
 										null,
-										"Clinic"
+										"Clinic",
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconAltStyles },
+											"keyboard_arrow_right"
+										)
 									)
 								)
 							),
@@ -30100,7 +30110,12 @@
 									_react2.default.createElement(
 										"p",
 										null,
-										"Community"
+										"Community",
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconAltStyles },
+											"keyboard_arrow_right"
+										)
 									)
 								)
 							),
@@ -30118,7 +30133,12 @@
 									_react2.default.createElement(
 										"p",
 										null,
-										"Teletherapy"
+										"Teletherapy",
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconAltStyles },
+											"keyboard_arrow_right"
+										)
 									)
 								)
 							)
@@ -30211,13 +30231,14 @@
 			fontSize: "3.5em",
 			transform: 'scale(1)',
 			transition: "all 0.3s ease",
+			color: "gray",
 			':hover': {
 				transform: 'scale(1.1)'
 			}
 		},
 		iconAltStyles: {
-			position: "relative",
-			top: "6px"
+			position: "absolute",
+			marginTop: "5px"
 		},
 		serviceLinkStyles: {
 			fontSize: "1.5em",
@@ -30872,46 +30893,46 @@
 						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
 						_react2.default.createElement(
 							"div",
-							{ style: { marginBottom: '50px' }, className: "col-md-offset-1 col-md-5 " },
+							{ style: { marginBottom: '50px' }, className: "col-md-offset-1 col-md-5 ", onClick: this.handleClickAbout.bind(this) },
 							_react2.default.createElement(
-								"h3",
-								{ style: inline.paragraphStyles },
-								texts.linkToAbout
-							),
-							_react2.default.createElement(
-								"h4",
-								null,
-								"And what our clients say about us"
-							),
-							_react2.default.createElement(
-								"h4",
-								{ onClick: this.handleClickAbout.bind(this) },
+								Link,
+								{ style: { ':hover': { textDecoration: 'none' } }, key: "nav1", className: "navLink", to: "/about" },
 								_react2.default.createElement(
-									Link,
-									{ to: "/about" },
+									"h3",
+									{ style: inline.paragraphStyles },
+									texts.linkToAbout
+								),
+								_react2.default.createElement(
+									"h4",
+									{ style: inline.paragraphStyles },
+									"And what our clients say about us"
+								),
+								_react2.default.createElement(
+									"h4",
+									{ className: "navLinkTitle" },
 									"About >"
 								)
 							)
 						),
 						_react2.default.createElement(
 							"div",
-							{ style: { marginBottom: '50px' }, className: "col-md-5" },
+							{ style: { marginBottom: '50px' }, className: "col-md-5", onClick: this.handleClickContact.bind(this) },
 							_react2.default.createElement(
-								"h3",
-								{ style: inline.paragraphStyles },
-								texts.linkToContact
-							),
-							_react2.default.createElement(
-								"h4",
-								null,
-								"Book a free 30 minute consultation with us!"
-							),
-							_react2.default.createElement(
-								"h4",
-								{ onClick: this.handleClickContact.bind(this) },
+								Link,
+								{ style: { ':hover': { textDecoration: 'none' } }, key: "nav2", className: "navLink", to: "/contact" },
 								_react2.default.createElement(
-									Link,
-									{ to: "/contact" },
+									"h3",
+									{ style: inline.paragraphStyles },
+									texts.linkToContact
+								),
+								_react2.default.createElement(
+									"h4",
+									{ style: inline.paragraphStyles },
+									"Book a free 30 minute consultation with us!"
+								),
+								_react2.default.createElement(
+									"h4",
+									{ className: "navLinkTitle" },
 									"Contact >"
 								)
 							)
@@ -30929,7 +30950,8 @@
 	var inline = {
 		paragraphStyles: {
 			lineHeight: _sharedStyles2.default.lineHeight,
-			textAlign: "center"
+			textAlign: "center",
+			color: "gray"
 		},
 		textToggleStyles: {
 			lineHeight: _sharedStyles2.default.lineHeight,
@@ -30953,6 +30975,9 @@
 		},
 		settingPStyles: {
 			textAlign: "left"
+		},
+		navLinkStyles: {
+			color: 'gray'
 		}
 	};
 
@@ -33268,7 +33293,7 @@
 							_react2.default.createElement(
 								"h2",
 								{ style: _sharedStyles2.default.titleStyles },
-								"Contact Info"
+								"Contact Us"
 							)
 						)
 					),
@@ -33277,16 +33302,16 @@
 						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-10" },
+							{ className: "col-sm-offset-1 col-sm-10 col-lg-offset-3 col-lg-6" },
 							_react2.default.createElement(
 								"h4",
-								null,
+								{ style: inline.mainParagraphStyles },
 								"Thank you for visiting us at Language Liftoff!"
 							),
 							_react2.default.createElement(
 								"h4",
-								null,
-								"Please feel free to contact us with any questions or service inquiries."
+								{ style: inline.mainParagraphStyles },
+								"Please feel free to contact us with any questions or service inquiries, and we will do our best to get back to you within two business days."
 							)
 						)
 					),
@@ -33295,7 +33320,7 @@
 						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4" },
+							{ className: "col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4" },
 							_react2.default.createElement(
 								_reactAddonsCssTransitionGroup2.default,
 								{ transitionName: "contact", transitionAppear: true, transitionAppearTimeout: 1000, transitionEnterTimeout: 500, transitionLeaveTimeout: 100 },
@@ -33304,62 +33329,59 @@
 									{ style: inline.ulStyles, key: "contact-zone" },
 									_react2.default.createElement(
 										"li",
-										{ key: "phone" },
+										null,
 										_react2.default.createElement(
 											"h4",
-											null,
-											_react2.default.createElement("i", { className: "glyphicon glyphicon-earphone", style: _sharedStyles2.default.glyphiconStyles }),
-											" : ",
+											{ style: inline.liInfoStyles },
 											_react2.default.createElement(
 												"a",
-												{ href: "tel:4253954671", style: inline.linkStyles },
-												"425-395-4671"
+												{ href: "tel:4253954671", style: inline.linkStyles, key: "phone-link" },
+												_react2.default.createElement("i", { className: "glyphicon glyphicon-earphone", style: _sharedStyles2.default.glyphiconStyles }),
+												" : 425-395-4671"
 											)
 										)
 									),
 									_react2.default.createElement(
 										"li",
-										{ key: "mail" },
+										null,
 										_react2.default.createElement(
 											"h4",
-											null,
-											_react2.default.createElement("i", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
-											" : ",
+											{ style: inline.liInfoStyles },
 											_react2.default.createElement(
 												"a",
-												{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries", style: inline.linkStyles },
-												"services@languageliftoff.com"
+												{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries", style: inline.linkStyles, key: "mail-link" },
+												_react2.default.createElement("i", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
+												" : services@languageliftoff.com"
 											)
 										)
 									),
 									_react2.default.createElement(
 										"li",
-										{ key: "address" },
+										null,
 										_react2.default.createElement(
 											"h4",
-											null,
-											_react2.default.createElement(
-												"i",
-												{ className: "material-icons", style: inline.iconStyles },
-												"store_mall_directory"
-											),
-											": ",
+											{ style: inline.liInfoStyles },
 											_react2.default.createElement(
 												"a",
-												{ target: "_blank", style: inline.linkStyles, href: "https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015" },
-												"Renton, WA 98059"
+												{ target: "_blank", key: "address-link", style: inline.linkStyles, href: "https://www.google.com/maps/place/Renton,+WA+98059/@47.4994156,-122.1465083,13z/data=!3m1!4b1!4m2!3m1!1s0x5490662246c4d82b:0x193c3cf558507015" },
+												_react2.default.createElement(
+													"i",
+													{ className: "material-icons", style: inline.iconStyles },
+													"store_mall_directory"
+												),
+												": Renton, WA 98059"
 											)
 										)
 									),
 									_react2.default.createElement(
 										"li",
-										{ key: "facebook", style: { marginTop: "20px" } },
+										null,
 										_react2.default.createElement(
 											"h4",
-											null,
+											{ style: inline.liInfoStyles },
 											_react2.default.createElement(
 												"a",
-												{ href: "http://www.facebook.com/LanguageLiftoff", target: "_blank" },
+												{ href: "http://www.facebook.com/LanguageLiftoff", key: "facebook-link", target: "_blank", style: inline.linkStyles },
 												_react2.default.createElement("img", { src: "app/assets/logos/fb/png/FB-FindUsonFacebook-online-114.png", width: 114 })
 											)
 										)
@@ -33419,12 +33441,19 @@
 			listStyle: "none",
 			marginTop: "30px",
 			backgroundColor: _sharedStyles2.default.altColor,
-			borderRadius: "30px",
+			borderRadius: "20px",
 			padding: "15px 10px 20px",
 			fontSize: "1.3em"
 		},
 		linkStyles: {
-			color: "#9E9E9E"
+			color: "gray",
+			display: 'block',
+			padding: '12px',
+			borderRadius: '10px',
+			':hover': {
+				textDecoration: 'none',
+				backgroundColor: '#F5F5F5'
+			}
 		},
 		sectionTitleStyles: {
 			borderRadius: "15px",
@@ -33433,6 +33462,13 @@
 		},
 		iconStyles: {
 			verticalAlign: "middle"
+		},
+		mainParagraphStyles: {
+			lineHeight: '1.5',
+			fontSize: '1.4em'
+		},
+		liInfoStyles: {
+			margin: '0'
 		}
 	};
 

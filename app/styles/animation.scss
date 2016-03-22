@@ -1,5 +1,4 @@
 
-
 .toggleText-enter {
 	opacity: 0.01;
 	&.toggleText-enter-active {
@@ -49,4 +48,9 @@
 	&:hover {
 		filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg);
 	}
+}
+
+
+.navLink:hover .navLinkTitle{
+	text-decoration: underline;
 }

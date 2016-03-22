@@ -1,3 +1,19 @@
+.slp {
+  height: 300px;
+  background: url(../assets/slp/language-liftoff-slp-jasmin.jpg) 75% top;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .slp:hover {
+    -webkit-filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg);
+            filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg); }
+
+.navLink:hover .navLinkTitle {
+  text-decoration: underline; }
+
+.developmentUl .selected {
+  background-color: #C8E6C9; }
+
 .toggleText-enter {
   opacity: 0.01; }
   .toggleText-enter.toggleText-enter-active {
@@ -12,33 +28,22 @@
   opacity: 0.5; }
   .development-enter.development-enter-active {
     opacity: 1;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out; }
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
 
 .development-leave {
   display: none; }
 
 .contact-appear {
   opacity: 0.01;
-  width: 50%; }
+  -webkit-transform: translateY(500px);
+          transform: translateY(500px); }
   .contact-appear.contact-appear-active {
     opacity: 1;
-    width: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
     -webkit-transition: all 1s ease;
     transition: all 1s ease; }
 
 .contact-leave {
   padding: 0; }
-
-.slp {
-  height: 300px;
-  background: url(../assets/slp/language-liftoff-slp-jasmin.jpg) 75% top;
-  background-size: cover;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
-  .slp:hover {
-    -webkit-filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg);
-            filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg); }
-
-.navLink:hover .navLinkTitle {
-  text-decoration: underline; }

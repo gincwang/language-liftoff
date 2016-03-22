@@ -1,4 +1,7 @@
+@import 'commonStyle';
 
+//Services.js
+//'toggle' animations
 .toggleText-enter {
 	opacity: 0.01;
 	&.toggleText-enter-active {
@@ -12,12 +15,14 @@
 }
 
 
+//ClientResourceDevelopment.js
+//'development' animation
 .development-enter {
 	opacity: 0.5;
 
 	&.development-enter-active {
 		opacity: 1;
-		transition: all 300ms ease-in-out;
+		transition: all 500ms ease-in-out;
 	}
 }
 
@@ -26,31 +31,18 @@
 }
 
 
+//Contact.js
+//'contact' animation
 .contact-appear {
 	opacity: 0.01;
-	width: 50%;
+	transform: translateY(500px);
 	&.contact-appear-active {
 		opacity: 1;
-		width: 100%;
+		transform: translateY(0px);
 		transition: all 1s ease;
 	}
 }
 
 .contact-leave {
 	padding: 0;
-}
-
-.slp{
-	height: 300px;
-	background: url(../assets/slp/language-liftoff-slp-jasmin.jpg) 75% top;
-	background-size: cover;
-	transition: all 0.3s ease;
-	&:hover {
-		filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg);
-	}
-}
-
-
-.navLink:hover .navLinkTitle{
-	text-decoration: underline;
 }

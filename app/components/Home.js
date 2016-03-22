@@ -37,16 +37,16 @@ class Home extends React.Component {
 				<div className="row" style={inline.paragraphIcons}>
 					<ul className="list-unstyled">
 						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='home'><i className="material-icons" style={inline.iconStyles} key='home-home'>home</i><p>Home</p></Link>
+							<Link to='/services' className='home'><i className="material-icons" style={inline.iconStyles} key='home-home'>home</i><p>Home<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
 						</li>
 						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='clinic'><i className="material-icons" style={inline.iconStyles} key='home-clinic'>store_mall_directory</i><p>Clinic</p></Link>
+							<Link to='/services' className='clinic'><i className="material-icons" style={inline.iconStyles} key='home-clinic'>store_mall_directory</i><p>Clinic<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
 						</li>
 						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='community'><i className="material-icons" style={inline.iconStyles} key='home-community'>domain</i><p>Community</p></Link>
+							<Link to='/services' className='community'><i className="material-icons" style={inline.iconStyles} key='home-community'>domain</i><p>Community<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
 						</li>
 						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='teletherapy'><i className="material-icons" style={inline.iconStyles} key='home-teletherapy'>computer</i><p>Teletherapy</p></Link>
+							<Link to='/services' className='teletherapy'><i className="material-icons" style={inline.iconStyles} key='home-teletherapy'>computer</i><p>Teletherapy<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
 						</li>
 					</ul>
 				</div>
@@ -88,13 +88,14 @@ let inline = {
 		fontSize: "3.5em",
 		transform: 'scale(1)',
 		transition: "all 0.3s ease",
+		color: "gray",
 		':hover': {
 			transform: 'scale(1.1)'
 		}
 	},
 	iconAltStyles: {
-		position: "relative",
-		top: "6px"
+		position: "absolute",
+		marginTop: "5px"
 	},
 	serviceLinkStyles: {
 		fontSize: "1.5em",

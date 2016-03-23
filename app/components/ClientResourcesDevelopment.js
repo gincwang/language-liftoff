@@ -2,7 +2,6 @@ import React from 'react';
 import SharedStyles from "../styles/sharedStyles.js";
 import ListWithList from "./shared/ListWithList.js";
 import Radium from "radium";
-import classNames from 'classnames';
 
 
 class ClientResourcesDevelopment extends React.Component {

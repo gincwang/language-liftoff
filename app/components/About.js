@@ -1,13 +1,20 @@
 import React from "react";
 import SharedStyles from "../styles/sharedStyles.js";
 import Radium from 'radium';
+import Modal from 'react-modal';
 
 class About extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {modalIsOpen: false, testimonialIndex: 0};
+	}
+	openModal(i){
+		this.setState({modalIsOpen: true, testimonialIndex: i});
+	}
+	closeModal(){
+		this.setState({modalIsOpen: false});
+	}
 	render(){
-		let handleTestimonial = function(e){
-			e.preventDefault();
-			console.log('testimonial');
-		}
 		return (
 			<div className="container-fluid" style={SharedStyles.mainStyles}>
 				<div className="row" style={SharedStyles.titleRowStyles}>
@@ -47,14 +54,18 @@ class About extends React.Component {
 					</div>
 				</div>
 				<div className="row" >
-					<div className="col-sm-12 col-lg-offset-3 col-lg-6">
+					<div className="col-xs-12 col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
 						<ul style={{listStyle: 'none', padding: '0'}}>
 							{text.testimonialShort.map((em,i)=>{
-								return <li key={i} style={inline.testimonialLiStyles}><a href='#' style={inline.testimonialLinkStyles} key={i+15} onClick={handleTestimonial.bind(this)}>{em}</a></li>;
+								return <li key={i} style={inline.testimonialLiStyles}><div style={inline.testimonialLinkStyles} key={i+15} onClick={this.openModal.bind(this, i)}>{em}</div></li>;
 							})}
 						</ul>
 					</div>
 				</div>
+				<Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal.bind(this)} style={inline.modalStyles}>
+					<button onClick={this.closeModal.bind(this)} style={inline.modalButtonStyles}>x</button>
+					{text.testimonialFull[this.state.testimonialIndex]}
+				</Modal>
 				<div style={inline.extraPadding}></div>
 			</div>
 		);
@@ -110,10 +121,12 @@ let inline = {
 	testimonialLinkStyles: {
 		color: 'gray',
 		':hover': {
-			textDecoration: 'none'
+			textDecoration: 'none',
+			cursor: 'pointer'
 		},
 		':focus': {
-			textDecoration: 'none'
+			textDecoration: 'none',
+			outline: 'none'
 		}
 	},
 	authorStyles: {
@@ -126,6 +139,40 @@ let inline = {
 		textDecoration: 'underline',
 		color: '#0091EA',
 		textAlign: 'right'
+	},
+	modalStyles: {
+		overlay: {
+			backgroundColor: 'rgba(0,0,0,0.5)'
+		},
+		content: {
+			top: '50%',
+			left: '50%',
+			bottom: 'auto',
+			right: 'auto',
+			transform: 'translate(-50%, -50%)',
+			borderRadius: '30px',
+			color: 'dimgray',
+			border: '10px solid #A5D6A7',
+			transition: 'all 0.5s ease'
+		}
+	},
+	modalButtonStyles: {
+		float: 'right',
+		borderRadius: '50%',
+		backgroundColor: 'transparent',
+		border: 'none',
+		fontSize: '1.5em',
+		color: 'gray',
+		padding: '0 13px 5px',
+		':hover': {
+			backgroundColor: '#F5F5F5'
+		}
+	},
+	modalContentStyles: {
+		fontSize: '1.3em',
+		lineHeight: '1.7',
+		textAlign: 'left',
+		padding: '10px 30px'
 	}
 
 };
@@ -139,9 +186,18 @@ let text = {
 	therapistMain: <span>Jasmin is experienced in working in a variety of settings, including private practice, public schools, rehabilitation centers, and telepractice (teletherapy).  She is also experienced in working with a wide age range of clients, including the early childhood population (ages 2-5), school-aged children and adolescents in elementary and secondary programs, and adults.  Jasmin has specialized knowledge in the areas of cognitive-communication disorders, neurogenic speech and language disorders, articulation/phonological disorders, receptive-expressive language disorders, autism spectrum disorder (ASD), and fluency/stuttering.  In addition, Jasmin also has a background in applied behavior analysis (ABA) therapy, foreign language instruction, teaching English as a second language, and literacy instruction.</span>,
 	testimonialTitle: <h2 style={inline.testimonialTitleStyle}>Client Testimonials</h2>,
 	testimonialFull: [
-		<div>“Throughout the school year, we discussed our son’s progress with her, and Jasmin was extremely responsive and flexible in fine-tuning the [sessions] depending on pace, progress, or focus changes that came up. Jasmin is an excellent communicator and listener. We always felt connected with her, and she promptly and thoroughly replied to all our suggestions, as well as showed initiative in introducing changes in methodology depending on our son’s progress and test results. Jasmin is extremely reliable, courteous, pleasant, responsible, intelligent, and patient. She has a wonderful way with kids, making the [sessions] fun and at the same time being able to maintain focus on getting work done.”</div>,
-		<div>“I enjoyed personalized class design from Jasmin who genuinely wanted the same goals for me child and not just spend an hour on pre- existing/general exercises. She listened to our child's needs and worked with them based on their interests. Her skills at keeping children on track without losing interest were phenomenal. Jasmin is a great speech therapist. Our younger son loves working with her because she is so fun and patient. I love working with Jasmin because she is very structured and fit in many activities toward the improvement of the child. She will not hesitate to change the direction or pace of the course work if she feels the child is ready for the new idea or new concept. This helps us greatly as I see vast improvement in my child. Her fun and interactive drills and games and her willingness to talk to parents on weekly progress are the skills that I admire and appreciate. Jamin is truly a gem in the world of personalized instruction.”</div>,
-		<div> 給王⽼師的推薦函: 親愛的家長們, 我們很開心的將王⽼師推薦給各家庭。 王老師的語言治療和英語教學是非常頂級並適合我們華語家庭。 王⽼師精通中文,能細⼼了解家長的需求,對孩子⽤有趣又實在的教學方式達到學習效果。 王老師的英⽂是母語也是她的專業,所以對需要 "modeling"/模擬的語言治療孩⼦們這是一位很難遇到的好⽼師。 如果您的孩⼦需要⽂法的訓練和加強文章表示能力, 王⽼師也是這⽅面的專家。 我深感榮幸我的孩⼦有緣與王⽼師學習, 他們的進步是王⽼師的用⼼。 再次推薦王⽼師給各位家長。 </div>
+		<div>
+			<h4 style={inline.modalContentStyles}>“Throughout the school year, we discussed our son’s progress with her, and Jasmin was extremely responsive and flexible in fine-tuning the [sessions] depending on pace, progress, or focus changes that came up. Jasmin is an excellent communicator and listener. We always felt connected with her, and she promptly and thoroughly replied to all our suggestions, as well as showed initiative in introducing changes in methodology depending on our son’s progress and test results. Jasmin is extremely reliable, courteous, pleasant, responsible, intelligent, and patient. She has a wonderful way with kids, making the [sessions] fun and at the same time being able to maintain focus on getting work done.”</h4>
+			<h5 style={inline.authorStyles}>- Kristina, Mother of Zak (elementary student)</h5>
+		</div>,
+		<div>
+			<h4 style={inline.modalContentStyles}>“I enjoyed personalized class design from Jasmin who genuinely wanted the same goals for me child and not just spend an hour on pre- existing/general exercises. She listened to our child's needs and worked with them based on their interests. Her skills at keeping children on track without losing interest were phenomenal. Jasmin is a great speech therapist. Our younger son loves working with her because she is so fun and patient. I love working with Jasmin because she is very structured and fit in many activities toward the improvement of the child. She will not hesitate to change the direction or pace of the course work if she feels the child is ready for the new idea or new concept. This helps us greatly as I see vast improvement in my child. Her fun and interactive drills and games and her willingness to talk to parents on weekly progress are the skills that I admire and appreciate. Jamin is truly a gem in the world of personalized instruction.”</h4>
+			<h5 style={inline.authorStyles}>- Yen Li, Mother of Andrew and Casey (elementary students)</h5>
+		</div>,
+		<div>
+			<h4 style={inline.modalContentStyles}>給王⽼師的推薦函: 親愛的家長們, 我們很開心的將王⽼師推薦給各家庭。 王老師的語言治療和英語教學是非常頂級並適合我們華語家庭。 王⽼師精通中文,能細⼼了解家長的需求,對孩子⽤有趣又實在的教學方式達到學習效果。 王老師的英⽂是母語也是她的專業,所以對需要 "modeling"/模擬的語言治療孩⼦們這是一位很難遇到的好⽼師。 如果您的孩⼦需要⽂法的訓練和加強文章表示能力, 王⽼師也是這⽅面的專家。 我深感榮幸我的孩⼦有緣與王⽼師學習, 他們的進步是王⽼師的用⼼。 再次推薦王⽼師給各位家長。</h4>
+			<h5 style={inline.authorStyles}>- Yen Li, Mother of Andrew and Casey (elementary students)</h5>
+		</div>
 	],
 	testimonialShort: [
 		<div>

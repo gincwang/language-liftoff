@@ -3,11 +3,12 @@
 //slp photo
 .slp{
 	height: 300px;
+    filter: brightness(90%);
 	background: url(../assets/slp/language-liftoff-slp-jasmin.jpg) 75% top;
 	background-size: cover;
-	transition: all 0.3s ease;
 	&:hover {
-		filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg);
+		filter: drop-shadow(5px 5px 2px gray) brightness(102%);
+    	transition: all 0.3s ease;
 	}
 }
 

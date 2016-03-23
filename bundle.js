@@ -30035,9 +30035,9 @@
 								_react2.default.createElement(
 									"strong",
 									null,
-									"Renton, Issaquah and Bellevue"
+									"Renton, Issaquah, Bellevue,"
 								),
-								" areas of Washington State:"
+								" and surrounding areas in Washington State:"
 							)
 						)
 					),
@@ -30390,6 +30390,10 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
+	var _radium = __webpack_require__(218);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30479,7 +30483,54 @@
 								text.therapistMain
 							)
 						)
-					)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: inline.testimonialRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							text.testimonialTitle
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							_react2.default.createElement(
+								"h3",
+								null,
+								"Here is what our clients and families have to say! "
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							_react2.default.createElement("hr", null)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-12 col-lg-offset-3 col-lg-6" },
+							_react2.default.createElement(
+								"ul",
+								{ style: { listStyle: 'none', padding: '0' } },
+								text.testimonialShort.map(function (em, i) {
+									return _react2.default.createElement(
+										"li",
+										{ key: i, style: inline.testimonialLiStyles },
+										_react2.default.createElement(
+											"a",
+											{ href: "#", style: inline.testimonialLinkStyles, key: i * 2 },
+											em
+										)
+									);
+								})
+							)
+						)
+					),
+					_react2.default.createElement("div", { style: inline.extraPadding })
 				);
 			}
 		}]);
@@ -30487,7 +30538,7 @@
 		return About;
 	}(_react2.default.Component);
 
-	exports.default = About;
+	exports.default = (0, _radium2.default)(About);
 
 	var inline = {
 		paragraphStyle: {
@@ -30516,6 +30567,24 @@
 			textAlign: "left",
 			padding: "10px 0",
 			lineHeight: "1.5"
+		},
+		testimonialRowStyles: {
+			padding: "10px 0"
+		},
+		testimonialLiStyles: {
+			padding: '10px'
+		},
+		testimonialLinkStyles: {
+			color: 'gray',
+			':hover': {
+				textDecoration: 'none'
+			}
+		},
+		authorStyles: {
+			textAlign: 'right'
+		},
+		extraPadding: {
+			padding: '20px 0'
 		}
 
 	};
@@ -30552,7 +30621,78 @@
 			"span",
 			null,
 			"Jasmin is experienced in working in a variety of settings, including private practice, public schools, rehabilitation centers, and telepractice (teletherapy).  She is also experienced in working with a wide age range of clients, including the early childhood population (ages 2-5), school-aged children and adolescents in elementary and secondary programs, and adults.  Jasmin has specialized knowledge in the areas of cognitive-communication disorders, neurogenic speech and language disorders, articulation/phonological disorders, receptive-expressive language disorders, autism spectrum disorder (ASD), and fluency/stuttering.  In addition, Jasmin also has a background in applied behavior analysis (ABA) therapy, foreign language instruction, teaching English as a second language, and literacy instruction."
-		)
+		),
+		testimonialTitle: _react2.default.createElement(
+			"h2",
+			null,
+			"Client Testimonials"
+		),
+		testimonialFull: [_react2.default.createElement(
+			"div",
+			null,
+			"“Throughout the school year, we discussed our son’s progress with her, and Jasmin was extremely responsive and flexible in fine-tuning the [sessions] depending on pace, progress, or focus changes that came up. Jasmin is an excellent communicator and listener. We always felt connected with her, and she promptly and thoroughly replied to all our suggestions, as well as showed initiative in introducing changes in methodology depending on our son’s progress and test results. Jasmin is extremely reliable, courteous, pleasant, responsible, intelligent, and patient. She has a wonderful way with kids, making the [sessions] fun and at the same time being able to maintain focus on getting work done.”"
+		), _react2.default.createElement(
+			"div",
+			null,
+			"“I enjoyed personalized class design from Jasmin who genuinely wanted the same goals for me child and not just spend an hour on pre- existing/general exercises. She listened to our child's needs and worked with them based on their interests. Her skills at keeping children on track without losing interest were phenomenal. Jasmin is a great speech therapist. Our younger son loves working with her because she is so fun and patient. I love working with Jasmin because she is very structured and fit in many activities toward the improvement of the child. She will not hesitate to change the direction or pace of the course work if she feels the child is ready for the new idea or new concept. This helps us greatly as I see vast improvement in my child. Her fun and interactive drills and games and her willingness to talk to parents on weekly progress are the skills that I admire and appreciate. Jamin is truly a gem in the world of personalized instruction.”"
+		), _react2.default.createElement(
+			"div",
+			null,
+			" 給王⽼師的推薦函: 親愛的家長們, 我們很開心的將王⽼師推薦給各家庭。 王老師的語言治療和英語教學是非常頂級並適合我們華語家庭。 王⽼師精通中文,能細⼼了解家長的需求,對孩子⽤有趣又實在的教學方式達到學習效果。 王老師的英⽂是母語也是她的專業,所以對需要 \"modeling\"/模擬的語言治療孩⼦們這是一位很難遇到的好⽼師。 如果您的孩⼦需要⽂法的訓練和加強文章表示能力, 王⽼師也是這⽅面的專家。 我深感榮幸我的孩⼦有緣與王⽼師學習, 他們的進步是王⽼師的用⼼。 再次推薦王⽼師給各位家長。 "
+		)],
+		testimonialShort: [_react2.default.createElement(
+			"div",
+			null,
+			_react2.default.createElement(
+				"h4",
+				null,
+				"\"We always felt connected with her, and she promptly and thoroughly replied to all our suggestions, as well as showed initiative in introducing changes in methodology depending on our son’s progress and test results. \""
+			),
+			_react2.default.createElement(
+				"h5",
+				{ style: inline.authorStyles },
+				"- Kristina, Mother of Zak (elementary student)"
+			)
+		), _react2.default.createElement(
+			"div",
+			null,
+			_react2.default.createElement(
+				"h4",
+				null,
+				"\"[Jasmin] will not hesitate to change the direction or pace of the course work if she feels the child is ready for the new idea or new concept. This helps us greatly as I see vast improvement in my child.\""
+			),
+			_react2.default.createElement(
+				"h5",
+				{ style: inline.authorStyles },
+				"- Yen Li, Mother of Andrew and Casey (elementary students)"
+			)
+		), _react2.default.createElement(
+			"div",
+			null,
+			_react2.default.createElement(
+				"h4",
+				null,
+				"\"王老師的語言治療和英語教學是非常頂級並適合我們華語家庭。 王⽼師精通中文,能細⼼了解家長的需求,對孩子⽤有趣又實在的教學方式達到學習效果。\""
+			),
+			_react2.default.createElement(
+				"h5",
+				{ style: inline.authorStyles },
+				"- Yen Li, Mother of Andrew and Casey (elementary students)"
+			)
+		)],
+		testimonialAuthors: [_react2.default.createElement(
+			"div",
+			null,
+			"Kristina, Mother of Zak (elementary student)"
+		), _react2.default.createElement(
+			"div",
+			null,
+			"Yen Li, Mother of Andrew and Casey (elementary students)"
+		), _react2.default.createElement(
+			"div",
+			null,
+			"Yen Li, Mother of Andrew and Casey (elementary students)"
+		)]
 	};
 
 /***/ },
@@ -30925,7 +31065,7 @@
 								_react2.default.createElement(
 									"h4",
 									{ style: inline.paragraphStyles },
-									"Book a free 30 minute consultation with us!"
+									"Book a free, 30-minute consultation with us!"
 								),
 								_react2.default.createElement(
 									"h4",
@@ -32148,10 +32288,6 @@
 	var _radium = __webpack_require__(218);
 
 	var _radium2 = _interopRequireDefault(_radium);
-
-	var _classnames = __webpack_require__(291);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33456,60 +33592,6 @@
 	}(_react2.default.Component);
 
 	exports.default = FaqDiv;
-
-/***/ },
-/* 291 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = [];
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-
-			return classes.join(' ');
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
 
 /***/ }
 /******/ ]);

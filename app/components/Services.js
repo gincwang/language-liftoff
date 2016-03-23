@@ -105,7 +105,7 @@ class Services extends React.Component {
 					<div style={{marginBottom: '50px'}} className="col-md-5" onClick={this.handleClickContact.bind(this)}>
 						<Link  style={{':hover':{textDecoration: 'none'}}} key='nav2' className="navLink" to='/contact'>
 							<h3 style={inline.paragraphStyles}>{texts.linkToContact}</h3>
-							<h4 style={inline.paragraphStyles}>Book a free 30 minute consultation with us!</h4>
+							<h4 style={inline.paragraphStyles}>Book a free, 30-minute consultation with us!</h4>
 							<h4 className="navLinkTitle">Contact ></h4>
 						</Link>
 					</div>

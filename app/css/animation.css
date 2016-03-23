@@ -1,12 +1,14 @@
 .slp {
   height: 300px;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
   background: url(../assets/slp/language-liftoff-slp-jasmin.jpg) 75% top;
-  background-size: cover;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  background-size: cover; }
   .slp:hover {
-    -webkit-filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg);
-            filter: drop-shadow(5px 5px 2px gray) brightness(103%) hue-rotate(-15deg); }
+    -webkit-filter: drop-shadow(5px 5px 2px gray) brightness(102%);
+            filter: drop-shadow(5px 5px 2px gray) brightness(102%);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
 
 .navLink:hover .navLinkTitle {
   text-decoration: underline; }

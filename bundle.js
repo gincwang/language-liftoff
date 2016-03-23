@@ -30414,6 +30414,12 @@
 		_createClass(About, [{
 			key: "render",
 			value: function render() {
+				var _this2 = this;
+
+				var handleTestimonial = function handleTestimonial(e) {
+					e.preventDefault();
+					console.log('testimonial');
+				};
 				return _react2.default.createElement(
 					"div",
 					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
@@ -30522,7 +30528,7 @@
 										{ key: i, style: inline.testimonialLiStyles },
 										_react2.default.createElement(
 											"a",
-											{ href: "#", style: inline.testimonialLinkStyles, key: i * 2 },
+											{ href: "#", style: inline.testimonialLinkStyles, key: i + 15, onClick: handleTestimonial.bind(_this2) },
 											em
 										)
 									);
@@ -30568,15 +30574,28 @@
 			padding: "10px 0",
 			lineHeight: "1.5"
 		},
+		testimonialTitleStyle: {
+			display: 'inline-block',
+			border: '2px solid gray',
+			padding: '15px 20px',
+			borderRadius: '10px'
+		},
 		testimonialRowStyles: {
 			padding: "10px 0"
 		},
 		testimonialLiStyles: {
-			padding: '10px'
+			padding: '10px',
+			borderRadius: '10px',
+			':hover': {
+				backgroundColor: '#E8F5E9'
+			}
 		},
 		testimonialLinkStyles: {
 			color: 'gray',
 			':hover': {
+				textDecoration: 'none'
+			},
+			':focus': {
 				textDecoration: 'none'
 			}
 		},
@@ -30624,7 +30643,7 @@
 		),
 		testimonialTitle: _react2.default.createElement(
 			"h2",
-			null,
+			{ style: inline.testimonialTitleStyle },
 			"Client Testimonials"
 		),
 		testimonialFull: [_react2.default.createElement(
@@ -31033,7 +31052,7 @@
 							{ style: { marginBottom: '50px' }, className: "col-md-offset-1 col-md-5 ", onClick: this.handleClickAbout.bind(this) },
 							_react2.default.createElement(
 								Link,
-								{ style: { ':hover': { textDecoration: 'none' } }, key: "nav1", className: "navLink", to: "/about" },
+								{ style: inline.navLinkStyles, key: "nav1", className: "navLink", to: "/about" },
 								_react2.default.createElement(
 									"h3",
 									{ style: inline.paragraphStyles },
@@ -31056,7 +31075,7 @@
 							{ style: { marginBottom: '50px' }, className: "col-md-5", onClick: this.handleClickContact.bind(this) },
 							_react2.default.createElement(
 								Link,
-								{ style: { ':hover': { textDecoration: 'none' } }, key: "nav2", className: "navLink", to: "/contact" },
+								{ style: inline.navLinkStyles, key: "nav2", className: "navLink", to: "/contact" },
 								_react2.default.createElement(
 									"h3",
 									{ style: inline.paragraphStyles },
@@ -31114,7 +31133,12 @@
 			textAlign: "left"
 		},
 		navLinkStyles: {
-			color: 'gray'
+			':hover': {
+				textDecoration: 'none'
+			},
+			':focus': {
+				textDecoration: 'none'
+			}
 		}
 	};
 
@@ -33474,6 +33498,10 @@
 			padding: '12px',
 			borderRadius: '10px',
 			':hover': {
+				textDecoration: 'none',
+				backgroundColor: '#F5F5F5'
+			},
+			':focus': {
 				textDecoration: 'none',
 				backgroundColor: '#F5F5F5'
 			}

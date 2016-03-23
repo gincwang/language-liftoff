@@ -84,6 +84,10 @@ let inline = {
 		':hover': {
 			textDecoration: 'none',
 			backgroundColor: '#F5F5F5'
+		},
+		':focus': {
+			textDecoration: 'none',
+			backgroundColor: '#F5F5F5'			
 		}
 	},
 	sectionTitleStyles: {

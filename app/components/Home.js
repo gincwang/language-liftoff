@@ -31,7 +31,7 @@ class Home extends React.Component {
 					<div className="col-md-offset-2 col-md-8" >
 						<h3 style={inline.paragraphStyle}>{text.intro}</h3>
 						<hr style={inline.hrStyles}/>
-						<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings in <strong>Renton, Issaquah and Bellevue</strong> areas of Washington State:</h3>
+						<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings in <strong>Renton, Issaquah, Bellevue,</strong> and surrounding areas in Washington State:</h3>
 					</div>
 				</div>
 				<div className="row" style={inline.paragraphIcons}>

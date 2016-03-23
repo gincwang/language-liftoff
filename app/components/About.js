@@ -121,6 +121,11 @@ let inline = {
 	},
 	extraPadding: {
 		padding: '20px 0'
+	},
+	expandStyle: {
+		textDecoration: 'underline',
+		color: '#0091EA',
+		textAlign: 'right'
 	}
 
 };
@@ -142,13 +147,17 @@ let text = {
 		<div>
 			<h4>"We always felt connected with her, and she promptly and thoroughly replied to all our suggestions, as well as showed initiative in introducing changes in methodology depending on our son’s progress and test results. "</h4>
 			<h5 style={inline.authorStyles}>- Kristina, Mother of Zak (elementary student)</h5>
+			<h5 style={inline.expandStyle}>Read more</h5>
 		</div>,
 		<div>
 			<h4>"[Jasmin] will not hesitate to change the direction or pace of the course work if she feels the child is ready for the new idea or new concept. This helps us greatly as I see vast improvement in my child."</h4>
-			<h5 style={inline.authorStyles}>- Yen Li, Mother of Andrew and Casey (elementary students)</h5></div>,
+			<h5 style={inline.authorStyles}>- Yen Li, Mother of Andrew and Casey (elementary students)</h5>
+			<h5 style={inline.expandStyle}>Read more</h5>
+			</div>,
 		<div>
 			<h4>"王老師的語言治療和英語教學是非常頂級並適合我們華語家庭。 王⽼師精通中文,能細⼼了解家長的需求,對孩子⽤有趣又實在的教學方式達到學習效果。"</h4>
 			<h5 style={inline.authorStyles}>- Yen Li, Mother of Andrew and Casey (elementary students)</h5>
+			<h5 style={inline.expandStyle}>Read more</h5>
 		</div>
 	],
 	testimonialAuthors: [

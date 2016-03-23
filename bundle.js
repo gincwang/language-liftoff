@@ -30604,6 +30604,11 @@
 		},
 		extraPadding: {
 			padding: '20px 0'
+		},
+		expandStyle: {
+			textDecoration: 'underline',
+			color: '#0091EA',
+			textAlign: 'right'
 		}
 
 	};
@@ -30671,6 +30676,11 @@
 				"h5",
 				{ style: inline.authorStyles },
 				"- Kristina, Mother of Zak (elementary student)"
+			),
+			_react2.default.createElement(
+				"h5",
+				{ style: inline.expandStyle },
+				"Read more"
 			)
 		), _react2.default.createElement(
 			"div",
@@ -30684,6 +30694,11 @@
 				"h5",
 				{ style: inline.authorStyles },
 				"- Yen Li, Mother of Andrew and Casey (elementary students)"
+			),
+			_react2.default.createElement(
+				"h5",
+				{ style: inline.expandStyle },
+				"Read more"
 			)
 		), _react2.default.createElement(
 			"div",
@@ -30697,6 +30712,11 @@
 				"h5",
 				{ style: inline.authorStyles },
 				"- Yen Li, Mother of Andrew and Casey (elementary students)"
+			),
+			_react2.default.createElement(
+				"h5",
+				{ style: inline.expandStyle },
+				"Read more"
 			)
 		)],
 		testimonialAuthors: [_react2.default.createElement(

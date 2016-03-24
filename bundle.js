@@ -35578,9 +35578,33 @@
 				_react2.default.createElement(
 					"a",
 					{ target: "_blank", href: "https://www.premera.com/wa/visitor/" },
-					"Premera Blue Cross."
+					_react2.default.createElement(
+						"strong",
+						null,
+						"Premera Blue Cross"
+					)
 				),
-				" We accept cash or check as payment."
+				", ",
+				_react2.default.createElement(
+					"a",
+					{ target: "_blank", href: "https://www.regence.com" },
+					_react2.default.createElement(
+						"strong",
+						null,
+						"Regence Blueshield"
+					)
+				),
+				", and ",
+				_react2.default.createElement(
+					"a",
+					{ target: "_blank", href: "https://www.fchn.com" },
+					_react2.default.createElement(
+						"strong",
+						null,
+						"First Choice Health"
+					)
+				),
+				".  We accept cash or check as payment."
 			)
 		},
 		two: {

@@ -87,7 +87,7 @@ let inline = {
 		},
 		':focus': {
 			textDecoration: 'none',
-			backgroundColor: '#F5F5F5'			
+			backgroundColor: '#F5F5F5'
 		}
 	},
 	sectionTitleStyles: {
@@ -110,7 +110,7 @@ let inline = {
 let faq = {
 	one: {
 		question: "What forms of payment are accepted?",
-		answer: <span>We are in-network providers with <a target="_blank" href="https://www.premera.com/wa/visitor/">Premera Blue Cross.</a> We accept cash or check as payment.</span>
+		answer: <span>We are in-network providers with <a target="_blank" href="https://www.premera.com/wa/visitor/"><strong>Premera Blue Cross</strong></a>, <a target="_blank" href="https://www.regence.com"><strong>Regence Blueshield</strong></a>, and <a target="_blank" href="https://www.fchn.com"><strong>First Choice Health</strong></a>.  We accept cash or check as payment.</span>
 	},
 	two: {
 		question: "In which areas can in-home therapy services be provided?",

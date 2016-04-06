@@ -46,6 +46,10 @@ var SharedStyles = {
 	},
 	referenceStyle: {
 		marginBottom: "30px"
+	},
+	maxWidth: {
+		maxWidth: "1200px",
+		margin: "auto"
 	}
 };
 

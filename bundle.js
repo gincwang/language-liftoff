@@ -24631,19 +24631,19 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(274);
+	var _About = __webpack_require__(273);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Services = __webpack_require__(296);
+	var _Services = __webpack_require__(295);
 
 	var _Services2 = _interopRequireDefault(_Services);
 
-	var _ClientResourcesDisorders = __webpack_require__(304);
+	var _ClientResourcesDisorders = __webpack_require__(303);
 
 	var _ClientResourcesDisorders2 = _interopRequireDefault(_ClientResourcesDisorders);
 
-	var _ClientResourcesDevelopment = __webpack_require__(306);
+	var _ClientResourcesDevelopment = __webpack_require__(305);
 
 	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
@@ -24732,6 +24732,8 @@
 
 	var Link = __webpack_require__(159).Link;
 	Link = (0, _radium2.default)(Link); //Needs to be wrapped in Radium due to Raidum not working with all components
+
+	//Sets up main page and the nav bar
 
 	var Main = function (_React$Component) {
 		_inherits(Main, _React$Component);
@@ -24890,94 +24892,102 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ className: 'container-fluid', style: { padding: "0" }, onClick: this.handleClick.bind(this) },
+					null,
 					_react2.default.createElement(
 						'div',
-						{ style: { backgroundColor: "white" } },
+						{ className: 'container-fluid', style: { padding: "0" }, onClick: this.handleClick.bind(this) },
 						_react2.default.createElement(
-							'nav',
-							{ style: inline.navStyles },
+							'div',
+							{ style: { backgroundColor: "white" } },
 							_react2.default.createElement(
-								'div',
-								{ onClick: this.handleTabClick.bind(this) },
+								'nav',
+								{ style: inline.navStyles },
 								_react2.default.createElement(
-									Link,
-									{ to: '/' },
-									_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 60 })
+									'div',
+									{ onClick: this.handleTabClick.bind(this) },
+									_react2.default.createElement(
+										Link,
+										{ to: '/' },
+										_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 60 })
+									)
+								),
+								_react2.default.createElement(
+									'ul',
+									{ style: this.navUlStyles(this.state.hideMobileNav) },
+									_react2.default.createElement(
+										'li',
+										{ style: this.navLiStyles("HOME"), onClick: this.handleTabClick.bind(this) },
+										_react2.default.createElement(
+											Link,
+											{ to: '/', style: inline.navLinkStyles },
+											'HOME'
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ style: this.navLiStyles("SERVICES"), onClick: this.handleTabClick.bind(this) },
+										_react2.default.createElement(
+											Link,
+											{ to: '/services', style: inline.navLinkStyles },
+											'SERVICES'
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ style: this.navLiStyles("RESOURCES"), onClick: this.handleTabClick.bind(this), className: "dropDownBtn" },
+										_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDownText, links: dropDownLink, minWidth: 200, hideDropDown: this.state.hideDropDown })
+									),
+									_react2.default.createElement(
+										'li',
+										{ style: this.navLiStyles("ABOUT US"), onClick: this.handleTabClick.bind(this) },
+										_react2.default.createElement(
+											Link,
+											{ to: '/about', style: inline.navLinkStyles },
+											'ABOUT US'
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ style: this.navLiStyles("CONTACT"), onClick: this.handleTabClick.bind(this) },
+										_react2.default.createElement(
+											Link,
+											{ to: '/contact', style: inline.navLinkStyles },
+											'CONTACT'
+										)
+									)
 								)
 							),
 							_react2.default.createElement(
-								'ul',
-								{ style: this.navUlStyles(this.state.hideMobileNav) },
+								'button',
+								{ onClick: this.handleHideMobileNavClick.bind(this), style: inline.navToggleButtonStyle },
 								_react2.default.createElement(
-									'li',
-									{ style: this.navLiStyles("HOME"), onClick: this.handleTabClick.bind(this) },
-									_react2.default.createElement(
-										Link,
-										{ to: '/', style: inline.navLinkStyles },
-										'HOME'
-									)
-								),
-								_react2.default.createElement(
-									'li',
-									{ style: this.navLiStyles("SERVICES"), onClick: this.handleTabClick.bind(this) },
-									_react2.default.createElement(
-										Link,
-										{ to: '/services', style: inline.navLinkStyles },
-										'SERVICES'
-									)
-								),
-								_react2.default.createElement(
-									'li',
-									{ style: this.navLiStyles("RESOURCES"), onClick: this.handleTabClick.bind(this), className: "dropDownBtn" },
-									_react2.default.createElement(_dropDownBtn2.default, { anchorStyles: inline.navLinkStyles, title: 'RESOURCES', texts: dropDownText, links: dropDownLink, minWidth: 200, hideDropDown: this.state.hideDropDown })
-								),
-								_react2.default.createElement(
-									'li',
-									{ style: this.navLiStyles("ABOUT US"), onClick: this.handleTabClick.bind(this) },
-									_react2.default.createElement(
-										Link,
-										{ to: '/about', style: inline.navLinkStyles },
-										'ABOUT US'
-									)
-								),
-								_react2.default.createElement(
-									'li',
-									{ style: this.navLiStyles("CONTACT"), onClick: this.handleTabClick.bind(this) },
-									_react2.default.createElement(
-										Link,
-										{ to: '/contact', style: inline.navLinkStyles },
-										'CONTACT'
-									)
+									'i',
+									{ className: 'material-icons' },
+									'dehaze'
 								)
-							)
-						),
-						_react2.default.createElement(
-							'button',
-							{ onClick: this.handleHideMobileNavClick.bind(this), style: inline.navToggleButtonStyle },
-							_react2.default.createElement(
-								'i',
-								{ className: 'material-icons' },
-								'dehaze'
 							)
 						)
 					),
 					this.props.children,
 					_react2.default.createElement(
 						'div',
-						{ style: inline.footerStyles },
+						{ className: 'container-fluid', style: { padding: "0" } },
 						_react2.default.createElement(
 							'div',
-							{ onClick: this.handleTabClick.bind(this) },
+							{ style: inline.footerStyles },
 							_react2.default.createElement(
-								Link,
-								{ to: '/' },
-								_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 50 })
-							),
-							_react2.default.createElement(
-								'span',
-								null,
-								'2015-16 Language Liftoff'
+								'div',
+								{ onClick: this.handleTabClick.bind(this) },
+								_react2.default.createElement(
+									Link,
+									{ to: '/' },
+									_react2.default.createElement('img', { style: inline.navLogoStyles, src: "app/assets/logos/language-liftoff-full-sm.png", alt: 'language-liftoff-logo', height: 50 })
+								),
+								_react2.default.createElement(
+									'span',
+									null,
+									'2015-16 Language Liftoff'
+								)
 							)
 						)
 					),
@@ -27824,6 +27834,10 @@
 		},
 		referenceStyle: {
 			marginBottom: "30px"
+		},
+		maxWidth: {
+			maxWidth: "1200px",
+			margin: "auto"
 		}
 	};
 
@@ -29943,7 +29957,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _list = __webpack_require__(273);
+	var _list = __webpack_require__(307);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -30002,210 +30016,226 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					null,
 					_react2.default.createElement(
 						"div",
-						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement(
-								"h2",
-								{ style: _sharedStyles2.default.titleStyles },
-								text.title
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-2 col-md-8" },
-							_react2.default.createElement(
-								"h3",
-								{ style: inline.paragraphStyle },
-								text.intro
-							),
-							_react2.default.createElement("hr", { style: inline.hrStyles }),
-							_react2.default.createElement(
-								"h3",
-								{ style: inline.paragraphStyle },
-								"Our services are offered in a variety of settings in ",
-								_react2.default.createElement(
-									"strong",
-									null,
-									"Renton, Issaquah, Bellevue,"
-								),
-								" and surrounding areas in Washington State:"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: inline.paragraphIcons },
-						_react2.default.createElement(
-							"ul",
-							{ className: "list-unstyled" },
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
-								_react2.default.createElement(
-									Link,
-									{ to: "/services", className: "home" },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons", style: inline.iconStyles, key: "home-home" },
-										"home"
-									),
-									_react2.default.createElement(
-										"p",
-										null,
-										"Home",
-										_react2.default.createElement(
-											"i",
-											{ className: "material-icons", style: inline.iconAltStyles },
-											"keyboard_arrow_right"
-										)
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
-								_react2.default.createElement(
-									Link,
-									{ to: "/services", className: "clinic" },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons", style: inline.iconStyles, key: "home-clinic" },
-										"store_mall_directory"
-									),
-									_react2.default.createElement(
-										"p",
-										null,
-										"Clinic",
-										_react2.default.createElement(
-											"i",
-											{ className: "material-icons", style: inline.iconAltStyles },
-											"keyboard_arrow_right"
-										)
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
-								_react2.default.createElement(
-									Link,
-									{ to: "/services", className: "community" },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons", style: inline.iconStyles, key: "home-community" },
-										"domain"
-									),
-									_react2.default.createElement(
-										"p",
-										null,
-										"Community",
-										_react2.default.createElement(
-											"i",
-											{ className: "material-icons", style: inline.iconAltStyles },
-											"keyboard_arrow_right"
-										)
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
-								_react2.default.createElement(
-									Link,
-									{ to: "/services", className: "teletherapy" },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons", style: inline.iconStyles, key: "home-teletherapy" },
-										"computer"
-									),
-									_react2.default.createElement(
-										"p",
-										null,
-										"Teletherapy",
-										_react2.default.createElement(
-											"i",
-											{ className: "material-icons", style: inline.iconAltStyles },
-											"keyboard_arrow_right"
-										)
-									)
-								)
-							)
-						)
-					),
-					_react2.default.createElement("div", { style: _sharedStyles2.default.topPadding }),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4" },
-							_react2.default.createElement(
-								"h3",
-								{ style: _sharedStyles2.default.titleStyles },
-								"What We Specialize In:"
-							),
+							{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 							_react2.default.createElement(
 								"div",
-								{ style: inline.linkDiv, onClick: this.handleDisorderClick },
+								{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
 								_react2.default.createElement(
-									Link,
-									{ to: "/client-resources/common-disorders", style: inline.linkStyles },
+									"h2",
+									{ style: _sharedStyles2.default.titleStyles },
+									text.title
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "container", style: _sharedStyles2.default.mainStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-offset-2 col-md-8" },
+								_react2.default.createElement(
+									"h3",
+									{ style: inline.paragraphStyle },
+									text.intro
+								),
+								_react2.default.createElement("hr", { style: inline.hrStyles }),
+								_react2.default.createElement(
+									"h3",
+									{ style: inline.paragraphStyle },
+									"Our services are offered in a variety of settings in ",
 									_react2.default.createElement(
-										"h4",
-										{ style: inline.linkText },
-										"Learn more about",
-										_react2.default.createElement(
-											"p",
-											{ style: { fontSize: '0.7em' } },
-											_react2.default.createElement(
-												"strong",
-												null,
-												"Common Language Disorders"
-											)
-										)
+										"strong",
+										null,
+										"Renton, Issaquah, Bellevue,"
 									),
-									_react2.default.createElement(_list2.default, { data: data.specialize, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+									" and surrounding areas in Washington State:"
 								)
 							)
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-5 col-lg-4" },
+							{ className: "row", style: inline.paragraphIcons },
 							_react2.default.createElement(
-								"h3",
-								{ style: _sharedStyles2.default.titleStyles },
-								"What We Offer:"
-							),
-							_react2.default.createElement(
-								"div",
-								{ style: inline.linkDiv, onClick: this.handleAboutClick },
+								"ul",
+								{ className: "list-unstyled" },
 								_react2.default.createElement(
-									Link,
-									{ to: "/about", style: inline.linkStyles },
+									"li",
+									{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
 									_react2.default.createElement(
-										"h4",
-										{ style: inline.linkText },
-										"Get to know us at",
+										Link,
+										{ to: "/services", className: "home" },
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconStyles, key: "home-home" },
+											"home"
+										),
 										_react2.default.createElement(
 											"p",
-											{ style: { fontSize: '0.7em' } },
+											null,
+											"Home",
 											_react2.default.createElement(
-												"strong",
-												null,
-												"Language Liftoff !"
+												"i",
+												{ className: "material-icons", style: inline.iconAltStyles },
+												"keyboard_arrow_right"
 											)
 										)
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
+									_react2.default.createElement(
+										Link,
+										{ to: "/services", className: "clinic" },
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconStyles, key: "home-clinic" },
+											"store_mall_directory"
+										),
+										_react2.default.createElement(
+											"p",
+											null,
+											"Clinic",
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons", style: inline.iconAltStyles },
+												"keyboard_arrow_right"
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
+									_react2.default.createElement(
+										Link,
+										{ to: "/services", className: "community" },
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconStyles, key: "home-community" },
+											"domain"
+										),
+										_react2.default.createElement(
+											"p",
+											null,
+											"Community",
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons", style: inline.iconAltStyles },
+												"keyboard_arrow_right"
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ className: "col-xs-6 col-sm-3 col-md-3 col-lg-2", style: inline.serviceLinkStyles, onClick: this.handleServiceClick.bind(this) },
+									_react2.default.createElement(
+										Link,
+										{ to: "/services", className: "teletherapy" },
+										_react2.default.createElement(
+											"i",
+											{ className: "material-icons", style: inline.iconStyles, key: "home-teletherapy" },
+											"computer"
+										),
+										_react2.default.createElement(
+											"p",
+											null,
+											"Teletherapy",
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons", style: inline.iconAltStyles },
+												"keyboard_arrow_right"
+											)
+										)
+									)
+								)
+							)
+						),
+						_react2.default.createElement("div", { style: _sharedStyles2.default.topPadding })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
+							_react2.default.createElement(
+								"div",
+								{ style: _sharedStyles2.default.maxWidth },
+								_react2.default.createElement(
+									"div",
+									{ className: "col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4" },
+									_react2.default.createElement(
+										"h3",
+										{ style: _sharedStyles2.default.titleStyles },
+										"What We Specialize In:"
 									),
-									_react2.default.createElement(_list2.default, { data: data.offer, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+									_react2.default.createElement(
+										"div",
+										{ style: inline.linkDiv, onClick: this.handleDisorderClick },
+										_react2.default.createElement(
+											Link,
+											{ to: "/client-resources/common-disorders", style: inline.linkStyles },
+											_react2.default.createElement(
+												"h4",
+												{ style: inline.linkText },
+												"Learn more about",
+												_react2.default.createElement(
+													"p",
+													{ style: { fontSize: '0.7em' } },
+													_react2.default.createElement(
+														"strong",
+														null,
+														"Common Language Disorders"
+													)
+												)
+											),
+											_react2.default.createElement(_list2.default, { data: data.specialize, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+										)
+									)
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "col-md-5 col-lg-4" },
+									_react2.default.createElement(
+										"h3",
+										{ style: _sharedStyles2.default.titleStyles },
+										"What We Offer:"
+									),
+									_react2.default.createElement(
+										"div",
+										{ style: inline.linkDiv, onClick: this.handleAboutClick },
+										_react2.default.createElement(
+											Link,
+											{ to: "/about", style: inline.linkStyles },
+											_react2.default.createElement(
+												"h4",
+												{ style: inline.linkText },
+												"Get to know us at",
+												_react2.default.createElement(
+													"p",
+													{ style: { fontSize: '0.7em' } },
+													_react2.default.createElement(
+														"strong",
+														null,
+														"Language Liftoff !"
+													)
+												)
+											),
+											_react2.default.createElement(_list2.default, { data: data.offer, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+										)
+									)
 								)
 							)
 						)
@@ -30320,72 +30350,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _radium = __webpack_require__(218);
-
-	var _radium2 = _interopRequireDefault(_radium);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var List = function (_React$Component) {
-		_inherits(List, _React$Component);
-
-		function List() {
-			_classCallCheck(this, List);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
-		}
-
-		_createClass(List, [{
-			key: "render",
-			value: function render() {
-
-				var elements = this.props.data.sort().map(function (em, index) {
-					return _react2.default.createElement(
-						"li",
-						{ style: this.props.liStyles, key: index },
-						_react2.default.createElement(
-							"h4",
-							null,
-							em
-						)
-					);
-				}, this);
-
-				return _react2.default.createElement(
-					"ul",
-					{ style: this.props.ulStyles, key: this.props.data.length },
-					elements
-				);
-			}
-		}]);
-
-		return List;
-	}(_react2.default.Component);
-
-	exports.default = (0, _radium2.default)(List);
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
 	var _sharedStyles = __webpack_require__(253);
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
@@ -30394,7 +30358,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _reactModal = __webpack_require__(275);
+	var _reactModal = __webpack_require__(274);
 
 	var _reactModal2 = _interopRequireDefault(_reactModal);
 
@@ -30435,131 +30399,151 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					null,
 					_react2.default.createElement(
 						"div",
-						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 							_react2.default.createElement(
-								"h2",
-								{ style: _sharedStyles2.default.titleStyles },
-								"Who We Are"
+								"div",
+								{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+								_react2.default.createElement(
+									"h2",
+									{ style: _sharedStyles2.default.titleStyles },
+									"Who We Are"
+								)
 							)
 						)
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "row" },
+						{ className: "container", style: _sharedStyles2.default.mainStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-offset-1 col-sm-10 col-lg-offset-3 col-lg-6", style: inline.paragraphRowStyle },
+							{ className: "row" },
 							_react2.default.createElement(
-								"h4",
-								{ style: inline.paragraphStyle },
-								text.mainParagraph1
+								"div",
+								{ className: "col-sm-offset-1 col-sm-10", style: inline.paragraphRowStyle },
+								_react2.default.createElement(
+									"h4",
+									{ style: inline.paragraphStyle },
+									text.mainParagraph1
+								),
+								_react2.default.createElement(
+									"h4",
+									{ style: inline.paragraphStyle },
+									text.mainParagraph2
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "row", style: inline.therapistRowStyle },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-offset-1 col-sm-10" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									text.therapistTitle
+								)
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "row", style: inline.therapistRowStyle },
+							_react2.default.createElement(
+								"div",
+								{ style: _sharedStyles2.default.maxWidth },
+								_react2.default.createElement(
+									"div",
+									{ className: "col-xs-12 col-sm-offset-0 col-sm-4" },
+									_react2.default.createElement("div", { className: "slp", style: inline.photoStyle })
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "col-xs-12 col-sm-8" },
+									_react2.default.createElement(
+										"h4",
+										{ style: inline.therapistParagraphStyle },
+										text.therapistIntro
+									),
+									_react2.default.createElement(
+										"h4",
+										{ style: inline.therapistParagraphStyle },
+										text.therapistMain
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "container", style: _sharedStyles2.default.mainStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "row", style: inline.testimonialRowStyles },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-sm-offset-1 col-sm-10" },
+								text.testimonialTitle
 							),
 							_react2.default.createElement(
-								"h4",
-								{ style: inline.paragraphStyle },
-								text.mainParagraph2
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: inline.therapistRowStyle },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
-							_react2.default.createElement(
-								"h2",
-								null,
-								text.therapistTitle
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: inline.therapistRowStyle },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-xs-12 col-sm-offset-0 col-sm-4 col-md-offset-1 col-md-3" },
-							_react2.default.createElement("div", { className: "slp", style: inline.photoStyle })
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-xs-12 col-sm-8 col-md-7" },
-							_react2.default.createElement(
-								"h4",
-								{ style: inline.therapistParagraphStyle },
-								text.therapistIntro
+								"div",
+								{ className: "col-sm-offset-1 col-sm-10" },
+								_react2.default.createElement(
+									"h3",
+									null,
+									"Here is what our clients and families have to say! "
+								)
 							),
 							_react2.default.createElement(
-								"h4",
-								{ style: inline.therapistParagraphStyle },
-								text.therapistMain
+								"div",
+								{ className: "col-sm-offset-1 col-sm-10" },
+								_react2.default.createElement("hr", null)
 							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: inline.testimonialRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
-							text.testimonialTitle
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							{ className: "row" },
 							_react2.default.createElement(
-								"h3",
-								null,
-								"Here is what our clients and families have to say! "
+								"div",
+								{ className: "col-xs-12 col-sm-offset-1 col-sm-10" },
+								_react2.default.createElement(
+									"ul",
+									{ style: { listStyle: 'none', padding: '0' } },
+									text.testimonialShort.map(function (em, i) {
+										return _react2.default.createElement(
+											"li",
+											{ key: i, style: inline.testimonialLiStyles },
+											_react2.default.createElement(
+												"div",
+												{ style: inline.testimonialLinkStyles, key: i + 15, onClick: _this2.openModal.bind(_this2, i) },
+												em
+											)
+										);
+									})
+								)
 							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
-							_react2.default.createElement("hr", null)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-xs-12 col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6" },
+							_reactModal2.default,
+							{ isOpen: this.state.modalIsOpen, onRequestClose: this.closeModal.bind(this), style: inline.modalStyles },
 							_react2.default.createElement(
-								"ul",
-								{ style: { listStyle: 'none', padding: '0' } },
-								text.testimonialShort.map(function (em, i) {
-									return _react2.default.createElement(
-										"li",
-										{ key: i, style: inline.testimonialLiStyles },
-										_react2.default.createElement(
-											"div",
-											{ style: inline.testimonialLinkStyles, key: i + 15, onClick: _this2.openModal.bind(_this2, i) },
-											em
-										)
-									);
-								})
-							)
-						)
-					),
-					_react2.default.createElement(
-						_reactModal2.default,
-						{ isOpen: this.state.modalIsOpen, onRequestClose: this.closeModal.bind(this), style: inline.modalStyles },
-						_react2.default.createElement(
-							"button",
-							{ onClick: this.closeModal.bind(this), style: inline.modalButtonStyles },
-							"x"
+								"button",
+								{ onClick: this.closeModal.bind(this), style: inline.modalButtonStyles },
+								"x"
+							),
+							text.testimonialFull[this.state.testimonialIndex]
 						),
-						text.testimonialFull[this.state.testimonialIndex]
-					),
-					_react2.default.createElement("div", { style: inline.extraPadding })
+						_react2.default.createElement("div", { style: inline.extraPadding })
+					)
 				);
 			}
 		}]);
@@ -30827,24 +30811,24 @@
 	};
 
 /***/ },
-/* 275 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(276);
+	module.exports = __webpack_require__(275);
 
 
 
 /***/ },
-/* 276 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(277);
-	var ExecutionEnvironment = __webpack_require__(278);
-	var ModalPortal = React.createFactory(__webpack_require__(279));
-	var ariaAppHider = __webpack_require__(294);
-	var elementClass = __webpack_require__(295);
-	var renderSubtreeIntoContainer = __webpack_require__(277).unstable_renderSubtreeIntoContainer;
+	var ReactDOM = __webpack_require__(276);
+	var ExecutionEnvironment = __webpack_require__(277);
+	var ModalPortal = React.createFactory(__webpack_require__(278));
+	var ariaAppHider = __webpack_require__(293);
+	var elementClass = __webpack_require__(294);
+	var renderSubtreeIntoContainer = __webpack_require__(276).unstable_renderSubtreeIntoContainer;
 
 	var SafeHTMLElement = ExecutionEnvironment.canUseDOM ? window.HTMLElement : {};
 
@@ -30922,7 +30906,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 277 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30931,7 +30915,7 @@
 
 
 /***/ },
-/* 278 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -30976,14 +30960,14 @@
 
 
 /***/ },
-/* 279 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var div = React.DOM.div;
-	var focusManager = __webpack_require__(280);
-	var scopeTab = __webpack_require__(282);
-	var Assign = __webpack_require__(283);
+	var focusManager = __webpack_require__(279);
+	var scopeTab = __webpack_require__(281);
+	var Assign = __webpack_require__(282);
 
 
 	// so that our CSS is statically analyzable
@@ -31180,10 +31164,10 @@
 
 
 /***/ },
-/* 280 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(281);
+	var findTabbable = __webpack_require__(280);
 	var modalElement = null;
 	var focusLaterElement = null;
 	var needToFocus = false;
@@ -31254,7 +31238,7 @@
 
 
 /***/ },
-/* 281 */
+/* 280 */
 /***/ function(module, exports) {
 
 	/*!
@@ -31310,10 +31294,10 @@
 
 
 /***/ },
-/* 282 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(281);
+	var findTabbable = __webpack_require__(280);
 
 	module.exports = function(node, event) {
 	  var tabbable = findTabbable(node);
@@ -31331,7 +31315,7 @@
 
 
 /***/ },
-/* 283 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31342,9 +31326,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseAssign = __webpack_require__(284),
-	    createAssigner = __webpack_require__(290),
-	    keys = __webpack_require__(286);
+	var baseAssign = __webpack_require__(283),
+	    createAssigner = __webpack_require__(289),
+	    keys = __webpack_require__(285);
 
 	/**
 	 * A specialized version of `_.assign` for customizing assigned values without
@@ -31417,7 +31401,7 @@
 
 
 /***/ },
-/* 284 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31428,8 +31412,8 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseCopy = __webpack_require__(285),
-	    keys = __webpack_require__(286);
+	var baseCopy = __webpack_require__(284),
+	    keys = __webpack_require__(285);
 
 	/**
 	 * The base implementation of `_.assign` without support for argument juggling,
@@ -31450,7 +31434,7 @@
 
 
 /***/ },
-/* 285 */
+/* 284 */
 /***/ function(module, exports) {
 
 	/**
@@ -31488,7 +31472,7 @@
 
 
 /***/ },
-/* 286 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31499,9 +31483,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(287),
-	    isArguments = __webpack_require__(288),
-	    isArray = __webpack_require__(289);
+	var getNative = __webpack_require__(286),
+	    isArguments = __webpack_require__(287),
+	    isArray = __webpack_require__(288);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -31730,7 +31714,7 @@
 
 
 /***/ },
-/* 287 */
+/* 286 */
 /***/ function(module, exports) {
 
 	/**
@@ -31873,7 +31857,7 @@
 
 
 /***/ },
-/* 288 */
+/* 287 */
 /***/ function(module, exports) {
 
 	/**
@@ -32122,7 +32106,7 @@
 
 
 /***/ },
-/* 289 */
+/* 288 */
 /***/ function(module, exports) {
 
 	/**
@@ -32308,7 +32292,7 @@
 
 
 /***/ },
-/* 290 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32319,9 +32303,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var bindCallback = __webpack_require__(291),
-	    isIterateeCall = __webpack_require__(292),
-	    restParam = __webpack_require__(293);
+	var bindCallback = __webpack_require__(290),
+	    isIterateeCall = __webpack_require__(291),
+	    restParam = __webpack_require__(292);
 
 	/**
 	 * Creates a function that assigns properties of source object(s) to a given
@@ -32366,7 +32350,7 @@
 
 
 /***/ },
-/* 291 */
+/* 290 */
 /***/ function(module, exports) {
 
 	/**
@@ -32437,7 +32421,7 @@
 
 
 /***/ },
-/* 292 */
+/* 291 */
 /***/ function(module, exports) {
 
 	/**
@@ -32575,7 +32559,7 @@
 
 
 /***/ },
-/* 293 */
+/* 292 */
 /***/ function(module, exports) {
 
 	/**
@@ -32648,7 +32632,7 @@
 
 
 /***/ },
-/* 294 */
+/* 293 */
 /***/ function(module, exports) {
 
 	var _element = typeof document !== 'undefined' ? document.body : null;
@@ -32695,7 +32679,7 @@
 
 
 /***/ },
-/* 295 */
+/* 294 */
 /***/ function(module, exports) {
 
 	module.exports = function(opts) {
@@ -32760,7 +32744,7 @@
 
 
 /***/ },
-/* 296 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32783,7 +32767,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(297);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(296);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -32862,279 +32846,299 @@
 
 				return _react2.default.createElement(
 					"div",
-					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					null,
 					_react2.default.createElement(
 						"div",
-						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							{ className: "row", style: _sharedStyles2.default.titleRowStyles },
 							_react2.default.createElement(
-								"h2",
-								{ style: _sharedStyles2.default.titleStyles },
-								"Service Details"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement(
-								"h4",
-								{ style: inline.paragraphStyles },
-								texts.mainParagraph
-							),
-							_react2.default.createElement("br", null),
-							_react2.default.createElement(
-								"h4",
-								{ style: inline.paragraphStyles },
-								texts.mainParagraphAddOn
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
-						_react2.default.createElement(
-							"ul",
-							{ className: "list-unstyled" },
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-4 col-sm-offset-3 col-sm-2", style: inline.serviceLinkStyles },
+								"div",
+								{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
 								_react2.default.createElement(
-									"a",
-									{ href: "#", onClick: this.handleClick.bind(this) },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons", id: "therapy", key: "therapy", style: this.setIconStyles("therapy") },
-										"local_florist"
-									)
+									"h2",
+									{ style: _sharedStyles2.default.titleStyles },
+									"Service Details"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "container", style: _sharedStyles2.default.mainStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+							_react2.default.createElement(
+								"div",
+								{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+								_react2.default.createElement(
+									"h4",
+									{ style: inline.paragraphStyles },
+									texts.mainParagraph
 								),
+								_react2.default.createElement("br", null),
 								_react2.default.createElement(
-									"p",
-									{ style: { borderBottom: this.state.toggleText === "therapy" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
-									"Therapy"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-4 col-sm-2", style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"a",
-									{ href: "#", onClick: this.handleClick.bind(this) },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons", id: "evaluation", key: "evaluation", style: this.setIconStyles("evaluation") },
-										"assignment"
-									)
-								),
-								_react2.default.createElement(
-									"p",
-									{ style: { borderBottom: this.state.toggleText === "evaluation" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
-									"Evaluation"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ className: "col-xs-4 col-sm-2", style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"a",
-									{ href: "#", onClick: this.handleClick.bind(this) },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons", id: "consultation", key: "consultation", style: this.setIconStyles("consultation") },
-										"record_voice_over"
-									)
-								),
-								_react2.default.createElement(
-									"p",
-									{ style: { borderBottom: this.state.toggleText === "consultation" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
-									"Consultation"
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "col-xs-12 col-sm-offset-2 col-sm-8" },
-							_react2.default.createElement(
-								"h4",
-								{ style: inline.textToggleStyles },
-								_react2.default.createElement(
-									_reactAddonsCssTransitionGroup2.default,
-									{ transitionName: "toggleText", transitionEnterTimeout: 500, transitionLeaveTimeout: 500 },
-									texts[this.state.toggleText]
+									"h4",
+									{ style: inline.paragraphStyles },
+									texts.mainParagraphAddOn
 								)
 							)
 						)
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+						{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
 						_react2.default.createElement(
 							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							{ className: "row", style: _sharedStyles2.default.altParagraphRowStyles },
 							_react2.default.createElement(
-								"h2",
-								{ style: inline.paragraphStyles },
+								"div",
+								{ style: _sharedStyles2.default.maxWidth },
 								_react2.default.createElement(
-									"span",
-									{ style: inline.settingStyles },
-									"Therapy Settings"
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
-							_react2.default.createElement(
-								"h4",
-								{ style: inline.paragraphStyles },
-								texts.settingIntro
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						null,
-						_react2.default.createElement(
-							"ul",
-							{ className: "list-unstyled" },
-							_react2.default.createElement(
-								"li",
-								{ style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"div",
-									{ className: "row" },
+									"ul",
+									{ className: "list-unstyled" },
 									_react2.default.createElement(
-										"div",
-										null,
+										"li",
+										{ className: "col-xs-4 col-sm-offset-3 col-sm-2", style: inline.serviceLinkStyles },
 										_react2.default.createElement(
-											"i",
-											{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
-											"home"
-										)
-									),
-									_react2.default.createElement(
-										"div",
-										null,
+											"a",
+											{ href: "#", onClick: this.handleClick.bind(this) },
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons", id: "therapy", key: "therapy", style: this.setIconStyles("therapy") },
+												"local_florist"
+											)
+										),
 										_react2.default.createElement(
 											"p",
-											{ style: inline.settingPStyles, className: "col-sm-10" },
-											texts.settingHome
+											{ style: { borderBottom: this.state.toggleText === "therapy" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
+											"Therapy"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										{ className: "col-xs-4 col-sm-2", style: inline.serviceLinkStyles },
+										_react2.default.createElement(
+											"a",
+											{ href: "#", onClick: this.handleClick.bind(this) },
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons", id: "evaluation", key: "evaluation", style: this.setIconStyles("evaluation") },
+												"assignment"
+											)
+										),
+										_react2.default.createElement(
+											"p",
+											{ style: { borderBottom: this.state.toggleText === "evaluation" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
+											"Evaluation"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										{ className: "col-xs-4 col-sm-2", style: inline.serviceLinkStyles },
+										_react2.default.createElement(
+											"a",
+											{ href: "#", onClick: this.handleClick.bind(this) },
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons", id: "consultation", key: "consultation", style: this.setIconStyles("consultation") },
+												"record_voice_over"
+											)
+										),
+										_react2.default.createElement(
+											"p",
+											{ style: { borderBottom: this.state.toggleText === "consultation" ? "2px solid white" : "none", color: _sharedStyles2.default.altColor } },
+											"Consultation"
 										)
 									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"div",
-									{ className: "row" },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
-										"store_mall_directory"
-									),
-									_react2.default.createElement(
-										"p",
-										{ style: inline.settingPStyles, className: "col-sm-10" },
-										texts.settingClinic
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"div",
-									{ className: "row" },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
-										"domain"
-									),
-									_react2.default.createElement(
-										"p",
-										{ style: inline.settingPStyles, className: "col-sm-10" },
-										texts.settingCommunity
-									)
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ style: inline.serviceLinkStyles },
-								_react2.default.createElement(
-									"div",
-									{ className: "row" },
-									_react2.default.createElement(
-										"i",
-										{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
-										"computer"
-									),
-									_react2.default.createElement(
-										"p",
-										{ style: inline.settingPStyles, className: "col-sm-10" },
-										texts.settingTeletherapy
-									)
-								)
-							)
-						)
-					),
-					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding }),
-					_react2.default.createElement(
-						"div",
-						{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
-						_react2.default.createElement(
-							"div",
-							{ style: { marginBottom: '50px' }, className: "col-md-offset-1 col-md-5 ", onClick: this.handleClickAbout.bind(this) },
-							_react2.default.createElement(
-								Link,
-								{ style: inline.navLinkStyles, key: "nav1", className: "navLink", to: "/about" },
-								_react2.default.createElement(
-									"h3",
-									{ style: inline.paragraphStyles },
-									texts.linkToAbout
 								),
 								_react2.default.createElement(
-									"h4",
-									{ style: inline.paragraphStyles },
-									"And what our clients say about us"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "navLinkTitle" },
-									"About >"
+									"div",
+									{ className: "col-xs-12 col-sm-offset-2 col-sm-8" },
+									_react2.default.createElement(
+										"h4",
+										{ style: inline.textToggleStyles },
+										_react2.default.createElement(
+											_reactAddonsCssTransitionGroup2.default,
+											{ transitionName: "toggleText", transitionEnterTimeout: 500, transitionLeaveTimeout: 500 },
+											texts[this.state.toggleText]
+										)
+									)
 								)
 							)
 						),
 						_react2.default.createElement(
 							"div",
-							{ style: { marginBottom: '50px' }, className: "col-md-5", onClick: this.handleClickContact.bind(this) },
+							{ className: "container" },
 							_react2.default.createElement(
-								Link,
-								{ style: inline.navLinkStyles, key: "nav2", className: "navLink", to: "/contact" },
+								"div",
+								{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
 								_react2.default.createElement(
-									"h3",
-									{ style: inline.paragraphStyles },
-									texts.linkToContact
+									"div",
+									{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+									_react2.default.createElement(
+										"h2",
+										{ style: inline.paragraphStyles },
+										_react2.default.createElement(
+											"span",
+											{ style: inline.settingStyles },
+											"Therapy Settings"
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+								_react2.default.createElement(
+									"div",
+									{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+									_react2.default.createElement(
+										"h4",
+										{ style: inline.paragraphStyles },
+										texts.settingIntro
+									)
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								null,
+								_react2.default.createElement(
+									"ul",
+									{ className: "list-unstyled" },
+									_react2.default.createElement(
+										"li",
+										{ style: inline.serviceLinkStyles },
+										_react2.default.createElement(
+											"div",
+											{ className: "row" },
+											_react2.default.createElement(
+												"div",
+												null,
+												_react2.default.createElement(
+													"i",
+													{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+													"home"
+												)
+											),
+											_react2.default.createElement(
+												"div",
+												null,
+												_react2.default.createElement(
+													"p",
+													{ style: inline.settingPStyles, className: "col-sm-10" },
+													texts.settingHome
+												)
+											)
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										{ style: inline.serviceLinkStyles },
+										_react2.default.createElement(
+											"div",
+											{ className: "row" },
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+												"store_mall_directory"
+											),
+											_react2.default.createElement(
+												"p",
+												{ style: inline.settingPStyles, className: "col-sm-10" },
+												texts.settingClinic
+											)
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										{ style: inline.serviceLinkStyles },
+										_react2.default.createElement(
+											"div",
+											{ className: "row" },
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+												"domain"
+											),
+											_react2.default.createElement(
+												"p",
+												{ style: inline.settingPStyles, className: "col-sm-10" },
+												texts.settingCommunity
+											)
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										{ style: inline.serviceLinkStyles },
+										_react2.default.createElement(
+											"div",
+											{ className: "row" },
+											_react2.default.createElement(
+												"i",
+												{ className: "material-icons clearfix col-sm-2", style: inline.settingIconStyles },
+												"computer"
+											),
+											_react2.default.createElement(
+												"p",
+												{ style: inline.settingPStyles, className: "col-sm-10" },
+												texts.settingTeletherapy
+											)
+										)
+									)
+								)
+							),
+							_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding }),
+							_react2.default.createElement(
+								"div",
+								{ className: "row", style: _sharedStyles2.default.paragraphRowStyles },
+								_react2.default.createElement(
+									"div",
+									{ style: { marginBottom: '50px' }, className: "col-md-offset-1 col-md-5 ", onClick: this.handleClickAbout.bind(this) },
+									_react2.default.createElement(
+										Link,
+										{ style: inline.navLinkStyles, key: "nav1", className: "navLink", to: "/about" },
+										_react2.default.createElement(
+											"h3",
+											{ style: inline.paragraphStyles },
+											texts.linkToAbout
+										),
+										_react2.default.createElement(
+											"h4",
+											{ style: inline.paragraphStyles },
+											"And what our clients say about us"
+										),
+										_react2.default.createElement(
+											"h4",
+											{ className: "navLinkTitle" },
+											"About >"
+										)
+									)
 								),
 								_react2.default.createElement(
-									"h4",
-									{ style: inline.paragraphStyles },
-									"Book a free, 30-minute consultation with us!"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "navLinkTitle" },
-									"Contact >"
+									"div",
+									{ style: { marginBottom: '50px' }, className: "col-md-5", onClick: this.handleClickContact.bind(this) },
+									_react2.default.createElement(
+										Link,
+										{ style: inline.navLinkStyles, key: "nav2", className: "navLink", to: "/contact" },
+										_react2.default.createElement(
+											"h3",
+											{ style: inline.paragraphStyles },
+											texts.linkToContact
+										),
+										_react2.default.createElement(
+											"h4",
+											{ style: inline.paragraphStyles },
+											"Book a free, 30-minute consultation with us!"
+										),
+										_react2.default.createElement(
+											"h4",
+											{ className: "navLinkTitle" },
+											"Contact >"
+										)
+									)
 								)
 							)
 						)
@@ -33301,13 +33305,13 @@
 	};
 
 /***/ },
-/* 297 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(298);
+	module.exports = __webpack_require__(297);
 
 /***/ },
-/* 298 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33328,8 +33332,8 @@
 
 	var assign = __webpack_require__(39);
 
-	var ReactTransitionGroup = __webpack_require__(299);
-	var ReactCSSTransitionGroupChild = __webpack_require__(301);
+	var ReactTransitionGroup = __webpack_require__(298);
+	var ReactCSSTransitionGroupChild = __webpack_require__(300);
 
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -33395,7 +33399,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 299 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33412,7 +33416,7 @@
 	'use strict';
 
 	var React = __webpack_require__(2);
-	var ReactTransitionChildMapping = __webpack_require__(300);
+	var ReactTransitionChildMapping = __webpack_require__(299);
 
 	var assign = __webpack_require__(39);
 	var emptyFunction = __webpack_require__(15);
@@ -33605,7 +33609,7 @@
 	module.exports = ReactTransitionGroup;
 
 /***/ },
-/* 300 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33708,7 +33712,7 @@
 	module.exports = ReactTransitionChildMapping;
 
 /***/ },
-/* 301 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33728,8 +33732,8 @@
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(3);
 
-	var CSSCore = __webpack_require__(302);
-	var ReactTransitionEvents = __webpack_require__(303);
+	var CSSCore = __webpack_require__(301);
+	var ReactTransitionEvents = __webpack_require__(302);
 
 	var onlyChild = __webpack_require__(156);
 
@@ -33878,7 +33882,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 302 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33981,7 +33985,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 303 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34095,7 +34099,7 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 304 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34114,7 +34118,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _listWithAnchor = __webpack_require__(305);
+	var _listWithAnchor = __webpack_require__(304);
 
 	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
 
@@ -34266,7 +34270,7 @@
 	var medConditionsLinks = ["http://www.asha.org/public/speech/disorders/ADHD/", "http://www.asha.org/public/speech/disorders/Autism/", "http://www.asha.org/public/speech/disorders/dementia/", "http://www.asha.org/public/speech/disorders/Stroke/", "http://www.asha.org/public/speech/disorders/TBI/"];
 
 /***/ },
-/* 305 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34331,7 +34335,7 @@
 	exports.default = (0, _radium2.default)(ListWithAnchor);
 
 /***/ },
-/* 306 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34350,7 +34354,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _ListWithList = __webpack_require__(307);
+	var _ListWithList = __webpack_require__(306);
 
 	var _ListWithList2 = _interopRequireDefault(_ListWithList);
 
@@ -34611,7 +34615,7 @@
 	var yearStrings = ['0-3 Months', '4-6 Months', '7-12 Months', '1-2 Years', '2-3 Years', '3-4 Years', '4-5 Years', 'End of Kindergarten', 'End of First Grade', 'End of Second Grade', 'End of Third Grade', 'End of Fourth Grade', 'End of Fifth Grade'];
 
 /***/ },
-/* 307 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34626,7 +34630,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _list = __webpack_require__(273);
+	var _list = __webpack_require__(307);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -34634,7 +34638,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(297);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(296);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -34728,6 +34732,72 @@
 	}(_react2.default.Component);
 
 	exports.default = (0, _radium2.default)(ListWithList);
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(218);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var List = function (_React$Component) {
+		_inherits(List, _React$Component);
+
+		function List() {
+			_classCallCheck(this, List);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+		}
+
+		_createClass(List, [{
+			key: "render",
+			value: function render() {
+
+				var elements = this.props.data.sort().map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						_react2.default.createElement(
+							"h4",
+							null,
+							em
+						)
+					);
+				}, this);
+
+				return _react2.default.createElement(
+					"ul",
+					{ style: this.props.ulStyles, key: this.props.data.length },
+					elements
+				);
+			}
+		}]);
+
+		return List;
+	}(_react2.default.Component);
+
+	exports.default = (0, _radium2.default)(List);
 
 /***/ },
 /* 308 */
@@ -34910,7 +34980,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _listWithAnchor = __webpack_require__(305);
+	var _listWithAnchor = __webpack_require__(304);
 
 	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
 
@@ -35349,7 +35419,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(297);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(296);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 

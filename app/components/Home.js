@@ -21,53 +21,61 @@ class Home extends React.Component {
 	}
 	render(){
 		return (
-			<div className="container-fluid" style={SharedStyles.mainStyles}>
-				<div className="row" style={SharedStyles.titleRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h2 style={SharedStyles.titleStyles}>{text.title}</h2>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-md-offset-2 col-md-8" >
-						<h3 style={inline.paragraphStyle}>{text.intro}</h3>
-						<hr style={inline.hrStyles}/>
-						<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings in <strong>Renton, Issaquah, Bellevue,</strong> and surrounding areas in Washington State:</h3>
-					</div>
-				</div>
-				<div className="row" style={inline.paragraphIcons}>
-					<ul className="list-unstyled">
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='home'><i className="material-icons" style={inline.iconStyles} key='home-home'>home</i><p>Home<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
-						</li>
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='clinic'><i className="material-icons" style={inline.iconStyles} key='home-clinic'>store_mall_directory</i><p>Clinic<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
-						</li>
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='community'><i className="material-icons" style={inline.iconStyles} key='home-community'>domain</i><p>Community<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
-						</li>
-						<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
-							<Link to='/services' className='teletherapy'><i className="material-icons" style={inline.iconStyles} key='home-teletherapy'>computer</i><p>Teletherapy<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
-						</li>
-					</ul>
-				</div>
-				<div style={SharedStyles.topPadding}></div>
-				<div className="row" style={SharedStyles.altParagraphRowStyles}>
-					<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
-						<h3 style={SharedStyles.titleStyles}>What We Specialize In:</h3>
-						<div style={inline.linkDiv} onClick={this.handleDisorderClick}>
-							<Link to='/client-resources/common-disorders' style={inline.linkStyles}>
-								<h4 style={inline.linkText}>Learn more about<p style={{fontSize: '0.7em'}}><strong>Common Language Disorders</strong></p></h4>
-								<List data={data.specialize} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
-							</Link>
+			<div>
+				<div className="container-fluid" style={SharedStyles.mainStyles}>
+					<div className="row" style={SharedStyles.titleRowStyles}>
+						<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+							<h2 style={SharedStyles.titleStyles}>{text.title}</h2>
 						</div>
 					</div>
-					<div className="col-md-5 col-lg-4">
-						<h3 style={SharedStyles.titleStyles}>What We Offer:</h3>
-						<div style={inline.linkDiv} onClick={this.handleAboutClick}>
-							<Link to='/about' style={inline.linkStyles}>
-								<h4 style={inline.linkText}>Get to know us at<p style={{fontSize: '0.7em'}}><strong>Language Liftoff !</strong></p></h4>
-								<List data={data.offer} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
-							</Link>
+				</div>
+				<div className="container" style={SharedStyles.mainStyles}>
+					<div className="row">
+						<div className="col-md-offset-2 col-md-8" >
+							<h3 style={inline.paragraphStyle}>{text.intro}</h3>
+							<hr style={inline.hrStyles}/>
+							<h3 style={inline.paragraphStyle}>Our services are offered in a variety of settings in <strong>Renton, Issaquah, Bellevue,</strong> and surrounding areas in Washington State:</h3>
+						</div>
+					</div>
+					<div className="row" style={inline.paragraphIcons}>
+						<ul className="list-unstyled">
+							<li className="col-xs-6 col-sm-3 col-md-3 col-lg-offset-2 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+								<Link to='/services' className='home'><i className="material-icons" style={inline.iconStyles} key='home-home'>home</i><p>Home<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
+							</li>
+							<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+								<Link to='/services' className='clinic'><i className="material-icons" style={inline.iconStyles} key='home-clinic'>store_mall_directory</i><p>Clinic<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
+							</li>
+							<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+								<Link to='/services' className='community'><i className="material-icons" style={inline.iconStyles} key='home-community'>domain</i><p>Community<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
+							</li>
+							<li className="col-xs-6 col-sm-3 col-md-3 col-lg-2" style={inline.serviceLinkStyles} onClick={this.handleServiceClick.bind(this)}>
+								<Link to='/services' className='teletherapy'><i className="material-icons" style={inline.iconStyles} key='home-teletherapy'>computer</i><p>Teletherapy<i className="material-icons" style={inline.iconAltStyles}>keyboard_arrow_right</i></p></Link>
+							</li>
+						</ul>
+					</div>
+					<div style={SharedStyles.topPadding}></div>
+				</div>
+				<div className="container-fluid" style={SharedStyles.mainStyles}>
+					<div className="row" style={SharedStyles.altParagraphRowStyles}>
+						<div style={SharedStyles.maxWidth}>
+							<div className="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
+								<h3 style={SharedStyles.titleStyles}>What We Specialize In:</h3>
+								<div style={inline.linkDiv} onClick={this.handleDisorderClick}>
+									<Link to='/client-resources/common-disorders' style={inline.linkStyles}>
+										<h4 style={inline.linkText}>Learn more about<p style={{fontSize: '0.7em'}}><strong>Common Language Disorders</strong></p></h4>
+										<List data={data.specialize} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
+									</Link>
+								</div>
+							</div>
+							<div className="col-md-5 col-lg-4">
+								<h3 style={SharedStyles.titleStyles}>What We Offer:</h3>
+								<div style={inline.linkDiv} onClick={this.handleAboutClick}>
+									<Link to='/about' style={inline.linkStyles}>
+										<h4 style={inline.linkText}>Get to know us at<p style={{fontSize: '0.7em'}}><strong>Language Liftoff !</strong></p></h4>
+										<List data={data.offer} ulStyles={dataUlStyles} liStyles={dataLiStyles} />
+									</Link>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -9,6 +9,8 @@ import PopUp from "./shared/popUp";
 var Link = require('react-router').Link;
 Link = Radium(Link); 	//Needs to be wrapped in Radium due to Raidum not working with all components
 
+
+//Sets up main page and the nav bar
 class Main extends React.Component{
 	constructor(props){
 		super(props);
@@ -138,28 +140,32 @@ class Main extends React.Component{
 	}
     render(){
         return (
-        	<div className="container-fluid" style={{padding: "0"}} onClick={this.handleClick.bind(this)}>
-        		<div style={{backgroundColor: "white"}}>
-		            <nav style={inline.navStyles}>
-		            	<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={60}/></Link></div>
-		                <ul style={this.navUlStyles(this.state.hideMobileNav)}>
-		                	<li style={this.navLiStyles("HOME")} onClick={this.handleTabClick.bind(this)}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
-		                    <li style={this.navLiStyles("SERVICES")} onClick={this.handleTabClick.bind(this)}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
-		                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDownText} links={dropDownLink} minWidth={200} hideDropDown={this.state.hideDropDown}/></li>
-		                    <li style={this.navLiStyles("ABOUT US")} onClick={this.handleTabClick.bind(this)}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
-		                    <li style={this.navLiStyles("CONTACT")} onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
-		                </ul>
-		            </nav>
-		            <button onClick={this.handleHideMobileNavClick.bind(this)} style={inline.navToggleButtonStyle}><i className="material-icons">dehaze</i></button>
-		        </div>
+			<div>
+	        	<div className="container-fluid" style={{padding: "0"}} onClick={this.handleClick.bind(this)}>
+	        		<div style={{backgroundColor: "white"}}>
+			            <nav style={inline.navStyles}>
+			            	<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={60}/></Link></div>
+			                <ul style={this.navUlStyles(this.state.hideMobileNav)}>
+			                	<li style={this.navLiStyles("HOME")} onClick={this.handleTabClick.bind(this)}><Link to="/" style={inline.navLinkStyles}>HOME</Link></li>
+			                    <li style={this.navLiStyles("SERVICES")} onClick={this.handleTabClick.bind(this)}><Link to="/services" style={inline.navLinkStyles}>SERVICES</Link></li>
+			                    <li style={this.navLiStyles("RESOURCES")} onClick={this.handleTabClick.bind(this)} className={"dropDownBtn"}><DropDownButton anchorStyles={inline.navLinkStyles} title="RESOURCES" texts={dropDownText} links={dropDownLink} minWidth={200} hideDropDown={this.state.hideDropDown}/></li>
+			                    <li style={this.navLiStyles("ABOUT US")} onClick={this.handleTabClick.bind(this)}><Link to="/about" style={inline.navLinkStyles}>ABOUT US</Link></li>
+			                    <li style={this.navLiStyles("CONTACT")} onClick={this.handleTabClick.bind(this)}><Link to="/contact" style={inline.navLinkStyles}>CONTACT</Link></li>
+			                </ul>
+			            </nav>
+			            <button onClick={this.handleHideMobileNavClick.bind(this)} style={inline.navToggleButtonStyle}><i className="material-icons">dehaze</i></button>
+			        </div>
+				</div>
 	            {this.props.children}
-	            <div style={inline.footerStyles}>
-					<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015-16 Language Liftoff</span></div>
-	            </div>
+				<div className='container-fluid' style={{padding: "0"}}>
+		            <div style={inline.footerStyles}>
+						<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015-16 Language Liftoff</span></div>
+		            </div>
+				</div>
 	            <div>
 	            	<PopUp content={popUpText.content}/>
 	            </div>
-	        </div>
+		</div>
         );
     }
 }

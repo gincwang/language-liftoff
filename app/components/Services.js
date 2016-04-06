@@ -48,67 +48,77 @@ class Services extends React.Component {
 	render(){
 
 		return (
-			<div className="container-fluid" style={SharedStyles.mainStyles}>
-				<div className="row" style={SharedStyles.titleRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h2 style={SharedStyles.titleStyles}>Service Details</h2>
+			<div>
+				<div className="container-fluid" style={SharedStyles.mainStyles}>
+					<div className="row" style={SharedStyles.titleRowStyles}>
+						<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+							<h2 style={SharedStyles.titleStyles}>Service Details</h2>
+						</div>
 					</div>
 				</div>
-				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h4 style={inline.paragraphStyles}>{texts.mainParagraph}</h4>
-						<br/>
-						<h4 style={inline.paragraphStyles}>{texts.mainParagraphAddOn}</h4>
+				<div className="container" style={SharedStyles.mainStyles}>
+					<div className="row" style={SharedStyles.paragraphRowStyles}>
+						<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+							<h4 style={inline.paragraphStyles}>{texts.mainParagraph}</h4>
+							<br/>
+							<h4 style={inline.paragraphStyles}>{texts.mainParagraphAddOn}</h4>
+						</div>
 					</div>
 				</div>
-				<div className="row" style={SharedStyles.altParagraphRowStyles}>
-					<ul className="list-unstyled">
-						<li className="col-xs-4 col-sm-offset-3 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="therapy" key="therapy" style={this.setIconStyles("therapy")}>local_florist</i></a><p style={{borderBottom:this.state.toggleText==="therapy" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Therapy</p></li>
-						<li className="col-xs-4 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="evaluation" key="evaluation" style={this.setIconStyles("evaluation")}>assignment</i></a><p style={{borderBottom:this.state.toggleText==="evaluation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Evaluation</p></li>
-						<li className="col-xs-4 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="consultation" key="consultation" style={this.setIconStyles("consultation")}>record_voice_over</i></a><p style={{borderBottom:this.state.toggleText==="consultation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Consultation</p></li>
-					</ul>
-					<div className="col-xs-12 col-sm-offset-2 col-sm-8">
-						<h4 style={inline.textToggleStyles}>
-							<ReactCSSTransitionGroup transitionName="toggleText" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-								{texts[this.state.toggleText]}
-							</ReactCSSTransitionGroup>
-						</h4>
+				<div className="container-fluid" style={SharedStyles.mainStyles}>
+					<div className="row" style={SharedStyles.altParagraphRowStyles}>
+						<div style={SharedStyles.maxWidth}>
+						<ul className="list-unstyled">
+							<li className="col-xs-4 col-sm-offset-3 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="therapy" key="therapy" style={this.setIconStyles("therapy")}>local_florist</i></a><p style={{borderBottom:this.state.toggleText==="therapy" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Therapy</p></li>
+							<li className="col-xs-4 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="evaluation" key="evaluation" style={this.setIconStyles("evaluation")}>assignment</i></a><p style={{borderBottom:this.state.toggleText==="evaluation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Evaluation</p></li>
+							<li className="col-xs-4 col-sm-2" style={inline.serviceLinkStyles}><a href="#" onClick={this.handleClick.bind(this)}><i className="material-icons" id="consultation" key="consultation" style={this.setIconStyles("consultation")}>record_voice_over</i></a><p style={{borderBottom:this.state.toggleText==="consultation" ? "2px solid white" : "none", color: SharedStyles.altColor}}>Consultation</p></li>
+						</ul>
+						<div className="col-xs-12 col-sm-offset-2 col-sm-8">
+							<h4 style={inline.textToggleStyles}>
+								<ReactCSSTransitionGroup transitionName="toggleText" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+									{texts[this.state.toggleText]}
+								</ReactCSSTransitionGroup>
+							</h4>
+						</div>
 					</div>
 				</div>
-				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h2 style={inline.paragraphStyles}><span style={inline.settingStyles}>Therapy Settings</span></h2>
+				<div className="container">
+					<div className="row" style={SharedStyles.paragraphRowStyles}>
+						<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+							<h2 style={inline.paragraphStyles}><span style={inline.settingStyles}>Therapy Settings</span></h2>
+						</div>
+					</div>
+					<div className="row" style={SharedStyles.paragraphRowStyles}>
+						<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+							<h4 style={inline.paragraphStyles}>{texts.settingIntro}</h4>
+						</div>
+					</div>
+					<div >
+						<ul className="list-unstyled">
+							<li style={inline.serviceLinkStyles}><div className="row"><div><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>home</i></div><div><p style={inline.settingPStyles} className="col-sm-10">{texts.settingHome}</p></div></div></li>
+							<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>store_mall_directory</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingClinic}</p></div></li>
+							<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>domain</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingCommunity}</p></div></li>
+							<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>computer</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingTeletherapy}</p></div></li>
+						</ul>
+					</div>
+					<div style={SharedStyles.bottomPadding}></div>
+					<div className="row" style={SharedStyles.paragraphRowStyles}>
+						<div style={{marginBottom: '50px'}} className="col-md-offset-1 col-md-5 " onClick={this.handleClickAbout.bind(this)}>
+							<Link style={inline.navLinkStyles} key='nav1' className="navLink" to='/about'>
+								<h3 style={inline.paragraphStyles}>{texts.linkToAbout}</h3>
+								<h4 style={inline.paragraphStyles}>And what our clients say about us</h4>
+								<h4 className="navLinkTitle">About ></h4>
+							</Link>
+						</div>
+						<div style={{marginBottom: '50px'}} className="col-md-5" onClick={this.handleClickContact.bind(this)}>
+							<Link  style={inline.navLinkStyles} key='nav2' className="navLink" to='/contact'>
+								<h3 style={inline.paragraphStyles}>{texts.linkToContact}</h3>
+								<h4 style={inline.paragraphStyles}>Book a free, 30-minute consultation with us!</h4>
+								<h4 className="navLinkTitle">Contact ></h4>
+							</Link>
+						</div>
 					</div>
 				</div>
-				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h4 style={inline.paragraphStyles}>{texts.settingIntro}</h4>
-					</div>
-				</div>
-				<div >
-					<ul className="list-unstyled">
-						<li style={inline.serviceLinkStyles}><div className="row"><div><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>home</i></div><div><p style={inline.settingPStyles} className="col-sm-10">{texts.settingHome}</p></div></div></li>
-						<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>store_mall_directory</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingClinic}</p></div></li>
-						<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>domain</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingCommunity}</p></div></li>
-						<li style={inline.serviceLinkStyles}><div className="row"><i className="material-icons clearfix col-sm-2" style={inline.settingIconStyles}>computer</i><p style={inline.settingPStyles} className="col-sm-10">{texts.settingTeletherapy}</p></div></li>
-					</ul>
-				</div>
-				<div style={SharedStyles.bottomPadding}></div>
-				<div className="row" style={SharedStyles.paragraphRowStyles}>
-					<div style={{marginBottom: '50px'}} className="col-md-offset-1 col-md-5 " onClick={this.handleClickAbout.bind(this)}>
-						<Link style={inline.navLinkStyles} key='nav1' className="navLink" to='/about'>
-							<h3 style={inline.paragraphStyles}>{texts.linkToAbout}</h3>
-							<h4 style={inline.paragraphStyles}>And what our clients say about us</h4>
-							<h4 className="navLinkTitle">About ></h4>
-						</Link>
-					</div>
-					<div style={{marginBottom: '50px'}} className="col-md-5" onClick={this.handleClickContact.bind(this)}>
-						<Link  style={inline.navLinkStyles} key='nav2' className="navLink" to='/contact'>
-							<h3 style={inline.paragraphStyles}>{texts.linkToContact}</h3>
-							<h4 style={inline.paragraphStyles}>Book a free, 30-minute consultation with us!</h4>
-							<h4 className="navLinkTitle">Contact ></h4>
-						</Link>
-					</div>
 				</div>
 			</div>
 		);

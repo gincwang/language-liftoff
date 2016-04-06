@@ -16,57 +16,67 @@ class About extends React.Component {
 	}
 	render(){
 		return (
-			<div className="container-fluid" style={SharedStyles.mainStyles}>
-				<div className="row" style={SharedStyles.titleRowStyles}>
-					<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-						<h2 style={SharedStyles.titleStyles}>Who We Are</h2>
+			<div>
+				<div className="container-fluid" style={SharedStyles.mainStyles}>
+					<div className="row" style={SharedStyles.titleRowStyles}>
+						<div className="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+							<h2 style={SharedStyles.titleStyles}>Who We Are</h2>
+						</div>
 					</div>
 				</div>
-				<div className="row">
-					<div className="col-sm-offset-1 col-sm-10 col-lg-offset-3 col-lg-6" style={inline.paragraphRowStyle}>
-						<h4 style={inline.paragraphStyle}>{text.mainParagraph1}</h4>
-						<h4 style={inline.paragraphStyle}>{text.mainParagraph2}</h4>
+				<div className="container" style={SharedStyles.mainStyles}>
+					<div className="row">
+						<div className="col-sm-offset-1 col-sm-10" style={inline.paragraphRowStyle}>
+							<h4 style={inline.paragraphStyle}>{text.mainParagraph1}</h4>
+							<h4 style={inline.paragraphStyle}>{text.mainParagraph2}</h4>
+						</div>
 					</div>
 				</div>
-				<div className="row" style={inline.therapistRowStyle}>
-					<div className="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
-						{<h2>{text.therapistTitle}</h2>}
+				<div className="container-fluid" style={SharedStyles.mainStyles}>
+					<div className="row" style={inline.therapistRowStyle}>
+						<div className="col-sm-offset-1 col-sm-10">
+							{<h2>{text.therapistTitle}</h2>}
+						</div>
+					</div>
+					<div className="row" style={inline.therapistRowStyle}>
+						<div style={SharedStyles.maxWidth}>
+						<div className="col-xs-12 col-sm-offset-0 col-sm-4">
+							<div className='slp' style={inline.photoStyle}></div>
+						</div>
+						<div className="col-xs-12 col-sm-8">
+							<h4 style={inline.therapistParagraphStyle}>{text.therapistIntro}</h4>
+							<h4 style={inline.therapistParagraphStyle}>{text.therapistMain}</h4>
+						</div>
+						</div>
 					</div>
 				</div>
-				<div className="row" style={inline.therapistRowStyle}>
-					<div className="col-xs-12 col-sm-offset-0 col-sm-4 col-md-offset-1 col-md-3">
-						<div className='slp' style={inline.photoStyle}></div>
+				<div className="container" style={SharedStyles.mainStyles}>
+					<div className="row" style={inline.testimonialRowStyles}>
+						<div className="col-sm-offset-1 col-sm-10">
+							{text.testimonialTitle}
+						</div>
+						<div className="col-sm-offset-1 col-sm-10">
+							<h3>Here is what our clients and families have to say! </h3>
+						</div>
+						<div className="col-sm-offset-1 col-sm-10">
+							<hr/>
+						</div>
 					</div>
-					<div className="col-xs-12 col-sm-8 col-md-7">
-						<h4 style={inline.therapistParagraphStyle}>{text.therapistIntro}</h4>
-						<h4 style={inline.therapistParagraphStyle}>{text.therapistMain}</h4>
+					<div className="row" >
+						<div className="col-xs-12 col-sm-offset-1 col-sm-10">
+							<ul style={{listStyle: 'none', padding: '0'}}>
+								{text.testimonialShort.map((em,i)=>{
+									return <li key={i} style={inline.testimonialLiStyles}><div style={inline.testimonialLinkStyles} key={i+15} onClick={this.openModal.bind(this, i)}>{em}</div></li>;
+								})}
+							</ul>
+						</div>
 					</div>
+					<Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal.bind(this)} style={inline.modalStyles}>
+						<button onClick={this.closeModal.bind(this)} style={inline.modalButtonStyles}>x</button>
+						{text.testimonialFull[this.state.testimonialIndex]}
+					</Modal>
+					<div style={inline.extraPadding}></div>
 				</div>
-				<div className="row" style={inline.testimonialRowStyles}>
-					<div className="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
-						{text.testimonialTitle}
-					</div>
-					<div className="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
-						<h3>Here is what our clients and families have to say! </h3>
-					</div>
-					<div className="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
-						<hr/>
-					</div>
-				</div>
-				<div className="row" >
-					<div className="col-xs-12 col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
-						<ul style={{listStyle: 'none', padding: '0'}}>
-							{text.testimonialShort.map((em,i)=>{
-								return <li key={i} style={inline.testimonialLiStyles}><div style={inline.testimonialLinkStyles} key={i+15} onClick={this.openModal.bind(this, i)}>{em}</div></li>;
-							})}
-						</ul>
-					</div>
-				</div>
-				<Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal.bind(this)} style={inline.modalStyles}>
-					<button onClick={this.closeModal.bind(this)} style={inline.modalButtonStyles}>x</button>
-					{text.testimonialFull[this.state.testimonialIndex]}
-				</Modal>
-				<div style={inline.extraPadding}></div>
 			</div>
 		);
 	}

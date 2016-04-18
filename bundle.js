@@ -24631,19 +24631,19 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(273);
+	var _About = __webpack_require__(274);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Services = __webpack_require__(295);
+	var _Services = __webpack_require__(296);
 
 	var _Services2 = _interopRequireDefault(_Services);
 
-	var _ClientResourcesDisorders = __webpack_require__(303);
+	var _ClientResourcesDisorders = __webpack_require__(304);
 
 	var _ClientResourcesDisorders2 = _interopRequireDefault(_ClientResourcesDisorders);
 
-	var _ClientResourcesDevelopment = __webpack_require__(305);
+	var _ClientResourcesDevelopment = __webpack_require__(306);
 
 	var _ClientResourcesDevelopment2 = _interopRequireDefault(_ClientResourcesDevelopment);
 
@@ -29957,7 +29957,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _list = __webpack_require__(307);
+	var _list = __webpack_require__(273);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -30331,11 +30331,77 @@
 
 	var data = {
 		specialize: ["Autism Spectrum Disorders", "Articulation/speech sound disorders", "Fluency disorders (stuttering)", "Expressive and/or receptive language skills", "Specific language impairments", "Pragmatics/social language & cognition skills", "Auditory memory / auditory processing disorders", "Literacy and phonological awareness", "Aphasia", "Dysarthria", "Cognitive communication rehab for improved attention, memory, and executive functioning", "Augmentative and alternative communication (AAC)"],
-		offer: ["Warm and positive connection with the client.", "Creative, goal-oriented, and hierarchal therapy that are tailored to each client's individual needs.", "Observations are welcomed anytime by client's family members and/or caregivers.", "Clear explanations of the activities during therapy, and how these skills can be applied and reinforced at home or in the community.", "Challenging therapy process that is also fun, functional, and motivating to the clients."]
+		offer: ["Warm and positive connection with the client.", "Creative, goal-oriented, and hierarchal therapy sessions that are tailored to each client's individual needs.", "Observations are welcomed anytime by client's family members and/or caregivers.", "Clear explanations of the activities during therapy, and how these skills can be applied and reinforced at home or in the community.", "Challenging therapy process that is also fun, functional, and motivating to the clients."]
 	};
 
 /***/ },
 /* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _radium = __webpack_require__(218);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var List = function (_React$Component) {
+		_inherits(List, _React$Component);
+
+		function List() {
+			_classCallCheck(this, List);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+		}
+
+		_createClass(List, [{
+			key: "render",
+			value: function render() {
+
+				var elements = this.props.data.sort().map(function (em, index) {
+					return _react2.default.createElement(
+						"li",
+						{ style: this.props.liStyles, key: index },
+						_react2.default.createElement(
+							"h4",
+							null,
+							em
+						)
+					);
+				}, this);
+
+				return _react2.default.createElement(
+					"ul",
+					{ style: this.props.ulStyles, key: this.props.data.length },
+					elements
+				);
+			}
+		}]);
+
+		return List;
+	}(_react2.default.Component);
+
+	exports.default = (0, _radium2.default)(List);
+
+/***/ },
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30358,7 +30424,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _reactModal = __webpack_require__(274);
+	var _reactModal = __webpack_require__(275);
 
 	var _reactModal2 = _interopRequireDefault(_reactModal);
 
@@ -30688,7 +30754,7 @@
 				null,
 				"M.A., CCC-SLP"
 			),
-			"Jasmin is a certified and licensed multilingual speech-language pathologist.  She graduated from the University of California, San Diego with a B.A. in Human Development and an emphasis in Linguistics and Cognitive Science.  Jasmin received her postgraduate degree in Speech and Language Pathology at San Jose State University."
+			"Jasmin is a certified and licensed multilingual (English, Mandarin Chinese, Spanish) speech-language pathologist.  She graduated from the University of California, San Diego with a B.A. in Human Development and an emphasis in Linguistics and Cognitive Science.  Jasmin received her postgraduate degree in Speech and Language Pathology at San Jose State University."
 		),
 		therapistMain: _react2.default.createElement(
 			"span",
@@ -30811,24 +30877,24 @@
 	};
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(275);
+	module.exports = __webpack_require__(276);
 
 
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(276);
-	var ExecutionEnvironment = __webpack_require__(277);
-	var ModalPortal = React.createFactory(__webpack_require__(278));
-	var ariaAppHider = __webpack_require__(293);
-	var elementClass = __webpack_require__(294);
-	var renderSubtreeIntoContainer = __webpack_require__(276).unstable_renderSubtreeIntoContainer;
+	var ReactDOM = __webpack_require__(277);
+	var ExecutionEnvironment = __webpack_require__(278);
+	var ModalPortal = React.createFactory(__webpack_require__(279));
+	var ariaAppHider = __webpack_require__(294);
+	var elementClass = __webpack_require__(295);
+	var renderSubtreeIntoContainer = __webpack_require__(277).unstable_renderSubtreeIntoContainer;
 
 	var SafeHTMLElement = ExecutionEnvironment.canUseDOM ? window.HTMLElement : {};
 
@@ -30906,7 +30972,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30915,7 +30981,7 @@
 
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -30960,14 +31026,14 @@
 
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var div = React.DOM.div;
-	var focusManager = __webpack_require__(279);
-	var scopeTab = __webpack_require__(281);
-	var Assign = __webpack_require__(282);
+	var focusManager = __webpack_require__(280);
+	var scopeTab = __webpack_require__(282);
+	var Assign = __webpack_require__(283);
 
 
 	// so that our CSS is statically analyzable
@@ -31164,10 +31230,10 @@
 
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(280);
+	var findTabbable = __webpack_require__(281);
 	var modalElement = null;
 	var focusLaterElement = null;
 	var needToFocus = false;
@@ -31238,7 +31304,7 @@
 
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports) {
 
 	/*!
@@ -31294,10 +31360,10 @@
 
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(280);
+	var findTabbable = __webpack_require__(281);
 
 	module.exports = function(node, event) {
 	  var tabbable = findTabbable(node);
@@ -31315,7 +31381,7 @@
 
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31326,9 +31392,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseAssign = __webpack_require__(283),
-	    createAssigner = __webpack_require__(289),
-	    keys = __webpack_require__(285);
+	var baseAssign = __webpack_require__(284),
+	    createAssigner = __webpack_require__(290),
+	    keys = __webpack_require__(286);
 
 	/**
 	 * A specialized version of `_.assign` for customizing assigned values without
@@ -31401,7 +31467,7 @@
 
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31412,8 +31478,8 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseCopy = __webpack_require__(284),
-	    keys = __webpack_require__(285);
+	var baseCopy = __webpack_require__(285),
+	    keys = __webpack_require__(286);
 
 	/**
 	 * The base implementation of `_.assign` without support for argument juggling,
@@ -31434,7 +31500,7 @@
 
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports) {
 
 	/**
@@ -31472,7 +31538,7 @@
 
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31483,9 +31549,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(286),
-	    isArguments = __webpack_require__(287),
-	    isArray = __webpack_require__(288);
+	var getNative = __webpack_require__(287),
+	    isArguments = __webpack_require__(288),
+	    isArray = __webpack_require__(289);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -31714,7 +31780,7 @@
 
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports) {
 
 	/**
@@ -31857,7 +31923,7 @@
 
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports) {
 
 	/**
@@ -32106,7 +32172,7 @@
 
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports) {
 
 	/**
@@ -32292,7 +32358,7 @@
 
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32303,9 +32369,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var bindCallback = __webpack_require__(290),
-	    isIterateeCall = __webpack_require__(291),
-	    restParam = __webpack_require__(292);
+	var bindCallback = __webpack_require__(291),
+	    isIterateeCall = __webpack_require__(292),
+	    restParam = __webpack_require__(293);
 
 	/**
 	 * Creates a function that assigns properties of source object(s) to a given
@@ -32350,7 +32416,7 @@
 
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports) {
 
 	/**
@@ -32421,7 +32487,7 @@
 
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports) {
 
 	/**
@@ -32559,7 +32625,7 @@
 
 
 /***/ },
-/* 292 */
+/* 293 */
 /***/ function(module, exports) {
 
 	/**
@@ -32632,7 +32698,7 @@
 
 
 /***/ },
-/* 293 */
+/* 294 */
 /***/ function(module, exports) {
 
 	var _element = typeof document !== 'undefined' ? document.body : null;
@@ -32679,7 +32745,7 @@
 
 
 /***/ },
-/* 294 */
+/* 295 */
 /***/ function(module, exports) {
 
 	module.exports = function(opts) {
@@ -32744,7 +32810,7 @@
 
 
 /***/ },
-/* 295 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32767,7 +32833,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(296);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(297);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -33305,13 +33371,13 @@
 	};
 
 /***/ },
-/* 296 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(297);
+	module.exports = __webpack_require__(298);
 
 /***/ },
-/* 297 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33332,8 +33398,8 @@
 
 	var assign = __webpack_require__(39);
 
-	var ReactTransitionGroup = __webpack_require__(298);
-	var ReactCSSTransitionGroupChild = __webpack_require__(300);
+	var ReactTransitionGroup = __webpack_require__(299);
+	var ReactCSSTransitionGroupChild = __webpack_require__(301);
 
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -33399,7 +33465,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 298 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33416,7 +33482,7 @@
 	'use strict';
 
 	var React = __webpack_require__(2);
-	var ReactTransitionChildMapping = __webpack_require__(299);
+	var ReactTransitionChildMapping = __webpack_require__(300);
 
 	var assign = __webpack_require__(39);
 	var emptyFunction = __webpack_require__(15);
@@ -33609,7 +33675,7 @@
 	module.exports = ReactTransitionGroup;
 
 /***/ },
-/* 299 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33712,7 +33778,7 @@
 	module.exports = ReactTransitionChildMapping;
 
 /***/ },
-/* 300 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33732,8 +33798,8 @@
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(3);
 
-	var CSSCore = __webpack_require__(301);
-	var ReactTransitionEvents = __webpack_require__(302);
+	var CSSCore = __webpack_require__(302);
+	var ReactTransitionEvents = __webpack_require__(303);
 
 	var onlyChild = __webpack_require__(156);
 
@@ -33882,7 +33948,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 301 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33985,7 +34051,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 302 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34099,7 +34165,7 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 303 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34118,7 +34184,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _listWithAnchor = __webpack_require__(304);
+	var _listWithAnchor = __webpack_require__(305);
 
 	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
 
@@ -34270,7 +34336,7 @@
 	var medConditionsLinks = ["http://www.asha.org/public/speech/disorders/ADHD/", "http://www.asha.org/public/speech/disorders/Autism/", "http://www.asha.org/public/speech/disorders/dementia/", "http://www.asha.org/public/speech/disorders/Stroke/", "http://www.asha.org/public/speech/disorders/TBI/"];
 
 /***/ },
-/* 304 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34335,7 +34401,7 @@
 	exports.default = (0, _radium2.default)(ListWithAnchor);
 
 /***/ },
-/* 305 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34354,7 +34420,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _ListWithList = __webpack_require__(306);
+	var _ListWithList = __webpack_require__(307);
 
 	var _ListWithList2 = _interopRequireDefault(_ListWithList);
 
@@ -34615,7 +34681,7 @@
 	var yearStrings = ['0-3 Months', '4-6 Months', '7-12 Months', '1-2 Years', '2-3 Years', '3-4 Years', '4-5 Years', 'End of Kindergarten', 'End of First Grade', 'End of Second Grade', 'End of Third Grade', 'End of Fourth Grade', 'End of Fifth Grade'];
 
 /***/ },
-/* 306 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34630,7 +34696,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _list = __webpack_require__(307);
+	var _list = __webpack_require__(273);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -34638,7 +34704,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(296);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(297);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -34732,72 +34798,6 @@
 	}(_react2.default.Component);
 
 	exports.default = (0, _radium2.default)(ListWithList);
-
-/***/ },
-/* 307 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _radium = __webpack_require__(218);
-
-	var _radium2 = _interopRequireDefault(_radium);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var List = function (_React$Component) {
-		_inherits(List, _React$Component);
-
-		function List() {
-			_classCallCheck(this, List);
-
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
-		}
-
-		_createClass(List, [{
-			key: "render",
-			value: function render() {
-
-				var elements = this.props.data.sort().map(function (em, index) {
-					return _react2.default.createElement(
-						"li",
-						{ style: this.props.liStyles, key: index },
-						_react2.default.createElement(
-							"h4",
-							null,
-							em
-						)
-					);
-				}, this);
-
-				return _react2.default.createElement(
-					"ul",
-					{ style: this.props.ulStyles, key: this.props.data.length },
-					elements
-				);
-			}
-		}]);
-
-		return List;
-	}(_react2.default.Component);
-
-	exports.default = (0, _radium2.default)(List);
 
 /***/ },
 /* 308 */
@@ -34980,7 +34980,7 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _listWithAnchor = __webpack_require__(304);
+	var _listWithAnchor = __webpack_require__(305);
 
 	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
 
@@ -35419,7 +35419,7 @@
 
 	var _radium2 = _interopRequireDefault(_radium);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(296);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(297);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 

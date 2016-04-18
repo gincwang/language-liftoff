@@ -183,7 +183,7 @@ let data = {
 	],
 	offer: [
 		"Warm and positive connection with the client.",
-		"Creative, goal-oriented, and hierarchal therapy that are tailored to each client's individual needs.",
+		"Creative, goal-oriented, and hierarchal therapy sessions that are tailored to each client's individual needs.",
 		"Observations are welcomed anytime by client's family members and/or caregivers.",
 		"Clear explanations of the activities during therapy, and how these skills can be applied and reinforced at home or in the community.",
 		"Challenging therapy process that is also fun, functional, and motivating to the clients.",

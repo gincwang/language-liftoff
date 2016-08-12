@@ -35511,7 +35511,7 @@
 											{ style: inline.liInfoStyles },
 											_react2.default.createElement(
 												"a",
-												{ href: "mailto:services@languageliftoff.com?subject=Speech%20Inquiries", style: inline.linkStyles, key: "mail-link" },
+												{ href: "mailto:languageliftoff@gmail.com?subject=Speech%20Inquiries", style: inline.linkStyles, key: "mail-link" },
 												_react2.default.createElement("i", { className: "glyphicon glyphicon-envelope", style: _sharedStyles2.default.glyphiconStyles }),
 												" : services@languageliftoff.com"
 											)

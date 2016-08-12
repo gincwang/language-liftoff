@@ -30,7 +30,7 @@ class Contact extends React.Component {
 							</li>
 							<li><h4 style={inline.liInfoStyles}>
 								<a href="mailto:languageliftoff@gmail.com?subject=Speech%20Inquiries" style={inline.linkStyles} key='mail-link'>
-									<i className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></i> : services@languageliftoff.com
+									<i className="glyphicon glyphicon-envelope" style={SharedStyles.glyphiconStyles}></i> : languageliftoff@gmail.com
 								</a></h4>
 							</li>
 							<li><h4 style={inline.liInfoStyles}>

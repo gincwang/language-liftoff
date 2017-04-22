@@ -159,7 +159,7 @@ class Main extends React.Component{
 	            {this.props.children}
 				<div className='container-fluid' style={{padding: "0"}}>
 		            <div style={inline.footerStyles}>
-						<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015-16 Language Liftoff</span></div>
+						<div onClick={this.handleTabClick.bind(this)}><Link to="/"><img style={inline.navLogoStyles} src={"app/assets/logos/language-liftoff-full-sm.png"} alt="language-liftoff-logo" height={50}/></Link><span>2015-17 Language Liftoff</span></div>
 		            </div>
 				</div>
 	            <div>

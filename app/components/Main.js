@@ -172,8 +172,8 @@ class Main extends React.Component{
 
 export default Radium(Main);
 
-let dropDownText = ["Common Disorders", "Typical Development", "Early Concerns", "Bilingual Concerns"];
-let dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns", "/client-resources/bilingual-concerns"];
+let dropDownText = ["Common Disorders", "Typical Development", "Early Concerns", "Bilingual Concerns", "Additional Resources"];
+let dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns", "/client-resources/bilingual-concerns", "/client-resources/additional-resources"];
 let popUpText = {content: "Contact us for a free 30-minute consultation!"};
 
 let inline = {

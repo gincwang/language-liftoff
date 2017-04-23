@@ -24655,7 +24655,11 @@
 
 	var _ClientResourcesBilingualConcerns2 = _interopRequireDefault(_ClientResourcesBilingualConcerns);
 
-	var _Contact = __webpack_require__(310);
+	var _ClientResourcesMore = __webpack_require__(310);
+
+	var _ClientResourcesMore2 = _interopRequireDefault(_ClientResourcesMore);
+
+	var _Contact = __webpack_require__(311);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
@@ -24672,7 +24676,8 @@
 			_react2.default.createElement(_reactRouter.Route, { path: "common-disorders", component: _ClientResourcesDisorders2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: "typical-development", component: _ClientResourcesDevelopment2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: "early-concerns", component: _ClientResourcesEarlyConcerns2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: "bilingual-concerns", component: _ClientResourcesBilingualConcerns2.default })
+			_react2.default.createElement(_reactRouter.Route, { path: "bilingual-concerns", component: _ClientResourcesBilingualConcerns2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: "additional-resources", component: _ClientResourcesMore2.default })
 		),
 		_react2.default.createElement(_reactRouter.Route, { path: "about", component: _About2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: "contact", component: _Contact2.default })
@@ -24986,7 +24991,7 @@
 								_react2.default.createElement(
 									'span',
 									null,
-									'2015-16 Language Liftoff'
+									'2015-17 Language Liftoff'
 								)
 							)
 						)
@@ -25005,8 +25010,8 @@
 
 	exports.default = (0, _radium2.default)(Main);
 
-	var dropDownText = ["Common Disorders", "Typical Development", "Early Concerns", "Bilingual Concerns"];
-	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns", "/client-resources/bilingual-concerns"];
+	var dropDownText = ["Common Disorders", "Typical Development", "Early Concerns", "Bilingual Concerns", "Additional Resources"];
+	var dropDownLink = ["/client-resources/common-disorders", "/client-resources/typical-development", "/client-resources/early-concerns", "/client-resources/bilingual-concerns", "/client-resources/additional-resources"];
 	var popUpText = { content: "Contact us for a free 30-minute consultation!" };
 
 	var inline = {
@@ -35411,7 +35416,178 @@
 
 	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
 
-	var _faqDiv = __webpack_require__(311);
+	var _listWithAnchor = __webpack_require__(305);
+
+	var _listWithAnchor2 = _interopRequireDefault(_listWithAnchor);
+
+	var _radium = __webpack_require__(218);
+
+	var _radium2 = _interopRequireDefault(_radium);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ClientResourcesMore = function (_React$Component) {
+		_inherits(ClientResourcesMore, _React$Component);
+
+		function ClientResourcesMore() {
+			_classCallCheck(this, ClientResourcesMore);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ClientResourcesMore).apply(this, arguments));
+		}
+
+		_createClass(ClientResourcesMore, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "container-fluid", style: _sharedStyles2.default.mainStyles },
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: _sharedStyles2.default.titleRowStyles },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8" },
+							_react2.default.createElement(
+								"h2",
+								{ style: _sharedStyles2.default.titleStyles },
+								"Additional Resources"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: topRowStyle },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4", style: sectionStyle, key: "speechDO" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Autism Spectrum Disorder"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: speechDO, links: speechDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-4", style: sectionStyle, key: "languageDO" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Seniors with Special Needs"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: languageDO, links: languageDOLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "row", style: topRowStyle },
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-offset-2 col-lg-4", style: sectionStyle, key: "commOptions" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Assistive Technology"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: commOptions, links: commOptionsLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "col-sm-6 col-lg-4", style: sectionStyle, key: "others" },
+							_react2.default.createElement(
+								"h3",
+								{ style: categoryTitleStyle },
+								"Other"
+							),
+							_react2.default.createElement(_listWithAnchor2.default, { texts: others, links: othersLinks, ulStyles: dataUlStyles, liStyles: dataLiStyles })
+						)
+					),
+					_react2.default.createElement("div", { style: _sharedStyles2.default.bottomPadding })
+				);
+			}
+		}]);
+
+		return ClientResourcesMore;
+	}(_react2.default.Component);
+
+	exports.default = (0, _radium2.default)(ClientResourcesMore);
+
+	var topRowStyle = {
+		margin: "20px 20px"
+	};
+
+	var sectionStyle = {
+		transform: 'scale(1)',
+		transition: 'all 0.3s ease',
+		':hover': {
+			transform: 'scale(1.03)'
+		}
+	};
+
+	var categoryTitleStyle = {
+		borderRadius: "20px",
+		border: "3px solid gray",
+		padding: "10px 0"
+	};
+
+	var dataUlStyles = {
+		backgroundColor: _sharedStyles2.default.altColor,
+		borderRadius: "30px",
+		padding: "10px 50px"
+	};
+
+	var dataLiStyles = {
+		textAlign: "left",
+		listStyle: "none",
+		fontSize: "1.3em",
+		padding: "5px 10px",
+		borderRadius: '20px',
+		backgroundColor: 'transparent',
+		transition: 'all 0.3s ease',
+		':hover': {
+			backgroundColor: '#C8E6C9'
+		}
+	};
+
+	var speechDO = ["Hobbies for Autistic Children", "Aging with Autism Resources", "Travel Tips for Persons with Autism"];
+	var speechDOLinks = ["http://www.autism-community.com/exploring-hobbies-with-your-child/", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3324697/", "http://www.parents.com/health/autism/resources/travel-tips-children-with-autism/"];
+
+	var languageDO = ["Planning for the Future for Seniors with Special Needs", "Home Organization for Newly Disabled Seniors", "Legal Guide for Newly Disabled Seniors"];
+	var languageDOLinks = ["https://www.onereversemortgage.com/blog/2017/03/special-needs-seniors-planning-for-the-future-of-this-vulnerable-population/", "https://www.yourstoragefinder.com/home-organization-for-newly-disabled-seniors", "https://www.justgreatlawyers.com/legal-guide-for-newly-disabled-and-disabled-seniors"];
+
+	var commOptions = ["Assistive Technology Buying Guide", "PrAACtical AAC: Strategies, Resources, and Information"];
+	var commOptionsLinks = ["https://www.retailmenot.com/blog/assistive-technology-buying-guide.html", "http://praacticalaac.org/"];
+
+	var others = ["Should They Stay or Should They Go: Selling a Home with Modifications"];
+	var othersLinks = ["https://www.homecity.com/home-modifications-and-selling-your-home"];
+
+/***/ },
+/* 311 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _sharedStyles = __webpack_require__(253);
+
+	var _sharedStyles2 = _interopRequireDefault(_sharedStyles);
+
+	var _faqDiv = __webpack_require__(312);
 
 	var _faqDiv2 = _interopRequireDefault(_faqDiv);
 
@@ -35689,7 +35865,7 @@
 	};
 
 /***/ },
-/* 311 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
